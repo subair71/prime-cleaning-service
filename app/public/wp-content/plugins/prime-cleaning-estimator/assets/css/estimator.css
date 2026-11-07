@@ -1,0 +1,687 @@
+/**
+ * Prime Cleaning Estimator - Modern Premium Stylesheet
+ * Fully responsive, accessible, mobile-first design (320px+)
+ */
+
+.pce-wrapper {
+    max-width: 820px;
+    margin: 2.5rem auto;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #1e293b;
+    box-sizing: border-box;
+}
+
+.pce-wrapper * {
+    box-sizing: border-box;
+}
+
+/* -------------------------------------------------------------
+   1. ESTIMATOR HEADER BANNER
+   ------------------------------------------------------------- */
+.pce-header-banner {
+    background: radial-gradient(circle at 85% 15%, rgba(13, 148, 136, 0.22) 0%, transparent 45%), linear-gradient(135deg, #0a1628 0%, #162a45 60%, #0f2c42 100%);
+    color: #ffffff;
+    padding: 2.75rem 2.25rem 2.25rem;
+    border-radius: 16px 16px 0 0;
+    text-align: center;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: none;
+}
+
+.pce-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #5eead4;
+    background: rgba(13, 148, 136, 0.18);
+    border: 1px solid rgba(94, 234, 212, 0.3);
+    padding: 0.3rem 0.85rem;
+    border-radius: 9999px;
+    margin-bottom: 0.85rem;
+}
+
+.pce-title {
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin: 0 0 0.65rem 0;
+    color: #ffffff !important;
+    line-height: 1.2;
+}
+
+.pce-subtitle {
+    font-size: 1.05rem;
+    color: #cbd5e1;
+    margin: 0 0 1.25rem 0;
+    line-height: 1.55;
+    max-width: 620px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pce-demo-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: #e2e8f0;
+    padding: 0.35rem 0.95rem;
+    border-radius: 9999px;
+    font-size: 0.82rem;
+    backdrop-filter: blur(4px);
+}
+
+/* -------------------------------------------------------------
+   2. MULTI-STEP PROGRESS NAVIGATION
+   ------------------------------------------------------------- */
+.pce-steps-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-top: none;
+    padding: 1.15rem 1.75rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.pce-step-item {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    color: #94a3b8;
+    font-size: 0.88rem;
+    font-weight: 700;
+    white-space: nowrap;
+    cursor: default;
+    transition: all 0.2s ease;
+}
+
+.pce-step-num {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #e2e8f0;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 800;
+    transition: all 0.2s ease;
+}
+
+.pce-step-item.pce-step-active {
+    color: #0d9488;
+}
+
+.pce-step-item.pce-step-active .pce-step-num {
+    background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
+    color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(13, 148, 136, 0.2);
+}
+
+.pce-step-item.pce-step-done {
+    color: #1e293b;
+}
+
+.pce-step-item.pce-step-done .pce-step-num {
+    background: #1e3a5f;
+    color: #ffffff;
+}
+
+.pce-step-divider {
+    flex: 1;
+    height: 2px;
+    background: #e2e8f0;
+    margin: 0 0.75rem;
+    min-width: 16px;
+}
+
+/* -------------------------------------------------------------
+   3. ESTIMATOR FORM CARD & PANELS
+   ------------------------------------------------------------- */
+.pce-form-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-top: none;
+    border-radius: 0 0 16px 16px;
+    padding: 2.5rem 2.25rem;
+    box-shadow: 0 16px 24px -4px rgba(15, 23, 42, 0.06), 0 6px 12px -4px rgba(15, 23, 42, 0.03);
+}
+
+.pce-step-heading {
+    font-size: 1.45rem;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: -0.02em;
+    margin: 0 0 0.5rem 0;
+}
+
+.pce-step-desc {
+    color: #64748b;
+    font-size: 0.98rem;
+    margin: 0 0 1.75rem 0;
+    line-height: 1.55;
+}
+
+/* Field Layouts */
+.pce-field-row {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.35rem;
+}
+
+.pce-field-col {
+    flex: 1;
+    min-width: 0;
+}
+
+.pce-field-col-full {
+    width: 100%;
+}
+
+.pce-label {
+    display: block;
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: #334155;
+    margin-bottom: 0.45rem;
+    letter-spacing: -0.01em;
+}
+
+.pce-req {
+    color: #e11d48;
+}
+
+.pce-field-hint {
+    font-size: 0.82rem;
+    color: #64748b;
+    margin-top: 0.4rem;
+    margin-bottom: 0;
+}
+
+/* Coverage Alert Box */
+.pce-coverage-alert {
+    padding: 1rem 1.25rem;
+    border-radius: 10px;
+    margin-top: 1.25rem;
+    font-size: 0.94rem;
+    line-height: 1.55;
+    animation: pceFadeIn 0.25s ease;
+}
+
+@keyframes pceFadeIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.pce-coverage-covered {
+    background-color: #f0fdf4;
+    border: 1.5px solid #86efac;
+    color: #14532d;
+}
+
+.pce-coverage-out {
+    background-color: #fff7ed;
+    border: 1.5px solid #fed7aa;
+    color: #9a3412;
+}
+
+/* -------------------------------------------------------------
+   4. SERVICE SELECTION RADIO CARDS (STEP 2)
+   ------------------------------------------------------------- */
+.pce-service-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.pce-radio-card {
+    display: flex;
+    align-items: flex-start;
+    padding: 1.4rem;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    background: #ffffff;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.03);
+}
+
+.pce-radio-card:hover {
+    border-color: #99f6e4;
+    background: #f0fdfa;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(15, 23, 42, 0.05);
+}
+
+.pce-radio-card.pce-selected {
+    border-color: #0d9488;
+    background: #f0fdfa;
+    box-shadow: 0 0 0 2px #0d9488, 0 6px 12px rgba(13, 148, 136, 0.12);
+}
+
+.pce-radio-card input[type="radio"] {
+    margin-top: 0.25rem;
+    margin-right: 1.15rem;
+    width: 22px;
+    height: 22px;
+    accent-color: #0d9488;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.pce-card-content {
+    flex: 1;
+}
+
+.pce-card-title {
+    font-weight: 800;
+    font-size: 1.12rem;
+    color: #0f172a;
+    letter-spacing: -0.015em;
+    margin-bottom: 0.35rem;
+}
+
+.pce-card-desc {
+    font-size: 0.92rem;
+    color: #64748b;
+    line-height: 1.5;
+    margin-bottom: 0.65rem;
+}
+
+/* Service Pills */
+.pce-pill {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 0.25rem 0.65rem;
+    border-radius: 9999px;
+    letter-spacing: 0.02em;
+}
+.pce-pill-teal { background: #ccfbf1; color: #0f766e; }
+.pce-pill-blue { background: #e0f2fe; color: #0369a1; }
+.pce-pill-orange { background: #ffedd5; color: #c2410c; }
+.pce-pill-purple { background: #f3e8ff; color: #7e22ce; }
+.pce-pill-green { background: #dcfce7; color: #15803d; }
+
+/* -------------------------------------------------------------
+   5. STEP 3: FREQUENCY CONTROLS & SCOPE
+   ------------------------------------------------------------- */
+.pce-frequency-options {
+    display: flex;
+    gap: 0.85rem;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+}
+
+.pce-freq-pill {
+    flex: 1;
+    min-width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.85rem 1.15rem;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: #334155;
+    background: #ffffff;
+    transition: all 0.18s ease;
+    text-align: center;
+}
+
+.pce-freq-pill input[type="radio"] {
+    display: none;
+}
+
+.pce-freq-pill.pce-freq-selected {
+    border-color: #0d9488;
+    background: #f0fdfa;
+    color: #0f766e;
+    box-shadow: 0 0 0 2px #0d9488;
+}
+
+.pce-disc-badge {
+    display: block;
+    font-size: 0.76rem;
+    color: #0d9488;
+    font-weight: 800;
+}
+
+/* -------------------------------------------------------------
+   6. STEP 4: ESTIMATE DISPLAY & FINANCIAL BREAKDOWN
+   ------------------------------------------------------------- */
+.pce-estimate-display {
+    margin-bottom: 2.25rem;
+}
+
+.pce-total-banner {
+    background: radial-gradient(circle at 50% 0%, rgba(13, 148, 136, 0.08) 0%, transparent 60%), #f8fafc;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 2.25rem 1.5rem;
+    text-align: center;
+    margin-bottom: 1.75rem;
+}
+
+.pce-total-label {
+    font-size: 0.88rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #64748b;
+    margin-bottom: 0.5rem;
+}
+
+.pce-total-price {
+    font-size: 2.75rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: #0d9488;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+}
+
+.pce-tax-clarification {
+    font-size: 0.88rem;
+    color: #64748b;
+}
+
+.pce-breakdown-card {
+    background: #ffffff;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.pce-breakdown-title {
+    margin: 0 0 1.15rem 0;
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: -0.01em;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 0.65rem;
+}
+
+.pce-breakdown-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.pce-breakdown-table td {
+    padding: 0.65rem 0;
+    font-size: 0.95rem;
+    color: #334155;
+    border-bottom: 1px dashed #f1f5f9;
+}
+
+.pce-breakdown-table td:last-child {
+    text-align: right;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.pce-breakdown-table tr:last-child td {
+    border-bottom: none;
+    font-weight: 800;
+    font-size: 1.08rem;
+    color: #0d9488;
+    padding-top: 0.85rem;
+}
+
+.pce-min-badge {
+    margin-top: 0.85rem;
+    padding: 0.65rem 0.85rem;
+    background: #fef3c7;
+    border: 1px solid #fde68a;
+    color: #92400e;
+    font-size: 0.85rem;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.pce-coverage-summary {
+    font-size: 0.92rem;
+    color: #475569;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 0.85rem 1.15rem;
+    border-radius: 8px;
+}
+
+/* -------------------------------------------------------------
+   7. STEP 5: ENQUIRY CONTACT & CONSENT
+   ------------------------------------------------------------- */
+.pce-recap-box {
+    background: #f8fafc;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1.75rem;
+}
+
+.pce-recap-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+}
+
+.pce-recap-row:last-child {
+    margin-bottom: 0;
+}
+
+.pce-consent-box {
+    margin: 1.5rem 0;
+    background: #f8fafc;
+    padding: 1rem 1.25rem;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+.pce-checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.92rem;
+    color: #334155;
+    line-height: 1.5;
+    cursor: pointer;
+}
+
+.pce-checkbox-label input[type="checkbox"] {
+    width: 22px;
+    height: 22px;
+    margin-top: 0.15rem;
+    accent-color: #0d9488;
+    flex-shrink: 0;
+}
+
+.pce-alert-error {
+    background: #fee2e2;
+    border: 1px solid #fca5a5;
+    color: #991b1b;
+    padding: 0.85rem 1.15rem;
+    border-radius: 8px;
+    font-size: 0.92rem;
+    margin-bottom: 1.5rem;
+}
+
+/* -------------------------------------------------------------
+   8. BUTTONS & ACTIONS
+   ------------------------------------------------------------- */
+.pce-panel-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2.25rem;
+    padding-top: 1.75rem;
+    border-top: 1px solid #f1f5f9;
+}
+
+.pce-btn {
+    min-height: 50px;
+    padding: 0.85rem 1.85rem;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 9999px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    text-decoration: none;
+}
+
+.pce-btn-next,
+.pce-btn-submit {
+    background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(13, 148, 136, 0.3);
+    margin-left: auto;
+}
+
+.pce-btn-next:hover,
+.pce-btn-submit:hover {
+    background: linear-gradient(135deg, #0f766e 0%, #0b5e57 100%);
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(13, 148, 136, 0.45);
+}
+
+.pce-btn-back,
+.pce-btn-secondary {
+    background: #ffffff;
+    color: #334155;
+    border: 1.5px solid #cbd5e1;
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+
+.pce-btn-back:hover,
+.pce-btn-secondary:hover {
+    background: #f1f5f9;
+    color: #0f172a;
+    border-color: #94a3b8;
+    transform: translateY(-1px);
+}
+
+.pce-spinner {
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    border-radius: 50%;
+    border-top-color: #ffffff;
+    animation: pceSpin 0.7s linear infinite;
+}
+
+@keyframes pceSpin {
+    to { transform: rotate(360deg); }
+}
+
+/* -------------------------------------------------------------
+   9. SUCCESS SCREEN
+   ------------------------------------------------------------- */
+.pce-success-card {
+    text-align: center;
+    padding: 2rem 1.5rem;
+}
+
+.pce-success-icon {
+    width: 72px;
+    height: 72px;
+    background: #dcfce7;
+    color: #15803d;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.25rem;
+    margin: 0 auto 1.5rem;
+    font-weight: 800;
+    box-shadow: 0 0 0 8px rgba(220, 252, 231, 0.5);
+}
+
+.pce-success-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: -0.025em;
+    margin: 0 0 0.5rem 0;
+}
+
+.pce-success-lead {
+    font-size: 1.1rem;
+    color: #475569;
+    margin: 0 0 1.75rem 0;
+    line-height: 1.6;
+}
+
+.pce-success-details {
+    max-width: 520px;
+    margin: 0 auto;
+    background: #f8fafc;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: left;
+    font-size: 0.98rem;
+}
+
+.pce-success-details p {
+    margin: 0.5rem 0;
+}
+
+/* -------------------------------------------------------------
+   10. MOBILE RESPONSIVENESS
+   ------------------------------------------------------------- */
+@media (max-width: 640px) {
+    .pce-header-banner {
+        padding: 2rem 1.25rem 1.5rem;
+    }
+    .pce-title {
+        font-size: 1.55rem;
+    }
+    .pce-form-card {
+        padding: 1.75rem 1.25rem;
+    }
+    .pce-field-row {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .pce-steps-nav {
+        padding: 0.85rem 0.5rem;
+    }
+    .pce-step-text {
+        display: none;
+    }
+    .pce-step-item {
+        gap: 0;
+    }
+    .pce-total-price {
+        font-size: 2.2rem;
+    }
+    .pce-panel-actions {
+        flex-direction: column-reverse;
+    }
+    .pce-btn {
+        width: 100%;
+        margin-left: 0 !important;
+    }
+}
