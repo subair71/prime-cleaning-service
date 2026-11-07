@@ -1,0 +1,229 @@
+<?php
+
+// phpcs:disable Squiz.PHP.EmbeddedPhp.ContentBeforeOpen
+// phpcs:disable Squiz.PHP.EmbeddedPhp.ContentBeforeEnd
+// phpcs:disable Squiz.PHP.EmbeddedPhp.ContentAfterEnd
+// phpcs:disable WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
+// phpcs:disable Squiz.Commenting.FunctionComment.MissingParamTagSquiz.Commenting.FunctionComment.MissingParamTag
+
+if ( ! defined( 'CP_AUTH_INCLUDE' ) ) {
+	print 'Direct access not allowed.';
+	exit;
+}
+
+// Required scripts.
+require_once CP_CALCULATEDFIELDSF_BASE_PATH . '/inc/cpcff_templates.inc.php';
+
+// Corrects a conflict with W3 Total Cache.
+if ( function_exists( 'w3_instance' ) ) {
+	try {
+		$w3_config = w3_instance( 'W3_Config' );
+		$w3_config->set( 'minify.html.enable', false );
+	} catch ( Exception $err ) {
+		error_log( $err->getMessage() );
+	}
+}
+
+add_filter( 'style_loader_tag', array( 'CPCFF_AUXILIARY', 'complete_link_tag' ) );
+
+wp_enqueue_style( 'cpcff_stylepublic', plugins_url( '/css/stylepublic.css', CP_CALCULATEDFIELDSF_MAIN_FILE_PATH ), array(), CP_CALCULATEDFIELDSF_VERSION );
+wp_enqueue_style( 'cpcff_jquery_ui', plugins_url( '/vendors/jquery-ui/jquery-ui.min.css', CP_CALCULATEDFIELDSF_MAIN_FILE_PATH ), array(), CP_CALCULATEDFIELDSF_VERSION );
+wp_enqueue_style( 'cpcff_jquery_ui_font', plugins_url( '/vendors/jquery-ui/jquery-ui-1.12.icon-font.min.css', CP_CALCULATEDFIELDSF_MAIN_FILE_PATH ), array(), CP_CALCULATEDFIELDSF_VERSION );
+
+$cpcff_main = CPCFF_MAIN::instance();
+$form_obj   = $cpcff_main->get_form( $id );
+
+$form_data            = $form_obj->get_option( 'form_structure', CP_CALCULATEDFIELDSF_DEFAULT_form_structure );
+$form_data_serialized = serialize( $form_data );
+
+if ( ( stripos( $form_data_serialized, 'select2' ) || stripos( $form_data_serialized, 'fphone' ) ) && ! wp_script_is( 'select2' ) && ! wp_script_is( 'select-2-js' ) ) {
+	wp_enqueue_style( 'cpcff_select2_css', plugins_url( '/vendors/select2/select2.min.css', CP_CALCULATEDFIELDSF_MAIN_FILE_PATH ), array(), CP_CALCULATEDFIELDSF_VERSION );
+	wp_enqueue_script( 'cpcff_select2_js', plugins_url( '/vendors/select2/select2.min.js', CP_CALCULATEDFIELDSF_MAIN_FILE_PATH ), array(), CP_CALCULATEDFIELDSF_VERSION, true );
+}
+
+if ( strpos( $form_data_serialized, 'fqrcode' ) && ! wp_script_is( 'qrcode' ) ) {
+	wp_enqueue_script( 'cpcff_qrcode_js', plugins_url( '/vendors/qrcode/html5-qrcode.min.js', CP_CALCULATEDFIELDSF_MAIN_FILE_PATH ), array(), CP_CALCULATEDFIELDSF_VERSION, true );
+}
+
+if ( preg_match( '/PDFPAGESNUMBER/i', $form_data_serialized ) && ! wp_script_is( 'cpcff_pdf_js' ) ) {
+	wp_enqueue_script( 'cpcff_pdf_js', plugins_url( '/vendors/pdf-js/pdf.min.js', CP_CALCULATEDFIELDSF_MAIN_FILE_PATH ), array(), CP_CALCULATEDFIELDSF_VERSION, true );
+	wp_add_inline_script( 'cpcff_pdf_js', 'pdfjsLib.GlobalWorkerOptions.workerSrc="' . esc_js( plugins_url( '/vendors/pdf-js/pdf.worker.min.js', CP_CALCULATEDFIELDSF_MAIN_FILE_PATH ) ) . '";', 'after' );
+}
+
+if ( ! empty( $form_data ) ) {
+	if (isset($form_data[1])) {
+		if (is_object($form_data[1])) $form_data[1] = (array) $form_data[1];
+		if (is_array($form_data[1]) && !empty($form_data[1]) && !isset($form_data[1][0])) $form_data[1] = array($form_data[1]);
+	} else {
+		$form_data[1] = array();
+	}
+	$form_settings = (isset($form_data[1]) && isset($form_data[1][0])) ? (array) $form_data[1][0] : array();
+
+	if( !empty( $form_data[ 0 ] ) )
+	{
+		$cff_replaced_shortcodes_flag = false;
+		foreach( $form_data[ 0 ] as $key => $object )
+		{
+			// PROCESS SHORTCODE FIELDS
+			if ( isset( $object->ftype ) && 'fhtml' == $object->ftype && isset( $object->replaceShortcodes ) && $object->replaceShortcodes ) {
+				$wrapper_callback = function($output, $tag, $attr, $m) {
+					if ( ! empty( $output ) ) {
+						$uniqid = wp_unique_id('cff-embedded-shortcode-');
+						$output = '<template id="' . esc_attr( $uniqid ) . '">' . $output . '</template>';
+					}
+					return $output;
+				};
+				add_filter('do_shortcode_tag', $wrapper_callback, 10, 4);
+				$fcontent_replaced_shortcode = do_shortcode( $object->fcontent );
+				if ( $fcontent_replaced_shortcode != $object->fcontent ) {
+					$cff_replaced_shortcodes_flag = true;
+				}
+				remove_filter('do_shortcode_tag', $wrapper_callback, 10);
+				$object->fcontent 			 = strip_shortcodes( $fcontent_replaced_shortcode );
+				$form_data[ 0 ][ $key ] 	 = $object;
+			}
+		}
+
+		if ( $cff_replaced_shortcodes_flag ) {
+			// Force other plugin assets
+			do_action('wp_enqueue_scripts');
+		}
+	}
+
+	if( !empty( $form_template ) ) {
+		$form_settings['formtemplate'] = $form_template;
+	}
+
+	if (!empty($form_settings['formtemplate'])) {
+		CPCFF_TEMPLATES::enqueue_template_resources($form_settings['formtemplate']);
+	}
+
+	if (!empty($form_settings['customstyles'])) {
+		print '<style>' . wp_strip_all_tags($form_settings['customstyles']) . '</style>'; // phpcs:ignore WordPress.Security.EscapeOutput
+	}
+
+	$form_data[1]['formid'] = 'cp_calculatedfieldsf_pform_' . CPCFF_MAIN::$form_counter;
+
+	if ( ! defined( 'CFF_AUXILIARY_NONCE' ) ) define( 'CFF_AUXILIARY_NONCE',  wp_create_nonce( 'cff-client-side-auxilary-nonce' ) );
+
+	// Form Heights
+	print $form_obj->get_height( '#' . $form_data[1]['formid'] );
+	?>
+<form name="<?php echo esc_attr( $form_data[1]['formid'] ); ?>" id="<?php echo esc_attr( $form_data[1]['formid'] ); ?>" action="<?php
+echo esc_attr( ( false !== ( $permalink = get_permalink() ) ) ? $permalink : '?' );
+?>" method="post" enctype="multipart/form-data" onsubmit="return fbuilderjQuery.fbuilder.doValidate(this);" class="cff-form no-prefetch <?php
+echo ' cff-form-' . $id;
+if ( ! empty( $form_settings['persistence'] ) ) {
+	echo ' persist-form';
+}
+if ( ! empty( $form_settings['formtemplate'] ) ) {
+	echo ' ' . esc_attr( $form_settings['formtemplate'] );
+}
+if ( ! empty( $atts ) && ! empty( $atts['class'] ) ) {
+	echo ' ' . esc_attr( $atts['class'] );
+}
+?>" <?php
+// Direction.
+if( function_exists('is_rtl') && is_rtl() ) $form_settings['direction'] = 'rtl';
+if ( !empty($form_settings['direction']) ) {
+	print ' dir="' . esc_attr( $form_settings['direction'] ) . '"';
+
+	if ( $form_settings['direction'] == 'rtl' ) { // Embed jQuery Slider RTL resources.
+		wp_enqueue_style( 'cpcff_slider_ui_rtl_css', plugins_url('/vendors/jquery-ui/jquery.ui.slider-rtl.css', CP_CALCULATEDFIELDSF_MAIN_FILE_PATH), array(), CP_CALCULATEDFIELDSF_VERSION );
+		wp_enqueue_script( 'cpcff_slider_ui_rtl_js', plugins_url('/vendors/jquery-ui/jquery.ui.slider-rtl.pack.js', CP_CALCULATEDFIELDSF_MAIN_FILE_PATH), array(), CP_CALCULATEDFIELDSF_VERSION, true );
+	}
+}
+?> data-nonce="<?php print esc_attr( CFF_AUXILIARY_NONCE ); ?>">
+<?php
+	// Submit form via AJAX.
+	if ( $form_obj->get_option('fp_ajax', 0) && ! $form_obj->get_option('fp_disable_submissions',0) ) {
+		print '<iframe name="cff_iframe_for_submission_' . CPCFF_MAIN::$form_counter . '" id="cff_iframe_for_submission_' . CPCFF_MAIN::$form_counter . '" style="display:none;" data-cff-reset="' . ( $form_obj->get_option('fp_ajax_reset_form', 0) ? 1 : 0 ) . '"></iframe>';
+		if ( ! empty( $form_obj->get_option('fp_thanks_mssg', '') ) ) {
+			print '<div class="cff-thanks-message" style="display:none;">' . esc_html( $form_obj->get_option('fp_thanks_mssg', '') ) . '</div>';
+		}
+	}
+
+    // Eval blocked
+    $eval_blocked_variable = '';
+    if ( CPCFF_AUXILIARY::is_eval_blocked() ) {
+        $eval_blocked_variable = 'cpcff_eval_blocked = true;';
+    }
+?>
+<input type="hidden" name="cp_calculatedfieldsf_pform_psequence" value="_<?php echo esc_attr( CPCFF_MAIN::$form_counter ); ?>" />
+<input type="hidden" name="cp_calculatedfieldsf_id" value="<?php echo esc_attr( $id ); ?>" />
+<input type="hidden" name="cp_ref_page" value="<?php echo esc_attr( CPCFF_AUXILIARY::site_url() ); ?>" />
+<?php if (
+	CPCFF_PRICE_CHECK::is_enabled($form_obj) &&
+	! empty( $cff_price_check_fields = CPCFF_PRICE_CHECK::get_fields( $form_obj ) )
+) : ?>
+<input
+    type="hidden"
+    name="cff_sum_values"
+    value=""
+	data-fields="<?php echo esc_attr( implode( ',', $cff_price_check_fields ) ); ?>"
+/>
+<?php endif; ?>
+<pre style="display:none !important;"><script data-category="functional" type="text/javascript"><?php echo $eval_blocked_variable; ?>form_structure_<?php echo esc_js( CPCFF_MAIN::$form_counter ); ?>=<?php print str_replace( array( "\n", "\r" ), ' ', ( ( version_compare( CP_CFF_PHPVERSION, '5.3.0' ) >= 0 ) ? json_encode( $form_data, JSON_HEX_QUOT | JSON_HEX_TAG ) : json_encode( $form_data ) ) ); // phpcs:ignore WordPress.Security.EscapeOutput
+// The plugin escapes the attributes when fields are generated by using Purify library.
+?>;</script></pre>
+<div id="fbuilder">
+	<?php
+	if (
+			!empty($form_settings['loading_animation'])
+		) {
+		print '<div class="cff-processing-form"></div>';
+	}
+	?>
+	<div id="fbuilder_<?php echo esc_attr( CPCFF_MAIN::$form_counter ); ?>">
+		<div id="formheader_<?php echo esc_attr( CPCFF_MAIN::$form_counter ); ?>"></div>
+		<div id="fieldlist_<?php echo esc_attr( CPCFF_MAIN::$form_counter ); ?>"></div>
+		<div class="clearer"></div>
+	</div>
+	<div id="cpcaptchalayer_<?php echo CPCFF_MAIN::$form_counter; ?>" class="cpcaptchalayer" style="display:none;">
+		<?php
+		$cpcff_texts_array = $form_obj->get_option('vs_all_texts', []);
+		$pay_later_enabled = $form_obj->get_option('enable_pay_later',0);
+		$paypal_enabled = $form_obj->get_option('enable_paypal', CP_CALCULATEDFIELDSF_DEFAULT_ENABLE_PAYPAL);
+		if(is_numeric($paypal_enabled)) $paypal_enabled = intval($paypal_enabled);
+		?>
+		<div class="fields" id="field-c0" style="display:<?php
+			print (($pay_later_enabled && $paypal_enabled) || $paypal_enabled == 2) ? 'block' : 'none';
+		?>">
+			<label><?php echo( $cpcff_texts_array[ 'payment_options_text' ][ 'text' ] ); ?></label>
+			<div class="dfield">
+				<?php if ($paypal_enabled) { ?><div><label><input type="radio" name="bccf_payment_option_paypal" vt="1" value="1" checked class="required"> <?php _e( $form_obj->get_option('enable_paypal_option_yes',CP_CALCULATEDFIELDSF_PAYPAL_OPTION_YES), 'calculated-fields-form') ; ?></label></div><?php } ?>
+				<!--addons-payment-options-->
+				<?php if (($pay_later_enabled && $paypal_enabled) || $paypal_enabled == 2) { ?><div><label><input type="radio" name="bccf_payment_option_paypal" vt="0" value="0" class="required"> <?php _e( $form_obj->get_option('enable_paypal_option_no',CP_CALCULATEDFIELDSF_PAYPAL_OPTION_NO), 'calculated-fields-form') ; ?></label></div><?php } ?>
+			</div>
+			<div class="clearer"></div>
+		</div>
+		<!--addons-payment-fields-->
+		<?php
+			CPCFF_CAPTCHA::display_captcha($form_obj, CPCFF_MAIN::$form_counter, $cpcff_texts_array);
+		?>
+	</div>
+</div>
+	<?php
+	if ( $form_obj->get_option( 'enable_submit', '' ) == '' ) {
+		print '<div id="cp_subbtn_' . esc_attr( CPCFF_MAIN::$form_counter ) . '" class="cp_subbtn" style="display:none;">' . esc_html( $form_obj->get_option( 'vs_text_submitbtn', 'Submit' ) ) . '</div>';
+	}
+	?>
+<div class="clearer"></div>
+	<?php
+	wp_nonce_field( 'cpcff_form_' . $id . '_' . CPCFF_MAIN::$form_counter, '_cpcff_public_nonce' );
+
+    // Minimum time to submit validation field
+    if ( ! empty( $min_time_to_submit = get_option( 'CP_CALCULATEDFIELDSF_MINIMUM_TIME_TO_SUBMIT', CP_CALCULATEDFIELDSF_MINIMUM_TIME_TO_SUBMIT ) ) )
+    {
+        echo '<input type="hidden" name="cff_form_start_time" value="' . esc_attr( CPCFF_AUXILIARY::encrypt( time() ) ) . '">';
+    }
+	?>
+</form>
+	<?php
+	// If the form shortcode was configured to be opened into an iframe adjust iframe size.
+	if ( isset( $_REQUEST['cff_iframe'] ) ):
+		?>
+	<style>.cff-form{width:100%;overflow-x:auto;box-sizing: border-box;}</style>
+	<?php
+	endif;
+}

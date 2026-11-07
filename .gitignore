@@ -1,25 +1,5 @@
-# Local server logs and configs
+# Transient runtime logs & OS caches
 logs/
-conf/
-
-# Local WordPress environment
-app/.envrc
-app/public/wp-admin/
-app/public/wp-includes/
-app/public/*.php
-!app/public/wp-config-sample.php
-app/public/wp-config.php
-app/public/wp-content/uploads/
-app/public/wp-content/upgrade/
-app/public/wp-content/plugins/calculated-fields-form/
-app/public/wp-content/themes/twentytwenty*
-
-# Allow specific themes and plugins
-!app/public/wp-content/themes/kadence/
-!app/public/wp-content/themes/kadence-child/
-!app/public/wp-content/plugins/prime-cleaning-estimator/
-
-# OS and system files
+*.log
 .DS_Store
 Thumbs.db
-*.log

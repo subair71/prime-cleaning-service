@@ -1,0 +1,909 @@
+<?php
+
+// phpcs:disable Squiz.PHP.EmbeddedPhp.ContentBeforeOpen
+// phpcs:disable Squiz.PHP.EmbeddedPhp.ContentBeforeEnd
+// phpcs:disable Squiz.PHP.EmbeddedPhp.ContentAfterEnd
+// phpcs:disable WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
+if ( ! is_admin() || ! current_user_can(apply_filters('cpcff_forms_edition_capability', 'manage_options')) ) {
+	print 'Direct access not allowed.';
+	exit;
+}
+
+$_GET['u'] = ( isset( $_GET['u'] ) ) ? intval( @$_GET['u'] ) : 0;
+$_GET['c'] = ( isset( $_GET['c'] ) ) ? intval( @$_GET['c'] ) : 0;
+$_GET['d'] = ( isset( $_GET['d'] ) ) ? intval( @$_GET['d'] ) : 0;
+
+global $wpdb;
+$cpcff_main = CPCFF_MAIN::instance();
+
+$message = '';
+
+if ( isset( $_GET['orderby'] ) ) {
+	update_option( 'CP_CALCULATEDFIELDSF_FORMS_LIST_ORDERBY', 'form_name' == $_GET['orderby'] ? 'form_name' : 'id' );
+}
+
+$cp_default_template = get_option('CP_CALCULATEDFIELDSF_DEFAULT_template', CP_CALCULATEDFIELDSF_DEFAULT_template);
+$cp_default_submit = get_option('CP_CALCULATEDFIELDSF_DEFAULT_display_submit_button', CP_CALCULATEDFIELDSF_DEFAULT_display_submit_button);
+$cp_default_captcha = get_option('CP_CALCULATEDFIELDSF_DEFAULT_cv_enable_captcha', CP_CALCULATEDFIELDSF_DEFAULT_cv_enable_captcha);
+$cp_default_captcha_method = CP_CALCULATEDFIELDSF_DEFAULT_cv_captcha_method;
+
+if ( isset( $_REQUEST['cp_default_template'] ) ) { // I don't need to check for the submit button at this moment.
+	check_admin_referer( 'cff-default-settings', '_cpcff_nonce' );
+
+	if ( 'none' != $_REQUEST['cp_default_template'] ) {
+		$cp_default_template = sanitize_text_field( wp_unslash( $_REQUEST['cp_default_template'] ) ); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
+	}
+	$cp_default_submit  = isset( $_REQUEST['cp_default_submit'] ) ? '' : 'no';
+	$cp_default_captcha = isset($_REQUEST['cp_default_captcha']) ? 'true' : 'false';
+	$cp_default_captcha_method = CP_CALCULATEDFIELDSF_DEFAULT_cv_captcha_method;
+
+	// Update default settings.
+	update_option( 'CP_CALCULATEDFIELDSF_DEFAULT_template', $cp_default_template );
+	update_option( 'CP_CALCULATEDFIELDSF_DEFAULT_display_submit_button', $cp_default_submit );
+	update_option( 'CP_CALCULATEDFIELDSF_DEFAULT_cv_enable_captcha', $cp_default_captcha );
+	update_option( 'CP_CALCULATEDFIELDSF_DEFAULT_cv_captcha_method', $cp_default_captcha_method );
+
+	if ( isset( $_REQUEST['cp_default_existing_forms'] ) ) {
+		$myrows = $wpdb->get_results('SELECT id,form_structure,enable_submit,cv_enable_captcha,extra FROM ' . $wpdb->prefix . CP_CALCULATEDFIELDSF_FORMS_TABLE ); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
+		foreach ( $myrows as $item ) {
+			$values = [];
+			$values_format = [];
+
+			if (isset($_REQUEST['cp_default_existing_forms']['template'])) {
+				$values['form_structure'] = preg_replace( '/"formtemplate"\s*\:\s*"[^"]*"/', '"formtemplate":"' . esc_js( $cp_default_template ) . '"', $item->form_structure );
+				$values_format[] = '%s';
+			}
+
+			if (isset($_REQUEST['cp_default_existing_forms']['captcha'])) {
+				$values['cv_enable_captcha'] = $cp_default_captcha;
+				$values_format[] = '%s';
+
+				// Merge default captcha method into extra (SKIP if already set per-form)
+				$extra_data = !empty($item->extra) ? json_decode($item->extra, true) : [];
+				if (!is_array($extra_data)) {
+					$extra_data = [];
+				}
+				$extra_data['cv_captcha_method'] = $cp_default_captcha_method;
+				if ($cp_default_captcha_method === 'math' && !isset($extra_data['cv_captcha_math_complexity'])) {
+					$extra_data['cv_captcha_math_complexity'] = 1;
+				}
+
+				$values['extra'] = json_encode($extra_data);
+				$values_format[] = '%s';
+			}
+
+			if (isset($_REQUEST['cp_default_existing_forms']['submit'])) {
+				$values['enable_submit'] = $cp_default_submit;
+				$values_format[] = '%s';
+			}
+
+			if ( !empty($values) ) {
+				$wpdb->update(
+					$wpdb->prefix . CP_CALCULATEDFIELDSF_FORMS_TABLE,
+					$values,
+					array(
+						'id' => $item->id,
+					),
+					$values_format,
+					array( '%d' )
+				);
+			}
+		}
+	}
+	$message = __( 'Default settings updated', 'calculated-fields-form' );
+	do_action( 'cff_admin_state_changed', 'default_template_save' );
+}
+
+if ( isset( $_GET['a'] ) && '1' == $_GET['a'] ) {
+	check_admin_referer( 'cff-add-form', '_cpcff_nonce' );
+
+	$ftpl = isset( $_GET['ftpl'] ) ? sanitize_text_field( wp_unslash( $_GET['ftpl'] ) ) : 0;
+	if( 'ai-generator' == $ftpl ) {
+		$transient_name = 'cff_ai_form_structure_' . get_current_user_id();
+		$ai_form_structure = get_transient( $transient_name );
+		if ( $ai_form_structure ) {
+			$ftpl = $ai_form_structure;
+			delete_transient( $transient_name );
+			delete_transient( 'cff_ai_form_preview_' . get_current_user_id() ); // Deletes the transient for form preview.
+		} else $ftpl = 0;
+	}
+
+	$new_form = $cpcff_main->create_form(
+		isset( $_GET['name'] ) ? sanitize_text_field( wp_unslash( $_GET['name'] ) ) : '',
+		isset( $_GET['category'] ) ? sanitize_text_field( wp_unslash( $_GET['category'] ) ) : '',
+		$ftpl,
+		isset( $_GET['from_website'] ) ? 1 : 0
+	);
+	// Update the default category.
+	$cff_current_form_category = get_option( 'calculated-fields-form-category', '' );
+	if ( ! empty( $cff_current_form_category ) ) {
+		update_option( 'calculated-fields-form-category', sanitize_text_field( wp_unslash( $_GET['category'] ) ) );
+	}
+
+	$message = __( 'Item added', 'calculated-fields-form' );
+	if ( $new_form ) {
+		print "<script data-category=\"functional\">document.location = 'admin.php?page=cp_calculated_fields_form&cal=" . esc_js( $new_form->get_id() ) . '&r=' . esc_js( rand() ) . '&_cpcff_nonce=' . esc_js( wp_create_nonce( 'cff-form-settings' ) ) . "';</script>";
+	}
+} elseif ( ! empty( $_GET['u'] ) ) {
+	check_admin_referer( 'cff-update-form', '_cpcff_nonce' );
+	$cpcff_main->get_form( sanitize_text_field( wp_unslash( $_GET['u'] ) ) )->update_name( ( isset( $_GET['name'] ) ) ? sanitize_text_field( wp_unslash( $_GET['name'] ) ) : '' );
+	$message = __( 'Item updated', 'calculated-fields-form' );
+} elseif (!empty($_POST['cff-bulk-action-selector'])) {
+	check_admin_referer('cff-bulk-action', '_cpcff_nonce');
+	$bulk_action = sanitize_text_field(stripcslashes($_POST['cff-bulk-action-selector']));
+	if ($bulk_action == 'delete') {
+		$cff_forms_ids = ( ! empty( $_POST['cff-forms-ids'] ) && is_scalar( $_POST['cff-forms-ids'] ) )
+						? sanitize_text_field( wp_unslash( $_POST['cff-forms-ids'] ) )
+						: '';
+		$cff_forms_ids = preg_replace( '/[^0-9,]/', '', $cff_forms_ids );
+		$cff_forms_ids = explode( ',', $cff_forms_ids );
+		$cff_forms_ids = array_filter( $cff_forms_ids, function($n){ return is_numeric($n) && intval($n) > 0;} );
+
+		if ( ! empty( $cff_forms_ids ) ) {
+			foreach ( $cff_forms_ids as $form_id ) {
+				$cpcff_main->delete_form( $form_id );
+			}
+			$message = __( "Forms deleted", 'calculated-fields-form' );
+		}
+	}
+} elseif ( ! empty( $_GET['d'] ) ) {
+	check_admin_referer( 'cff-delete-form', '_cpcff_nonce' );
+	$cpcff_main->delete_form( sanitize_text_field( wp_unslash( $_GET['d'] ) ) );
+	$message = __( 'Form deleted', 'calculated-fields-form' );
+} elseif ( ! empty( $_GET['c'] ) ) {
+	check_admin_referer( 'cff-clone-form', '_cpcff_nonce' );
+	if ( is_numeric( $_GET['c'] ) && $cpcff_main->clone_form( intval( $_GET['c'] ) ) !== false ) {
+		$message = __( 'Item duplicated/cloned', 'calculated-fields-form' );
+	} else {
+		$message = __( 'Duplicate/Clone Error, the form cannot be cloned', 'calculated-fields-form' );
+	}
+} elseif ( isset( $_GET['ac'] ) && 'st' == $_GET['ac'] ) {
+	check_admin_referer( 'cff-update-general-settings', '_cpcff_nonce' );
+	update_option( 'CP_CFF_LOAD_SCRIPTS', ( isset( $_GET['scr'] ) && '1' == $_GET['scr'] ? '0' : '1' ) );
+	update_option( 'CP_CALCULATEDFIELDSF_DISABLE_REVISIONS', ( isset( $_GET['dr'] ) && '1' == $_GET['dr'] ? 1 : 0 ) );
+	update_option( 'CP_CALCULATEDFIELDSF_USE_CACHE', ( isset( $_GET['jsc'] ) && '1' == $_GET['jsc'] ? 1 : 0 ) );
+	update_option( 'CP_CALCULATEDFIELDSF_OPTIMIZATION_PLUGIN', ( isset( $_GET['optm'] ) && '1' == $_GET['optm'] ? 1 : 0 ) );
+	update_option( 'CP_CALCULATEDFIELDSF_ENCODING_EMAIL', ( isset( $_GET['em'] ) && '1' == $_GET['em'] ? 1 : 0 ) );
+	update_option( 'CP_CALCULATEDFIELDSF_EXCLUDE_CRAWLERS', ( isset( $_GET['ecr'] ) && '1' == $_GET['ecr'] ? 1 : 0 ) );
+	update_option( 'CP_CALCULATEDFIELDSF_DIRECT_FORM_ACCESS', ( isset( $_GET['df'] ) && '1' == $_GET['df'] ? 1 : 0 ) );
+
+    $mtts = sanitize_text_field(wp_unslash($_GET["mtts"] ?? ''));
+    if ( ! empty( $mtts ) )  {
+        $mtts = is_numeric( $mtts ) ? max(0, intval( $mtts )) : CP_CALCULATEDFIELDSF_MINIMUM_TIME_TO_SUBMIT;
+    }
+    update_option( 'CP_CALCULATEDFIELDSF_MINIMUM_TIME_TO_SUBMIT', $mtts );
+
+    $ake = ( ! empty( $_GET["ake"] ) ) ? 1 : 0;
+    $aka = sanitize_text_field( wp_unslash( $_GET["aka"] ?? '' ) );
+    $akl = ( ! empty( $_GET["akl"] ) ) ? 1 : 0;
+    $akt = ( ! empty( $_GET["akt"] ) ) ? 1 : 0;
+    CPCFF_Akismet::get_instance()->save_settings( (bool) $ake, $aka, (bool) $akl, (bool) $akt );
+
+	update_option( 'CP_CALCULATEDFIELDSF_AMP', ( isset( $_GET['amp'] ) && '1' == $_GET['amp'] ? 1 : 0 ) );
+	update_option( 'CP_CALCULATEDFIELDSF_NONCE', ( isset( $_GET["nc"] ) && '1' == $_GET["nc"] ? 1 : 0 ) );
+
+	$bk_ov = get_option( 'CP_CALCULATEDFIELDSF_RENDER_ONLY_VISIBLE', 1 );
+    update_option( 'CP_CALCULATEDFIELDSF_RENDER_ONLY_VISIBLE', ( isset( $_GET['ov'] ) && '1' == $_GET['ov'] ? 1 : 0 ) );
+
+	$public_js_path = CP_CALCULATEDFIELDSF_BASE_PATH . '/js/cache/all.js';
+	try {
+		if (
+			get_option( 'CP_CALCULATEDFIELDSF_USE_CACHE', CP_CALCULATEDFIELDSF_USE_CACHE ) == false ||
+			get_option( 'CP_CALCULATEDFIELDSF_RENDER_ONLY_VISIBLE', 1 ) != $bk_ov
+		) {
+			if ( file_exists( $public_js_path ) ) {
+				unlink( $public_js_path );
+			}
+		} elseif ( ! file_exists( $public_js_path ) ) {
+				wp_remote_get( CPCFF_AUXILIARY::wp_url() . ( ( strpos( CPCFF_AUXILIARY::wp_url(), '?' ) === false ) ? '/?' : '&' ) . 'cp_cff_resources=public&min=1', array( 'sslverify' => false, 'timeout' => CP_CALCULATEDFIELDSF_TIMEOUT ) );
+		}
+	} catch ( Exception $err ) {
+		error_log( $err->getMessage() );
+	}
+
+	if ( ! empty( $_GET['chs'] ) ) {
+		$target_charset = sanitize_text_field( wp_unslash( $_GET['chs'] ) );
+		if ( ! in_array( $target_charset, array( 'utf8_general_ci', 'utf8mb4_general_ci', 'latin1_swedish_ci' ) ) ) {
+			$target_charset = 'utf8_general_ci';
+		}
+
+		$tables = array( $wpdb->prefix . CP_CALCULATEDFIELDSF_FORMS_TABLE, $wpdb->prefix . CP_CALCULATEDFIELDSF_POSTS_TABLE_NAME_NO_PREFIX );
+		foreach ( $tables as $tab ) { // phpcs:ignore WordPress.WP.GlobalVariablesOverride
+            // DESCRIBE/ALTER TABLE identifiers cannot be parameterized via wpdb->prepare().
+            // $tab comes from a SHOW TABLES iteration (constants), $name from DESCRIBE schema.
+            // Not user input.
+			$myrows = $wpdb->get_results( "DESCRIBE {$tab}" ); // phpcs:ignore WordPress.DB.PreparedSQL
+			foreach ( $myrows as $item ) {
+				$name = $item->Field;
+				$type = $item->Type; // phpcs:ignore WordPress.WP.GlobalVariablesOverride
+				if ( preg_match( '/^varchar\((\d+)\)$/i', $type, $mat ) || ! strcasecmp( $type, 'CHAR' ) || ! strcasecmp( $type, 'TEXT' ) || ! strcasecmp( $type, 'MEDIUMTEXT' ) ) {
+					$wpdb->query( "ALTER TABLE {$tab} CHANGE {$name} {$name} {$type} COLLATE {$target_charset}" ); // phpcs:ignore WordPress.DB.PreparedSQL
+				}
+			}
+		}
+	}
+	$message = __( 'Troubleshoot settings updated', 'calculated-fields-form' );
+	do_action( 'cff_admin_state_changed', 'troubleshoot_settings_save' );
+}
+
+// For sortin the forms list.
+$orderby = get_option( 'CP_CALCULATEDFIELDSF_FORMS_LIST_ORDERBY', 'id' ); // phpcs:ignore WordPress.WP.GlobalVariablesOverride
+if ( $message ) {
+	echo "<div id='setting-error-settings_updated' class='" . ( stripos( $message, 'error' ) !== false ? 'error' : 'updated' ) . " settings-error'><p><strong>" . esc_html( $message ) . '</strong></p></div>';
+}
+
+?>
+<div class="wrap cff-main-backend">
+<div class="cff-navigation-main-menu">
+	<?php
+		require_once CP_CALCULATEDFIELDSF_BASE_PATH . '/inc/cpcff_using_ai_agents.inc.php';
+	?>
+	<div style="text-align:right;"><?php include_once dirname( __FILE__) . '/cpcff_video_tutorial.inc.php'; ?></div>
+</div><div style="clear:both;"></div>
+<?php
+if ( get_option( 'cff-t-f', 0 ) ) :
+	?>
+	<div style='display: flex;align-items: center;background: #fffaf4;border: 1px solid #F0AD4E;padding: 16px 20px;margin: 20px 30px 20px 0;box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);gap: 16px;height: auto;font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;justify-content: center;'>
+	<?php print wp_kses_post( get_option( 'cff-t-t', '' ) ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
+	</div>
+	<?php
+	delete_option( 'cff-t-f' );
+endif;
+?>
+<?php
+if ( file_exists( dirname(__FILE__) . '/__countdown.php' ) ) include dirname(__FILE__) . '/__countdown.php';
+?>
+<h1><?php esc_html_e( 'Calculated Fields Form', 'calculated-fields-form' ); ?></h1>
+
+<script data-category="functional" type="text/javascript">
+var cff_metabox_nonce = '<?php print esc_js( wp_create_nonce( 'cff-metabox-status' ) ); ?>';
+window.addEventListener('load', function() {
+	let $ = fbuilderjQuery;
+	function _showHideSaveButtonPopUp() {
+		let wt  = $(window).scrollTop();
+		let ref = $('#metabox_registering_area');
+		if ( ! ref.length ) ref = $('.cff-navigation-main-menu');
+		let et  = ref.offset().top + ref.outerHeight();
+		if ( et < wt ) {
+			$('.cff-save-controls-floating-popup').show('slow');
+		} else {
+			$('.cff-save-controls-floating-popup').hide('slow');
+		}
+	};
+	$(window).on('scroll', _showHideSaveButtonPopUp);
+	_showHideSaveButtonPopUp();
+});
+function cp_selectAllForms(e)
+{
+	fbuilderjQuery('.cff-forms-list input[type="checkbox"]').prop('checked', e.checked);
+}
+
+function cp_bulkAction(form)
+{
+	let $ 		= fbuilderjQuery,
+		$form 	= $(form),
+		action 	= $(form).find('select[name="cff-bulk-action-selector"]').val();
+
+	switch(action) {
+		case 'delete':
+			let ids = [];
+			$('.cff-forms-list input[type="checkbox"][name="calid[]"]:checked').each(function() { ids.push(this.value); });
+			if(!ids.length) {
+				$.fbuilder.confirmationDialog('<?php esc_attr_e( 'Message', 'calculated-fields-form' ); ?>', '<?php esc_attr_e( 'Please select at least one form.', 'calculated-fields-form' ); ?>', 'Ok', false);
+			} else {
+				let title = "<?php print esc_js(__( 'Delete forms', 'calculated-fields-form' )); ?>";
+				let yes_button = "<?php print esc_js(__( 'Yes, delete them', 'calculated-fields-form' )); ?>";
+                    let no_button = "<?php print esc_js(__( 'No, keep them', 'calculated-fields-form' )); ?>";
+                    let message = "<?php print esc_js(__( 'You are about to delete the checked form(s) with id(s): ', 'calculated-fields-form' )); ?>" + ids.join(', ') + "<br><b><?php print esc_js(__( 'Are you sure that you want to delete the form(s)?', 'calculated-fields-form' )); ?></b>";
+
+                    $.fbuilder.confirmationDialog( title, message, yes_button, no_button, function() {
+                        $form.find('input[name="cff-forms-ids"]').remove();
+						$form.append('<input type="hidden" name="cff-forms-ids" value="'+cff_esc_attr(ids.join(','))+'">');
+						$form.submit();
+                        return true;
+                    } );
+			}
+		break;
+	}
+}
+
+function cp_addItem()
+{
+	var e = fbuilderjQuery("#cp_itemname"),
+		form_tag = e.closest('form')[0],
+		calname  = e.val().replace(/^\s*/, '').replace(/^\s*/, '').replace(/\s*$/, ''),
+		category = document.getElementById("calculated-fields-form-category").value;
+
+	e.val(calname);
+
+	if('reportValidity' in form_tag && !form_tag.reportValidity()) return;
+
+	document.location = 'admin.php?page=cp_calculated_fields_form&a=1&r='+Math.random()+'&name='+encodeURIComponent(calname)+'&category='+encodeURIComponent(category)+'&_cpcff_nonce=<?php echo esc_js( wp_create_nonce( 'cff-add-form' ) ); ?>';
+}
+
+function cp_addItem_keyup( e )
+{
+	e.which = e.which || e.keyCode;
+	if(e.which == 13) cp_addItem();
+}
+
+ function cp_renameItem( id )
+ {
+	let $ = fbuilderjQuery;
+	let title = "<?php print esc_js(__( 'Rename Form', 'calculated-fields-form' )); ?>";
+	let yes_button = "<?php print esc_js(__( 'Yes, rename', 'calculated-fields-form' )); ?>";
+	let no_button = "<?php print esc_js(__( 'No, keep it', 'calculated-fields-form' )); ?>";
+	let message = "<label for='cff_new_form_name' style='font-weight:600;'><?php print esc_js(__( 'Form name: ', 'calculated-fields-form' )); ?></label>" +
+	"<input type='text' id='cff_new_form_name' style='width:100%;margin-top:10px;' value='" + cff_esc_attr(document.getElementById("calname_"+id).value) + "' onkeyup='cp_renameItem_keyup(event, "+cff_esc_attr(id)+");' />";
+
+	$.fbuilder.confirmationDialog( title, message, yes_button, no_button, function() {
+		document.getElementById("calname_"+id).value = document.getElementById("cff_new_form_name").value;
+		cp_updateItem(id);
+		return true;
+	} );
+ }
+
+ function cp_renameItem_keyup( e, id )
+ {
+    e.which = e.which || e.keyCode;
+    if(e.which == 13) {
+        cp_updateItem(id);
+    }
+ }
+
+function cp_updateItem(id)
+{
+	var calname = document.getElementById("calname_"+id).value;
+	document.location = 'admin.php?page=cp_calculated_fields_form&u='+id+'&r='+Math.random()+'&name='+encodeURIComponent(calname)+'&_cpcff_nonce=<?php echo esc_js( wp_create_nonce( 'cff-update-form' ) ); ?>'+( 'cff_getScrollForURL' in window ? cff_getScrollForURL() : '' );
+}
+
+function cp_cloneItem(id)
+{
+	document.location = 'admin.php?page=cp_calculated_fields_form&c='+id+'&r='+Math.random()+'&_cpcff_nonce=<?php echo esc_js( wp_create_nonce( 'cff-clone-form' ) ); ?>';
+}
+
+function cp_manageSettings(id)
+{
+	let url = 'admin.php?page=cp_calculated_fields_form&cal='+id+'&r='+Math.random()+'&_cpcff_nonce=<?php echo esc_js( wp_create_nonce( 'cff-form-settings' ) ); ?>';
+	// ctrl was held down during the click.
+	if (window.event.ctrlKey) {
+		window.open(url, '_blank');
+	} else {
+		document.location = url;
+	}
+}
+
+function cp_viewMessages(event, id)
+{
+    let url = 'admin.php?page=cp_calculated_fields_form&cal='+id+'&list=1&r='+Math.random()+'&_cpcff_nonce=<?php echo esc_js( wp_create_nonce('cff-submissions-list' ) ); ?>';
+	// ctrl was held down during the click.
+	if (event.ctrlKey) {
+		window.open(url, '_blank');
+	} else {
+		document.location = url;
+	}
+}
+
+function cp_deleteItem(id)
+{
+	let title = "<?php print esc_js(__( 'Delete form', 'calculated-fields-form' )); ?>";
+	let yes_button = "<?php print esc_js(__( 'Yes, delete form', 'calculated-fields-form' )); ?>";
+	let no_button = "<?php print esc_js(__( 'No, keep form', 'calculated-fields-form' )); ?>";
+	let message = "<?php print esc_js(__( 'You are about to delete the form with id: ', 'calculated-fields-form' )); ?>" + id + "<br><b><?php print esc_js(__( 'Are you sure that you want to delete it?', 'calculated-fields-form' )); ?></b>";
+
+	fbuilderjQuery.fbuilder.confirmationDialog( title, message, yes_button, no_button, function() {
+		document.location = 'admin.php?page=cp_calculated_fields_form&d='+id+'&r='+Math.random()+'&_cpcff_nonce=<?php echo esc_js( wp_create_nonce( 'cff-delete-form' ) ); ?>';
+		return true;
+	} );
+}
+
+ function cp_copyShortcode(e, id) {
+	let $ = fbuilderjQuery;
+	let $hint = $(e).closest('.cff-form-list-shortcode').siblings('.cff-form-list-shortcode-copied-hint');
+	let shortcodeText = document.getElementById("calshortcode_"+id).textContent.trim();
+
+	if (navigator.clipboard && window.isSecureContext) {
+		navigator.clipboard.writeText(shortcodeText).then(
+			function() { $hint.show().fadeOut(2500); },
+			function() { cp_copyShortcodeFallback(shortcodeText, $hint); }
+		);
+	} else {
+		cp_copyShortcodeFallback(shortcodeText, $hint);
+	}
+ }
+
+ function cp_copyShortcodeFallback(text, $hint) {
+	let $temp = fbuilderjQuery('<textarea>')
+		.val(text)
+		.css({ position: 'absolute', left: '-9999px', top: '0' })
+		.appendTo('body');
+	$temp[0].select();
+	try {
+		document.execCommand('copy');
+		$hint.show().fadeOut(2500);
+	} catch (err) {
+		console.error('Copy to clipboard failed', err);
+	}
+	$temp.remove();
+ }
+
+function cp_updateConfig()
+{
+    let title = "<?php print esc_js(__( 'Update settings', 'calculated-fields-form' )); ?>";
+    let yes_button = "<?php print esc_js(__( 'Yes, update settings', 'calculated-fields-form' )); ?>";
+    let no_button = "<?php print esc_js(__( 'No, keep current settings', 'calculated-fields-form' )); ?>";
+    let message = "<?php print esc_js(__( 'You are about to update the plugin settings: ', 'calculated-fields-form' )); ?><br><b><?php print esc_js(__( 'Are you sure that you want to update them?', 'calculated-fields-form' )); ?></b>";
+
+    fbuilderjQuery.fbuilder.confirmationDialog( title, message, yes_button, no_button, function() {
+		var scr = document.getElementById("ccscriptload").value,
+			chs = document.getElementById("cccharsets").value,
+			dr  = (document.getElementById("ccdisablerevisions").checked) ? 1 : 0,
+			jsc = (document.getElementById("ccjscache").checked) ? 1 : 0,
+			optm = (document.getElementById("ccoptimizationplugin").checked) ? 1 : 0,
+			df  = (document.getElementById("ccdirectform").checked) ? 1 : 0,
+			ov  = (document.getElementById("cconlyvisible").checked) ? 1 : 0,
+			amp = (document.getElementById("ccampform").checked) ? 1 : 0,
+			ecr = (document.getElementById("ccexcludecrawler").checked) ? 1 : 0,
+			nc  = (document.getElementById("ccusenonce").checked) ? 1 : 0,
+			em  = (document.getElementById("ccencodingemail").checked) ? 1 : 0,
+            mtts = document.getElementById("ccminimumtimetosubmit").value,
+            ake = (document.getElementById("ccenableakismet").checked) ? 1 : 0,
+            aka = String(document.getElementById("ccakismetapikey").value).trim(),
+            akl = (document.getElementById("ccakismetactivitylog").checked) ? 1 : 0,
+            akt = (document.getElementById("ccakismettestmode").checked) ? 1 : 0;
+
+		document.location = 'admin.php?page=cp_calculated_fields_form&ecr='+ecr+'&ac=st&scr='+scr+'&chs='+chs+'&dr='+dr+'&jsc='+jsc+'&optm='+optm+'&em='+em+'&df='+df+'&ov='+ov+'&amp='+amp+'&nc='+nc+'&mtts='+encodeURIComponent( mtts )+'&ake='+ake+'&aka='+encodeURIComponent( aka )+'&akl='+akl+'&akt='+akt+'&r='+Math.random()+'&_cpcff_nonce=<?php echo esc_js( wp_create_nonce( 'cff-update-general-settings' ) ); ?>#metabox_troubleshoot_area';
+        return true;
+    });
+}
+
+function cp_select_template()
+{
+	let $ = fbuilderjQuery;
+	$('.cp_template_info').hide();
+	$('.cp_template_'+$('#cp_default_template').val()).show();
+}
+
+function cp_update_default_settings(e)
+{
+    if(fbuilderjQuery('[name*="cp_default_existing_forms"]:checked').length)
+	{
+		if (confirm('<?php esc_html_e( 'Are you sure you want to modify existing forms?\\nWe recommend modifying the forms one by one.', 'calculated-fields-form' ); ?>'))
+		{
+			e.form.submit();
+		}
+	}
+	else e.form.submit();
+}
+</script>
+<h2 class="nav-tab-wrapper">
+	<a href="admin.php?page=cp_calculated_fields_form&cff-tab=forms" class="nav-tab <?php
+	if ( empty( $_GET['cff-tab'] ) || 'forms' == $_GET['cff-tab'] ) {
+		print 'nav-tab-active';} ?>"><?php esc_html_e( 'Forms and Settings', 'calculated-fields-form' ); ?></a>
+	<a href="admin.php?page=cp_calculated_fields_form&cff-tab=marketplace" class="nav-tab <?php
+	if ( ! empty( $_GET['cff-tab'] ) && 'marketplace' == $_GET['cff-tab'] ) {
+		print 'nav-tab-active';} ?>"><?php esc_html_e( 'Marketplace', 'calculated-fields-form' ); ?></a>
+</h2>
+<div style="margin-top:20px;display:<?php print ( empty( $_GET['cff-tab'] ) || 'forms' == $_GET['cff-tab'] ) ? 'block' : 'none'; ?>;" class="cff-forms-list-and-settings"><!-- Forms & Settings Section -->
+	<style>.cff-forms-list-and-settings>*:not(.cff-save-controls-floating-popup){padding-right:30px;box-sizing:border-box;}</style>
+	<div class="cff-save-controls-floating-popup">
+		<div class="cff-website-icon"></div>
+		<div class="cff-popup-icon">
+			<div class="cff-popup-bubble"><?php esc_html_e( 'Create Form', 'calculated-fields-form' ); ?></div>
+			<a href="admin.php?page=cp_calculated_fields_form_sub_new">
+                <button type="button">
+                <?php include plugin_dir_path(__FILE__) . '../images/icons/add-form.svg'; ?>
+                </button>
+            </a>
+		</div>
+		<div class="cff-popup-icon-separator"></div>
+		<div class="cff-popup-icon">
+			<div class="cff-popup-bubble"><?php esc_html_e( 'Forms List', 'calculated-fields-form' ); ?></div>
+			<a href="#metabox_form_list"><img src="<?php print esc_attr( plugins_url('../images/icons/forms-list.svg', __FILE__) ); ?>" alt="<?php esc_attr_e( 'Forms List', 'calculated-fields-form' ); ?>"></a>
+		</div>
+		<div class="cff-popup-icon">
+			<div class="cff-popup-bubble"><?php esc_html_e( 'Default Forms Settings', 'calculated-fields-form' ); ?></div>
+			<a href="#metabox_default_settings"><img src="<?php print esc_attr( plugins_url('../images/icons/default-settings.svg', __FILE__) ); ?>" alt="<?php esc_attr_e( 'Default Forms Settings', 'calculated-fields-form' ); ?>"></a>
+		</div>
+		<div class="cff-popup-icon">
+			<div class="cff-popup-bubble"><?php esc_html_e( 'Troubleshoot Area & General Plugin Settings', 'calculated-fields-form' ); ?></div>
+			<a href="#metabox_troubleshoot_area"><img src="<?php print esc_attr( plugins_url('../images/icons/troubleshoot-area.svg', __FILE__) ); ?>" alt="<?php esc_attr_e( 'Troubleshoot Area & General Plugin Settings', 'calculated-fields-form' ); ?>"></a>
+		</div>
+		<div class="cff-popup-icon-separator"></div>
+		<div class="cff-popup-icon cff-popup-icon-disabled">
+			<div class="cff-popup-bubble"><?php esc_html_e( 'Add Ons', 'calculated-fields-form' ); ?></div>
+			<a href="https://cff.dwbooster.com/download#comparison" target="_blank"><img src="<?php print esc_attr( plugins_url('../images/icons/addons.svg', __FILE__) ); ?>" alt="<?php esc_attr_e( 'Add Ons', 'calculated-fields-form' ); ?>"></a>
+		</div>
+		<div class="cff-popup-icon cff-popup-icon-disabled">
+			<div class="cff-popup-bubble"><?php esc_html_e( 'Export/Import Forms', 'calculated-fields-form' ); ?></div>
+			<a href="https://cff.dwbooster.com/download#comparison" target="_blank"><img src="<?php print esc_attr( plugins_url('../images/icons/import-export.svg', __FILE__) ); ?>" alt="<?php esc_attr_e( 'Export/Import Forms', 'calculated-fields-form' ); ?>"></a>
+		</div>
+	</div>
+	<div id="normal-sortables" class="meta-box-sortables">
+		<!-- New Form -->
+		<?php
+		if ( isset( $_POST['calculated-fields-form-category'] ) ) {
+			check_admin_referer( 'cff-change-category', '_cpcff_nonce' );
+			update_option( 'calculated-fields-form-category', sanitize_text_field( wp_unslash( $_POST['calculated-fields-form-category'] ) ) );
+			update_option( 'calculated-fields-search-form', ( isset( $_POST['calculated-fields-search-form'] ) ? sanitize_text_field( wp_unslash( $_POST['calculated-fields-search-form'] ) ) : '' ) );
+		}
+			$cff_current_form_category = get_option( 'calculated-fields-form-category', '' );
+			$cff_search_form_term      = get_option( 'calculated-fields-search-form', '' );
+		?>
+		<div id="metabox_new_form_area" class="postbox" >
+            <h3 class='hndle' style="padding:5px;margin-top:5px;margin-bottom:5px;"><span><?php esc_html_e( 'New Form', 'calculated-fields-form' ); ?></span></h3>
+			<div class="inside">
+				<form name="additem">
+                    <div>
+						<input type="text" name="cp_itemname" id="cp_itemname"  value="<?php print esc_attr( ! empty( $_GET['form_name']) ? sanitize_text_field( wp_unslash( $_GET['form_name'] ) ) : '' ); ?>" onkeyup="cp_addItem_keyup( event );"  style="margin-top:5px;" required placeholder="<?php esc_attr_e( 'New form name', 'calculated-fields-form' ); ?> (*)" />
+						<input type="text" name="calculated-fields-form-category" id="calculated-fields-form-category"  value="<?php print esc_attr((isset( $_GET['form_category'] )) ? sanitize_text_field( wp_unslash( $_GET['form_category'] ) ) : $cff_current_form_category); ?>" style="margin-top:5px;" placeholder="<?php esc_attr_e('Category', 'calculated-fields-form'); ?>" list="calculated-fields-form-categories" />
+						<datalist id="calculated-fields-form-categories">
+							<?php
+								print $cpcff_main->get_categories( 'DATALIST' ); // phpcs:ignore WordPress.Security.EscapeOutput
+							?>
+						</datalist>
+						<input type="button" onclick="cp_addItem();" name="gobtn" value="<?php esc_attr_e( 'From Scratch', 'calculated-fields-form' ); ?>" class="button-primary" style="margin-top:5px;" />
+						<input type="button" onclick="if( ! ('reportValidity' in this.form) || this.form.reportValidity() ) document.location.href='admin.php?page=cp_calculated_fields_form_sub_new&form_name='+encodeURIComponent(this.form.cp_itemname.value)+'&form_category='+encodeURIComponent(this.form['calculated-fields-form-category'].value);" name="gobtn" value="<?php esc_attr_e( 'From Template', 'calculated-fields-form' ); ?>" class="button-secondary" style="margin-top:5px;" />
+                        <input type="button" onclick="if( ! ('reportValidity' in this.form) || this.form.reportValidity() ) document.location.href='admin.php?page=cp_calculated_fields_form_sub_new&form_name='+encodeURIComponent(this.form.cp_itemname.value)+'&form_category='+encodeURIComponent(this.form['calculated-fields-form-category'].value)+'&ai=1';" name="gobtn" value="<?php esc_attr_e( 'AI Generator', 'calculated-fields-form' ); ?>" class="button-secondary" style="margin-top:5px;" />
+					</div>
+				</form>
+				<i id="cff-top-position"></i>
+			</div>
+		</div>
+
+		<!-- Form Categories -->
+		<div class="cff-filter-area">
+			<form id="metabox_categories_list" action="admin.php?page=cp_calculated_fields_form#cff-top-position" method="post">
+				<input type="hidden" name="_cpcff_nonce" value="<?php echo esc_attr( wp_create_nonce( 'cff-change-category' ) ); ?>" />
+				<b><?php esc_html_e( 'Form Categories', 'calculated-fields-form' ); ?></b>
+				<select name="calculated-fields-form-category" onchange="this.form.submit();">
+					<option value=""><?php esc_html_e( 'All forms', 'calculated-fields-form' ); ?></option>
+					<?php
+						print $cpcff_main->get_categories( 'SELECT', $cff_current_form_category ); // phpcs:ignore WordPress.Security.EscapeOutput
+					?>
+				</select>
+				<b><?php esc_html_e( 'Search', 'calculated-fields-form' ); ?></b>
+				<input type="text" name="calculated-fields-search-form" placeholder="<?php esc_attr_e( '- search term -', 'calculated-fields-form' ); ?>" value="<?php print esc_attr( $cff_search_form_term ); ?>" />
+				<input type="submit" value="<?php esc_attr_e( 'Search', 'calculated-fields-form' ); ?>" class="button-primary" />
+				<input id="cff-reset-forms-filter" type="submit" value="<?php esc_attr_e( 'Reset', 'calculated-fields-form' ); ?>" onclick="fbuilderjQuery('[name=\'calculated-fields-form-category\'] option:first-child').prop('selected', true);fbuilderjQuery('[name=\'calculated-fields-search-form\']').val('');" class="button-secondary" />
+			</form>
+
+			<div id="forms_pagination">
+				<?php
+				if ( ! empty( $_POST['calculated-fields-form-records-per-page'] ) ) {
+					check_admin_referer( 'cff-records-per-page', '_cpcff_nonce' );
+
+					if ( 'all' == sanitize_text_field( wp_unslash( $_POST['calculated-fields-form-records-per-page'] ) ) ) {
+						$records_per_page = PHP_INT_MAX;
+					} elseif ( is_numeric( $_POST['calculated-fields-form-records-per-page'] ) ) {
+						$records_per_page = max( 0, intval( $_POST['calculated-fields-form-records-per-page'] ) );
+					}
+					if ( ! empty( $records_per_page ) ) {
+						update_option(
+							'calculated-fields-form-records-per-page',
+							$records_per_page
+						);
+					}
+				}
+				$records_per_page = get_option( 'calculated-fields-form-records-per-page', 20 );
+				$myrows           = CPCFF_FORM::forms_list( [
+					'category' 		=> $cff_current_form_category,
+					'search_term' 	=> $cff_search_form_term,
+					'order_by'		=> $orderby,
+                    'stats'         => true
+				] );
+
+				$total_pages  = ceil( count( $myrows ) / $records_per_page );
+				$current_page = ! empty( $_REQUEST['page-number'] ) && is_numeric( $_REQUEST['page-number'] ) ?
+								min( $total_pages, max( 1, intval( sanitize_text_field( wp_unslash( $_REQUEST['page-number'] ) ) ) ) ) :
+								1;
+				?>
+			</div>
+		</div>
+		<div class="cff-bulk-actions-pagination-container">
+			<div class="cff-bulk-action">
+				<form action="admin.php?page=cp_calculated_fields_form#cff-top-position" method="post" class="cff-bulk-action-form">
+					<input type="hidden" name="_cpcff_nonce" value="<?php echo esc_attr( wp_create_nonce( 'cff-bulk-action' ) ); ?>" />
+					<select name="cff-bulk-action-selector" id="cff-bulk-action-selector">
+						<option value=""><?php esc_attr_e('Bulk Actions', 'calculated-fields-form'); ?></option>
+						<option value="delete"><?php esc_attr_e('Delete selected', 'calculated-fields-form'); ?></option>
+					</select>
+					<input type="button" value="<?php esc_attr_e('Apply', 'calculated-fields-form'); ?>" class="button-secondary" onclick="cp_bulkAction(this.form);">
+				</form>
+			</div>
+			<div class="cff-forms-pagination-area"><?php
+				$pages_links = CPCFF_AUXILIARY::paginate_links(
+					[
+						'base'         => 'admin.php?page=cp_calculated_fields_form&%_%',
+						'format'       => 'page-number=%#%',
+						'total'        => $total_pages,
+						'current'      => $current_page,
+						'show_all'     => false,
+						'end_size'     => 1,
+						'mid_size'     => 2,
+						'prev_text'    => __( '&laquo; Previous', 'calculated-fields-form' ),
+						'next_text'    => __( 'Next &raquo;', 'calculated-fields-form' ),
+						'add_args'     => []
+					]
+				);
+				$pages_links = ! empty( $pages_links ) ? $pages_links : '';
+				print $pages_links; // phpcs:ignore WordPress.Security.EscapeOutput
+			?>
+				<form action="admin.php?page=cp_calculated_fields_form#cff-top-position" method="post" class="cff-records-per-page-form">
+					<input type="hidden" name="_cpcff_nonce" value="<?php echo esc_attr( wp_create_nonce( 'cff-records-per-page' ) ); ?>" />
+					<input type="hidden" name="page-number" value="<?php echo esc_attr( $current_page ); ?>" />
+					<select name="calculated-fields-form-records-per-page" onchange="this.form.submit();">
+						<option value="10"  <?php if ( $records_per_page == 10 ) print 'SELECTED'; ?>><?php print esc_html(__('10 forms', 'calculated-fields-form')); ?></option>
+						<option value="20"  <?php if ( $records_per_page == 20 ) print 'SELECTED'; ?>><?php print esc_html(__('20 forms', 'calculated-fields-form')); ?></option>
+						<option value="50"  <?php if ( $records_per_page == 50 ) print 'SELECTED'; ?>><?php print esc_html(__('50 forms', 'calculated-fields-form')); ?></option>
+						<option value="100" <?php if ( $records_per_page == 100 ) print 'SELECTED'; ?>><?php print esc_html(__('100 forms', 'calculated-fields-form')); ?></option>
+						<option value="all" <?php if ( $records_per_page == 'all' || 100 < $records_per_page ) print 'SELECTED'; ?>><?php print esc_html(__('All forms', 'calculated-fields-form')); ?></option>
+					</select>
+				</form>
+			</div>
+		</div>
+		<div style="clear:both;Display:block"></div>
+		<hr />
+		<!-- Forms List -->
+		<div id="metabox_form_list" class="postbox" >
+			<h3 class='hndle' style="padding:5px;"><span><?php
+				esc_html_e( 'Form List / Items List', 'calculated-fields-form' );
+
+			if ( '' != $cff_current_form_category ) {
+				print '&nbsp;' . esc_html__( 'in', 'calculated-fields-form' ) . '&nbsp;<u>' . esc_html( $cff_current_form_category ) . '</u>&nbsp;' . esc_html__( 'category', 'calculated-fields-form' );
+			}
+
+			if ( '' != $cff_search_form_term ) {
+				print ',&nbsp;' . esc_html__( 'search term(s)', 'calculated-fields-form' ) . '&nbsp;<u>' . esc_html( $cff_search_form_term ) . '</u>';
+			}
+			?></span></h3>
+			<div class="inside" style="overflow-x:auto;">
+                <table cellspacing="10" class="cff-custom-table cff-forms-list wp-list-table widefat striped table-view-list">
+					<thead>
+						<tr>
+                            <th align="left"><input type="checkbox" id="cff-select-all-forms" onchange="cp_selectAllForms(this);" />&nbsp;<a href="?page=cp_calculated_fields_form&orderby=id" <?php
+							if ( 'id' == $orderby ) {
+								print 'class="cff-active-column"';} ?>><?php esc_html_e( 'ID', 'calculated-fields-form' ); ?></a></th>
+							<th align="left"><a href="?page=cp_calculated_fields_form&orderby=form_name" <?php
+							if ( 'form_name' == $orderby ) {
+								print 'class="cff-active-column"';} ?>><?php esc_html_e( 'Form Name', 'calculated-fields-form' ); ?></a></th>
+                            <th align="left"><?php esc_html_e( 'Category', 'calculated-fields-form' ); ?></th>
+                            <th align="left"><?php esc_html_e( 'Shortcode', 'calculated-fields-form' ); ?></th>
+                            <th align="left"><?php esc_html_e( 'Entries', 'calculated-fields-form' ); ?></th>
+						</tr>
+					</thead>
+					<tbody>
+					<?php
+					if ( count( $myrows ) == 0 ) {
+						print '<tr><td colspan="4" style="text-align:center;margin-top:20px;font-size:1.2em;width:100%;">' .
+						esc_html__( 'Forms list is empty.', 'calculated-fields-form' ) .
+						(
+							'' != $cff_search_form_term ?
+							'&nbsp;' . esc_html__( 'No forms match the search term(s)', 'calculated-fields-form' ) . '&nbsp;<b><u>' . esc_html( $cff_search_form_term ) . '</u></b>' .
+							(
+								'' != $cff_current_form_category ?
+								'&nbsp;' . esc_html__( 'in the', 'calculated-fields-form' ) .
+								'&nbsp;<b><u>' . esc_html( $cff_current_form_category ) . '</u></b>&nbsp;' . esc_html__( 'category', 'calculated-fields-form' )
+								: ''
+							) . '&nbsp;(<a href="javascript:fbuilderjQuery(\'#cff-reset-forms-filter\').trigger(\'click\');">' . esc_html__( 'reset', 'calculated-fields-form' ) . '</a>)' :
+							''
+						) . '</td></tr>';
+					}
+
+					// Variables to include the links the public forms.
+					$_cff_link_to_form_base_url  = CPCFF_AUXILIARY::site_url();
+					$_cff_link_to_form_base_url .= ( strpos( $_cff_link_to_form_base_url, '?' ) === false ? '?' : '&' ) .'cff-form=';
+
+					$_rows_count = count( $myrows );
+					for ( $items_index = max( 0, ( $current_page - 1 ) * $records_per_page ); $items_index < min( $current_page * $records_per_page, $_rows_count ); $items_index++ ) {
+						$item = $myrows[ $items_index ];
+						$form_name = sanitize_text_field( $item->form_name );
+						?>
+						<tr>
+							<td nowrap><label><input type="checkbox" name="calid[]" id="calid_<?php echo esc_attr($item->id); ?>" value="<?php echo esc_attr($item->id); ?>" />&nbsp;<?php echo esc_html($item->id); ?></label></td>
+                            <td class="cff-form-list-name-cell">
+								<input type="hidden" name="calname_<?php echo $item->id; ?>" id="calname_<?php echo $item->id; ?>" value="<?php echo esc_attr($form_name); ?>" onkeyup="cp_renameItem_keyup(event, <?php echo esc_js( $item->id ); ?>);" />
+								<?php
+									$form_name = trim( $form_name );
+									print '<a href="javascript:void(0);" onclick="cp_manageSettings(' . esc_attr( $item->id ) . ');" class="cff-form-list-name ' . ( empty( $form_name ) ? 'cff-form-no-name' : '' ) . '" title="' . esc_attr__( 'Build form', 'calculated-fields-form' ) . '">' . esc_html( ! empty( $form_name ) ? $form_name : __( 'No name', 'calculated-fields-form' ) ).'</a>';
+								?>
+								<!-- Buttons -->
+								<div class="cff-form-list-buttons">
+									<a href="javascript:void(0);" onclick="cp_manageSettings(<?php echo esc_attr( $item->id ); ?>);" class="cff-build-form"><?php esc_html_e( 'Build', 'calculated-fields-form' ); ?></a>
+									|
+									<a href="javascript:void(0);" onclick="cp_renameItem(<?php echo $item->id; ?>);"><?php esc_html_e( 'Rename', 'calculated-fields-form' ); ?></a>
+									|
+									<a href="javascript:void(0);" onclick="cp_viewMessages(event, <?php echo $item->id; ?>);"><?php esc_html_e( 'Entries', 'calculated-fields-form' ); ?></a>
+									|
+									<a href="javascript:void(0);" onclick="cp_cloneItem(<?php echo $item->id; ?>);"><?php esc_html_e( 'Duplicate', 'calculated-fields-form' ); ?></a>
+									|
+									<a href="javascript:void(0);"  onclick="cp_deleteItem(<?php echo $item->id; ?>);" class="cff-delete-form"><?php esc_html_e( 'Delete', 'calculated-fields-form' ); ?></a>
+									|
+									<a href="<?php print esc_attr( $_cff_link_to_form_base_url . $item->id ); ?>" target="_blank"><?php esc_html_e( 'View', 'calculated-fields-form' ); ?></a>
+
+								</div>
+							</td>
+							<td class="cff-form-list-category-cell">
+								<?php
+									print esc_html( ! empty($item->category) ? $item->category : '-'  );
+								?>
+							</td>
+                            <td class="cff-form-list-shortcode-cell">
+								<div class="cff-form-list-shortcode">
+									<?php
+										print '<a href="' . esc_attr( $_cff_link_to_form_base_url . $item->id ) . '" target="_blank" id="calshortcode_' . $item->id . '" style="white-space:nowrap;">[CP_CALCULATED_FIELDS id="' . $item->id. '"]</a>';
+									?>
+									<img src="<?php print esc_attr( plugins_url('../images/icons/copy.svg', __FILE__) ); ?>" title="<?php esc_attr_e('Copy Shortcode','calculated-fields-form');?>" onclick="cp_copyShortcode(this, <?php echo $item->id; ?>);" style="cursor:pointer;" />
+								</div>
+								<div class="cff-form-list-shortcode-copied-hint"><?php esc_html_e('Copied!!!', 'calculated-fields-form'); ?></div>
+							</td>
+                            <td class="cff-form-list-entries-cell" data-label="<?php esc_attr_e('Entries', 'calculated-fields-form');?>">
+								<a href="javascript:void(0);" onclick="return cp_viewMessages(event, <?php echo $item->id; ?>);" style="font-weight:600"><?php print $item->stats??0; ?></a>
+							</td>
+                        </tr>
+						<?php
+					}
+					?>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<?php
+		if ( ! empty( $pages_links ) ) {
+                print '<div style="text-align: right;margin-bottom: 20px;"><div style="display:inline-block;">' . $pages_links . '</div><div style="display:block;clear:both;"></div></div>'; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		}
+		?>
+
+		<!-- Default Settings -->
+		<i id="default-settings-section"></i>
+		<div id="metabox_default_settings" class="postbox cff-metabox <?php print esc_attr( $cpcff_main->metabox_status( 'metabox_default_settings' ) ); ?>" >
+			<h3 class='hndle' style="padding:5px;"><span><?php esc_html_e( 'Default Settings', 'calculated-fields-form' ); ?></span></h3>
+			<div class="inside">
+				<p><?php esc_html_e( 'Applies the default settings to new forms.', 'calculated-fields-form' ); ?></p>
+                <form name="defaultsettings" action="admin.php?page=cp_calculated_fields_form#default-settings-section" method="post">
+					<?php esc_html_e( 'Default Template', 'calculated-fields-form' ); ?>:<br />
+					<?php
+						require_once CP_CALCULATEDFIELDSF_BASE_PATH . '/inc/cpcff_templates.inc.php';
+						$templates_list       = CPCFF_TEMPLATES::load_templates();
+						$template_options     = '<option value="none">- No Change Template -</option><option value="">Use default template</option>';
+						$template_information = '';
+					foreach ( $templates_list as $template_item ) {
+						$template_options     .= '<option value="' . esc_attr( $template_item['prefix'] ) . '" ' . ( ($template_item['prefix'] == $cp_default_template) ? 'SELECTED' : '' ) . '>' . esc_html( $template_item['title'] ) . '</option>';
+						$template_information .= '<div class="width50 cp_template_info cp_template_' . esc_attr( $template_item['prefix'] ) . '" style="text-align:center;padding:10px 0; display:' . ( ($template_item['prefix'] == $cp_default_template) ? 'block' : 'none' ) . '; margin:10px 0; border: 1px dashed #CCC;">' . ( (! empty( $template_item['thumbnail'] )) ? '<img src="' . esc_attr( $template_item['thumbnail'] ) . '"><br>' : '' ) . ( (! empty( $template_item['description'] )) ? esc_html( $template_item['description'] ) : '' ) . '</div>';
+					}
+					?>
+					<select name="cp_default_template" id="cp_default_template" class="width50" onchange="cp_select_template();"><?php print $template_options; // phpcs:ignore WordPress.Security.EscapeOutput ?></select><br />
+					<?php print $template_information; // phpcs:ignore WordPress.Security.EscapeOutput ?>
+					<div class="cff-default-settings-apply-existing-forms">
+                        <label><input type="checkbox" aria-label="<?php esc_attr_e('Apply template settings to existing forms', 'calculated-fields-form'); ?>" name="cp_default_existing_forms[template]" <?php print(isset($_REQUEST['cp_default_existing_forms']['template']) ? 'CHECKED' : ''); ?> /> <?php _e( 'Apply template settings to existing forms', 'calculated-fields-form' ); ?> (<i><?php _e('It will modify the settings of existing forms', 'calculated-fields-form'); ?></i>)</label>
+                    </div>
+                    <hr />
+					<label><input type="checkbox" aria-label="<?php esc_attr_e('Activate Captcha by Default', 'calculated-fields-form'); ?>" name="cp_default_captcha" <?php print(($cp_default_captcha == 'true') ? 'CHECKED' : ''); ?> /> <?php esc_html_e( 'Activate Captcha by Default', 'calculated-fields-form' ); ?></label>
+					<div class="cff-default-settings-apply-existing-forms">
+                        <label><input type="checkbox" aria-label="<?php esc_attr_e('Apply captcha settings to existing forms', 'calculated-fields-form'); ?>" name="cp_default_existing_forms[captcha]" <?php print(isset($_REQUEST['cp_default_existing_forms']['captcha']) ? 'CHECKED' : ''); ?> /> <?php _e( 'Apply captcha settings to existing forms', 'calculated-fields-form' ); ?> (<i><?php _e('It will modify the settings of existing forms', 'calculated-fields-form'); ?></i>)</label>
+                    </div>
+					<hr />
+					<label><input type="checkbox" aria-label="<?php esc_attr_e('Display Submit Button by Default', 'calculated-fields-form'); ?>" name="cp_default_submit" <?php print( ('' == $cp_default_submit) ? 'CHECKED' : ''); ?> /> <?php esc_html_e( 'Display Submit Button by Default', 'calculated-fields-form' ); ?></label>
+					<div class="cff-default-settings-apply-existing-forms">
+                        <label><input type="checkbox" aria-label="<?php esc_attr_e('Apply submit button settings to existing forms', 'calculated-fields-form'); ?>" name="cp_default_existing_forms[submit]" <?php print(isset($_REQUEST['cp_default_existing_forms']['submit']) ? 'CHECKED' : ''); ?> /> <?php _e( 'Apply submit button settings to existing forms', 'calculated-fields-form' ); ?> (<i><?php _e('It will modify the settings of existing forms', 'calculated-fields-form'); ?></i>)</label>
+                    </div>
+
+                    <input type="button" name="cp_save_default_settings" value="<?php esc_attr_e( 'Update', 'calculated-fields-form' ); ?>" class="button-secondary" onclick="cp_update_default_settings(this);" style="margin-top:24px;" />
+					<input type="hidden" name="_cpcff_nonce" value="<?php echo esc_attr( wp_create_nonce( 'cff-default-settings' ) ); ?>" />
+				</form>
+			</div>
+		</div>
+		<div id="metabox_troubleshoot_area" class="postbox cff-metabox <?php print esc_attr( $cpcff_main->metabox_status( 'metabox_troubleshoot_area' ) ); ?>" >
+			<h3 class='hndle' style="padding:5px;"><span><?php esc_html_e( 'Troubleshoot Area & General Settings', 'calculated-fields-form' ); ?></span></h3>
+			<div class="inside">
+				<form name="updatesettings">
+					<div style="border:1px solid #DADADA; padding:10px;">
+						<p><?php _e( '<strong>Important!</strong>: Use this area <strong>only</strong> if you are experiencing conflicts with third party plugins, with the theme scripts or with the character encoding.', 'calculated-fields-form' ); // phpcs:ignore WordPress.Security.EscapeOutput ?></p>
+						<?php esc_html_e( 'Script load method', 'calculated-fields-form' ); ?>:<br />
+						<select id="ccscriptload" name="ccscriptload"  class="width50">
+							<option value="0" <?php
+							if ( get_option( 'CP_CFF_LOAD_SCRIPTS', '0' ) == '1' ) {
+								echo 'selected';} ?>><?php esc_html_e( 'Classic (Recommended)', 'calculated-fields-form' ); ?></option>
+							<option value="1" <?php
+							if ( get_option( 'CP_CFF_LOAD_SCRIPTS', '0' ) != '1' ) {
+								echo 'selected';} ?>><?php esc_html_e( 'Direct', 'calculated-fields-form' ); ?></option>
+						</select><br />
+						<em><?php esc_html_e( '* Change the script load method if the form doesn\'t appear in the public website.', 'calculated-fields-form' ); ?></em>
+						<br /><br />
+						<?php esc_html_e( 'Character encoding', 'calculated-fields-form' ); ?>:<br />
+						<select id="cccharsets" name="cccharsets" class="width50">
+							<option value=""><?php esc_html_e( 'Keep current charset (Recommended)', 'calculated-fields-form' ); ?></option>
+							<option value="utf8_general_ci">UTF-8 (<?php esc_html_e( 'try this first', 'calculated-fields-form' ); ?>)</option>
+							<option value="utf8mb4_general_ci">UTF-8mb4 (<?php esc_html_e( 'Only from MySQL 5.5', 'calculated-fields-form' ); ?>)</option>
+							<option value="latin1_swedish_ci">latin1_swedish_ci</option>
+						</select><br />
+						<em><?php esc_html_e( '* Update the charset if you are getting problems displaying special/non-latin characters. After updated you need to edit the special characters again.', 'calculated-fields-form' ); ?></em>
+						<br /><br />
+						<?php esc_html_e( 'The emails contain invalid characters', 'calculated-fields-form' ); ?>:<br />
+						<label><input type="checkbox" name="ccencodingemail" id="ccencodingemail" <?php echo ( (get_option( 'CP_CALCULATEDFIELDSF_ENCODING_EMAIL', false )) ? 'CHECKED' : ''); ?> /><em><?php esc_html_e( '* Encodes the notification emails as ISO-8859-2 and base64.', 'calculated-fields-form' ); ?></em></label>
+						<br /><br />
+						<?php
+							$compatibility_warnings = $cpcff_main->compatibility_warnings();
+						if ( ! empty( $compatibility_warnings ) ) {
+							print '<div style="margin:10px 0; border:1px dashed #FF0000; padding:10px; color:red;">' . $compatibility_warnings; // phpcs:ignore WordPress.Security.EscapeOutput
+						}
+							esc_html_e( 'There is active an optimization plugin in WordPress', 'calculated-fields-form' ); ?>:<br />
+						<label><input type="checkbox" id="ccoptimizationplugin" name="ccoptimizationplugin" value="1" <?php echo (( get_option( 'CP_CALCULATEDFIELDSF_OPTIMIZATION_PLUGIN', CP_CALCULATEDFIELDSF_OPTIMIZATION_PLUGIN ) ) ? 'CHECKED' : ''); ?> /><em><?php esc_html_e( '* Tick the checkbox if there is an optimization plugin active on the website, and the forms are not visible.', 'calculated-fields-form' ); ?></em></label>
+						<?php
+						if ( ! empty( $compatibility_warnings ) ) {
+							print '</div>';
+						}
+						?>
+					</div>
+					<br />
+					<label><input type="checkbox" name="ccdisablerevisions" id="ccdisablerevisions" <?php echo (( get_option( 'CP_CALCULATEDFIELDSF_DISABLE_REVISIONS', CP_CALCULATEDFIELDSF_DISABLE_REVISIONS ) ) ? 'CHECKED' : ''); ?> /> <?php esc_html_e( 'Disable Form Revisions', 'calculated-fields-form' ); ?></label>
+					<br /><br />
+					<label><input type="checkbox" name="ccjscache" id="ccjscache" <?php echo (( get_option( 'CP_CALCULATEDFIELDSF_USE_CACHE', CP_CALCULATEDFIELDSF_USE_CACHE ) ) ? 'CHECKED' : ''); ?> /> <?php esc_html_e( 'Activate Javascript Cache', 'calculated-fields-form' ); ?></label>
+					<br /><br />
+                    <label><input type="checkbox" name="cconlyvisible" id="cconlyvisible" <?php echo (( get_option( 'CP_CALCULATEDFIELDSF_RENDER_ONLY_VISIBLE', true ) ) ? 'CHECKED' : ''); ?> /> <?php esc_html_e( 'Render only the visible forms to improve page performance', 'calculated-fields-form' ); ?></label>
+                    <br /><br />
+					<label><input type="checkbox" name="ccdirectform" id="ccdirectform" <?php echo (( get_option( 'CP_CALCULATEDFIELDSF_DIRECT_FORM_ACCESS', CP_CALCULATEDFIELDSF_DIRECT_FORM_ACCESS ) ) ? 'CHECKED' : ''); ?> /> <?php esc_html_e( 'Allows to access the forms directly', 'calculated-fields-form' ); ?></label>
+					<br /><br />
+					<label><input type="checkbox" name="ccampform" id="ccampform" <?php echo (( get_option( 'CP_CALCULATEDFIELDSF_AMP', CP_CALCULATEDFIELDSF_AMP ) ) ? 'CHECKED' : ''); ?> /> <?php esc_html_e( 'Allows to access the forms from amp pages', 'calculated-fields-form' ); ?></label>
+					<br /><br />
+					<label><input type="checkbox" name="ccexcludecrawler" id="ccexcludecrawler" <?php echo (( get_option( 'CP_CALCULATEDFIELDSF_EXCLUDE_CRAWLERS', false ) ) ? 'CHECKED' : ''); ?> /> <?php esc_html_e( 'Do not load the forms with crawlers', 'calculated-fields-form' ); ?></label>
+					<br /><i><?php esc_html_e( '* The forms are not loaded when website is being indexed by searchers.', 'calculated-fields-form' ); ?></i>
+					<br /><br />
+					<label><input type="checkbox" name="ccusenonce" id="ccusenonce" <?php echo ( intval( get_option( 'CP_CALCULATEDFIELDSF_NONCE', 0 ) ) ? 'CHECKED' : '' ); ?> /> <?php _e( 'Protect the forms with nonce', 'calculated-fields-form' ); ?></label>
+                    <br /><br />
+                    <hr />
+                    <strong><?php _e( 'Protect the forms against the spam bots', 'calculated-fields-form' ); ?></strong><br /><br />
+                    <label for="ccminimumtimetosubmit"><?php esc_html_e( 'Enable minimum time to submit (in seconds)', 'calculated-fields-form' );?></label> <input type="number" name="ccminimumtimetosubmit" id="ccminimumtimetosubmit" value="<?php print esc_attr( get_option( 'CP_CALCULATEDFIELDSF_MINIMUM_TIME_TO_SUBMIT', CP_CALCULATEDFIELDSF_MINIMUM_TIME_TO_SUBMIT ) ); ?>" min="0" size="3" />
+                    <br /><br />
+					<hr />
+                    <strong><?php esc_html_e( 'Spam protection with Akismet', 'calculated-fields-form' ); ?></strong><br /><br />
+                    <label for="ccenableakismet">
+                        <input type="checkbox" name="ccenableakismet" id="ccenableakismet" value="1"
+                        <?php echo (( CPCFF_Akismet::is_enabled() ) ? 'CHECKED' : ''); ?> />
+                        <?php esc_html_e( 'Enable Akismet spam protection', 'calculated-fields-form' ); ?>
+                    </label>
+                    <br /><br />
+                    <label for="ccakismetapikey"><?php esc_html_e( 'Akismet API Key', 'calculated-fields-form' ); ?> <?php echo CPCFF_Akismet::get_instance()->api_key_status(); ?></label><br>
+                    <input type="text" name="ccakismetapikey" id="ccakismetapikey" value="<?php print esc_attr( CPCFF_Akismet::get_api_key() ); ?>" class="width50" /><br />
+                    <em>
+                        <?php
+                        printf(
+                            /* translators: %s: link to akismet.com */
+                            esc_html__( 'Get your free key at %s', 'calculated-fields-form' ),
+                            '<a href="' . esc_url(CPCFF_Akismet::SIGNUP_URL ) . '" target="_blank">akismet.com</a>'
+                        );
+                        ?>
+                    </em>
+                    <br /><br />
+                    <label for="ccakismetactivitylog">
+                        <input type="checkbox" name="ccakismetactivitylog" id="ccakismetactivitylog" value="1"
+                        <?php echo (( CPCFF_Akismet::is_activity_log_enabled() ) ? 'CHECKED' : ''); ?> />
+                        <?php esc_html_e( 'Activity Log - Log Akismet results in the PHP log', 'calculated-fields-form' ); ?>
+                    </label>
+                    <br /><br />
+                    <label for="ccakismettestmode">
+                        <input type="checkbox" name="ccakismettestmode" id="ccakismettestmode" value="1"
+                        <?php echo (( CPCFF_Akismet::is_test_mode_enabled() ) ? 'CHECKED' : ''); ?> />
+                        <?php esc_html_e( 'Test Mode - Use Akismet in test mode', 'calculated-fields-form' ); ?>
+                    </label>
+                    <br /><br />
+                    <input type="button" onclick="cp_updateConfig();" name="gobtn" value="<?php esc_attr_e( 'UPDATE', 'calculated-fields-form' ); ?>" class="button-secondary" />
+					<br />
+				</form>
+			</div>
+		</div>
+	</div>
+</div><!-- End Forms & Settings Section -->
+<div style="margin-top:20px;display:<?php print (( ! empty( $_GET['cff-tab'] ) && 'marketplace' == $_GET['cff-tab'] ) ? 'block' : 'none'); ?>;"><!-- Marketplace Section -->
+	<div id="metabox_basic_settings" class="postbox cff-no-animate" >
+		<h3 class='hndle' style="padding:5px;"><span><?php esc_html_e( 'Calculated Fields Form Marketplace', 'calculated-fields-form' ); ?></span></h3>
+		<div class="inside">
+			<div class="cff-marketplace"></div>
+		</div>
+	</div>
+</div><!-- End Marketplace Section -->
+[<a href="https://cff.dwbooster.com/customization" target="_blank"><?php esc_html_e( 'Request Custom Modifications', 'calculated-fields-form' ); ?></a>] | [<a href="https://cff.dwbooster.com/download#comparison" target="_blank"><?php esc_html_e( 'Upgrade', 'calculated-fields-form' ); ?></a>] | [<a href="https://wordpress.org/support/plugin/calculated-fields-form#new-post" target="_blank"><?php esc_html_e( 'Help', 'calculated-fields-form' ); ?></a>]
+</div>
+<script data-category="functional">cff_current_version='free';</script>
+<script data-category="functional" src="https://cff-bundles.dwbooster.com/plugins/plugins.js?v=<?php print esc_attr( CP_CALCULATEDFIELDSF_VERSION . '_' . gmdate( 'Y-m-d' ) ); // phpcs:ignore WordPress.WP.EnqueuedResources ?>"></script>
+<script data-category="functional" src="<?php print esc_attr( plugins_url( '/vendors/forms.js', CP_CALCULATEDFIELDSF_MAIN_FILE_PATH ) . '?v=' . CP_CALCULATEDFIELDSF_VERSION . '_' . gmdate( 'Y-m-d' ) ); // phpcs:ignore WordPress.WP.EnqueuedResources ?>"></script>

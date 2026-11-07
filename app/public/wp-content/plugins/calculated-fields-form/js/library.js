@@ -1,0 +1,719 @@
+jQuery(function () {
+	if ( typeof cpcff_forms_library_config == 'undefined' ) return;
+    let wordpress_ai = 'wordpress-ai', // This is the WordPress AI connector.
+        ai_providers = '',
+        ai_default_provider = cpcff_forms_library_config['ai-default-provider'] || '',
+        ai_provider_selected = cpcff_forms_library_config['ai-selected-provider'] || ai_default_provider,
+        ai_default_model = cpcff_forms_library_config['ai-default-model'] || '',
+        ai_model_selected = cpcff_forms_library_config['ai-selected-model'] || ai_default_model,
+        ai_api_key = (cpcff_forms_library_config['ai-api-key'] && String(cpcff_forms_library_config['ai-api-key']).trim()) || '';
+
+    // Check provider and models selected.
+    if ( 'ai-providers' in cpcff_forms_library_config ) {
+        if ( ! ( ai_provider_selected in cpcff_forms_library_config['ai-providers'] ) ) {
+            ai_provider_selected = ai_default_provider;
+        }
+
+        if ( ! ( ai_model_selected in cpcff_forms_library_config['ai-providers'][ai_provider_selected]['models'] ) ) {
+            ai_model_selected = cpcff_forms_library_config['ai-providers'][ai_provider_selected]['default_model'];
+        }
+    }
+
+    if ( 'ai-providers' in cpcff_forms_library_config ) {
+        let providers = cpcff_forms_library_config['ai-providers'];
+        for ( let provider in providers ) {
+            if (provider == wordpress_ai ) {
+                ai_providers = '<option data-provider="'+provider+'" value="'+provider+'">' + providers[provider]['title']+'</option>' + ai_providers;
+            } else {
+                ai_providers += '<optgroup label="'+providers[provider]['title']+'">';
+                for ( let model in providers[provider]['models'] ) {
+                    if ( providers[provider]['models'][model]['form-generation'] == false ) continue;
+                    ai_providers += '<option data-provider="' + provider + '" value="' + model + '" ' + ( ai_model_selected == model ? 'selected' : '' ) + '>' + providers[provider]['models'][model]['title']+'</option>';
+                }
+                ai_providers += '</optgroup>';
+            }
+        }
+    }
+
+    // Texts
+	let txt_api_key_placeholder 	= cpcff_forms_library_config['texts']['api_key_placeholder'] ?? '',
+		form_description_placeholder = cpcff_forms_library_config['texts']['form_descritpion_placeholder'] ?? '',
+		form_modifications_placeholder = cpcff_forms_library_config['texts']['form_modifications_placeholder'] ?? '',
+		txt_search_placeholder 		= cpcff_forms_library_config['texts']['search_placeholder'] ?? '',
+		txt_form_name_placeholder 	= cpcff_forms_library_config['texts']['form_name_placeholder'] ?? '',
+
+		txt_form_descritpion_label = cpcff_forms_library_config['texts']['form_descritpion_label'],
+		txt_no_form_label 		   = cpcff_forms_library_config['texts']['no_form_label'],
+
+		txt_api_key_instruct 	   = cpcff_forms_library_config['texts']['api_key_instruct'],
+		txt_wordpress_instruct 	   = cpcff_forms_library_config['texts']['wordpress_instruct'],
+
+		txt_api_key_requirement_error	  = cpcff_forms_library_config['texts']['api_key_requirement_error'],
+		txt_description_requirement_error = cpcff_forms_library_config['texts']['description_requirement_error'],
+
+		txt_ai_form_generator_menu 	= cpcff_forms_library_config['texts']['ai_form_generator_menu'],
+		txt_website_forms_menu		= cpcff_forms_library_config['texts']['website_forms_menu'],
+		txt_all_categories_menu		= cpcff_forms_library_config['texts']['all_categories_menu'],
+
+		txt_save_api_key_btn 		= cpcff_forms_library_config['texts']['save_api_key_btn'],
+		txt_saving_api_key_btn 		= cpcff_forms_library_config['texts']['saving_api_key_btn'],
+		txt_clear_api_key_btn 		= cpcff_forms_library_config['texts']['clear_api_key_btn'],
+		txt_generate_form_btn 		= cpcff_forms_library_config['texts']['generate_form_btn'],
+		txt_apply_modifications_btn = cpcff_forms_library_config['texts']['apply_modifications_btn'] ?? 'Apply Modifications',
+		txt_use_it_btn 				= cpcff_forms_library_config['texts']['use_it_btn'],
+		txt_preview_btn 			= cpcff_forms_library_config['texts']['preview_btn'] ?? 'Preview',
+        txt_open_modify_btn         = cpcff_forms_library_config['texts']['open_modify_btn'] ?? '+ Describe Modifications',
+        txt_back_form_generator_btn  = cpcff_forms_library_config['texts']['back_form_generator_btn'] ?? 'Back to Form Generator',
+        txt_close_modify_btn        = cpcff_forms_library_config['texts']['close_modify_btn'] ?? '- Hide Description',
+		txt_create_form_btn 		= cpcff_forms_library_config['texts']['create_form_btn'],
+		txt_back_btn 				= cpcff_forms_library_config['texts']['back_btn'],
+		txt_forward_btn 			= cpcff_forms_library_config['texts']['forward_btn'] ?? 'Go to form',
+		txt_close_btn 				= cpcff_forms_library_config['texts']['close_btn'] ?? 'close',
+
+        txt_still_loading           = cpcff_forms_library_config['texts']['still_loading'] ?? 'Be patient, still thinking...',
+
+	// Variables
+		$ = jQuery,
+		categories 	= {},
+		form_name_library_field,
+
+    /* Templates */
+		ai_generator_tpl = `
+			<div class="cff-ai-form-generator" style="display:none;">
+				<div class="cff-ai-form-description-container">
+					<div class="cff-form-library-close-back cff-form-library-ai-close" onclick="cff_templatesInCategory();"></div>
+                    <div class="cff-ai-api-key-container">
+                        <select id="cff-ai-model-provider" name="cff-ai-model-provider">
+                        ${ai_providers}
+                        </select>
+						<input type="password" id="cff-ai-api-key" name="cff-ai-api-key" placeholder="${txt_api_key_placeholder}" value="${ai_api_key}" />
+						<button id="cff-ai-save-btn" class="button-primary" title="">${txt_save_api_key_btn}</button>
+						<button id="cff-ai-clear-btn" class="button-secondary">${txt_clear_api_key_btn}</button>
+					</div>
+					<i class="cff-ai-description">${txt_api_key_instruct}</i>
+					<div class="cff-form-library-form-title">${txt_form_descritpion_label}</div>
+					<textarea id="cff-ai-form-description" rows="4" placeholder="${form_description_placeholder}"></textarea>
+					<div style="display:flex;gap:5px;align-items:center;">
+						<input type="button" class="button-primary cff-ai-generate" value="${txt_generate_form_btn}" />
+						<input type="button" class="button-secondary cff-form-library-forward" value="${txt_forward_btn}" style="display:none;" />
+					</div>
+				</div>
+				<div class="cff-ai-form-preview-container">
+					<div class="cff-form-library-close-back cff-form-library-back" data-label="&lt; ${txt_back_btn}"></div>
+					<div class="cff-ai-form-preview">
+						<iframe></iframe>
+					</div>
+                    <div>
+					    <input type="button" class="button-primary cff-select-form" value="${txt_use_it_btn}"  onclick="cff_getTemplate('ai-generator');" />
+                        <button type="button" class="button-secondary cff-modify-form">${txt_open_modify_btn}</button>
+                        <button type="button" class="button-secondary cff-back-form-generator">${txt_back_form_generator_btn}</button>
+                    </div>
+                    <div class="cff-ai-form-modifications-description-container">
+                        <textarea id="cff-ai-form-modifications-description" rows="4" placeholder="${form_modifications_placeholder}"></textarea>
+                        <div>
+                            <input type="button" class="button-primary cff-ai-generate2" value="${txt_apply_modifications_btn}" />
+                        </div>
+                    </div>
+				</div>
+			</div>
+		`,
+
+		dialog_tpl = `
+			<div class="cff-form-library-cover">
+				<div class="cff-form-library-container">
+					<div class="cff-form-library-column-left">
+						<div class="cff-form-library-search-box">
+							<div class="cff-form-library-close-back cff-form-library-close" title="${txt_close_btn}"></div>
+							<input type="search" placeholder="${txt_search_placeholder}" oninput="cff_filteringFormsByText(this)" autocomplete="new-password">
+						</div>
+						<div class="cff-form-library-ai-forms">
+							<ul>
+								<li><a href="javascript:void(0);" onclick="cff_displayAIGenerator(this);">${txt_ai_form_generator_menu}</a></li>
+							</ul>
+						</div>
+						<div class="cff-form-library-website-forms">
+							<ul>
+								<li><a href="javascript:void(0);" onclick="cff_templatesInCategory(this,-1);">${txt_website_forms_menu}</a></li>
+							</ul>
+						</div>
+						<div class="cff-form-library-categories">
+							<ul>
+								<li><a href="javascript:void(0);" onclick="cff_templatesInCategory(this);" class="cff-form-library-active-category">${txt_all_categories_menu}</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="cff-form-library-column-right">
+						<div class="cff-form-library-blank-form-container" style="display:flex;">
+							<div class="cff-form-library-blank-form">
+								<input type="text" placeholder="${txt_form_name_placeholder}" id="cp_itemname_library" autocomplete="new-password">
+								<input type="button" value="${txt_create_form_btn}" class="button-primary" onclick="cff_getTemplate(0);">
+							</div>
+							<div class="cff-form-library-close-back cff-form-library-close" title="${txt_close_btn}"></div>
+						</div>
+						<div class="cff-form-library-main">
+							<div class="cff-form-library-no-form">${txt_no_form_label}</div>
+						</div>
+						${ai_generator_tpl}
+					</div>
+				</div>
+			</div>
+		`,
+
+		form_tpl = `
+			<div class="cff-form-library-form">
+				<div class="cff-form-library-form-top">
+					<div class="cff-form-library-form-title"></div>
+					<div class="cff-form-library-form-description"></div>
+				</div>
+				<div class="cff-form-library-form-bottom">
+					<div class="cff-form-library-form-category"></div>
+					<div>
+						<input type="button" class="button-primary cff-select-form" value="${txt_use_it_btn}" />
+						<input type="button" class="button-secondary cff-preview-form" value="${txt_preview_btn}" />
+					</div>
+				</div>
+			</div>
+		`;
+
+		// Template preview container - hidden by default
+		var template_preview_tpl = `
+			<div class="cff-template-preview-container" style="display:none;">
+				<div class="cff-template-preview-header">
+					<span class="cff-template-preview-title"></span>
+					<div class="cff-form-library-close-back cff-template-preview-close" onclick="cff_closePreview()" title="${txt_close_btn}"></div>
+				</div>
+				<div class="cff-template-preview-content"></div>
+				<div class="cff-template-preview-footer">
+					<input type="button" class="button-primary cff-select-form-from-preview" value="${txt_use_it_btn}" />
+				</div>
+			</div>
+		`;
+
+    $.expr.pseudos.contains = $.expr.createPseudo(function (arg) {
+        return function (elem) {
+            return $(elem).text().toUpperCase().indexOf(arg.toUpperCase()) >= 0;
+        };
+    });
+
+    function getProviderSelected() {
+        return String($('#cff-ai-model-provider option:selected').data('provider')).trim();
+    }
+
+    function updateAIProviderURL( provider ) {
+        if ( provider == wordpress_ai ) {
+            $('.cff-ai-description').html(txt_wordpress_instruct);
+        } else {
+            $('.cff-ai-description').html(txt_api_key_instruct);
+        }
+        $('.cff-ai-links').html('<a href="' + cpcff_forms_library_config['ai-providers'][provider]['api_key_url'] + '" target="_blank">' + cpcff_forms_library_config['ai-providers'][provider]['title'] + '</a>');
+    }
+
+	function openDialog(explicit) {
+        $('body').css('overflow', 'hidden');
+        var version 	= 'free',
+			version_n 	= {'free': 1, 'pro': 2, 'dev': 3, 'plat': 4},
+			form_name_field = $('[id="cp_itemname"]'),
+			form_tag 	= form_name_field.closest('form')[0],
+			data 		= [];
+
+		form_name_field.val(form_name_field.val().replace(/^\s*/, '').replace(/\s*$/, ''));
+
+		if( ( typeof explicit == 'undefined' || !explicit ) && 'reportValidity' in form_tag && !form_tag.reportValidity()) return;
+
+        if (!$('.cff-form-library-container').length) {
+            $('body').append(dialog_tpl);
+            updateAIProviderURL(getProviderSelected());
+
+            if (typeof cpcff_forms_library_config != 'undefined' && 'version' in cpcff_forms_library_config) {
+                version = cpcff_forms_library_config['version'];
+            }
+
+            if (typeof cff_forms_templates != 'undefined') {
+				for(var j in cff_forms_templates ) {
+					data = cff_forms_templates[j];
+					for (var i in data) {
+
+						let templates_categories = data[i]['category'].split('|');
+						for ( let j in templates_categories ) {
+							categories[templates_categories[j]] = '<li><a href="javascript:void(0);" onclick="cff_templatesInCategory(this,\'' + templates_categories[j] + '\')">' + templates_categories[j] + '</a></li>';
+						}
+
+						let tmp = $(form_tpl);
+						if (version_n[version] < version_n[j]) {
+							tmp.addClass( 'cff-form-library-form-disabled' ).append('<div class="cff-form-library-form-lock"></div>').on('click', function(){window.open('https://cff.dwbooster.com/download#comparison', '_blank');});
+							tmp.find('[type="button"]')
+								.prop( 'disabled', true )
+								.on(
+									'click',
+									function(){ window.open('https://cff.dwbooster.com/download#comparison', '_blank'); }
+								);
+						} else {
+							tmp.find('[type="button"].cff-select-form').on(
+								'click',
+								(function (id) {
+									return function () {
+										cff_getTemplate(id);
+									};
+								})(data[i]['id'])
+							);
+						}
+						tmp.attr('data-category', data[i]['category']);
+                        tmp.attr('data-template-id', data[i]['id']);
+                        tmp.attr('data-template-title', data[i]['title']);
+						if ( 'thumb' in data[i] ) {
+							tmp.find('.cff-form-library-form-title').before('<div class="cff-form-library-form-thumb"><img src="https://cdn.jsdelivr.net/gh/cffdwboostercom/formtemplates@main/'+data[i]['thumb']+'"></div>');
+						}
+						tmp.find('.cff-form-library-form-title').text(data[i]['title']);
+						tmp.find('.cff-form-library-form-description').text(data[i]['description']);
+                        tmp.find('.cff-form-library-form-category').text(data[i]['category'].replace(/\|/g, ', '));
+						tmp.find('[type="button"].cff-preview-form').on(
+                            'click',
+                            (function (id, title) {
+                                return function () {
+                                    cff_previewTemplate(id, title);
+                                };
+                            })(data[i]['id'], data[i]['title']));
+						tmp.appendTo('.cff-form-library-main');
+					}
+				}
+			}
+
+			for (var i in categories) {
+				$(categories[i]).appendTo('.cff-form-library-categories ul');
+			}
+
+			// Website forms.
+			if (typeof cpcff_forms_library_config != 'undefined' && 'website_forms' in cpcff_forms_library_config) {
+				let data  = cpcff_forms_library_config['website_forms'];
+				for ( let i in data ) {
+					let tmp = $(form_tpl);
+					tmp.find('[type="button"].cff-select-form').on(
+						'click',
+						(function (id) {
+							return function () {
+								cff_getTemplate(id, true);
+							};
+						})(data[i]['id'])
+					);
+					tmp.find('[type="button"].cff-preview-form').on(
+						'click',
+						(function (id, title) {
+							return function () {
+								cff_previewWebsiteForm(id, title);
+							};
+						})(data[i]['id'], data[i]['form_name'])
+					);
+					tmp.attr('data-category', '-1');
+					tmp.find('.cff-form-library-form-title').text( '('+data[i]['id']+') ' + data[i]['form_name']);
+					tmp.find('.cff-form-library-form-description').text(data[i]['description']);
+					tmp.find('.cff-form-library-form-category').text(data[i]['category']);
+					tmp.appendTo('.cff-form-library-main');
+				}
+            }
+        };
+
+		$(document).on('keyup', '[id="cp_itemname_library"]', function(evt){
+			var keycode = (evt.keyCode ? evt.keyCode : evt.which);
+            if(keycode == 13){
+                cff_getTemplate(0);
+            }
+		});
+
+        // Initialize
+        showNoFormMessage();
+        $('.cff-form-library-search-box input').val('');
+        $('.cff-form-library-categories ul>li:first-child a').trigger('click');
+        $('.cff-form-library-cover').show();
+
+		form_name_library_field = $('[id="cp_itemname_library"]');
+		form_name_library_field.val(form_name_field.val());
+    };
+
+    function closeDialog() {
+        $('body').css('overflow', '');
+		$('.cff-form-library-cover').animate({ opacity: 0 }, 'slow', function() {
+			$(this).remove();
+		});
+    };
+
+    function showNoFormMessage() {
+        $('.cff-form-library-no-form').show();
+    };
+
+    function hideNoFormMessage() {
+        $('.cff-form-library-no-form').hide();
+    };
+
+    function displayTemplates(me, category) {
+        // Close preview if open, then continue
+        var $preview = $('.cff-template-preview-container');
+        if ($preview.is(':visible')) {
+            cff_closePreview(function() {
+                displayTemplates(me, category);
+            });
+            return;
+        }
+        $('.cff-ai-form-generator').hide();
+		$('.cff-form-library-main').show();
+        hideNoFormMessage();
+        $('.cff-form-library-search-box input').val('');
+        $('.cff-form-library-active-category').removeClass('cff-form-library-active-category');
+		if (typeof me != 'undefined') $(me).addClass('cff-form-library-active-category');
+
+        if (typeof category == 'undefined') {
+            $('.cff-form-library-form').show();
+            $('.cff-form-library-form[data-category="-1"]').hide();
+        } else {
+            $('.cff-form-library-form').hide();
+            $('.cff-form-library-form[data-category*="' + category + '"]').show();
+        }
+    };
+
+	function displayAIGenerator(me) {
+		// Close preview if open, then continue
+		var $preview = $('.cff-template-preview-container');
+		if ($preview.is(':visible')) {
+			cff_closePreview(function() {
+				displayAIGenerator(me);
+			});
+			return;
+		}
+		$('.cff-form-library-search-box input').val('');
+        $('.cff-form-library-active-category').removeClass('cff-form-library-active-category');
+		$(me).addClass('cff-form-library-active-category');
+		$('.cff-form-library-main').hide();
+		$('.cff-ai-form-generator').show();
+        $('#cff-ai-model-provider').trigger('change');
+	};
+
+    function formsByText(me) {
+		$('.cff-ai-form-generator').hide();
+		$('.cff-form-library-main').show();
+        var v = String(me.value).trim();
+
+        $('.cff-form-library-active-category').removeClass('cff-form-library-active-category');
+
+        $('.cff-form-library-form').hide();
+
+        $('.cff-form-library-form:contains("' + v + '")').each(function () {
+            $(this).show();
+        });
+
+        if ($('.cff-form-library-form:visible').length) {
+            hideNoFormMessage();
+        } else {
+            showNoFormMessage();
+        }
+    };
+
+    function getTemplate(id, is_website_form) {
+		is_website_form = is_website_form || false;
+        var form_name = encodeURIComponent(form_name_library_field.val() || ''),
+        category_name = encodeURIComponent($('[id="calculated-fields-form-category"]').val() || ''),
+        url;
+
+        if (typeof cpcff_forms_library_config != 'undefined' && 'website_url' in cpcff_forms_library_config) {
+            url = cpcff_forms_library_config['website_url'] + '&name=' + form_name + '&category=' + category_name;
+            if (id) url += '&ftpl=' + encodeURIComponent(id);
+			if (is_website_form) url += '&from_website=1';
+            document.location.href = url;
+            closeDialog();
+            return;
+        }
+
+        if ('cp_addItem' in window)
+            cp_addItem();
+    };
+
+    // Template preview functions
+    var _cff_template_preview_scroll_top = 0;
+    var _cff_template_preview_scroll_left = 0;
+    var _cff_current_template_id = null;
+    var _cff_current_template_title = null;
+    var _cff_current_is_website_form = false;
+
+    function cff_previewTemplate(templateId, templateTitle) {
+        _cff_current_is_website_form = false;
+        cff_previewForm(templateId, templateTitle, 'ftpl');
+    }
+
+    function cff_previewWebsiteForm(formId, formTitle) {
+        _cff_current_is_website_form = true;
+        cff_previewForm(formId, formTitle, 'form_id');
+    }
+
+    function cff_previewForm(formId, formTitle, paramName) {
+        var $main = $('.cff-form-library-main');
+        if (!$main.length) return;
+
+        // Validate paramName to prevent injection
+        if (paramName !== 'ftpl' && paramName !== 'form_id') {
+            return;
+        }
+
+        // Save scroll position
+        _cff_template_preview_scroll_top = $main.scrollTop();
+        _cff_template_preview_scroll_left = $main.scrollLeft();
+        _cff_current_template_id = formId;
+        _cff_current_template_title = formTitle;
+
+        // Hide grid, show preview container
+        $main.hide();
+        var $previewContainer = $('.cff-template-preview-container');
+        if (!$previewContainer.length) {
+            // Create preview container inside the library column-right
+            $('.cff-form-library-column-right').append(template_preview_tpl);
+            $previewContainer = $('.cff-template-preview-container');
+            // Attach select button handler
+            $previewContainer.find('.cff-select-form-from-preview').on('click', function() {
+                cff_selectFromPreview();
+            });
+        }
+        // Use text() for formTitle to prevent XSS
+        $previewContainer.find('.cff-template-preview-title').text(formTitle);
+        $previewContainer.find('.cff-template-preview-content').html('<div style="text-align:center;padding:40px;">Loading...</div>');
+        $previewContainer.css('display', 'flex');
+
+        // Set iframe src - follows AI Generator pattern: admin.php?page=...&cff_template_preview=1
+        var previewUrl = cpcff_forms_library_config['template_preview_url'] + '&cff_template_preview=1&' + paramName + '=' + encodeURIComponent(formId) + '&_=' + Date.now();
+        var iframe = document.createElement('iframe');
+        iframe.src = previewUrl;
+        iframe.style.width = '100%';
+        iframe.style.height = '100%';
+        iframe.style.border = 'none';
+        iframe.style.background = '#fff';
+        $previewContainer.find('.cff-template-preview-content').html(iframe);
+    }
+
+    function cff_closePreview(callback) {
+        var $main = $('.cff-form-library-main');
+        var $previewContainer = $('.cff-template-preview-container');
+        if (!$main.length || !$previewContainer.length) {
+            if (callback) callback();
+            return;
+        }
+
+        $previewContainer.hide();
+        $main.show();
+
+        // Restore scroll position
+        $main.scrollTop(_cff_template_preview_scroll_top);
+        $main.scrollLeft(_cff_template_preview_scroll_left);
+
+        _cff_current_template_id = null;
+        _cff_current_template_title = null;
+        _cff_current_is_website_form = false;
+
+        if (callback) callback();
+    }
+
+	function cff_backFormGenerator() {
+		$('.cff-ai-form-preview-container').hide();
+		$('.cff-form-library-forward').show();
+	}
+
+    function cff_selectFromPreview() {
+        if (_cff_current_template_id !== null) {
+            cff_getTemplate(_cff_current_template_id, _cff_current_is_website_form);
+        }
+    }
+
+	function cff_showModifySection() {
+		$('.cff-ai-form-modifications-description-container').addClass('cff-ai-form-modifications-description-container-active');
+		$('.cff-modify-form').text(txt_close_modify_btn);
+		let d = $('#cff-ai-form-modifications-description');
+		if ( String(d.val()).trim() == '' ) d.val($('#cff-ai-form-description').val());
+	}
+
+	function cff_hideModifySection(clearDescriptionOnHide) {
+		$('.cff-ai-form-modifications-description-container').removeClass('cff-ai-form-modifications-description-container-active');
+		$('.cff-modify-form').text(txt_open_modify_btn);
+		clearDescriptionOnHide = clearDescriptionOnHide || false;
+		if (clearDescriptionOnHide) $('#cff-ai-form-modifications-description').val('');
+	}
+
+    $(document).on('change', '#cff-ai-model-provider', function(){
+        let provider_selected = getProviderSelected();
+        $('#cff-ai-api-key')[provider_selected == wordpress_ai ? 'hide' : 'show']();
+        $('#cff-ai-model-provider').css('flex-grow', provider_selected == wordpress_ai ? '1' : 'initial');
+        updateAIProviderURL(getProviderSelected());
+    });
+	$(document).on('keyup', function(evt){ if ( evt.keyCode == 27 ) { cff_closeLibraryDialog(); } });
+	$(document).on('focus', '#cff-ai-api-key', function(){ this.type="text"; })
+			   .on('blur' , '#cff-ai-api-key', function(){ this.type="password"; });
+	$(document).on('click', '#cff-ai-save-btn', async function(){
+        let me = this,
+            api_key  = String($('#cff-ai-api-key').val()).trim(),
+		    provider = getProviderSelected(),
+		    model 	 = String($('#cff-ai-model-provider').val()).trim(),
+            width = me.offsetWidth;
+
+		me.style.width = width + 'px';
+		me.textContent = txt_saving_api_key_btn;
+		me.disabled = true;
+
+        // Save settings.
+        let formData = new FormData();
+        formData.append('cff_ai_form_save_settings', true);
+        formData.append('cff_ai_form_generator_provider', provider);
+        formData.append('cff_ai_form_generator_model', model);
+        formData.append('cff_ai_form_generator_api_key', api_key);
+        const response = await fetch(
+            cpcff_forms_library_config['ai_form_generator_url'],
+            {
+                'method': 'POST',
+                'body': formData
+            }
+        );
+
+        if (response.ok) {
+            const output = await response.text();
+            try {
+                let result = JSON.parse(output);
+                if ('error' in result) {
+                    throw new Error(result['error']);
+                }
+
+                if ('success' in result) {
+                    alert(result['success']);
+                }
+            } catch (err) {
+                alert(err.message);
+            }
+            me.disabled = false;
+            me.textContent = txt_save_api_key_btn;
+        }
+	});
+	$(document).on('click', '#cff-ai-clear-btn', function(){
+		$('#cff-ai-api-key').val('');
+        $('#cff-ai-save-btn').trigger('click');
+	});
+	$(document).on('click', '.cff-form-library-close', closeDialog);
+	$(document).on('click', '.cff-form-library-back', cff_backFormGenerator);
+	$(document).on('click', '.cff-back-form-generator', cff_backFormGenerator);
+	$(document).on('click', '.cff-form-library-forward', function(){ $('.cff-ai-form-preview-container').css('display', 'flex'); });
+    $(document).on('click', '.cff-modify-form', function(){
+		let e = $(this);
+        e.toggleClass('cff-modify-form-active');
+		if ( e.hasClass('cff-modify-form-active') ) cff_showModifySection();
+		else cff_hideModifySection(true);
+    });
+    $(document).on('click', '.cff-ai-generate2', function(){
+        let e = $(this);
+        $('.cff-ai-generate').trigger('click', {
+            'trigger_btn': e,
+            'description_field': $('#cff-ai-form-modifications-description'),
+            'url_params': { 'modify_form': true }
+        });
+    });
+	$(document).on('click', '.cff-ai-generate', async function(evt, extra_params){
+        extra_params = extra_params || {};
+		$('.cff-form-library-forward').hide();
+		if ( ! ( 'trigger_btn' in extra_params) ) { // It was not triggered by the button that applies modifications.
+			cff_hideModifySection(true);
+		}
+		// Check API Key and form description.
+		let api_key 		  = String($('#cff-ai-api-key').val()).trim(),
+            provider          = getProviderSelected(),
+            model             = String($('#cff-ai-model-provider').val()).trim(),
+			description_field = extra_params['description_field'] ?? $('#cff-ai-form-description'),
+			description 	  = description_field.val().split(/[\n\r]/g).map((n)=>String(n).trim()).filter((n)=>n != '').join("\n");
+
+		if ( '' == api_key && provider != wordpress_ai ) {
+			alert( txt_api_key_requirement_error );
+			return;
+		}
+
+		if ( '' == description ) {
+			alert( txt_description_requirement_error );
+			return;
+		}
+
+		// Display the loading process and call the server side code.
+		$('.cff-ai-form-generator').append('<div class="cff-processing-form"><div class="cff-still-loading"></div></div>');
+		var stageTexts = cpcff_forms_library_config['texts'] || {};
+		[
+			[2000, stageTexts?.still_loading_1s || 'Hang tight…'],
+			[5000, stageTexts?.still_loading_3s || 'Still working on it…'],
+			[8000, stageTexts?.still_loading_5s || 'Almost there…'],
+			[12000, stageTexts?.still_loading_10s || 'Complex request, thank you for your patience…']
+		].forEach(function (stage) {
+			setTimeout(function () {
+				let el = $('.cff-ai-form-generator .cff-processing-form .cff-still-loading');
+				el.fadeOut(150, function () {
+					$(this).text(stage[1]);
+					$(this).fadeIn(200);
+				});
+			}, stage[0]);
+		});
+		$('.cff-form-library-back').prop('disabled', true);
+		description_field.prop('disabled', true);
+		this.disabled = true;
+        extra_params?.trigger_btn?.prop('disabled', true);
+
+		let formData = new FormData();
+		formData.append('cff_ai_form_generator_description', description);
+		formData.append('cff_ai_form_generator_provider', provider);
+		formData.append('cff_ai_form_generator_model', model);
+		formData.append('cff_ai_form_generator_api_key', api_key);
+
+        if( 'url_params' in extra_params ) {
+            for ( let param in extra_params['url_params'] ) {
+                formData.append(param, extra_params['url_params'][param]);
+            }
+        }
+
+		const response = await fetch(
+			cpcff_forms_library_config['ai_form_generator_url'],
+			{
+				'method' : 'POST',
+				'body'   : formData
+			}
+		);
+
+		if ( response.ok ) {
+			const output = await response.text();
+			try {
+				let result = JSON.parse( output );
+				if ( 'error' in result ) {
+					throw new Error( result['error'] );
+				}
+
+				if ( 'success' in result ) {
+
+					// Display the form preview.
+					const cacheBuster = Date.now();
+					$('.cff-ai-form-preview>iframe').attr('src', cpcff_forms_library_config['ai_form_generator_url'] + '&cff_ai_form_preview=1&_=' + cacheBuster);
+					$('.cff-ai-form-preview-container').css('display','flex');
+
+				}
+			} catch ( err ) {
+				alert( err.message );
+			}
+		}
+
+		// Hide the loading animation.
+		$('.cff-processing-form').remove();
+        $('.cff-form-library-back').prop('disabled', false);
+		description_field.prop('disabled', false);
+		this.disabled = false;
+        extra_params?.trigger_btn?.prop('disabled', false);
+    });
+
+	// Export
+    window['cff_openLibraryDialog'] = openDialog;
+    window['cff_closeLibraryDialog'] = closeDialog;
+    window['cff_getTemplate'] = getTemplate;
+    window['cff_templatesInCategory'] = displayTemplates;
+    window['cff_filteringFormsByText'] = formsByText;
+	window['cff_displayAIGenerator'] = displayAIGenerator;
+    window['cff_previewTemplate'] = cff_previewTemplate;
+    window['cff_closePreview'] = cff_closePreview;
+    window['cff_selectFromPreview'] = cff_selectFromPreview;
+
+    // Open the dialog if it is in the correct section:
+    if (/cp_calculated_fields_form_sub_new/i.test(document.location.search)) {
+        cff_openLibraryDialog(true);
+        if (/ai=1/i.test(document.location.search)) $('.cff-form-library-ai-forms a').trigger('click');
+    }
+});

@@ -1,0 +1,619 @@
+<?php
+if (! is_admin() || ! current_user_can(apply_filters('cpcff_forms_edition_capability', 'manage_options'))) {
+    echo 'Direct access not allowed.';
+    exit;
+}
+
+require_once CP_CALCULATEDFIELDSF_BASE_PATH . '/inc/cpcff_admin_ai_entry_searcher.inc.php';
+
+if (!defined('CP_CALCULATEDFIELDSF_ID')) {
+    define('CP_CALCULATEDFIELDSF_ID', ((!empty($_GET["cal"]) && is_numeric($_GET["cal"])) ? intval($_GET["cal"]) : 0));
+}
+
+/**
+ * Process the submissions list
+ */
+
+global $wpdb;
+$message = "";
+
+if (
+    isset($_REQUEST['cff_toggle_details']) &&
+    check_admin_referer('cff-toggle-details', '_cpcff_nonce')
+) {
+    update_option('cff-show-entry-details', ((! empty($_REQUEST['show_details'])) ? 1 : 0));
+    exit;
+} elseif (
+    ! empty($_GET['ld']) &&
+    check_admin_referer('cff-delete-submission', '_cpcff_nonce')
+) {
+    $user_id = get_current_user_id();
+    $items_deleted = [];
+    if (is_array($_GET['ld'])) {
+        foreach ($_GET['ld'] as $entry_to_delete) {
+            if (is_numeric($entry_to_delete) && ($entry_to_delete = intval($entry_to_delete)) !== 0) {
+                CPCFF_SUBMISSIONS::delete($entry_to_delete);
+                $items_deleted[] = $entry_to_delete;
+            }
+        }
+
+        if ($items_deleted && count($items_deleted) > 0) {
+            error_log('Calculated Fields Form: List of submissions deleted by user ' . $user_id . ' - IDs: ' . implode(', ', $items_deleted));
+        }
+    } elseif (is_numeric($_GET['ld']) && ($entry_to_delete = intval($_GET['ld'])) !== 0) {
+        CPCFF_SUBMISSIONS::delete($entry_to_delete);
+        $items_deleted[] = $entry_to_delete;
+        error_log('Calculated Fields Form: Submission with ID ' . $entry_to_delete . ' deleted by user ' . $user_id);
+    }
+
+    if (count($items_deleted) > 0) {
+        $message = __('Item(s) deleted', 'calculated-fields-form');
+    }
+} elseif (
+    isset($_GET['da']) &&
+    check_admin_referer('cff-delete-all-submissions', '_cpcff_nonce')
+) {
+    $events = $wpdb->get_results('SELECT id FROM ' . CP_CALCULATEDFIELDSF_POSTS_TABLE_NAME);
+    foreach ($events as $event) {
+        CPCFF_SUBMISSIONS::delete($event->id);
+    }
+    error_log('Calculated Fields Form: All submissions deleted by user ' . get_current_user_id());
+    $message = __('Item(s) deleted', 'calculated-fields-form');
+}  elseif(
+	isset($_GET['lu']) &&
+	is_numeric($_GET['lu']) &&
+	( $lu = intval($_GET['lu']) ) !== 0 &&
+	check_admin_referer('cff-paid-status', '_cpcff_nonce')
+) {
+	$status = (! empty($_GET["status"]) && is_numeric($_GET["status"]) && intval($_GET["status"])) ? 1 : 0;
+	if (CPCFF_SUBMISSIONS::update($lu, array('paid' => $status))) {
+		/**
+		 * Action called after change the payment status of event
+		 * The event's id and new payment's status are passed as parameters
+		 */
+		do_action('cpcff_change_payment_status', $lu, $status);
+		$message = __("Item updated", 'calculated-fields-form');
+	}
+} else {
+    check_admin_referer('cff-submissions-list', '_cpcff_nonce');
+}
+
+do_action('cpcff_additional_submissions_actions', $_GET);
+
+$form_list_opts = '';
+$form_list = CPCFF_FORM::forms_list(['no_form' => true]);
+
+foreach ($form_list as $form) {
+    $selected_opt = '';
+    if ($form->id == CP_CALCULATEDFIELDSF_ID) {
+        $current_form = $form;
+        $selected_opt = 'SELECTED';
+    }
+    $form_list_opts .= '<option value="' . esc_attr($form->id) . '" ' . esc_attr($selected_opt) . '>' . esc_html($form->id . ' - ' . $form->form_name) . '</option>';
+}
+
+// For pagination.
+$current_page       = max(1, ((isset($_GET["p"]) && is_numeric($_GET["p"])) ? intval($_GET["p"]) : 0));
+$total_events       = 0;
+$total_pages        = 1;
+$records_per_page   = 50;
+$events             = [];
+
+// ========== FOR BASIC FILTERING ==========
+if ( ! isset($_GET['cff-ai-searcher-active']) ):
+	$cond = '';
+	if (
+		isset($_GET["search"]) &&
+		($to_search = sanitize_text_field(wp_unslash($_GET["search"]))) !== ''
+	) {
+		$escaped_to_search = '%' . $wpdb->esc_like($to_search) . '%';
+		$cond .= $wpdb->prepare(" AND (data like %s OR paypal_post LIKE %s)", $escaped_to_search, $escaped_to_search);
+	}
+
+	if (
+		isset($_GET["dfrom"]) &&
+		($from_date = sanitize_text_field(wp_unslash($_GET["dfrom"]))) !== '' &&
+		strtotime($from_date)
+	) {
+		$cond .= $wpdb->prepare(" AND (`time` >= %s)", $from_date . ' 00:00:00');
+	}
+
+	if (
+		isset($_GET["dto"]) &&
+		($to_date = sanitize_text_field(wp_unslash($_GET["dto"]))) !== '' &&
+		strtotime($to_date)
+	) {
+		$cond .= $wpdb->prepare(" AND (`time` <= %s)", $to_date . ' 23:59:59');
+	}
+
+	if ( isset($_GET['paid']) ) {
+		$cond .= " AND `paid`=1";
+	}
+
+	// If there is not selected a form, get only the entries corresponding to existing forms
+	$_from_where_clauses = $wpdb->prepare(
+		"FROM " . CP_CALCULATEDFIELDSF_POSTS_TABLE_NAME .
+			" LEFT JOIN " . $wpdb->prefix . CP_CALCULATEDFIELDSF_FORMS_TABLE .
+			" ON (" . CP_CALCULATEDFIELDSF_POSTS_TABLE_NAME . ".formid=" . $wpdb->prefix . CP_CALCULATEDFIELDSF_FORMS_TABLE . ".id) WHERE formid" . (CP_CALCULATEDFIELDSF_ID == 0 ? "<>" : "=") . "%d",
+		CP_CALCULATEDFIELDSF_ID
+	) . $cond;
+
+	$counter_events_query = "SELECT COUNT(" . CP_CALCULATEDFIELDSF_POSTS_TABLE_NAME . ".id) " . $_from_where_clauses;
+	$counter_events_query = apply_filters('cpcff_count_messages_query', $counter_events_query);
+	$total_events = $wpdb->get_var($counter_events_query);
+	$total_pages  = ceil($total_events / $records_per_page);
+
+	$events_query = "SELECT DISTINCT " . CP_CALCULATEDFIELDSF_POSTS_TABLE_NAME . ".*, IFNULL(" . $wpdb->prefix . CP_CALCULATEDFIELDSF_FORMS_TABLE . ".id, 0) as form_exists " . $_from_where_clauses . " ORDER BY " . CP_CALCULATEDFIELDSF_POSTS_TABLE_NAME . ".id DESC LIMIT " . (($current_page - 1) * $records_per_page) . "," . $records_per_page;
+
+	/**
+	 * Allows modify the query of messages, passing the query as parameter
+	 * returns the new query
+	 */
+	$events_query = apply_filters('cpcff_messages_query', $events_query);
+	$events = CPCFF_SUBMISSIONS::populate($events_query);
+endif;
+// ========== END BASIC FILTERING ==========
+
+// ========== FOR AI SEARCH FILTERING ==========
+if ( isset($_GET['cff-ai-searcher-active']) ):
+	$events_ids = CPCFF_AI_ENTRY_SEARCHER::get_messages_by_ai_searcher();
+	if ($events_ids === false) {
+		$message = __('Your previous AI search has expired. Please enter a new search term', 'calculated-fields-form');
+	} elseif(!empty($events_ids)) {
+		$counter_events_query = "SELECT COUNT(*) FROM " . CP_CALCULATEDFIELDSF_POSTS_TABLE_NAME . " WHERE id IN (" . implode(',', $events_ids) . ")";
+		$counter_events_query = apply_filters('cpcff_count_messages_query', $counter_events_query);
+		$total_events = $wpdb->get_var($counter_events_query);
+		$total_pages  = ceil($total_events / $records_per_page);
+
+		$events_query = "SELECT DISTINCT p.* FROM " . CP_CALCULATEDFIELDSF_POSTS_TABLE_NAME . " p WHERE id IN (" . implode(',', $events_ids) . ") ORDER BY p.id DESC LIMIT " . (($current_page - 1) * $records_per_page) . "," . $records_per_page;
+
+		/**
+		 * Allows modify the query of messages, passing the query as parameter
+		 * returns the new query
+		 */
+		$events_query = apply_filters('cpcff_messages_query', $events_query);
+		$events = CPCFF_SUBMISSIONS::populate($events_query);
+	}
+endif;
+// ========== END AI SEARCH FILTERING ==========
+
+if ($message) {
+    echo "<div id='setting-error-settings_updated' class='updated settings-error cff-admin-message'><p><strong>" . esc_html($message) . "</strong></p></div>";
+}
+?>
+<div class="wrap cff-entries-backend">
+    <div class="cff-navigation-main-menu">
+		<?php
+		require_once CP_CALCULATEDFIELDSF_BASE_PATH . '/inc/cpcff_using_ai_agents.inc.php';
+		?>
+		<a onclick="document.location='admin.php?page=cp_calculated_fields_form';" class="button-secondary"><?php esc_html_e('Back to forms list...', 'calculated-fields-form'); ?></a>
+	</div>
+    <div style="clear:both;"></div>
+
+	<h1 style="display:block;margin-bottom:20px;"><?php esc_html_e( 'Calculated Fields Form - Message List', 'calculated-fields-form' ); ?></h1>
+	<?php CPCFF_AI_ENTRY_SEARCHER::maybe_enqueue_assets(); ?>
+	<div class="postbox">
+		<div class="postbox-header">
+			<?php CPCFF_AI_ENTRY_SEARCHER::render_toggle(); ?>
+		</div>
+		<div class="inside">
+			<?php CPCFF_AI_ENTRY_SEARCHER::render_ai_panel(); ?>
+			<div id="cff-basic-filter" style="display:<?php echo (CPCFF_AI_ENTRY_SEARCHER::is_active() ? 'none' : 'block'); ?>;">
+				<h3><?php esc_html_e( 'This message list is from', 'calculated-fields-form' ); ?>: <?php echo ((!empty($myform)) ? esc_html($myform->form_name) : esc_html__('every form', 'calculated-fields-form')); ?></h3>
+				<form action="admin.php" method="get" class="cff-filter-entries" style="display:flex; flex-wrap:wrap; gap:10px;align-items:center;">
+					<input type="hidden" name="page" value="cp_calculated_fields_form" />
+					<input type="hidden" name="list" value="1" />
+					<div style="display:inline-block; white-space:nowrap;">
+						<?php esc_html_e('Search for', 'calculated-fields-form'); ?>: <input type="text" name="search" value="<?php echo esc_attr((! empty($to_search)) ? $to_search : ''); ?>" />
+					</div>
+					<div style="display:inline-block; white-space:nowrap;" class="cff-filter-left-column">
+						<?php esc_html_e('From', 'calculated-fields-form'); ?>: <input type="text" id="dfrom" name="dfrom" value="<?php echo esc_attr((! empty($from_date)) ? $from_date : ''); ?>" />
+					</div>
+					<div style="display:inline-block; white-space:nowrap;" class="cff-filter-right-column">
+						<?php esc_html_e('To', 'calculated-fields-form'); ?>: <input type="text" id="dto" name="dto" value="<?php echo esc_attr(! empty($to_date) ? $to_date : ''); ?>" />
+					</div>
+					<div style="display:inline-block; white-space:nowrap;">
+						<?php esc_html_e('In', 'calculated-fields-form'); ?>: <select id="cal" name="cal">
+							<option value="0"><?php esc_html_e('All forms', 'calculated-fields-form'); ?></option><?php echo $form_list_opts; ?>
+						</select>
+					</div>
+					<div style="display:inline-block; white-space:nowrap;">
+						<label for="paid"><input type="checkbox" id="paid" name="paid" <?php if(isset($_GET['paid'])) print 'CHECKED'; ?> /><?php esc_html_e( 'Paid Only', 'calculated-fields-form' ); ?></label>
+					</div>
+					<?php
+					/**
+					 * Additional filtering options, allows to add new fields for filtering the results
+					 */
+					do_action('cpcff_messages_filters');
+					?>
+					<nobr style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;">
+						<input type="submit" name="ds" value="<?php esc_attr_e('Filter', 'calculated-fields-form'); ?>" class="button button-primary" style="min-width:100px;" />
+						<input type="button" value="<?php esc_attr_e('Export to CSV', 'calculated-fields-form'); ?>" class="button button-secondary cff-upgrade-button" onclick="cff_open_upgrade_confirm();" />
+						<input type="button" name="cp_calculatedfieldsf_reset" value="<?php esc_attr_e('Reset', 'calculated-fields-form'); ?>" class="button button-secondary" onclick="cp_reset_filter_form();" />
+					</nobr>
+					<input type="hidden" name="_cpcff_nonce" value="<?php echo wp_create_nonce('cff-submissions-list'); ?>" />
+				</form>
+            </div>
+        </div>
+    </div>
+    <br />
+
+    <?php
+    $_ai_active = isset($_GET['cff-ai-searcher-active']);
+	$_page_add_args = [
+		'cal'         => CP_CALCULATEDFIELDSF_ID,
+		'list'        => 1,
+		'_cpcff_nonce' => wp_create_nonce('cff-submissions-list'),
+	];
+	if ($_ai_active) {
+		$_page_add_args['cff-ai-searcher-active'] = 1;
+	} else {
+		if (isset($to_search) && $to_search !== '') $_page_add_args['search'] = $to_search;
+		if (isset($from_date) && $from_date !== '') $_page_add_args['dfrom'] = $from_date;
+		if (isset($to_date) && $to_date !== '') $_page_add_args['dto'] = $to_date;
+		if (isset($_GET['paid'])) $_page_add_args['paid'] = 1;
+	}
+
+	$page_links = CPCFF_AUXILIARY::paginate_links(
+        [
+            'base'         => 'admin.php?page=cp_calculated_fields_form&%_%',
+            'format'       => 'p=%#%',
+            'total'        => $total_pages,
+            'current'      => $current_page,
+            'show_all'     => false,
+            'end_size'     => 1,
+            'mid_size'     => 2,
+            'prev_text'    => __('&laquo; Previous', 'calculated-fields-form'),
+            'next_text'    => __('Next &raquo;', 'calculated-fields-form'),
+			'add_args'     => $_page_add_args,
+        ]
+    );
+
+    $page_links_top = '<div style="text-align:right;">' .
+        '<div style="float:left;">
+        <label><input type="checkbox" name="show_details" onchange="cp_toggle_details(this);" ' . ((get_option('cff-show-entry-details', 0)) ? 'CHECKED' : '') . '> ' . esc_html__('Show all entry details', 'calculated-fields-form') . '</label>' .
+        '</div>' .
+        $page_links .
+        '<div style="clear:both;"></div></div>';
+
+    $page_links_bottom = '<div style="text-align:right;">' .
+        $page_links .
+        '</div>';
+
+    echo $page_links_top;
+    ?>
+    <div id="dex_printable_contents" style="padding:10px 0;">
+        <table class="wp-list-table widefat pages cff-custom-table cff-events-list <?php echo ((get_option('cff-show-entry-details', 0)) ? 'cff-event-show-details' : ''); ?>" cellspacing="0">
+            <thead>
+                <tr>
+                    <th style="font-weight:bold;"><input type="checkbox" onclick="cp_checkAllItems( this )" style="margin-left:8px;"></th>
+                    <th style="padding-left:7px;font-weight:bold;"><?php esc_html_e('ID', 'calculated-fields-form'); ?></th>
+                    <th style="padding-left:7px;font-weight:bold;"><?php esc_html_e('Form', 'calculated-fields-form'); ?></th>
+                    <th style="padding-left:7px;font-weight:bold;"><?php esc_html_e('Date', 'calculated-fields-form'); ?></th>
+                    <th style="padding-left:7px;font-weight:bold;"><?php esc_html_e('IP Address', 'calculated-fields-form'); ?></th>
+                    <th style="padding-left:7px;font-weight:bold;"><?php esc_html_e('Email', 'calculated-fields-form'); ?><a href="javascript:void(0);" onclick="cff_open_upgrade_confirm();" style="text-decoration:none;margin-left:5px;">&#128712;</a></th>
+                    <th style="padding-left:7px;font-weight:bold;"><?php esc_html_e('Payment info', 'calculated-fields-form'); ?></th>
+                    <?php
+                    /**
+                     * Action called to include new headers in the table of messages
+                     */
+                    do_action('cpcff_messages_list_header');
+                    ?>
+                    <th style="padding-left:7px;font-weight:bold;" class="cff-events-actions"><?php esc_html_e('Options', 'calculated-fields-form'); ?></th>
+                </tr>
+            </thead>
+            <tbody id="the-list">
+                <?php
+                if (empty($events)) echo '<tr><td colspan="100%" style="text-align:center;">' . esc_html__('No events found.', 'calculated-fields-form') . '</td></tr>';
+                $year_month = '';
+                foreach ($events as $event) if (isset($event)) {
+					$serialized_entry_details = $event->paypal_post;
+					$entry_details = unserialize($serialized_entry_details, ['allowed_classes' => false]);
+                    $time = strtotime($event->time);
+                    $current_year_month = date('Y-m', $time);
+                    if ($year_month !== $current_year_month) {
+                        $year_month = $current_year_month;
+                        echo '<tr><td colspan="100%" style="font-weight:bold;text-align:center;background-color:#ffeebc;text-transform:uppercase;border-bottom: 1px solid #c3c4c7;">' . esc_html(date_i18n('F Y', $time)) . '</td></tr>';
+                    }
+                ?>
+                    <tr id="cff_event_<?php echo esc_attr($event->id);?>" class='alternate author-self status-draft format-default iedit' valign="top">
+                        <td><input type="checkbox" value="<?php echo esc_attr($event->id); ?>" class="cp_item" style="margin-left:8px;"></td>
+                        <td><?php echo esc_html($event->id); ?></td>
+                        <td><?php echo esc_html($event->formid); ?></td>
+                        <td><?php echo esc_html(date('Y-m-d H:i', $time)); ?></td>
+                        <td><?php echo '<a href="' . esc_url('http://whatismyipaddress.com/ip/' . $event->ipaddr) . '" target="_blank">' . esc_html($event->ipaddr) . '</a>'; ?></td>
+                        <td>-</td>
+                        <td>
+						<?php
+							if ( $entry_details !== false && !empty($entry_details['final_price']) ) {
+								echo '<div style="margin-bottom:10px;"><span style="font-weight:600;">' . esc_html__('Final price:', 'calculated-fields-form') . '</span><br>' . esc_html($entry_details['final_price']) . '</div>';
+							}
+							if ($event->paid) {
+								if ( $entry_details !== false && !empty( $entry_details[ 'paypal_data' ] ) ) {
+									echo '<span style="color:#00aa00;font-weight:bold"><a href="javascript:void(0);" onclick="cp_moreInfo(this);">'.esc_html__("Paid", 'calculated-fields-form' ).'[+]</a></span><div class="paypal_data" style="display:none;">'.str_replace("\n", "<br>", esc_html($entry_details[ 'paypal_data' ])).'</div>';
+								} else {
+									echo '<span style="color:#00aa00;font-weight:bold">'.esc_html__("Paid", 'calculated-fields-form' ).'</span>';
+								}
+							} else {
+								echo '<span style="color:#ff0000;font-weight:bold">'.esc_html__("Not Paid", 'calculated-fields-form' ).'</span>';
+							}
+						?>
+						</td>
+                        <?php
+                        /**
+                         * Action called to add related data to the message
+                         * The row is passed as parameter
+                         */
+                        do_action('cpcff_message_row_data', $event);
+                        ?>
+                        <td class="cff-events-actions">
+                            <?php
+                            $buttons = '';
+                            $buttons .= '<input type="button" name="caldelete_' . esc_attr($event->id) . '" value="' . esc_attr__('Delete', 'calculated-fields-form') . '" onclick="cp_deleteMessageItem(' . esc_attr($event->id) . ', ' . esc_attr($event->formid) . ');" class="button-secondary" />' .
+
+								(($event->paid)
+									? '<input type="button" name="calmanage_' . esc_attr($event->id) . '" value="' . esc_attr__('Change to NOT PAID', 'calculated-fields-form') . '" onclick="cp_updateMessageItem(' . esc_attr($event->id) . ',0);" class="button-secondary" />'
+									: '<input type="button" name="calmanage_' . esc_attr($event->id) . '" value="' . esc_attr__('Change to PAID', 'calculated-fields-form') . '" onclick="cp_updateMessageItem(' . esc_attr($event->id) . ',1);" class="button-secondary" />'
+                                ) .
+
+                                '<input type="button" value="' . esc_attr__('Change Payment Status', 'calculated-fields-form') . '" onclick="cff_open_upgrade_confirm();" class="button-secondary cff-upgrade-button" />' .
+                                '<input type="button" value="' . esc_attr__('Edit (Raw)', 'calculated-fields-form') . '" onclick="cff_open_upgrade_confirm();" class="button-secondary cff-upgrade-button" />' .
+                                '<input type="button" value="' . esc_attr__('Send Mails', 'calculated-fields-form') . '" onclick="cff_open_upgrade_confirm();" class="button-secondary cff-upgrade-button" />';
+
+                            echo apply_filters('cpcff_message_row_buttons', $buttons, $event);
+                            ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="100" style="border-top:1px solid #c3c4c7;border-bottom:1px solid #c3c4c7;">
+                            <div class="cff-event-data">
+                                <div class="cff-event-data-handle" onclick="this.closest('.cff-event-data').classList.toggle('cff-event-show-details');" title="<?php esc_attr_e('Show/hide details', 'calculated-fields-form'); ?>">
+                                    <hr />
+                                </div>
+                                <div class="cff-event-data-details">
+                                    <?php
+                                    echo '<template shadowrootmode="open">'.str_replace("\n", "<br />", wp_kses_post(wp_unslash($event->data))).'</template>';
+
+									// Support reapeaters.
+									$print_links = function($_field_name, $_field_value) use (&$print_links){
+										if (is_array($_field_value) ) {
+											if (preg_match('/fieldname\d+_url/', $_field_name)) {
+												$_urls = $_field_value;
+											} else {
+												foreach ($_field_value as $_key => $_value) {
+													$print_links( $_key, $_value );
+												}
+											}
+										}
+
+										if ( ! empty($_urls) ) {
+											foreach ($_urls as $_url) {
+												print '<p><a href="' . esc_url($_url) . '" target="_blank">' . esc_html($_url) . '</a></p>';
+											}
+										}
+									};
+
+                                    // Add links
+                                    if ($entry_details !== false) {
+                                        if (preg_match('/fieldname\d+_url/', $serialized_entry_details)) {
+                                            foreach ($entry_details as $_key => $_value) {
+												$print_links( $_key, $_value );
+                                            }
+                                        }
+
+                                        echo '</div>';
+                                        echo '<div class="cff-event-data-footer">';
+                                        echo '<hr />';
+                                        if (!empty($entry_details['from_page'])) {
+                                            echo '<p>' . esc_html__('Form Page', 'calculated-fields-form') . ': <a href="' . esc_url($entry_details['from_page']) . '" target="_blank">' . esc_html($entry_details['from_page']) . '</a></p>';
+                                        }
+                                    }
+                                    do_action('cpcff_message_additional_details', $event);
+                                    ?>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                <?php } ?>
+            </tbody>
+        </table>
+    </div>
+    <?php
+    echo $page_links_bottom;
+    ?>
+    <p class="submit"><input type="button" name="pbutton" value="<?php esc_attr_e('Delete all checked', 'calculated-fields-form'); ?>" onclick="cp_deleteAllTicked();" class="button-secondary" /> <input type="button" name="pbutton" value="<?php esc_attr_e('Print', 'calculated-fields-form'); ?>" onclick="cp_do_dexapp_print();" class="button-secondary" /> <span style="display:inline-block;float:right;text-align:right;"><input type="button" name="pbutton" value="<?php esc_attr_e('Delete all entries from all forms', 'calculated-fields-form'); ?>" onclick="cp_deleteAll();" class="button-secondary" style="background-color:#951717;border-color:#951717;color:white;" /><br><i><?php esc_html_e('Caution: "Delete all" erases all submissions in the database.', 'calculated-fields-form'); ?></i></span></p>
+    <style type="text/css">
+        div#cff-upgrade-frame { display: flex; align-items: center; background: #fffaf4; border: 1px solid #F0AD4E; padding: 16px 20px; margin: 20px 0; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); gap: 16px; height: auto; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; } div#cff-upgrade-frame .cff-plugin-promote { width: 100%; flex-grow: 1; display: block; } div#cff-upgrade-frame .cff-premium-label { margin-bottom: 2px; font-weight: 600; color: #495057; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; } div#cff-upgrade-frame .cff-premium-title { font-size: 17px; font-weight: 800; color: #212529; margin-bottom: 4px; line-height: 1.2; } div#cff-upgrade-frame .cff-premium-desc { font-size: 13px; color: #495057; margin-bottom: 10px; line-height: 1.4; } div#cff-upgrade-frame .cff-premium-actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; } @media screen and (max-width:710px) { div#cff-upgrade-frame { display: none; } }
+    </style>
+    <div id="cff-upgrade-frame">
+        <div class="cff-plugin-promote">
+            <div class="cff-premium-label"><?php esc_html_e( 'Premium Features', 'calculated-fields-form' ); ?></div>
+            <div class="cff-premium-desc">
+                <?php
+                esc_html_e('The commercial version of the "Calculated Fields Form" plugin allows you to add a summary of the information collected by the form on the "Thank You Page" content, manage payments, send user confirmation emails, analyze data by using AI agents, and much more.', 'calculated-fields-form');
+                ?>
+            </div>
+            <div class="cff-premium-title">
+                <?php esc_html_e('Pay only ONCE, use it FOREVER', 'calculated-fields-form'); ?>
+            </div>
+            <div class="cff-premium-desc">
+                <?php esc_html_e('No additional charges, ', 'calculated-fields-form'); ?> <span style="font-weight: 600; color: #228be6;"><?php esc_html_e('lifetime updates', 'calculated-fields-form'); ?></span>, <?php esc_html_e('one copy for all your websites', 'calculated-fields-form'); ?> <a href="https://cff.dwbooster.com/download#comparison" target="_blank" style="text-decoration:none;" class="button-primary"><?php esc_html_e('Get it now', 'calculated-fields-form'); ?></a>
+            </div>
+        </div>
+    </div>
+
+    <script data-category="functional" type="text/javascript">
+        (function() {
+            let $ = fbuilderjQuery;
+            $(function() {
+                $("#dfrom").datepicker({
+                    dateFormat: 'yy-mm-dd'
+                });
+                $("#dto").datepicker({
+                    dateFormat: 'yy-mm-dd'
+                });
+            });
+        })();
+
+        function cff_buildActionURL(baseParams, options) {
+            options = options || {};
+            const source = new URLSearchParams(window.location.search);
+            const target = new URLSearchParams();
+            // Mode-aware preservation: in AI mode, preserve the AI flag (the filter
+            // state lives in a transient). In basic mode, preserve classic filter
+            // params. Both modes preserve cal, list, and p.
+            const aiMode = source.has('cff-ai-searcher-active');
+            const preserved = aiMode
+                ? ['cal', 'list', 'cff-ai-searcher-active', 'p']
+                : ['cal', 'list', 'search', 'dfrom', 'dto', 'paid', 'p'];
+            for (let i = 0; i < preserved.length; i++) {
+                const k = preserved[i];
+                if (source.has(k)) target.set(k, source.get(k));
+            }
+            for (const k in baseParams) {
+                if (Object.prototype.hasOwnProperty.call(baseParams, k)) {
+                    const v = baseParams[k];
+                    if (Array.isArray(v)) {
+                        v.forEach(function(item) { target.append(k, item); });
+                    } else {
+                        target.set(k, v);
+                    }
+                }
+            }
+            if (options.preserveScroll === true && typeof cff_getScrollForURL === 'function') {
+                const scrollStr = cff_getScrollForURL();
+                if (scrollStr) {
+                    const cleaned = String(scrollStr).replace(/^[?&]+/, '');
+                    if (cleaned) {
+                        const scrollParams = new URLSearchParams(cleaned);
+                        scrollParams.forEach(function(value, key) {
+                            target.set(key, value);
+                        });
+                    }
+                }
+            }
+            return 'admin.php?page=cp_calculated_fields_form&' + target.toString();
+        }
+
+        function cp_checkAllItems(e) {
+            try {
+                let $ = fbuilderjQuery;
+                $(e).closest('table').find('input[type="checkbox"]').prop('checked', $(e).prop('checked'));
+            } catch (err) {}
+        }
+
+        function cp_deleteMessageItem(id, form_id) {
+            let title = "<?php echo esc_js(__('Delete entry', 'calculated-fields-form')); ?>";
+            let yes_button = "<?php echo esc_js(__('Yes, delete it', 'calculated-fields-form')); ?>";
+            let no_button = "<?php echo esc_js(__('No, keep it', 'calculated-fields-form')); ?>";
+            let message = "<?php echo esc_js(__('You are about to delete the item with id: ', 'calculated-fields-form')); ?>" + id + " <?php echo esc_js(__('in the form: ', 'calculated-fields-form')); ?>" + form_id + "<br><b><?php echo esc_js(__('Are you sure that you want to delete this item?', 'calculated-fields-form')); ?></b>";
+
+            fbuilderjQuery.fbuilder.confirmationDialog(title, message, yes_button, no_button, function() {
+                document.location = cff_buildActionURL({
+                    cal: <?php echo CP_CALCULATEDFIELDSF_ID; ?>,
+                    list: 1,
+                    ld: id,
+                    r: Math.random(),
+                    _cpcff_nonce: '<?php echo wp_create_nonce( 'cff-delete-submission' ); ?>'
+                }, { preserveScroll: true });
+                return true;
+            });
+        }
+
+        function cp_deleteAllTicked() {
+            try {
+                let $ = fbuilderjQuery,
+				    ids=[];
+
+			    $( '.cp_item:checked' ).each( function(){ ids.push( this.value ); } );
+			    if( ids.length ) {
+                    let title = "<?php echo esc_js(__('Delete entries', 'calculated-fields-form')); ?>";
+                    let yes_button = "<?php echo esc_js(__('Yes, delete them', 'calculated-fields-form')); ?>";
+                    let no_button = "<?php echo esc_js(__('No, keep them', 'calculated-fields-form')); ?>";
+                    let message = "<?php echo esc_js(__('You are about to delete the checked item(s) with id(s): ', 'calculated-fields-form')); ?>" + ids.join(', ') + "<br><b><?php echo esc_js(__('Are you sure that you want to delete the item(s)?', 'calculated-fields-form')); ?></b>";
+
+                    $.fbuilder.confirmationDialog(title, message, yes_button, no_button, function() {
+                        document.location = cff_buildActionURL({
+                            cal: <?php echo CP_CALCULATEDFIELDSF_ID; ?>,
+                            list: 1,
+                            'ld[]': ids,
+                            r: Math.random(),
+                            _cpcff_nonce: '<?php echo wp_create_nonce( 'cff-delete-submission' ); ?>'
+                        });
+                        return true;
+                    });
+                } else {
+					$.fbuilder.confirmationDialog('<?php esc_attr_e( 'Message', 'calculated-fields-form' ); ?>', '<?php esc_attr_e( 'Please select at least one item to delete.', 'calculated-fields-form' ); ?>', 'Ok', false);
+                }
+            } catch (err) {}
+        }
+
+        function cp_deleteAll() {
+            try {
+                let title = "<?php echo esc_js(__('Delete all entries from all forms', 'calculated-fields-form')); ?>";
+                let yes_button = "<?php echo esc_js(__('Yes, delete them', 'calculated-fields-form')); ?>";
+                let no_button = "<?php echo esc_js(__('No, keep them', 'calculated-fields-form')); ?>";
+                let message = "<b><?php echo esc_js(__('Are you sure that you want to delete all items from all the forms? Please note that you will not be able to recover them.', 'calculated-fields-form')); ?></b>" + "<label for='cp_confirm_delete_all' style='display:block;margin-top:20px;'>" + <?php echo wp_json_encode(__('Enter the <b>"delete"</b> word to confirm:', 'calculated-fields-form')); ?> + "</label><input type='text' id='cp_confirm_delete_all' style='width:100%;margin-top:10px;' />";
+
+                fbuilderjQuery.fbuilder.confirmationDialog(title, message, yes_button, no_button, function() {
+                    let confirmation = jQuery('#cp_confirm_delete_all').val();
+                    if (String(confirmation).toLowerCase().trim() != 'delete') {
+                        alert(<?php print wp_json_encode(__('Please enter the "delete" word to confirm.', 'calculated-fields-form')); ?>);
+                        return false;
+                    }
+                    document.location = cff_buildActionURL({
+                        cal: <?php echo CP_CALCULATEDFIELDSF_ID; ?>,
+                        list: 1,
+                        da: 1,
+                        r: Math.random(),
+                        _cpcff_nonce: '<?php echo wp_create_nonce( 'cff-delete-all-submissions' ); ?>'
+                    });
+                    return true;
+                });
+            } catch (err) {}
+        }
+
+		function cp_updateMessageItem(id,status) {
+		    document.location = cff_buildActionURL({
+		        cal: <?php echo esc_js(CP_CALCULATEDFIELDSF_ID); ?>,
+		        list: 1,
+		        status: status,
+		        lu: id,
+		        r: Math.random(),
+		        _cpcff_nonce: '<?php echo esc_js(wp_create_nonce( 'cff-paid-status' )); ?>'
+		    }, { preserveScroll: true });
+	    }
+
+        function cp_do_dexapp_print() {
+            w = window.open('', '_blank', 'noopener,noreferrer');
+            w.document.write("<style>table{border:0 !important;width:100%;}th{border-bottom:2px solid black !important;text-align:left}td{padding-left:10px;border-bottom:1px solid black !important;} img{max-width:100%;} table tr.alternate td:first-child, table thead tr th:first-child, table thead tr th:last-child,hr,.cff-events-actions{display:none;}</style>" + document.getElementById('dex_printable_contents').innerHTML);
+            w.document.close();
+            w.focus();
+            w.print();
+            w.close();
+        }
+
+        function cp_toggle_details(e) {
+            fbuilderjQuery.ajax({
+                url: '<?php echo esc_url(admin_url('admin.php?page=cp_calculated_fields_form')); ?>',
+                type: 'GET',
+                data: {
+                    _cpcff_nonce: '<?php echo esc_js(wp_create_nonce('cff-toggle-details')); ?>',
+                    list: 1,
+                    cal: 0,
+                    cff_toggle_details: 1,
+                    show_details: e.checked ? 1 : 0
+                }
+            });
+            document.getElementsByClassName('cff-events-list')[0].classList[e.checked ? 'add' : 'remove']('cff-event-show-details');
+        }
+
+        function cff_open_upgrade_confirm() {
+            if (confirm("<?php print esc_js(__('These features aren\'t available in this version. Do you want to open the plugin\'s page to check other versions?', 'calculated-fields-form')); ?>"))
+                window.open('https://cff.dwbooster.com/download#comparison', '_blank');
+        }
+
+        function cp_reset_filter_form() {
+            document.location = 'admin.php?page=cp_calculated_fields_form&cal=0&list=1&_cpcff_nonce=<?php echo wp_create_nonce('cff-submissions-list'); ?>';
+        }
+    </script>
