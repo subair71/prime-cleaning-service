@@ -32,3 +32,19 @@ register_nav_menus(array(
     'mobile'  => __('Mobile Navigation', 'kadence-child'),
     'footer'  => __('Footer Navigation', 'kadence-child'),
 ));
+
+/**
+ * Angular-inspired visual overrides. Loaded after the child theme and plugin CSS.
+ * No templates, page content, pricing logic, or estimator handlers are changed.
+ */
+add_action('wp_enqueue_scripts', function () {
+    $file = get_stylesheet_directory() . '/prime-angular-redesign.css';
+    if (is_readable($file)) {
+        wp_enqueue_style(
+            'prime-angular-redesign',
+            get_stylesheet_directory_uri() . '/prime-angular-redesign.css',
+            array('kadence-child-style'),
+            (string) filemtime($file)
+        );
+    }
+}, 100);
