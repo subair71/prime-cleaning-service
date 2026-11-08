@@ -13,6 +13,8 @@
   --prime-teal-border: #99f6e4;
   --prime-teal-glow: rgba(13, 148, 136, 0.22);
   --prime-teal-gradient: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
+  --prime-red: var(--prime-teal);
+  --prime-red-hover: var(--prime-teal-hover);
 
   /* Neutrals & Text Colors */
   --prime-bg: #f8fafc;
