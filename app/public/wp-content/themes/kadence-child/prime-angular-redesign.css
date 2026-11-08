@@ -420,3 +420,20 @@ body.prime-cleaning-site:not(.wp-admin) .site-branding .site-title::before {colo
  body.prime-cleaning-site:not(.wp-admin) .entry-content .wp-block-cover {border-radius:12px;}
  body.prime-cleaning-site:not(.wp-admin) .entry-content h1 {font-size:clamp(30px,8vw,42px);line-height:1.16;}
 }
+
+/* Inner pages: eliminate Kadence's reserved vertical space before the first page block.
+   Keep the actual page hero, badge, heading and descriptive text untouched. */
+body.prime-cleaning-site.page:not(.home) #inner-wrap,
+body.prime-cleaning-site.page:not(.home) #primary,
+body.prime-cleaning-site.page:not(.home) .content-area,
+body.prime-cleaning-site.page:not(.home) .site-main,
+body.prime-cleaning-site.page:not(.home) article.page,
+body.prime-cleaning-site.page:not(.home) .entry-content-wrap {margin-top:0!important;padding-top:0!important;}
+body.prime-cleaning-site.page:not(.home) .entry-content > :first-child {margin-top:0!important;}
+body.prime-cleaning-site.page:not(.home) .entry-content > .wp-block-group:first-child,
+body.prime-cleaning-site.page:not(.home) .entry-content > .wp-block-cover:first-child {padding-top:clamp(24px,4vw,48px)!important;}
+body.prime-cleaning-site.page:not(.home) .entry-content > .wp-block-group:first-child > :first-child {margin-top:0;}
+@media(max-width:767px){
+ body.prime-cleaning-site.page:not(.home) .entry-content > .wp-block-group:first-child,
+ body.prime-cleaning-site.page:not(.home) .entry-content > .wp-block-cover:first-child {padding-top:24px!important;}
+}
