@@ -390,3 +390,33 @@ body.home .site-branding .site-title::before {color:#fff;}
  body.home .entry-content .wp-block-cover {border-radius:12px;}
  body.home .entry-content h1 {font-size:clamp(30px,8vw,42px);line-height:1.16;}
 }
+
+/* Consistent page shell: remove Kadence-generated title bands across standard pages.
+   Existing page headings INSIDE the content are preserved. */
+body.prime-cleaning-site:not(.wp-admin) .entry-hero,
+body.prime-cleaning-site:not(.wp-admin) .entry-header-wrap,
+body.prime-cleaning-site:not(.wp-admin) .page-header,
+body.prime-cleaning-site:not(.wp-admin) .page-title-wrap,
+body.prime-cleaning-site:not(.wp-admin) .hero-section.entry-hero-section {display:none!important;}
+body.prime-cleaning-site:not(.wp-admin) #primary,
+body.prime-cleaning-site:not(.wp-admin) .content-area,
+body.prime-cleaning-site:not(.wp-admin) .site-main,
+body.prime-cleaning-site:not(.wp-admin) .entry-content-wrap {min-width:0;box-sizing:border-box;}
+body.prime-cleaning-site:not(.wp-admin) .content-bg {background:transparent;box-shadow:none;}
+body.prime-cleaning-site:not(.wp-admin) .entry-content {width:100%;max-width:1184px;margin-inline:auto;box-sizing:border-box;}
+body.prime-cleaning-site:not(.wp-admin) .entry-content :is(img,video,iframe) {max-width:100%;}
+body.prime-cleaning-site:not(.wp-admin) .entry-content :is(.wp-block-columns,.wp-block-column,.wp-block-group) {min-width:0;}
+body.prime-cleaning-site:not(.wp-admin) .entry-content .wp-block-cover {border-radius:16px;overflow:hidden;}
+body.prime-cleaning-site:not(.wp-admin) .entry-content .wp-block-cover__inner-container {min-width:0;max-width:100%;}
+body.prime-cleaning-site:not(.wp-admin) .entry-content .alignwide {max-width:1184px;margin-inline:auto;}
+body.prime-cleaning-site:not(.wp-admin) .entry-content .alignfull {max-width:none;}
+body.prime-cleaning-site:not(.wp-admin) .entry-content h1 {overflow-wrap:break-word;word-break:normal;}
+body.prime-cleaning-site:not(.wp-admin) .header-quote-nav-item>a {background:var(--prime-red)!important;color:#fff!important;border-radius:12px!important;box-shadow:0 2px 8px rgba(1,33,105,.08)!important;}
+body.prime-cleaning-site:not(.wp-admin) .header-quote-nav-item>a:hover {background:var(--prime-red-hover)!important;color:#fff!important;}
+body.prime-cleaning-site:not(.wp-admin) .site-branding .site-title::before {color:#fff;}
+@media(max-width:767px){
+ body.prime-cleaning-site:not(.wp-admin) .entry-content {padding-inline:16px;}
+ body.prime-cleaning-site:not(.wp-admin) .entry-content .wp-block-columns:not(.is-not-stacked-on-mobile) {flex-direction:column;}
+ body.prime-cleaning-site:not(.wp-admin) .entry-content .wp-block-cover {border-radius:12px;}
+ body.prime-cleaning-site:not(.wp-admin) .entry-content h1 {font-size:clamp(30px,8vw,42px);line-height:1.16;}
+}
