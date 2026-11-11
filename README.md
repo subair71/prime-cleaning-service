@@ -2,6 +2,8 @@
 
 A modern, professional WordPress website and interactive cleaning-price estimator built for **Derick’s business, Prime Domestic & Cleaning Services**, based in Malvern East (VIC 3145) and serving Melbourne's metropolitan and eastern suburbs.
 
+**Homepage redesign (11 November 2026):** The existing Kadence child theme now includes the reference-inspired teal homepage and an editable Gutenberg pattern. See [implementation and WordPress setup notes](docs/homepage-redesign.md), the [visual preview](docs/homepage-preview/index.html), and the [desktop screenshot](docs/homepage-preview/prime-homepage-desktop.png). The existing estimator plugin and database are unchanged.
+
 ---
 
 ## 🌟 Highlights

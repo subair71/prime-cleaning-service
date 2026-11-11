@@ -1,0 +1,490 @@
+/*
+Theme Name: Kadence Child - Prime Cleaning
+Theme URI: https://prime-cleaning-service.local
+Description: Premium Modern Child Theme for Prime Domestic & Cleaning Services Melbourne
+Author: Prime Domestic & Cleaning Services
+Template: kadence
+Version: 1.2.0
+Text Domain: kadence-child
+*/
+
+/* -------------------------------------------------------------
+   1. GLOBAL DESIGN TOKENS & SYSTEM VARIABLES
+   ------------------------------------------------------------- */
+:root {
+    /* Brand Navy Palette */
+    --pce-navy-deep: #0a1628;
+    --pce-navy: #162a45;
+    --pce-navy-light: #234168;
+    --pce-navy-surface: #0f1f38;
+
+    /* Brand Teal & Accent Palette */
+    --pce-teal: #0d9488;
+    --pce-teal-dark: #0f766e;
+    --pce-teal-light: #f0fdfa;
+    --pce-teal-border: #99f6e4;
+    --pce-teal-glow: rgba(13, 148, 136, 0.25);
+    --pce-teal-gradient: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
+
+    /* Neutrals & Slate */
+    --pce-slate-900: #0f172a;
+    --pce-slate-800: #1e293b;
+    --pce-slate-700: #334155;
+    --pce-slate-600: #475569;
+    --pce-slate-500: #64748b;
+    --pce-slate-400: #94a3b8;
+    --pce-slate-300: #cbd5e1;
+    --pce-slate-200: #e2e8f0;
+    --pce-slate-100: #f1f5f9;
+    --pce-slate-50: #f8fafc;
+    --pce-white: #ffffff;
+
+    /* Elevation & Shadows */
+    --pce-shadow-xs: 0 1px 2px rgba(15, 23, 42, 0.05);
+    --pce-shadow-sm: 0 2px 4px rgba(15, 23, 42, 0.04), 0 1px 2px rgba(15, 23, 42, 0.03);
+    --pce-shadow-md: 0 6px 12px -2px rgba(15, 23, 42, 0.08), 0 3px 6px -2px rgba(15, 23, 42, 0.04);
+    --pce-shadow-lg: 0 16px 24px -4px rgba(15, 23, 42, 0.08), 0 6px 12px -4px rgba(15, 23, 42, 0.04);
+    --pce-shadow-xl: 0 25px 35px -5px rgba(15, 23, 42, 0.12), 0 10px 15px -5px rgba(15, 23, 42, 0.04);
+
+    /* Radii */
+    --pce-radius-sm: 6px;
+    --pce-radius-md: 10px;
+    --pce-radius-lg: 16px;
+    --pce-radius-xl: 24px;
+    --pce-radius-full: 9999px;
+
+    /* Transitions */
+    --pce-transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+
+    /* Kadence Theme Palette Overrides */
+    --global-palette1: #0d9488 !important; /* Primary Brand Teal */
+    --global-palette2: #0f766e !important; /* Primary Dark */
+    --global-palette3: #0f172a !important; /* Headings Slate 900 */
+    --global-palette4: #334155 !important; /* Body Slate 700 */
+    --global-palette5: #64748b !important; /* Muted Slate 500 */
+    --global-palette6: #cbd5e1 !important; /* Border Slate 300 */
+    --global-palette7: #f1f5f9 !important; /* Light Background */
+    --global-palette8: #f8fafc !important; /* Page Background */
+    --global-palette9: #ffffff !important; /* White */
+}
+
+/* -------------------------------------------------------------
+   2. TYPOGRAPHY & SMOOTH SCROLLING
+   ------------------------------------------------------------- */
+html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: var(--pce-slate-700);
+    background-color: var(--pce-slate-50);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--pce-slate-900);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.25;
+}
+
+/* -------------------------------------------------------------
+   3. MODERN SITE HEADER & BRAND IDENTITY
+   ------------------------------------------------------------- */
+#masthead.site-header {
+    background: rgba(255, 255, 255, 0.96) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border-bottom: 1px solid var(--pce-slate-200) !important;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04) !important;
+    transition: var(--pce-transition);
+}
+
+.site-main-header-wrap {
+    padding: 0.6rem 0;
+}
+
+/* Brand Text & Monogram Emblem */
+.site-branding .site-title,
+.site-branding .site-title a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-size: 1.18rem !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.03em !important;
+    color: var(--pce-navy-deep) !important;
+    text-decoration: none !important;
+}
+
+.site-branding .site-title::before {
+    content: "✦";
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: var(--pce-radius-sm);
+    background: var(--pce-navy-deep);
+    color: #5eead4;
+    font-size: 1rem;
+    box-shadow: 0 2px 6px rgba(10, 22, 40, 0.25);
+    flex-shrink: 0;
+}
+
+/* Main Navigation Menu */
+.main-navigation ul li a {
+    font-weight: 600 !important;
+    color: var(--pce-slate-700) !important;
+    font-size: 0.95rem !important;
+    padding: 0.6rem 1rem !important;
+    border-radius: var(--pce-radius-sm);
+    transition: var(--pce-transition) !important;
+}
+
+.main-navigation ul li a:hover,
+.main-navigation ul li.current-menu-item > a {
+    color: var(--pce-teal-dark) !important;
+    background-color: var(--pce-teal-light);
+}
+
+/* Sub-Menu Dropdown Styling */
+.main-navigation ul ul.sub-menu {
+    background: #ffffff !important;
+    border: 1px solid var(--pce-slate-200) !important;
+    border-radius: var(--pce-radius-md) !important;
+    box-shadow: var(--pce-shadow-xl) !important;
+    padding: 0.5rem !important;
+    min-width: 230px !important;
+    margin-top: 0.5rem !important;
+}
+
+.main-navigation ul ul.sub-menu li a {
+    padding: 0.65rem 1rem !important;
+    font-size: 0.9rem !important;
+    border-radius: var(--pce-radius-sm) !important;
+    color: var(--pce-slate-700) !important;
+}
+
+.main-navigation ul ul.sub-menu li a:hover {
+    background-color: var(--pce-teal-light) !important;
+    color: var(--pce-teal-dark) !important;
+    transform: translateX(4px);
+}
+
+/* Header Quote CTA Pill */
+.header-quote-nav-item a {
+    background: var(--pce-teal-gradient) !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    padding: 0.65rem 1.35rem !important;
+    border-radius: var(--pce-radius-full) !important;
+    margin-left: 0.85rem !important;
+    box-shadow: 0 4px 12px var(--pce-teal-glow) !important;
+    transition: var(--pce-transition) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.4rem !important;
+}
+
+.header-quote-nav-item a:hover {
+    background: linear-gradient(135deg, #0f766e 0%, #0b5e57 100%) !important;
+    color: #ffffff !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 16px rgba(13, 148, 136, 0.4) !important;
+}
+
+.header-quote-nav-item a::after {
+    content: "→";
+    display: inline-block;
+    transition: transform 0.15s ease;
+}
+
+.header-quote-nav-item a:hover::after {
+    transform: translateX(3px);
+}
+
+/* -------------------------------------------------------------
+   4. MODERN UI COMPONENTS & CARDS
+   ------------------------------------------------------------- */
+/* Clean Modern Badges */
+.pce-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.85rem;
+    background: var(--pce-teal-light);
+    color: var(--pce-teal-dark);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border-radius: var(--pce-radius-full);
+    border: 1px solid var(--pce-teal-border);
+    margin-bottom: 0.75rem;
+}
+
+.pce-badge-dark {
+    background: rgba(255, 255, 255, 0.12);
+    color: #5eead4;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+/* Premium Card System */
+.pce-card {
+    background: #ffffff;
+    border: 1px solid var(--pce-slate-200);
+    border-radius: var(--pce-radius-lg);
+    padding: 2.25rem 2rem;
+    box-shadow: var(--pce-shadow-sm);
+    transition: var(--pce-transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.pce-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--pce-teal-gradient);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.pce-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--pce-shadow-lg);
+    border-color: var(--pce-slate-300);
+}
+
+.pce-card:hover::before {
+    opacity: 1;
+}
+
+/* Modern Primary Buttons */
+.pce-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: var(--pce-teal-gradient);
+    color: #ffffff !important;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0.85rem 1.85rem;
+    border-radius: var(--pce-radius-full);
+    text-decoration: none !important;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 14px var(--pce-teal-glow);
+    transition: var(--pce-transition);
+}
+
+.pce-btn-primary:hover,
+.pce-btn-primary:focus {
+    background: linear-gradient(135deg, #0f766e 0%, #0b5e57 100%);
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(13, 148, 136, 0.4);
+}
+
+/* Modern Secondary & Ghost Buttons */
+.pce-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: #ffffff;
+    color: var(--pce-navy) !important;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0.85rem 1.85rem;
+    border-radius: var(--pce-radius-full);
+    text-decoration: none !important;
+    border: 1.5px solid var(--pce-slate-300);
+    cursor: pointer;
+    box-shadow: var(--pce-shadow-xs);
+    transition: var(--pce-transition);
+}
+
+.pce-btn-secondary:hover,
+.pce-btn-secondary:focus {
+    background: var(--pce-slate-100);
+    border-color: var(--pce-navy);
+    color: var(--pce-navy-deep) !important;
+    transform: translateY(-2px);
+    box-shadow: var(--pce-shadow-md);
+}
+
+/* Pill Tags (Suburbs, features) */
+.pce-tag-pill {
+    display: inline-block;
+    padding: 0.35rem 0.8rem;
+    background: #ffffff;
+    border: 1px solid var(--pce-slate-200);
+    border-radius: var(--pce-radius-full);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--pce-slate-700);
+    box-shadow: var(--pce-shadow-xs);
+    transition: var(--pce-transition);
+}
+
+.pce-tag-pill:hover {
+    border-color: var(--pce-teal);
+    color: var(--pce-teal-dark);
+    transform: translateY(-1px);
+}
+
+/* -------------------------------------------------------------
+   5. MOBILE USABILITY & TOUCH CONTROLS
+   ------------------------------------------------------------- */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="date"],
+select,
+textarea {
+    min-height: 48px;
+    font-size: 16px !important; /* Critical: Stops iOS Safari auto-zoom */
+    border-radius: var(--pce-radius-md);
+    border: 1.5px solid var(--pce-slate-300);
+    padding: 0.75rem 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    color: var(--pce-slate-900);
+    transition: var(--pce-transition);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--pce-teal);
+    box-shadow: 0 0 0 4px var(--pce-teal-glow);
+}
+
+/* Ensure completely fluid container layout */
+body, html {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.entry-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* -------------------------------------------------------------
+   6. PREMIUM FOOTER STYLING
+   ------------------------------------------------------------- */
+.site-footer {
+    background: linear-gradient(180deg, #0f1f38 0%, #0a1628 100%) !important;
+    color: var(--pce-slate-300) !important;
+    padding: 4.5rem 1.5rem 2rem !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto 3rem;
+}
+
+.footer-col h4 {
+    color: #ffffff !important;
+    font-size: 1.1rem !important;
+    font-weight: 700 !important;
+    margin-bottom: 1.25rem !important;
+    letter-spacing: -0.01em;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 0.65rem;
+    font-size: 0.93rem;
+}
+
+.footer-col a {
+    color: #94a3b8 !important;
+    text-decoration: none !important;
+    transition: var(--pce-transition);
+}
+
+.footer-col a:hover,
+.footer-col a:focus {
+    color: #5eead4 !important;
+    transform: translateX(2px);
+    display: inline-block;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.25rem;
+    font-size: 0.88rem;
+    color: #64748b;
+}
+
+.footer-bottom a {
+    color: #94a3b8 !important;
+    text-decoration: none;
+    transition: var(--pce-transition);
+}
+
+.footer-bottom a:hover {
+    color: #ffffff !important;
+}
+
+.footer-bottom .login-link {
+    font-size: 0.82rem;
+    color: #475569 !important;
+    padding: 0.3rem 0.65rem;
+    border-radius: var(--pce-radius-sm);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-bottom .login-link:hover {
+    color: #cbd5e1 !important;
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* -------------------------------------------------------------
+   7. RESPONSIVE ADAPTATIONS
+   ------------------------------------------------------------- */
+@media (max-width: 768px) {
+    .site-branding .site-title {
+        font-size: 1rem !important;
+    }
+    .pce-card {
+        padding: 1.75rem 1.25rem;
+    }
+    .footer-grid {
+        gap: 2rem;
+    }
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+}

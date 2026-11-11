@@ -5,6 +5,8 @@
 
 defined('ABSPATH') || exit;
 
+require_once get_stylesheet_directory() . '/inc/prime-homepage.php';
+
 add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style(
         'kadence-parent-style',
@@ -38,6 +40,9 @@ register_nav_menus(array(
  * No templates, page content, pricing logic, or estimator handlers are changed.
  */
 add_action('wp_enqueue_scripts', function () {
+    if (is_front_page()) {
+        return;
+    }
     $file = get_stylesheet_directory() . '/prime-angular-redesign.css';
     if (is_readable($file)) {
         wp_enqueue_style(
@@ -85,7 +90,7 @@ function prime_cleaning_page_classes($classes) {
 add_filter('body_class', 'prime_cleaning_page_classes', 20);
 
 add_action('wp_enqueue_scripts', function () {
-    if (!is_page() || is_admin()) {
+    if (!is_page() || is_admin() || is_front_page()) {
         return;
     }
     $file = get_stylesheet_directory() . '/prime-page-enhancements.css';
