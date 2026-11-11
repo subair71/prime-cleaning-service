@@ -56,6 +56,7 @@ class PCE_Shortcode {
     }
 
     public static function render_shortcode($atts = array()) {
+        if (($atts['mode'] ?? '') !== 'legacy' && ($_GET['prime_service'] ?? '') !== 'office') return PCE_Flow::render();
         self::enqueue_assets();
 
         $settings = PCE_Settings::get_all();

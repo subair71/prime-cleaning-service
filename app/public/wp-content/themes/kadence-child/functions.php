@@ -28,12 +28,14 @@ add_filter('body_class', function ($classes) {
     return $classes;
 });
 
-// Register navigation menus
+// Register after translations are available (WordPress 6.7+).
+add_action('init', function () {
 register_nav_menus(array(
     'primary' => __('Primary Navigation', 'kadence-child'),
     'mobile'  => __('Mobile Navigation', 'kadence-child'),
     'footer'  => __('Footer Navigation', 'kadence-child'),
 ));
+});
 
 /**
  * Angular-inspired visual overrides. Loaded after the child theme and plugin CSS.
@@ -108,3 +110,5 @@ add_action('wp_enqueue_scripts', function () {
         (string) filemtime($file)
     );
 }, 120);
+
+require_once get_stylesheet_directory() . "/inc/prime-pages.php";
