@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!container) return;
 
     const form = document.getElementById('pce-estimator-form');
+    if (!form) return; // The approved flow retains the historical anchor.
     const settings = window.pceData ? window.pceData.settings : {};
     const ajaxUrl = window.pceData ? window.pceData.ajax_url : '';
     const nonce = window.pceData ? window.pceData.nonce : '';

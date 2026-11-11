@@ -81,7 +81,7 @@ class PCE_DB {
 
     public static function update_enquiry_status($id, $status) {
         global $wpdb;
-        $allowed = array('new', 'contacted', 'quoted', 'closed');
+        $allowed = array('new', 'contacted', 'quoted', 'closed', 'won', 'lost');
         if (!in_array($status, $allowed, true)) {
             return false;
         }
@@ -131,7 +131,7 @@ class PCE_DB {
         global $wpdb;
         $table_name = self::get_table_name();
         $results = $wpdb->get_results("SELECT status, COUNT(*) as count FROM $table_name GROUP BY status", ARRAY_A);
-        $counts = array('all' => 0, 'new' => 0, 'contacted' => 0, 'quoted' => 0, 'closed' => 0);
+        $counts = array('all' => 0, 'new' => 0, 'contacted' => 0, 'quoted' => 0, 'closed' => 0, 'won' => 0, 'lost' => 0);
         if ($results) {
             foreach ($results as $r) {
                 $st = $r['status'];

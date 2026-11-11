@@ -115,6 +115,7 @@ class PCE_Admin {
     }
 
     private static function render_enquiries_list() {
+        echo '<p><a href="'.esc_url(admin_url('admin.php?page=prime-estimator&status_filter=won')).'">Won</a> · <a href="'.esc_url(admin_url('admin.php?page=prime-estimator&status_filter=lost')).'">Lost</a> · <a href="'.esc_url(wp_nonce_url(admin_url('admin-post.php?action=pce_export'),'pce_export')).'">Export CSV</a></p>';
         $filter_status = isset($_GET['status_filter']) ? sanitize_text_field($_GET['status_filter']) : '';
         $counts = PCE_DB::count_enquiries_by_status();
         $enquiries = PCE_DB::get_enquiries(array('status' => $filter_status, 'limit' => 100));
@@ -171,7 +172,7 @@ class PCE_Admin {
                             <?php endif; ?>
                         </td>
                         <td>
-                            <strong><?php echo esc_html(PCE_Calculator::get_service_name($row['service_type'])); ?></strong><br>
+                            <strong><?php echo esc_html(PCE_Approved::SERVICES[$row['service_type']] ?? PCE_Calculator::get_service_name($row['service_type'])); ?></strong><br>
                             <?php 
                             $prop = json_decode($row['property_details'], true);
                             if (!empty($prop['office_hours'])) {
@@ -185,14 +186,14 @@ class PCE_Admin {
                             ?>
                         </td>
                         <td>
-                            <strong style="font-size: 1.1em; color: #0d9488;">$<?php echo number_format($row['total_amount'], 2); ?> AUD</strong><br>
+                            <strong style="font-size: 1.1em; color: #0d9488;"><?php echo esc_html(PCE_Approved_Admin::amount($row)); ?></strong><br>
                             <small style="color: #64748b;">(Estimate)</small>
                         </td>
                         <td>
                             <select class="pce-status-dropdown" data-id="<?php echo esc_attr($row['id']); ?>">
                                 <option value="new" <?php selected($status, 'new'); ?>>New</option>
                                 <option value="contacted" <?php selected($status, 'contacted'); ?>>Contacted</option>
-                                <option value="quoted" <?php selected($status, 'quoted'); ?>>Quoted</option>
+                                <option value="won" <?php selected($status, 'won'); ?>>Won</option><option value="lost" <?php selected($status, 'lost'); ?>>Lost</option><option value="quoted" <?php selected($status, 'quoted'); ?>>Quoted</option>
                                 <option value="closed" <?php selected($status, 'closed'); ?>>Closed</option>
                             </select>
                             <span class="spinner" id="spinner-<?php echo esc_attr($row['id']); ?>" style="float:none; margin:0 4px;"></span>
@@ -223,6 +224,7 @@ class PCE_Admin {
 
         $prop = json_decode($row['property_details'], true) ?: array();
         $breakdown = json_decode($row['estimate_breakdown'], true) ?: array();
+        if (($breakdown['version'] ?? 0) === 2) { PCE_Approved_Admin::detail($row, $breakdown); return; }
         ?>
         <p>
             <a href="<?php echo esc_url(admin_url('admin.php?page=prime-estimator&tab=enquiries')); ?>" class="button">&larr; Back to Enquiries List</a>
@@ -283,7 +285,7 @@ class PCE_Admin {
                         <th>Admin Email Alert:</th>
                         <td>
                             <?php if (!empty($row['email_sent'])) : ?>
-                                <span style="color: #16a34a; font-weight:600;">&#10003; Delivered via wp_mail</span>
+                                <span style="color: #16a34a; font-weight:600;">&#10003; Accepted by mail transport</span>
                             <?php else : ?>
                                 <span style="color: #dc2626; font-weight:600;">&#9888; Email notice not sent</span>
                                 <?php if (!empty($row['email_error'])) : ?>
@@ -302,7 +304,7 @@ class PCE_Admin {
                     <tbody>
                         <tr>
                             <td><strong>Service Type</strong></td>
-                            <td style="text-align: right;"><strong><?php echo esc_html($breakdown['service_name'] ?? PCE_Calculator::get_service_name($row['service_type'])); ?></strong></td>
+                            <td style="text-align: right;"><strong><?php echo esc_html($breakdown['service_name'] ?? PCE_Approved::SERVICES[$row['service_type']] ?? PCE_Calculator::get_service_name($row['service_type'])); ?></strong></td>
                         </tr>
                         <?php if (!empty($breakdown['bedrooms'])) : ?>
                         <tr>

@@ -4,6 +4,8 @@ A modern, professional WordPress website and interactive cleaning-price estimato
 
 **Homepage redesign (11 November 2026):** The existing Kadence child theme now includes the reference-inspired teal homepage and an editable Gutenberg pattern. See [implementation and WordPress setup notes](docs/homepage-redesign.md), the [visual preview](docs/homepage-preview/index.html), and the [desktop screenshot](docs/homepage-preview/prime-homepage-desktop.png). The existing estimator plugin and database are unchanged.
 
+**Approved remaining pages (feature branch):** See the [implementation gallery and proposal checklist](docs/approved-pages/README.md), [LocalWP update steps](docs/approved-pages/LOCALWP.md) and [verification report](docs/approved-pages/QA.md). The approved estimator now uses separate price grids and approved suburb zones. Older setup/feature descriptions below describe the original demonstration implementation. For an existing site, follow the new update guide and do **not** import `database.sql`.
+
 ---
 
 ## 🌟 Highlights
