@@ -1,0 +1,90 @@
+{
+  "pattern-home": {
+    "blocks": 122,
+    "errors": []
+  },
+  "stored-home": {
+    "blocks": 122,
+    "errors": []
+  },
+  "pattern-office": {
+    "blocks": 49,
+    "errors": []
+  },
+  "stored-office": {
+    "blocks": 49,
+    "errors": []
+  },
+  "pattern-lease": {
+    "blocks": 87,
+    "errors": []
+  },
+  "stored-lease": {
+    "blocks": 87,
+    "errors": []
+  },
+  "pattern-regular": {
+    "blocks": 115,
+    "errors": []
+  },
+  "stored-regular": {
+    "blocks": 115,
+    "errors": []
+  },
+  "pattern-carpet": {
+    "blocks": 90,
+    "errors": []
+  },
+  "stored-carpet": {
+    "blocks": 90,
+    "errors": []
+  },
+  "pattern-prices": {
+    "blocks": 20,
+    "errors": []
+  },
+  "stored-prices": {
+    "blocks": 20,
+    "errors": []
+  },
+  "pattern-about": {
+    "blocks": 61,
+    "errors": []
+  },
+  "stored-about": {
+    "blocks": 61,
+    "errors": []
+  },
+  "pattern-contact": {
+    "blocks": 25,
+    "errors": []
+  },
+  "stored-contact": {
+    "blocks": 25,
+    "errors": []
+  },
+  "pattern-blog": {
+    "blocks": 9,
+    "errors": []
+  },
+  "stored-blog": {
+    "blocks": 9,
+    "errors": []
+  },
+  "pattern-privacy": {
+    "blocks": 151,
+    "errors": []
+  },
+  "stored-privacy": {
+    "blocks": 151,
+    "errors": []
+  },
+  "pattern-terms": {
+    "blocks": 12,
+    "errors": []
+  },
+  "stored-terms": {
+    "blocks": 12,
+    "errors": []
+  }
+}

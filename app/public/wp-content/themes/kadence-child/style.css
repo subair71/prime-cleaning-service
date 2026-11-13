@@ -120,20 +120,7 @@ h1, h2, h3, h4, h5, h6 {
     text-decoration: none !important;
 }
 
-.site-branding .site-title::before {
-    content: "✦";
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 32px;
-    height: 32px;
-    border-radius: var(--pce-radius-sm);
-    background: var(--pce-navy-deep);
-    color: #5eead4;
-    font-size: 1rem;
-    box-shadow: 0 2px 6px rgba(10, 22, 40, 0.25);
-    flex-shrink: 0;
-}
+
 
 /* Main Navigation Menu */
 .main-navigation ul li a {

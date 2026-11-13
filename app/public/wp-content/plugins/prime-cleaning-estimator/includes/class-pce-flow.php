@@ -20,6 +20,15 @@ class PCE_Flow {
         wp_enqueue_script('pce-approved',plugins_url('assets/js/approved.js',PCE_PLUGIN_FILE),[],PCE_VERSION,true);
         wp_localize_script('pce-approved','primeEstimate',['url'=>admin_url('admin-ajax.php'),'nonce'=>wp_create_nonce('pce_v2'),'today'=>wp_date('Y-m-d'),'suburbs'=>PCE_Approved::settings()['suburbs'],'whatsapp'=>PCE_Approved::whatsapp()]);
     }
+    static function service_icon($service) {
+        $paths=[
+            'lease'=>'<path d="m3 11 9-8 9 8M5 9v12h5v-7h4v7h5V9"/>',
+            'regular'=>'<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4m10-4v4M3 10h18M7 14h2m3 0h2M7 17h2"/>',
+            'deep'=>'<path d="m14 13 7-9a1.5 1.5 0 0 0-2-2l-8 9M5 12l6-1 4 4-1 6c-4 1-9-1-12-4l3-5Zm1 3-2 4m5-3-1 5m4-4v4"/>',
+            'carpet'=>'<rect x="3" y="5" width="18" height="14" rx="1"/><path d="M6 9h12M6 12h12M6 15h12M5 3v2m4-2v2m6-2v2m4-2v2M5 19v2m4-2v2m6-2v2m4-2v2"/>',
+        ];
+        return '<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'.($paths[$service]??'').'</svg>';
+    }
     static function render() { self::assets();ob_start(); include PCE_PLUGIN_DIR.'templates/approved-estimator.php'; return ob_get_clean(); }
     static function contact_form() { self::assets();ob_start(); ?><form class="pe-contact pe-form" novalidate><div class="pe-errors" role="alert" hidden></div><?php self::contact_fields(true); ?><button class="pe-primary" type="submit">Send message</button><p class="pe-small">An enquiry is not a confirmed booking.</p><div class="pe-contact-success" role="status" hidden></div></form><?php return ob_get_clean(); }
     static function contact_fields($simple=false) {

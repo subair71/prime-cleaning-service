@@ -42,6 +42,8 @@ function prime_home_estimator_url() {
 }
 
 function prime_home_icon($name) {
+    // Preserve legacy shortcode references with a simple cleaning tool icon.
+    if ($name === 'sparkle') $name = 'brush';
     $paths = array(
         'home' => '<path d="m3 11 9-8 9 8M5 9v12h5v-7h4v7h5V9M16 6V3h3v6"/>',
         'calendar' => '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4m10-4v4M3 10h18M7 14h2m3 0h2m3 0h1M7 17h2m3 0h2"/>',
@@ -50,7 +52,6 @@ function prime_home_icon($name) {
         'clock' => '<circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 3"/>',
         'price' => '<circle cx="12" cy="12" r="9"/><path d="M15 8h-4a2 2 0 0 0 0 4h2a2 2 0 0 1 0 4H9m3-10v12"/>',
         'support' => '<path d="M4 13v-2a8 8 0 0 1 16 0v5a4 4 0 0 1-4 4h-2"/><rect x="2" y="11" width="4" height="7" rx="2"/><rect x="18" y="11" width="4" height="7" rx="2"/><path d="M12 20h2"/>',
-        'sparkle' => '<path d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5L12 3ZM20 2v4m-2-2h4"/>',
         'brush' => '<path d="m14 13 7-9a1.5 1.5 0 0 0-2-2l-8 9M5 12l6-1 4 4-1 6c-4 1-9-1-12-4l3-5Zm1 3-2 4m5-3-1 5m4-4v4"/>',
         'key' => '<circle cx="8" cy="8" r="5"/><path d="m12 12 9 9m-3-3 3-3m-6 0 3-3M7 7h.01"/>',
         'office' => '<rect x="5" y="2" width="14" height="20" rx="1"/><path d="M9 6h1m4 0h1M9 10h1m4 0h1M9 14h1m4 0h1M10 22v-4h4v4"/>',

@@ -1,6 +1,8 @@
 # Prime Domestic & Cleaning Services — Melbourne
 
-**Latest content review (13 November 2026):** [November 12 implementation, screenshots, tests and editing guide](docs/nov12-review/README.md). This feature branch is for review only; see its outstanding client inputs and browser-QA limits. Do not use the older demo instructions below as launch approval.
+**Client review refinements (13 November 2026):** [Full-page screenshots, proposal checklist, test results and editing guide](docs/client-review/README.md). Feature branch only; no merge or production deployment.
+
+**Previous content review (13 November 2026):** [November 12 implementation, screenshots, tests and editing guide](docs/nov12-review/README.md). This feature branch is for review only; see its outstanding client inputs and browser-QA limits. Do not use the older demo instructions below as launch approval.
 
 A modern, professional WordPress website and interactive cleaning-price estimator built for **Derick’s business, Prime Domestic & Cleaning Services**, based in Malvern East (VIC 3145) and serving Melbourne's metropolitan and eastern suburbs.
 

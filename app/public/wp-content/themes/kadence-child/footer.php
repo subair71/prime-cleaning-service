@@ -13,14 +13,14 @@ do_action('kadence_after_content');
         <div class="footer-grid">
             <div class="footer-col" style="max-width: 320px;">
                 <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:1rem;">
-                    <span style="display:inline-flex; align-items:center; justify-content:center; width:28px; height:28px; border-radius:6px; background:#162a45; border:1px solid #0d9488; color:#5eead4; font-size:0.85rem;">✦</span>
+
                     <strong style="color:#ffffff; font-size:1.15rem; letter-spacing:-0.02em;">PRIME DOMESTIC</strong>
                 </div>
                 <p style="font-size: 0.92rem; line-height: 1.65; color: #94a3b8; margin: 0 0 1rem 0;">
                     Structured residential, vacate, and commercial office cleaning services based in Malvern East, delivering reliable standards across Melbourne.
                 </p>
                 <div style="display:inline-block; font-size: 0.78rem; color: #5eead4; background: rgba(13,148,136,0.15); border: 1px solid rgba(94,234,212,0.25); padding: 0.25rem 0.65rem; border-radius: 9999px;">
-                    ✦ Malvern East 3145 Hub
+                    Malvern East 3145 Hub
                 </div>
             </div>
 
