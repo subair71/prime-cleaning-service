@@ -22,6 +22,7 @@ class PCE_AJAX {
 
     public static function handle_calculate() {
         check_ajax_referer('pce_estimator_nonce', 'nonce');
+        if (sanitize_key($_POST['service'] ?? '') === 'office' && !current_user_can('manage_options')) wp_send_json_error(['message'=>'Office cleaning is not available in Phase 1.'], 422);
 
         $params = array(
             'service'      => sanitize_text_field($_POST['service'] ?? 'regular'),
@@ -39,6 +40,7 @@ class PCE_AJAX {
 
     public static function handle_submit_quote() {
         check_ajax_referer('pce_estimator_nonce', 'nonce');
+        if (sanitize_key($_POST['service'] ?? '') === 'office' && !current_user_can('manage_options')) wp_send_json_error(['message'=>'Office cleaning is not available in Phase 1.'], 422);
 
         // Honeypot spam check
         if (!empty($_POST['pce_hp_url'])) {
