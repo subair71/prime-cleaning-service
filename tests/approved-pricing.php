@@ -25,3 +25,9 @@ check('tax never added',calc()['tax_note'],'No GST is added.');check('price forg
 $missing=$s;$missing['minimum']=null;check('minimum missing custom',calc([],$missing)['state'],'custom');
 $missing=$s;$missing['travel_fee']=null;check('zone 1 no fee required',calc([],$missing)['state'],'estimate');check('zone 2 missing fee custom',calc(['suburb'=>'far'],$missing)['state'],'custom');
 check('reference sequence',PCE_Approved::reference(17),'PDC-1017');echo "$count calculator checks passed.\n";
+check('November 12 default minimum',PCE_Approved::defaults()['minimum'],110);
+$q=calc(['service'=>'lease','extras'=>['windows'=>1]]);check('included lease windows not charged twice',$q['total'],400.0);check('included windows normalised out',$q['input']['extras']['windows'],0);
+$q=calc(['service'=>'lease','extras'=>['walls'=>1]]);check('extra walls ambiguous scope custom',$q['state'],'custom');check('custom has no stale price lines',$q['lines'],[]);
+$q=calc(['service'=>'carpet','property'=>'double','carpets'=>['bedroom'=>1,'living'=>2,'hallway'=>1,'stairs'=>1],'suburb'=>'far']);check('individual carpet areas and travel',$q['total'],155.0);
+$s110=$s;$s110['minimum']=110;$s110['grids']['regular']['2:1']=50;$q=calc([],$s110);check('approved 110 minimum floor',$q['total'],110.0);check('approved minimum low rounding',$q['low'],100.0);check('approved minimum high rounding',$q['high'],120.0);
+echo "$count total calculator checks passed.\n";

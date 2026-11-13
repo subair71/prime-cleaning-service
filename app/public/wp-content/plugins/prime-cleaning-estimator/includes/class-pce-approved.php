@@ -7,7 +7,7 @@ class PCE_Approved {
     const EXTRAS = ['oven'=>'Oven', 'fridge'=>'Fridge', 'windows'=>'Inside windows', 'balcony'=>'Balcony / patio', 'walls'=>'Wall spot cleaning'];
     const CARPETS = ['bedroom'=>'Bedrooms', 'living'=>'Lounge / living rooms', 'hallway'=>'Hallways', 'stairs'=>'Flights of stairs'];
     static function defaults() {
-        return ['grids'=>['lease'=>[], 'regular'=>[]], 'extras'=>array_fill_keys(array_keys(self::EXTRAS), null), 'carpets'=>array_fill_keys(array_keys(self::CARPETS), null), 'deep_multiplier'=>1.5, 'storey_percent'=>15, 'recurring_percent'=>15, 'travel_fee'=>30, 'minimum'=>null, 'suburbs'=>[], 'phone'=>'', 'whatsapp'=>'', 'email'=>'', 'owner_email'=>'', 'sender_email'=>'', 'abn'=>'', 'reviews_url'=>'', 'response_notice'=>'Response-time wording awaiting client approval.', 'discount_message'=>'Save 15% on the base clean and double-storey surcharge with weekly or fortnightly Regular cleaning. Add-ons and travel are excluded.'];
+        return ['grids'=>['lease'=>[], 'regular'=>[]], 'extras'=>array_fill_keys(array_keys(self::EXTRAS), null), 'carpets'=>array_fill_keys(array_keys(self::CARPETS), null), 'deep_multiplier'=>1.5, 'storey_percent'=>15, 'recurring_percent'=>15, 'travel_fee'=>30, 'minimum'=>110, 'suburbs'=>[], 'phone'=>'0491 245 156', 'whatsapp'=>'61491245156', 'email'=>'info@primedomestic.com.au', 'owner_email'=>'', 'sender_email'=>'', 'abn'=>'16 938 734 164', 'reviews_url'=>'', 'response_notice'=>'We aim to reply within 2 hours during the day, and always within 24 hours.', 'discount_message'=>'Save 15% on the base clean and double-storey surcharge with weekly or fortnightly Regular cleaning. Add-ons and travel are excluded.'];
     }
     static function settings() { return array_replace_recursive(self::defaults(), (array)get_option(self::OPTION, [])); }
     static function money($v) { return $v !== null && $v !== '' && is_numeric($v) && is_finite((float)$v) && (float)$v >= 0 ? round((float)$v, 2) : null; }
@@ -34,6 +34,7 @@ class PCE_Approved {
         $o=['service'=>sanitize_key($p['service']??''),'bedrooms'=>(string)($p['bedrooms']??''),'bathrooms'=>(string)($p['bathrooms']??''),'property'=>sanitize_key($p['property']??''),'furnished'=>!empty($p['furnished']),'frequency'=>sanitize_key($p['frequency']??'once'),'suburb'=>sanitize_key($p['suburb']??''),'extras'=>[],'carpets'=>[]];
         foreach(self::EXTRAS as $k=>$label) $o['extras'][$k]=empty($p['extras'][$k])?0:1;
         foreach(self::CARPETS as $k=>$label) $o['carpets'][$k]=isset($p['carpets'][$k]) && preg_match('/^\d{1,2}$/',(string)$p['carpets'][$k]) ? (int)$p['carpets'][$k] : (isset($p['carpets'][$k]) ? -1 : 0);
+        if($o['service']==='lease') $o['extras']['windows']=0; // Safe-reach inside windows already included.
         if($o['service']!=='regular') $o['frequency']='once';
         if($o['service']==='carpet') { $o['extras']=array_fill_keys(array_keys(self::EXTRAS),0); $o['furnished']=false; }
         return $o;
@@ -57,6 +58,7 @@ class PCE_Approved {
         $r=['version'=>2,'state'=>'invalid','errors'=>$errors,'service_name'=>self::SERVICES[$p['service']]??'', 'input'=>$p,'reasons'=>[],'lines'=>[], 'total'=>null,'low'=>null,'high'=>null,'tax_note'=>'No GST is added.'];
         if($errors) return $r;
         $reason=[]; $base=0; $addons=0;
+        if($p['service']==='lease' && $p['extras']['walls']) $reason[]='extra_wall_scope';
         if($p['service']!=='carpet') {
             if((int)$p['bedrooms']>=6) $reason[]='bedrooms';
             if((int)$p['bathrooms']>=5) $reason[]='bathrooms';
@@ -93,6 +95,6 @@ class PCE_Approved {
     static function reference($id) { return 'PDC-'.(1000+(int)$id); }
     static function whatsapp($reference='') {
         $number=preg_replace('/\D/','',self::settings()['whatsapp']);
-        return $number ? 'https://wa.me/'.$number.'?text='.rawurlencode('Hello Prime, '.($reference?'my enquiry reference is '.$reference.'. I would like to send photos.':'I would like to enquire about cleaning.')) : '';
+        return $number ? 'https://wa.me/'.$number.($reference?'?text='.rawurlencode('Hi Prime Domestic, my reference is '.$reference.'. Here are some photos of the place.'):'') : '';
     }
 }

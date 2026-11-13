@@ -1,16 +1,17 @@
 <?php
 /** Approved page patterns and safe, explicit installation. */
 defined('ABSPATH') || exit;
-function prime_pages_map() { return ['lease'=>['End of Lease Cleaning',['end-of-lease-cleaning']],'regular'=>['Regular House Cleaning',['regular-home-cleaning','regular-house-cleaning']],'carpet'=>['Carpet Steam Cleaning',['carpet-steam-cleaning']],'prices'=>['Prices & Instant Estimate',['get-a-quote','prices-instant-estimate','prices']],'about'=>['About',['about']],'contact'=>['Contact & Service Areas',['contact','contact-service-areas']],'blog'=>['Blog',['blog']],'privacy'=>['Privacy Policy',['privacy-policy']],'terms'=>['Terms',['terms','terms-and-conditions']]]; }
+function prime_pages_map() { return ['home'=>['Home',['home']],'office'=>['Office Cleaning — Phase 2',['office-cleaning']],'lease'=>['End of Lease Cleaning',['end-of-lease-cleaning']],'regular'=>['Regular & Deep Cleaning',['regular-home-cleaning','regular-house-cleaning']],'carpet'=>['Carpet Steam Cleaning',['carpet-steam-cleaning']],'prices'=>['Prices & Instant Estimate',['get-a-quote','prices-instant-estimate','prices']],'about'=>['About',['about']],'contact'=>['Contact & Service Areas',['contact','contact-service-areas']],'blog'=>['Blog',['blog']],'privacy'=>['Privacy Policy',['privacy-policy']],'terms'=>['Terms of Service',['terms','terms-and-conditions']]]; }
 function prime_page_object($key) {
     $ids = get_option('prime_approved_page_ids', []);
+    if ($key === 'home' && get_option('page_on_front')) return get_post(get_option('page_on_front'));
     if (!empty($ids[$key])) {
         $page = get_post($ids[$key]);
         if ($page && $page->post_type === 'page' && $page->post_status !== 'trash') return $page;
     }
     foreach (prime_pages_map()[$key][1] as $slug) {
         // The original database stores service pages below /services/.
-        $paths = in_array($key, ['lease', 'regular', 'carpet'], true) ? ['services/' . $slug, $slug] : [$slug];
+        $paths = in_array($key, ['lease', 'regular', 'carpet', 'office'], true) ? ['services/' . $slug, $slug] : [$slug];
         foreach ($paths as $path) {
             $page = get_page_by_path($path);
             if ($page && $page->post_status !== 'trash') return $page;
@@ -19,7 +20,7 @@ function prime_page_object($key) {
     return null;
 }
 function prime_page_link($key) { $p=prime_page_object($key);return $p?get_permalink($p):home_url('/'.prime_pages_map()[$key][1][0].'/'); }
-function prime_page_key() { if(is_front_page())return '';if(is_singular('post')||is_home()||is_category())return 'blog';$id=get_queried_object_id();foreach(prime_pages_map() as $key=>$v){$p=prime_page_object($key);if($p && (int)$p->ID===$id)return $key;}return ''; }
+function prime_page_key() { if(is_front_page())return 'home';if(is_singular('post')||is_home()||is_category())return 'blog';$id=get_queried_object_id();foreach(prime_pages_map() as $key=>$v){$p=prime_page_object($key);if($p && (int)$p->ID===$id)return $key;}return ''; }
 function prime_business() { return class_exists('PCE_Approved')?PCE_Approved::settings():['phone'=>'','whatsapp'=>'','email'=>'','abn'=>'','reviews_url'=>'','response_notice'=>'Response-time wording awaiting client approval.']; }
 function prime_b($name,$html,$attrs=[]) { return '<!-- wp:'.$name.($attrs?' '.wp_json_encode($attrs,JSON_UNESCAPED_SLASHES):'').' -->'.$html.'<!-- /wp:'.$name.' -->'; }
 function prime_g($content,$class='',$tag='div') { return prime_b('group','<'.$tag.' class="wp-block-group'.($class?' '.$class:'').'">'.$content.'</'.$tag.'>',array_filter(['tagName'=>$tag==='div'?null:$tag,'className'=>$class])); }
@@ -28,7 +29,7 @@ function prime_h($text,$level=2,$class='') { return prime_b('heading','<h'.$leve
 function prime_sc($text) { return prime_b('shortcode',$text); }
 function prime_buttons($label,$href,$secondary=false) { return prime_b('buttons','<div class="wp-block-buttons">'.prime_b('button','<div class="wp-block-button'.($secondary?' is-style-outline':'').'"><a class="wp-block-button__link wp-element-button" href="'.esc_url($href).'">'.esc_html($label).'</a></div>',$secondary?['className'=>'is-style-outline']:[]).'</div>'); }
 function prime_cols($items,$class='') { $c='';foreach($items as $item)$c.=prime_b('column','<div class="wp-block-column">'.$item.'</div>');return prime_b('columns','<div class="wp-block-columns'.($class?' '.$class:'').'">'.$c.'</div>',$class?['className'=>$class]:[]); }
-function prime_photo($key,$alt,$hero=false) { $src=get_stylesheet_directory_uri().'/assets/images/prime-'.$key.'-1280.webp';return prime_b('image','<figure class="wp-block-image size-full prime-service-photo'.($hero?' pp-hero-photo':'').'"><img src="'.esc_url($src).'" alt="'.esc_attr($alt).'"/><figcaption class="wp-element-caption">Illustrative photo — awaiting client-owned photography</figcaption></figure>',['sizeSlug'=>'full','className'=>'prime-service-photo'.($hero?' pp-hero-photo':'')]); }
+function prime_photo($key,$alt,$hero=false) { $src=get_stylesheet_directory_uri().'/assets/images/prime-'.$key.'-1280.webp';return prime_b('image','<figure class="wp-block-image size-full prime-service-photo'.($hero?' pp-hero-photo':'').'"><img src="'.esc_url($src).'" alt="'.esc_attr($alt).'"/><figcaption class="wp-element-caption">Illustrative interior</figcaption></figure>',['sizeSlug'=>'full','className'=>'prime-service-photo'.($hero?' pp-hero-photo':'')]); }
 function prime_icon_block($name) { return prime_g(prime_sc('[prime_home_icon name="'.sanitize_key($name).'"]'),'pp-section-icon'); }
 function prime_lorem() { return 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'; }
 function prime_section($content,$class='') { return prime_g(prime_g($content,'pp-container'),'pp-section '.$class,'section'); }
@@ -40,7 +41,7 @@ function prime_inclusions($lease=false) {
     return prime_section(prime_h('What is included',2,'pp-centre').prime_p('Inclusions and exclusions are placeholders awaiting client approval.','pp-centre').prime_cols([prime_g($panels,'pp-card pp-inclusions'),prime_g(prime_h('Not included',3).prime_p('Exclusions awaiting client approval.').prime_p('× Lorem ipsum dolor sit amet.<br><br>× Consectetur adipiscing elit.<br><br>× Sed do eiusmod tempor incididunt.'),'pp-card')],'pp-two-thirds'));
 }
 function prime_before_after() { return prime_section(prime_cols([prime_h('Before & after').prime_p('Photo placeholders only. These are not real results or a guarantee of outcome.'),prime_g(prime_h('Before',3).prime_p('Client photo pending'),'pp-photo-placeholder'),prime_g(prime_h('After',3).prime_p('Client photo pending'),'pp-photo-placeholder')]),'pp-mint'); }
-function prime_pattern($key) {
+function prime_pattern_legacy($key) {
     $content='';$title=prime_pages_map()[$key][0];
     if(in_array($key,['lease','regular','carpet'],true)) {
         $service=['lease'=>'lease','regular'=>'regular','carpet'=>'carpet'][$key];$estimate=add_query_arg('prime_service',$service,prime_page_link('prices'));
@@ -84,16 +85,17 @@ function prime_pattern($key) {
     }
     return prime_g($content,'prime-approved-content');
 }
+require_once __DIR__.'/prime-launch.php';
 add_action('init',function(){foreach(prime_pages_map() as $key=>$v)register_block_pattern('prime/approved-'.$key,['title'=>'Prime — '.$v[0],'categories'=>['prime'],'content'=>prime_pattern($key)]);});
 add_filter('template_include',function($template){return prime_page_key()?get_stylesheet_directory().'/page-prime-approved.php':$template;},99);
 add_action('wp_enqueue_scripts',function(){if(!prime_page_key())return;wp_dequeue_style('prime-angular-redesign');wp_dequeue_style('prime-page-enhancements');wp_enqueue_style('prime-approved-pages',get_stylesheet_directory_uri().'/prime-approved-pages.css',['kadence-child-style'],(string)filemtime(get_stylesheet_directory().'/prime-approved-pages.css'));wp_enqueue_script('prime-approved-pages',get_stylesheet_directory_uri().'/assets/js/prime-approved-pages.js',[],(string)filemtime(get_stylesheet_directory().'/assets/js/prime-approved-pages.js'),true);},200);
 add_action('after_setup_theme',function(){add_editor_style('prime-approved-pages.css');});
 add_filter('body_class',function($c){if(prime_page_key())$c[]='prime-approved';return $c;});
-function prime_install_approved_pages() {
+function prime_install_approved_pages_legacy() {
     $ids=get_option('prime_approved_page_ids',[]);
     foreach(prime_pages_map() as $key=>$v){$p=prime_page_object($key);if($p){$ids[$key]=$p->ID;if(!get_post_meta($p->ID,'_prime_approved_installed',true)) {add_post_meta($p->ID,'_prime_preapproved_content',$p->post_content,true);wp_save_post_revision($p->ID);wp_update_post(['ID'=>$p->ID,'post_content'=>prime_pattern($key)]);update_post_meta($p->ID,'_prime_approved_installed',1);}}else{$id=wp_insert_post(['post_type'=>'page','post_status'=>in_array($key,['privacy','terms'],true)?'draft':'publish','post_title'=>$v[0],'post_name'=>$v[1][0],'post_content'=>prime_pattern($key)]);if(!is_wp_error($id)){$ids[$key]=$id;update_post_meta($id,'_prime_approved_installed',1);}}}
     update_option('prime_approved_page_ids',$ids);flush_rewrite_rules(false);return $ids;
 }
-add_action('admin_menu',function(){add_theme_page('Prime approved pages','Prime approved pages','manage_options','prime-approved-pages',function(){echo '<div class="wrap"><h1>Install approved page layouts</h1><p>Updates the nine mapped pages once, preserving their IDs, URLs and original content in revisions and a backup field. Adds missing pages. New legal pages remain drafts until approved. Existing posts, homepage and extra pages are preserved. Later runs do not overwrite your edits.</p><form method="post" action="'.esc_url(admin_url('admin-post.php')).'">';wp_nonce_field('prime_install_pages');echo '<input type="hidden" name="action" value="prime_install_pages">';submit_button('Install approved layouts');echo '</form></div>';});});
+add_action('admin_menu',function(){add_theme_page('Prime approved pages','Prime approved pages','manage_options','prime-approved-pages',function(){echo '<div class="wrap"><h1>Install approved page layouts</h1><p>Applies the 12 November content to all ten pages once, with page backups and revisions. Reuses existing URLs. Keeps Office and missing Terms in draft and removes extra services from launch. Preserves prices, approved suburbs and enquiries. Later runs preserve your edits.</p><form method="post" action="'.esc_url(admin_url('admin-post.php')).'">';wp_nonce_field('prime_install_pages');echo '<input type="hidden" name="action" value="prime_install_pages">';submit_button('Install approved layouts');echo '</form></div>';});});
 add_action('admin_post_prime_install_pages',function(){if(!current_user_can('manage_options'))wp_die('Not authorised.');check_admin_referer('prime_install_pages');prime_install_approved_pages();wp_safe_redirect(admin_url('edit.php?post_type=page'));exit;});
 require_once __DIR__.'/prime-page-components.php';

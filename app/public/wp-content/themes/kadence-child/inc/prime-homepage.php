@@ -147,7 +147,7 @@ function prime_home_estimator_card() {
     <aside id="instant-estimator" class="prime-estimator" aria-labelledby="prime-estimator-title">
         <div class="prime-estimator-heading">
             <?php echo prime_home_icon('calculator'); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-            <div><h2 id="prime-estimator-title">Instant Price Estimator</h2><p>Start your personalised cleaning quote.</p></div>
+            <div><h2 id="prime-estimator-title">What does your place need?</h2><p>Choose your clean. We’ll take it from here.</p></div>
         </div>
         <form class="prime-quick-quote" action="<?php echo esc_url($demo ? '#instant-estimator' : $action . '#pce-estimator-container'); ?>" method="get" data-demo="<?php echo $demo ? 'true' : 'false'; ?>">
             <?php foreach ($action_query as $key => $value) : if (!is_scalar($value)) { continue; } ?>
@@ -158,18 +158,18 @@ function prime_home_estimator_card() {
                 <option value="regular">Regular Home Cleaning</option>
                 <option value="deep">Deep Cleaning</option>
                 <option value="lease">End-of-Lease Cleaning</option>
-                <option value="office">Office Cleaning</option>
+                <option value="carpet">Carpet Steam Cleaning</option>
             </select>
             <div class="prime-home-size">
                 <label for="prime-bedrooms">Home Size</label>
                 <select id="prime-bedrooms" name="prime_bedrooms">
-                    <?php for ($count = 1; $count <= 6; $count++) : ?>
-                        <option value="<?php echo esc_attr($count); ?>" <?php selected($count, 2); ?>><?php echo esc_html($count === 6 ? '6+ bedrooms' : ($count === 1 ? '1 bedroom / Studio' : $count . ' bedrooms')); ?></option>
+                    <?php for ($count = 0; $count <= 6; $count++) : ?>
+                        <option value="<?php echo esc_attr($count); ?>" <?php selected($count, 2); ?>><?php echo esc_html($count === 6 ? '6+ bedrooms' : ($count === 0 ? 'Studio' : ($count === 1 ? '1 bedroom' : $count . ' bedrooms'))); ?></option>
                     <?php endfor; ?>
                 </select>
             </div>
             <p class="prime-office-note" hidden>Tell us your office hours and requirements in the next step.</p>
-            <button type="submit" class="prime-button prime-calculate" <?php disabled($demo); ?>>Calculate Price <span aria-hidden="true">→</span></button>
+            <button type="submit" class="prime-button prime-calculate" <?php disabled($demo); ?>>Get my estimate <span aria-hidden="true">→</span></button>
             <p class="prime-estimator-note" aria-live="polite"><?php echo $demo ? 'Demo only — online estimates are not available yet.' : 'Continue with your location and details to calculate.'; ?></p>
         </form>
     </aside>

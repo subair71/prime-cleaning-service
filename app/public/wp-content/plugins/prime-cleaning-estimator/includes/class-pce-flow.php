@@ -21,7 +21,7 @@ class PCE_Flow {
         wp_localize_script('pce-approved','primeEstimate',['url'=>admin_url('admin-ajax.php'),'nonce'=>wp_create_nonce('pce_v2'),'today'=>wp_date('Y-m-d'),'suburbs'=>PCE_Approved::settings()['suburbs'],'whatsapp'=>PCE_Approved::whatsapp()]);
     }
     static function render() { self::assets();ob_start(); include PCE_PLUGIN_DIR.'templates/approved-estimator.php'; return ob_get_clean(); }
-    static function contact_form() { self::assets();ob_start(); ?><form class="pe-contact pe-form" novalidate><div class="pe-errors" role="alert" hidden></div><?php self::contact_fields(true); ?><button class="pe-primary" type="submit">Send enquiry →</button><p class="pe-small">An enquiry is not a confirmed booking.</p><div class="pe-contact-success" role="status" hidden></div></form><?php return ob_get_clean(); }
+    static function contact_form() { self::assets();ob_start(); ?><form class="pe-contact pe-form" novalidate><div class="pe-errors" role="alert" hidden></div><?php self::contact_fields(true); ?><button class="pe-primary" type="submit">Send message</button><p class="pe-small">An enquiry is not a confirmed booking.</p><div class="pe-contact-success" role="status" hidden></div></form><?php return ob_get_clean(); }
     static function contact_fields($simple=false) {
         $fields=['name'=>['Full name','text',true,'name'],'phone'=>['Mobile number','tel',true,'tel'],'email'=>['Email address','email',true,'email']];
         if($simple) $fields['suburb_name']=['Suburb','text',true,'address-level2'];
@@ -37,8 +37,8 @@ class PCE_Flow {
             echo '<label>How did you hear about us? (optional)<input name="referral" maxlength="200"></label>';
         }
         echo '</div><label>'.($simple?'Your enquiry':'Notes (optional)').'<textarea name="notes" rows="4" maxlength="3000" '.($simple?'required':'').'></textarea><span class="pe-field-error" data-error="notes"></span></label>';
-        echo '<div class="pe-honeypot" aria-hidden="true"><label>Leave empty<input name="website" tabindex="-1" autocomplete="off"></label></div><label class="pe-check"><input type="checkbox" name="consent" required> <span>I agree to the <a href="'.esc_url(get_privacy_policy_url()?:home_url('/privacy-policy/')).'">Privacy Policy</a> and consent to being contacted about my enquiry. *</span></label><span class="pe-field-error" data-error="consent"></span>';
-        if(!$simple) echo '<p class="pe-note">Preferred dates and time preferences are requests only. We will confirm arrangements with you. Send photos via WhatsApp after submitting; no website uploads.</p>';
+        echo '<div class="pe-honeypot" aria-hidden="true"><label>Leave empty<input name="website" tabindex="-1" autocomplete="off"></label></div><label class="pe-check"><input type="checkbox" name="consent" required> <span>I agree to Prime Domestic contacting me about this enquiry. See our <a href="'.esc_url(get_privacy_policy_url()?:home_url('/privacy-policy/')).'">Privacy Policy</a>.*</span></label><span class="pe-field-error" data-error="consent"></span>';
+        if(!$simple) echo '<p class="pe-note">This is a request, not a confirmed booking. We’ll confirm by phone or message.</p>';
     }
     static function select($name,$label,$options,$required=false) { echo '<label>'.esc_html($label).($required?' *':'').'<select name="'.esc_attr($name).'" '.($required?'required':'').'>'; foreach($options as $v=>$text) echo '<option value="'.esc_attr($v).'">'.esc_html($text).'</option>';echo '</select><span class="pe-field-error" data-error="'.esc_attr($name).'"></span></label>'; }
     static function request() {
@@ -92,14 +92,22 @@ class PCE_Flow {
         $reference=PCE_Approved::reference($id);$mail_error='Email transport / approved sender not configured.';$sent=0;
         if(is_email($s['sender_email']) && is_email($s['email'])) {
             $headers=['Content-Type: text/plain; charset=UTF-8','From: Prime Domestic & Cleaning Services <'.$s['sender_email'].'>'];
-            $range=$quote['state']==='estimate'?'AUD '.$quote['low'].'–'.$quote['high']:'Custom quote required';
-            $body=$reference."\n".$record['customer_name']."\n".$record['customer_email']."\n".$record['customer_phone']."\n".$record['suburb']."\n".$quote['service_name']."\n".$range."\nPreferred date request: ".($record['preferred_date']??'Not supplied')."\n".$record['notes']."\n\nDetails: ".wp_json_encode($extras)."\nFrozen breakdown: ".wp_json_encode($quote);
+            $range=$quote['state']==='estimate'?'AUD '.$quote['low'].' to AUD '.$quote['high']:'Custom quote required';
+            $first=preg_split('/\s+/',trim($record['customer_name']))[0];
+            $subject='New enquiry '.$reference.' – '.$quote['service_name'].' – '.$record['suburb'].' – '.$range;
+            $body=$reference."\n".$record['customer_name']."\n".$record['customer_email']."\n".$record['customer_phone']."\n".$record['suburb']."\n".$quote['service_name']."\n".$range."\nPreferred date request: ".($record['preferred_date']??'Not supplied')."\n".$record['notes']."\n\nDetails: ".wp_json_encode($extras)."\nSelections: ".wp_json_encode($quote['input']);
+            if($quote['state']==='estimate')$body.="\nFrozen breakdown: ".wp_json_encode($quote);
+            else $body.="\nCustom quote: ".implode(', ',$quote['reasons']??[]).". No numerical estimate has been issued.";
             $recipients=array_values(array_unique(array_filter([$s['email'],$s['owner_email']],'is_email')));
-            $owner=wp_mail($recipients,'New enquiry '.$reference,$body,array_merge($headers,['Reply-To: '.$record['customer_email']]));
-            $ack=wp_mail($record['customer_email'],'Your Prime enquiry '.$reference,"Thank you for your enquiry.\nReference: $reference\n$range\nYour requested date is not a confirmed booking.\n".$s['response_notice'],array_merge($headers,['Reply-To: '.$s['email']]));
+            $owner=wp_mail($recipients,$subject,$body,array_merge($headers,['Reply-To: '.$record['customer_email']]));
+            $ackbody='Hi '.$first.', thanks for reaching out to Prime Domestic and Cleaning Services. We’ve received your enquiry (reference '.$reference.') for '.$quote['service_name'].' in '.$record['suburb'];
+            if($quote['state']==='estimate')$ackbody.=', with an estimate of '.$range.'. We aim to reply within 2 hours during the day, and always within 24 hours, to confirm the details and a time that suits you. If you’d like to send photos, just reply to this email or message us on WhatsApp at 0491 245 156.';
+            else $ackbody.='. This one needs a proper look, so we’ll come back to you with a quote. We aim to reply within 2 hours during the day, and always within 24 hours. Photos help a lot: just reply to this email or WhatsApp us at 0491 245 156.';
+            $ackbody.="\n\nYour preferred date is a request, not a confirmed booking.\n\nTalk soon, Derick and the Prime Domestic team.";
+            $ack=wp_mail($record['customer_email'],'Got it! Your enquiry '.$reference,$ackbody,array_merge($headers,['Reply-To: '.$s['email']]));
             $sent=$owner&&$ack?1:0;$mail_error=$sent?'':'One or more email handoffs failed. Check the saved enquiry and mail configuration.';
         }
         $wpdb->update($table,['email_sent'=>$sent,'email_error'=>$mail_error],['id'=>$id]);self::success($id);
     }
-    static function success($id) { wp_send_json_success(['reference'=>PCE_Approved::reference($id),'whatsapp'=>PCE_Approved::whatsapp(PCE_Approved::reference($id)),'message'=>'Your enquiry has been received. Your requested date is not a confirmed booking.']); }
+    static function success($id) { $row=PCE_DB::get_enquiry($id);$quote=json_decode($row['estimate_breakdown'],true);$first=preg_split('/\s+/',trim($row['customer_name']))[0];wp_send_json_success(['reference'=>PCE_Approved::reference($id),'whatsapp'=>PCE_Approved::whatsapp(PCE_Approved::reference($id)),'first_name'=>$first,'state'=>$quote['state'],'range'=>$quote['state']==='estimate'?['low'=>$quote['low'],'high'=>$quote['high']]:null,'message'=>'Thanks '.$first.'! Your reference is '.PCE_Approved::reference($id).'. We aim to reply within 2 hours during the day, and always within 24 hours. Want to speed things up? Send us a few photos on WhatsApp.']); }
 }

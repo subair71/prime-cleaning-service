@@ -1,0 +1,231 @@
+[
+  {
+    "name": "home",
+    "path": "/",
+    "width": 390,
+    "canonicalCount": 1,
+    "description": "Family-run home cleaning in Malvern East and Melbourne's south-east. Instant online estimate, pay on completion, we bring everything.",
+    "h1": 1,
+    "images": [
+      {
+        "ok": true,
+        "src": "http://127.0.0.1:4173/wp-content/themes/kadence-child/assets/images/prime-regular-1280.webp"
+      },
+      {
+        "ok": true,
+        "src": "http://127.0.0.1:4173/wp-content/themes/kadence-child/assets/images/prime-lease-1280.webp"
+      },
+      {
+        "ok": true,
+        "src": "http://127.0.0.1:4173/wp-content/themes/kadence-child/assets/images/prime-carpet-1280.webp"
+      },
+      {
+        "ok": true,
+        "src": "http://127.0.0.1:4173/wp-content/themes/kadence-child/assets/images/prime-regular-1280.webp"
+      }
+    ],
+    "noindex": "noindex, nofollow",
+    "overflow": false,
+    "title": "Home Cleaning Malvern East | Prime Domestic",
+    "height": 7016
+  },
+  {
+    "name": "end-of-lease",
+    "path": "/end-of-lease-cleaning/",
+    "width": 390,
+    "canonicalCount": 1,
+    "description": "End of lease cleaning to the agent checklist across Melbourne's south-east. Clear prices, free fixes on agent reports within 72 hours.",
+    "h1": 1,
+    "images": [
+      {
+        "ok": true,
+        "src": "http://127.0.0.1:4173/wp-content/themes/kadence-child/assets/images/prime-lease-1280.webp"
+      }
+    ],
+    "noindex": "noindex, nofollow",
+    "overflow": false,
+    "title": "End of Lease Cleaning Malvern East | Prime Domestic",
+    "height": 4894
+  },
+  {
+    "name": "regular-deep",
+    "path": "/regular-home-cleaning/",
+    "width": 390,
+    "canonicalCount": 1,
+    "description": "Weekly, fortnightly or one-off house cleaning by a small local team. 15% off regular visits. Get an instant estimate.",
+    "h1": 1,
+    "images": [
+      {
+        "ok": true,
+        "src": "http://127.0.0.1:4173/wp-content/themes/kadence-child/assets/images/prime-regular-1280.webp"
+      },
+      {
+        "ok": true,
+        "src": "http://127.0.0.1:4173/wp-content/themes/kadence-child/assets/images/prime-lease-1280.webp"
+      }
+    ],
+    "noindex": "noindex, nofollow",
+    "overflow": false,
+    "title": "Regular House Cleaning Malvern East | Prime Domestic",
+    "height": 6350
+  },
+  {
+    "name": "carpet",
+    "path": "/carpet-steam-cleaning/",
+    "width": 390,
+    "canonicalCount": 1,
+    "description": "Hot-water extraction carpet cleaning, priced per room. Great for families, pets and end of lease. Get your estimate online.",
+    "h1": 1,
+    "images": [
+      {
+        "ok": true,
+        "src": "http://127.0.0.1:4173/wp-content/themes/kadence-child/assets/images/prime-carpet-1280.webp"
+      }
+    ],
+    "noindex": "noindex, nofollow",
+    "overflow": false,
+    "title": "Carpet Steam Cleaning Malvern East | Prime Domestic",
+    "height": 5078
+  },
+  {
+    "name": "contact",
+    "path": "/contact/",
+    "width": 1280,
+    "canonicalCount": 1,
+    "contentWidth": 1265,
+    "description": "Call, WhatsApp or email us. Free travel within 15 km of Malvern East, flat travel fee for 15\u201325 km. We aim to reply within 2 hours.",
+    "h1": 1,
+    "images": [
+      {
+        "ok": true,
+        "src": "http://127.0.0.1:4173/wp-content/themes/kadence-child/assets/images/prime-regular-1280.webp"
+      },
+      {
+        "ok": true,
+        "src": "http://127.0.0.1:4173/wp-content/themes/kadence-child/assets/images/service-zones.svg"
+      }
+    ],
+    "noindex": "noindex, nofollow",
+    "overflow": false,
+    "title": "Contact & Service Areas | Prime Domestic",
+    "height": 2407
+  },
+  {
+    "name": "home",
+    "path": "/",
+    "width": 1280,
+    "canonicalCount": 1,
+    "contentWidth": 1265,
+    "description": "Family-run home cleaning in Malvern East and Melbourne's south-east. Instant online estimate, pay on completion, we bring everything.",
+    "h1": 1,
+    "images": [
+      {
+        "ok": true,
+        "src": "http://127.0.0.1:4173/wp-content/themes/kadence-child/assets/images/prime-regular-1280.webp"
+      },
+      {
+        "ok": true,
+        "src": "http://127.0.0.1:4173/wp-content/themes/kadence-child/assets/images/prime-lease-1280.webp"
+      },
+      {
+        "ok": true,
+        "src": "http://127.0.0.1:4173/wp-content/themes/kadence-child/assets/images/prime-carpet-1280.webp"
+      },
+      {
+        "ok": true,
+        "src": "http://127.0.0.1:4173/wp-content/themes/kadence-child/assets/images/prime-regular-1280.webp"
+      }
+    ],
+    "noindex": "noindex, nofollow",
+    "overflow": false,
+    "title": "Home Cleaning Malvern East | Prime Domestic",
+    "height": 3976
+  },
+  {
+    "name": "end-of-lease",
+    "path": "/end-of-lease-cleaning/",
+    "width": 1280,
+    "canonicalCount": 1,
+    "contentWidth": 1280,
+    "description": "End of lease cleaning to the agent checklist across Melbourne's south-east. Clear prices, free fixes on agent reports within 72 hours.",
+    "h1": 1,
+    "images": [
+      {
+        "ok": true,
+        "src": "http://127.0.0.1:4173/wp-content/themes/kadence-child/assets/images/prime-lease-1280.webp"
+      }
+    ],
+    "noindex": "noindex, nofollow",
+    "overflow": false,
+    "title": "End of Lease Cleaning Malvern East | Prime Domestic",
+    "height": 3427
+  },
+  {
+    "name": "regular-deep",
+    "path": "/regular-home-cleaning/",
+    "width": 1280,
+    "canonicalCount": 1,
+    "contentWidth": 1265,
+    "description": "Weekly, fortnightly or one-off house cleaning by a small local team. 15% off regular visits. Get an instant estimate.",
+    "h1": 1,
+    "images": [
+      {
+        "ok": true,
+        "src": "http://127.0.0.1:4173/wp-content/themes/kadence-child/assets/images/prime-regular-1280.webp"
+      },
+      {
+        "ok": true,
+        "src": "http://127.0.0.1:4173/wp-content/themes/kadence-child/assets/images/prime-lease-1280.webp"
+      }
+    ],
+    "noindex": "noindex, nofollow",
+    "overflow": false,
+    "title": "Regular House Cleaning Malvern East | Prime Domestic",
+    "height": 4150
+  },
+  {
+    "name": "carpet",
+    "path": "/carpet-steam-cleaning/",
+    "width": 1280,
+    "canonicalCount": 1,
+    "contentWidth": 1265,
+    "description": "Hot-water extraction carpet cleaning, priced per room. Great for families, pets and end of lease. Get your estimate online.",
+    "h1": 1,
+    "images": [
+      {
+        "ok": true,
+        "src": "http://127.0.0.1:4173/wp-content/themes/kadence-child/assets/images/prime-carpet-1280.webp"
+      }
+    ],
+    "noindex": "noindex, nofollow",
+    "overflow": false,
+    "title": "Carpet Steam Cleaning Malvern East | Prime Domestic",
+    "height": 3476
+  },
+  {
+    "name": "prices-estimate",
+    "path": "/get-a-quote/",
+    "width": 1280,
+    "canonicalCount": 1,
+    "contentWidth": 1280,
+    "description": "See starting prices and get an instant cleaning estimate in about a minute. No GST, no deposits, pay on completion.",
+    "h1": 1,
+    "images": [],
+    "noindex": "noindex, nofollow",
+    "overflow": false,
+    "title": "Cleaning Prices & Instant Estimate | Prime Domestic",
+    "height": 3593
+  },
+  {
+    "name": "about",
+    "path": "/about/",
+    "width": 1280,
+    "height": 2592
+  },
+  {
+    "name": "blog",
+    "path": "/blog/",
+    "width": 1280,
+    "height": 1458
+  }
+]
