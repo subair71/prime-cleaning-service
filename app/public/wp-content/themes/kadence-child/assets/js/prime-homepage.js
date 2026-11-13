@@ -42,15 +42,22 @@ document.addEventListener("DOMContentLoaded", function () {
     const size = form.querySelector(".prime-home-size");
     const officeNote = form.querySelector(".prime-office-note");
     const sync = function () {
-      const office = service.value === "office";
+      const office = service.value === "office" || service.value === "carpet";
       size.hidden = office;
       bedrooms.disabled = office;
-      officeNote.hidden = !office;
+      officeNote.hidden = service.value !== "office";
     };
     service.addEventListener("change", sync);
     sync();
     form.addEventListener("submit", function (event) {
       if (form.dataset.demo === "true") event.preventDefault();
+      else {
+        event.preventDefault();
+        const destination = new URL(form.action, window.location.href);
+        new FormData(form).forEach((value, key) => destination.searchParams.set(key, value));
+        destination.hash = "estimate";
+        window.location.assign(destination.href);
+      }
     });
   });
 });

@@ -2,7 +2,14 @@
   const button = document.querySelector('.pp-menu-toggle'), nav = document.getElementById('pp-navigation');
   if(!button || !nav)return;
   button.addEventListener('click',()=>{const open=button.getAttribute('aria-expanded')==='true';button.setAttribute('aria-expanded',String(!open));nav.classList.toggle('is-open',!open);});
-  document.addEventListener('keydown',e=>{if(e.key==='Escape'){nav.classList.remove('is-open');button.setAttribute('aria-expanded','false');document.querySelector('.pp-services-menu')?.removeAttribute('open');button.focus();}});
+  document.addEventListener('keydown',e=>{
+    if(e.key!=='Escape')return;
+    const services=document.querySelector('.pp-services-menu');
+    if(services?.open){services.open=false;services.querySelector('summary').focus();}
+    else if(button.getAttribute('aria-expanded')==='true'){nav.classList.remove('is-open');button.setAttribute('aria-expanded','false');button.focus();}
+  });
+  document.addEventListener('click',e=>{const services=document.querySelector('.pp-services-menu');if(services?.open&&!services.contains(e.target))services.open=false;});
+  nav.addEventListener('click',e=>{if(e.target.closest('a')){nav.classList.remove('is-open');button.setAttribute('aria-expanded','false');}});
 })();
 /* Enhance editable core Details blocks into a keyboard-accessible checklist tab set. */
 document.querySelectorAll('.pp-inclusions').forEach((group, index) => {
