@@ -1,3 +1,5 @@
+> **Superseded:** this Free/custom-calculator bridge does not meet the no-custom-code contract. Do not use it for handover. See [native migration status and blockers](native-migration/README.md).
+
 # Fluent Forms and visual editing
 
 Branch: `feature/prime-fluent-forms-builder`, based on main `a10970d`.

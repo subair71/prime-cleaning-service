@@ -1,0 +1,37 @@
+{
+  "provenance": "Source defaults only; not a live-site settings backup. Grids, add-on/carpet rates and suburbs are unapproved.",
+  "settings": {
+    "grids": {
+      "lease": [],
+      "regular": []
+    },
+    "extras": {
+      "oven": null,
+      "fridge": null,
+      "windows": null,
+      "balcony": null,
+      "walls": null
+    },
+    "carpets": {
+      "bedroom": null,
+      "living": null,
+      "hallway": null,
+      "stairs": null
+    },
+    "deep_multiplier": 1.5,
+    "storey_percent": 15,
+    "recurring_percent": 15,
+    "travel_fee": 30,
+    "minimum": 110,
+    "suburbs": [],
+    "phone": "0491 245 156",
+    "whatsapp": "61491245156",
+    "email": "info@primedomestic.com.au",
+    "owner_email": "",
+    "sender_email": "",
+    "abn": "16 938 734 164",
+    "reviews_url": "",
+    "response_notice": "We aim to reply within 2 hours during the day, and always within 24 hours.",
+    "discount_message": "Save 15% on the base clean and double-storey surcharge with weekly or fortnightly Regular cleaning. Add-ons and travel are excluded."
+  }
+}

@@ -1,6 +1,6 @@
 # Prime Domestic & Cleaning Services — Melbourne
 
-**Fluent Forms branch (15 November 2026):** [Setup, visual editing, rollback and validation](docs/fluent-forms-builder.md). Contact and quote-enquiry fields use Fluent Forms Free after explicit setup. The existing pricing engine and precise theme styling remain; no production deployment.
+**Native WordPress migration (15 November 2026):** [Kadence review, native exports, screenshots and remaining blockers](docs/native-migration/README.md). Eleven native block layouts and a standalone contact form are implemented. **The Fluent Forms Pro estimator and full handover are blocked** pending Pro, approved pricing/suburbs and actual-site migration/validation. Same branch and draft PR #7; no merge or production deployment. The earlier Free/custom bridge is superseded and does not meet the contract.
 
 **Client review refinements (13 November 2026):** [Full-page screenshots, proposal checklist, test results and editing guide](docs/client-review/README.md). Feature branch only; no merge or production deployment.
 

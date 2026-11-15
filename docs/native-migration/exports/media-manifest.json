@@ -1,0 +1,17 @@
+{
+  "regular": {
+    "id": 20,
+    "url": "http://127.0.0.1:4173/wp-content/uploads/2026/11/prime-regular-1280.webp",
+    "file": "prime-regular-1280.webp"
+  },
+  "lease": {
+    "id": 21,
+    "url": "http://127.0.0.1:4173/wp-content/uploads/2026/11/prime-lease-1280.webp",
+    "file": "prime-lease-1280.webp"
+  },
+  "carpet": {
+    "id": 22,
+    "url": "http://127.0.0.1:4173/wp-content/uploads/2026/11/prime-carpet-1280.webp",
+    "file": "prime-carpet-1280.webp"
+  }
+}

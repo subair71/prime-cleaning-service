@@ -1,0 +1,90 @@
+[
+    {
+        "id": 4,
+        "title": "Home",
+        "slug": "home",
+        "status": "publish",
+        "key": "home",
+        "file": "pages/home.html"
+    },
+    {
+        "id": 5,
+        "title": "Office Cleaning \u2014 Phase 2",
+        "slug": "office-cleaning",
+        "status": "draft",
+        "key": "office",
+        "file": "pages/office.html"
+    },
+    {
+        "id": 6,
+        "title": "End of Lease Cleaning",
+        "slug": "end-of-lease-cleaning",
+        "status": "publish",
+        "key": "lease",
+        "file": "pages/lease.html"
+    },
+    {
+        "id": 7,
+        "title": "Regular &amp; Deep Cleaning",
+        "slug": "regular-home-cleaning",
+        "status": "publish",
+        "key": "regular",
+        "file": "pages/regular.html"
+    },
+    {
+        "id": 8,
+        "title": "Carpet Steam Cleaning",
+        "slug": "carpet-steam-cleaning",
+        "status": "publish",
+        "key": "carpet",
+        "file": "pages/carpet.html"
+    },
+    {
+        "id": 9,
+        "title": "Prices &amp; Instant Estimate",
+        "slug": "get-a-quote",
+        "status": "publish",
+        "key": "prices",
+        "file": "pages/prices.html"
+    },
+    {
+        "id": 10,
+        "title": "About",
+        "slug": "about",
+        "status": "publish",
+        "key": "about",
+        "file": "pages/about.html"
+    },
+    {
+        "id": 11,
+        "title": "Contact &amp; Service Areas",
+        "slug": "contact",
+        "status": "publish",
+        "key": "contact",
+        "file": "pages/contact.html"
+    },
+    {
+        "id": 12,
+        "title": "Blog",
+        "slug": "blog",
+        "status": "publish",
+        "key": "blog",
+        "file": "pages/blog.html"
+    },
+    {
+        "id": 3,
+        "title": "Privacy Policy",
+        "slug": "privacy-policy",
+        "status": "publish",
+        "key": "privacy",
+        "file": "pages/privacy.html"
+    },
+    {
+        "id": 15,
+        "title": "Terms of Service",
+        "slug": "terms",
+        "status": "draft",
+        "key": "terms",
+        "file": "pages/terms.html"
+    }
+]

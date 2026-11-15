@@ -1,0 +1,68 @@
+[
+  {
+    "page": "home",
+    "h1": 1,
+    "scrollWidth": 753,
+    "width": 753
+  },
+  {
+    "page": "regular",
+    "h1": 1,
+    "scrollWidth": 753,
+    "width": 753
+  },
+  {
+    "page": "lease",
+    "h1": 1,
+    "scrollWidth": 753,
+    "width": 753
+  },
+  {
+    "page": "carpet",
+    "h1": 1,
+    "scrollWidth": 753,
+    "width": 753
+  },
+  {
+    "page": "prices",
+    "h1": 1,
+    "scrollWidth": 753,
+    "width": 753
+  },
+  {
+    "page": "about",
+    "h1": 1,
+    "scrollWidth": 753,
+    "width": 753
+  },
+  {
+    "page": "contact",
+    "h1": 1,
+    "scrollWidth": 753,
+    "width": 753
+  },
+  {
+    "page": "blog",
+    "h1": 1,
+    "scrollWidth": 753,
+    "width": 753
+  },
+  {
+    "page": "privacy",
+    "h1": 1,
+    "scrollWidth": 753,
+    "width": 753
+  },
+  {
+    "page": "office",
+    "h1": 1,
+    "scrollWidth": 753,
+    "width": 753
+  },
+  {
+    "page": "terms",
+    "h1": 1,
+    "scrollWidth": 753,
+    "width": 753
+  }
+]
