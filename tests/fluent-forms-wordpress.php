@@ -1,0 +1,53 @@
+<?php
+/** Run against a disposable local WordPress + Fluent Forms installation only. */
+if (empty($argv[1])) { fwrite(STDERR, "Usage: php tests/fluent-forms-wordpress.php /path/to/wp-load.php\n"); exit(1); }
+$_SERVER['HTTP_HOST'] = '127.0.0.1'; $_SERVER['REQUEST_URI'] = '/';
+require $argv[1];
+if (wp_get_environment_type() !== 'local') throw new RuntimeException('Use a disposable local installation.');
+add_filter('pre_wp_mail', '__return_false');
+$checks = 0;
+function ff_check($label, $ok) { global $checks; $checks++; if (!$ok) throw new RuntimeException($label); }
+$ids = PCE_Fluent_Forms::setup();
+ff_check('setup is available', !is_wp_error($ids));
+$before = wpFluent()->table('fluentform_forms')->count();
+$again = PCE_Fluent_Forms::setup();
+ff_check('setup is idempotent', $ids === $again && $before === wpFluent()->table('fluentform_forms')->count());
+ff_check('contact ready', PCE_Fluent_Forms::ready('contact'));
+ff_check('enquiry ready', PCE_Fluent_Forms::ready('enquiry'));
+$form = wpFluent()->table('fluentform_forms')->find($ids['enquiry']);
+$s = PCE_Approved::defaults();
+$s['grids']['regular']['2:1'] = 200;
+$s['suburbs']['fixture'] = ['name'=>'Fixture suburb', 'postcode'=>'3000', 'zone'=>2];
+$s['extras']['oven'] = 20;
+$quote = PCE_Approved::calculate(['service'=>'regular','bedrooms'=>'2','bathrooms'=>'1','property'=>'double','frequency'=>'weekly','suburb'=>'fixture','extras'=>['oven'=>1]], $s);
+$token = wp_generate_uuid4(); set_transient('pce_quote_'.$token, $quote, 600);
+$p = ['name'=>'Fixture QA','phone'=>'0400000000','email'=>'qa@example.invalid','suburb_name'=>'Fixture suburb','preferred_date'=>wp_date('Y-m-d'),'parking'=>'available','consent'=>true,'request_key'=>wp_generate_uuid4(),'quote_token'=>$token];
+ff_check('valid quote accepted', !PCE_Fluent_Forms::validate([], $p, $form));
+ff_check('date rejected', isset(PCE_Fluent_Forms::validate([], array_replace($p,['preferred_date'=>'2000-01-01']), $form)['preferred_date']));
+ff_check('consent rejected', isset(PCE_Fluent_Forms::validate([], array_replace($p,['consent'=>false]), $form)['consent']));
+ff_check('expired token rejected', isset(PCE_Fluent_Forms::validate([], array_replace($p,['quote_token'=>'expired']), $form)['quote_token']));
+ff_check('unrelated form untouched', PCE_Fluent_Forms::validate([], [], (object)['id'=>999999]) === []);
+$snapshot = PCE_Fluent_Forms::snapshot(array_merge($p, ['prime_estimate'=>'forged','prime_estimate_summary'=>'AUD 1']), $form->id);
+ff_check('price cannot be forged', json_decode($snapshot['prime_estimate'], true)['total'] === 245.5);
+ff_check('suburb authoritative', $snapshot['suburb_name'] === 'Fixture suburb');
+$saved = PCE_Flow::persist($p);
+ff_check('saved successfully', !is_wp_error($saved));
+ff_check('range preserved', $saved['range'] === ['low'=>220.0,'high'=>270.0] || $saved['range'] === ['low'=>220,'high'=>270]);
+$rowId = PCE_Fluent_Forms::prior($p);
+$row = PCE_DB::get_enquiry($rowId);
+ff_check('frozen snapshot saved', json_decode($row['estimate_breakdown'], true)['total'] === 245.5);
+delete_transient('pce_quote_'.$token);
+ff_check('retry works after token expiry', PCE_Flow::persist($p)['reference'] === $saved['reference']);
+global $wpdb;
+ff_check('one legacy entry per request', (int)$wpdb->get_var($wpdb->prepare('SELECT COUNT(*) FROM '.PCE_DB::get_table_name().' WHERE request_key=%s', hash('sha256',$p['request_key']))) === 1);
+ff_check('mail failure recorded truthfully', (int)$row['email_sent'] === 0 && $row['email_error'] !== '');
+$contact = wpFluent()->table('fluentform_forms')->find($ids['contact']);
+ff_check('contact message required', isset(PCE_Fluent_Forms::validate([], $p, $contact)['notes']));
+$html = PCE_Flow::render();
+$doc = new DOMDocument(); libxml_use_internal_errors(true); $doc->loadHTML($html); $xpath = new DOMXPath($doc);
+ff_check('two sibling forms, never nested', $xpath->query('//form')->length === 2 && $xpath->query('//form//form')->length === 0);
+$off = $ids; $off['enabled'] = false; update_option(PCE_Fluent_Forms::OPTION, $off);
+ff_check('rollback to original forms', str_contains(PCE_Flow::contact_form(), 'pe-contact pe-form'));
+update_option(PCE_Fluent_Forms::OPTION, $ids);
+$wpdb->delete(PCE_DB::get_table_name(), ['id'=>$rowId]);
+echo "$checks Fluent Forms integration checks passed.\n";

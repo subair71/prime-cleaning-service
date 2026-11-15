@@ -30,7 +30,7 @@ class PCE_Flow {
         return '<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'.($paths[$service]??'').'</svg>';
     }
     static function render() { self::assets();ob_start(); include PCE_PLUGIN_DIR.'templates/approved-estimator.php'; return ob_get_clean(); }
-    static function contact_form() { self::assets();ob_start(); ?><form class="pe-contact pe-form" novalidate><div class="pe-errors" role="alert" hidden></div><?php self::contact_fields(true); ?><button class="pe-primary" type="submit">Send message</button><p class="pe-small">An enquiry is not a confirmed booking.</p><div class="pe-contact-success" role="status" hidden></div></form><?php return ob_get_clean(); }
+    static function contact_form() { if (class_exists('PCE_Fluent_Forms') && PCE_Fluent_Forms::ready('contact')) return PCE_Fluent_Forms::render('contact'); self::assets();ob_start(); ?><form class="pe-contact pe-form" novalidate><div class="pe-errors" role="alert" hidden></div><?php self::contact_fields(true); ?><button class="pe-primary" type="submit">Send message</button><p class="pe-small">An enquiry is not a confirmed booking.</p><div class="pe-contact-success" role="status" hidden></div></form><?php return ob_get_clean(); }
     static function contact_fields($simple=false) {
         $fields=['name'=>['Full name','text',true,'name'],'phone'=>['Mobile number','tel',true,'tel'],'email'=>['Email address','email',true,'email']];
         if($simple) $fields['suburb_name']=['Suburb','text',true,'address-level2'];
@@ -81,22 +81,27 @@ class PCE_Flow {
     static function submit() { self::save(false); }
     static function contact() { self::save(true); }
     static function save($simple) {
-        $p=self::request();$errors=self::validate_contact($p,$simple);
-        if($errors) wp_send_json_error(['message'=>'Please complete the highlighted fields.','errors'=>$errors],422);
+        $result=self::persist(self::request(),$simple);
+        if(is_wp_error($result)) wp_send_json_error(array_merge(['message'=>$result->get_error_message()],(array)$result->get_error_data()),422);
+        wp_send_json_success($result);
+    }
+    static function persist($p,$simple=false) {
+        $errors=self::validate_contact($p,$simple);
+        if($errors) return new WP_Error('validation','Please complete the highlighted fields.',['errors'=>$errors]);
         $key=$p['request_key']??'';
-        if(!preg_match('/^[a-zA-Z0-9-]{24,80}$/',$key)) wp_send_json_error(['message'=>'Refresh the page to start a new enquiry.'],422);
+        if(!preg_match('/^[a-zA-Z0-9-]{24,80}$/',$key)) return new WP_Error('request_key','Refresh the page to start a new enquiry.');
         $key=hash('sha256',$key);global $wpdb;$table=PCE_DB::get_table_name();
         $existing=$wpdb->get_var($wpdb->prepare("SELECT id FROM $table WHERE request_key=%s",$key));
-        if($existing) self::success($existing);
+        if($existing) return self::success_data($existing);
         $quote=$simple?['version'=>2,'state'=>'custom','service_name'=>'General enquiry','reasons'=>['enquiry'],'input'=>['service'=>'contact'],'lines'=>[],'total'=>null,'low'=>null,'high'=>null]:get_transient('pce_quote_'.sanitize_text_field($p['quote_token']??''));
-        if(!$quote) wp_send_json_error(['message'=>'Your estimate has expired. Go back to review your estimate; your contact details will stay in this form.','expired'=>true],409);
+        if(!$quote) return new WP_Error('expired','Your estimate has expired. Go back to review your estimate; your contact details will stay in this form.',['expired'=>true]);
         $input=$quote['input'];$s=PCE_Approved::settings();$suburb=$quote['suburb_details']??null;
-        if(!$simple && !$suburb && trim($p['suburb_name']??'')==='') wp_send_json_error(['message'=>'Enter your suburb.','errors'=>['suburb_name'=>'Enter your suburb for a custom quote.']],422);
+        if(!$simple && !$suburb && trim($p['suburb_name']??'')==='') return new WP_Error('suburb','Enter your suburb.',['errors'=>['suburb_name'=>'Enter your suburb for a custom quote.']]);
         $extras=[]; foreach(['additional_dates','time_preference','parking','condition','pets','referral'] as $k) $extras[$k]=sanitize_text_field($p[$k]??'');
         $extras['consent']=true;$extras['consent_at']=gmdate('c');$extras['privacy_url']=get_privacy_policy_url();
         $record=['created_at'=>current_time('mysql'),'status'=>'new','customer_name'=>sanitize_text_field($p['name']),'customer_email'=>sanitize_email($p['email']),'customer_phone'=>sanitize_text_field($p['phone']),'suburb'=>$suburb?$suburb['name']:sanitize_text_field($p['suburb_name']??''),'postcode'=>$suburb?$suburb['postcode']:'','service_type'=>$input['service'],'is_in_area'=>$suburb?1:0,'property_details'=>wp_json_encode(array_merge($input,['enquiry'=>$extras])),'estimate_breakdown'=>wp_json_encode($quote),'total_amount'=>$quote['total']??0,'preferred_date'=>$simple?null:$p['preferred_date'],'notes'=>sanitize_textarea_field($p['notes']??''),'request_key'=>$key,'email_sent'=>0];
         $ok=$wpdb->insert($table,$record);$id=$wpdb->insert_id;
-        if(!$ok) { $id=$wpdb->get_var($wpdb->prepare("SELECT id FROM $table WHERE request_key=%s",$key));if($id) self::success($id);wp_send_json_error(['message'=>'Your enquiry could not be saved. Your details remain below. Please try again.'],500); }
+        if(!$ok) { $id=$wpdb->get_var($wpdb->prepare("SELECT id FROM $table WHERE request_key=%s",$key));if($id) return self::success_data($id);return new WP_Error('storage','Your enquiry could not be saved. Your details remain below. Please try again.'); }
         // A saved record is success even when transport is not configured. Never claim inbox delivery.
         $reference=PCE_Approved::reference($id);$mail_error='Email transport / approved sender not configured.';$sent=0;
         if(is_email($s['sender_email']) && is_email($s['email'])) {
@@ -116,7 +121,8 @@ class PCE_Flow {
             $ack=wp_mail($record['customer_email'],'Got it! Your enquiry '.$reference,$ackbody,array_merge($headers,['Reply-To: '.$s['email']]));
             $sent=$owner&&$ack?1:0;$mail_error=$sent?'':'One or more email handoffs failed. Check the saved enquiry and mail configuration.';
         }
-        $wpdb->update($table,['email_sent'=>$sent,'email_error'=>$mail_error],['id'=>$id]);self::success($id);
+        $wpdb->update($table,['email_sent'=>$sent,'email_error'=>$mail_error],['id'=>$id]);return self::success_data($id);
     }
-    static function success($id) { $row=PCE_DB::get_enquiry($id);$quote=json_decode($row['estimate_breakdown'],true);$first=preg_split('/\s+/',trim($row['customer_name']))[0];wp_send_json_success(['reference'=>PCE_Approved::reference($id),'whatsapp'=>PCE_Approved::whatsapp(PCE_Approved::reference($id)),'first_name'=>$first,'state'=>$quote['state'],'range'=>$quote['state']==='estimate'?['low'=>$quote['low'],'high'=>$quote['high']]:null,'message'=>'Thanks '.$first.'! Your reference is '.PCE_Approved::reference($id).'. We aim to reply within 2 hours during the day, and always within 24 hours. Want to speed things up? Send us a few photos on WhatsApp.']); }
+    static function success($id) { wp_send_json_success(self::success_data($id)); }
+    static function success_data($id) { $row=PCE_DB::get_enquiry($id);$quote=json_decode($row['estimate_breakdown'],true);$first=preg_split('/\s+/',trim($row['customer_name']))[0];return ['reference'=>PCE_Approved::reference($id),'whatsapp'=>PCE_Approved::whatsapp(PCE_Approved::reference($id)),'first_name'=>$first,'state'=>$quote['state'],'range'=>$quote['state']==='estimate'?['low'=>$quote['low'],'high'=>$quote['high']]:null,'message'=>'Thanks '.$first.'! Your reference is '.PCE_Approved::reference($id).'. We aim to reply within 2 hours during the day, and always within 24 hours. Want to speed things up? Send us a few photos on WhatsApp.']; }
 }
