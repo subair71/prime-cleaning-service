@@ -3,14 +3,14 @@
  * Plugin Name: Prime Cleaning Estimator
  * Plugin URI: https://prime-cleaning-service.local
  * Description: Multi-step cleaning price estimator for Melbourne domestic and commercial services with live pricing and admin quote management.
- * Version: 2.1.0
+ * Version: 2.2.0
  * Author: Prime Domestic & Cleaning Services
  * Text Domain: prime-cleaning-estimator
  */
 
 defined('ABSPATH') || exit;
 
-define('PCE_VERSION', '2.1.0');
+define('PCE_VERSION', '2.2.0');
 define('PCE_PLUGIN_FILE', __FILE__);
 define('PCE_PLUGIN_DIR', plugin_dir_path(__FILE__));
 
@@ -25,6 +25,8 @@ require_once PCE_PLUGIN_DIR . 'includes/class-pce-shortcode.php';
 require_once PCE_PLUGIN_DIR . 'includes/class-pce-approved.php';
 require_once PCE_PLUGIN_DIR . 'includes/class-pce-flow.php';
 require_once PCE_PLUGIN_DIR . 'includes/class-pce-approved-admin.php';
+
+require_once PCE_PLUGIN_DIR . 'includes/class-pce-fluent-forms.php';
 
 // Plugin Activation Hook: Database table creation
 register_activation_hook(__FILE__, function () {
@@ -42,5 +44,6 @@ add_action('plugins_loaded', function () {
     PCE_Admin::init();
     PCE_Shortcode::init();
     PCE_Flow::init();
+    PCE_Fluent_Forms::init();
     PCE_Approved_Admin::init();
 });

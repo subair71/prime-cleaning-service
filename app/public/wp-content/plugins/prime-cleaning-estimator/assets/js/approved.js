@@ -34,6 +34,7 @@
   const root = document.querySelector('.pe');
   if (root) {
     const form = root.querySelector('form'), next = form.querySelector('.pe-next'), back = form.querySelector('.pe-back');
+    const fluentPanel = root.querySelector('.pe-fluent-enquiry');
     let step = 0, token = '', requestKey = uuid(), busy = false;
     const service = () => form.querySelector('[name="service"]:checked')?.value || '';
     const payload = () => { const p = read(form); p.extras = {}; p.carpets = {}; for (const key of ['oven','fridge','windows','balcony','walls']) p.extras[key] = !!form.elements['extra_' + key].checked; for (const key of ['bedroom','living','hallway','stairs']) p.carpets[key] = form.elements['carpet_' + key].value; p.furnished = form.elements.furnished.checked; return p; };
@@ -41,14 +42,23 @@
       const s = service(); form.querySelector('.pe-frequency').hidden = s !== 'regular'; form.querySelector('.pe-lease').hidden = s !== 'lease'; form.querySelector('.pe-property').hidden = s === 'carpet';form.querySelector('.pe-carpet-only').hidden = s !== 'carpet';form.querySelector('.pe-extras').hidden = s === 'carpet';
       form.elements.extra_windows.closest('label').hidden = s === 'lease'; if(s === 'lease')form.elements.extra_windows.checked=false; form.querySelector('.pe-lease-included').hidden=s!=='lease';
       form.querySelector('.pe-unlisted').hidden = form.elements.suburb.value !== 'unlisted';
-      const selected = config.suburbs[form.elements.suburb.value]; form.elements.review_suburb.value = selected ? selected.name + ' ' + selected.postcode : form.elements.suburb_name.value; form.querySelector('.pe-zone-message').textContent = selected ? 'Selected suburb: Zone ' + selected.zone : '';
+      const selected = config.suburbs[form.elements.suburb.value]; if (form.elements.review_suburb) form.elements.review_suburb.value = selected ? selected.name + ' ' + selected.postcode : form.elements.suburb_name.value; form.querySelector('.pe-zone-message').textContent = selected ? 'Selected suburb: Zone ' + selected.zone : '';
       root.querySelector('.pe-summary-service').textContent = form.querySelector('[name="service"]:checked')?.closest('label').querySelector('strong').textContent || 'Choose a service to get started.';
     };
     const show = focus => {
+      if (fluentPanel) {
+        form.hidden = step === 5; fluentPanel.hidden = step !== 5;
+        const enquiry = fluentPanel.querySelector('form');
+        if (enquiry && step === 5) {
+          enquiry.elements.quote_token.value = token; enquiry.elements.request_key.value = requestKey;
+          const suburb = config.suburbs[form.elements.suburb.value];
+          enquiry.elements.suburb_name.value = suburb ? suburb.name + ' ' + suburb.postcode : form.elements.suburb_name.value;
+        }
+      }
       form.querySelectorAll('.pe-step').forEach(el => el.hidden = Number(el.dataset.step) !== step);
       root.querySelectorAll('[data-progress]').forEach(el => { el.removeAttribute('aria-current'); if (Number(el.dataset.progress) === Math.min(step,4)) el.setAttribute('aria-current','step'); el.classList.toggle('complete',Number(el.dataset.progress)<step); });
       back.hidden = step === 0; next.textContent = step === 3 ? 'See my estimate →' : step === 4 ? 'Continue to enquiry →' : step === 5 ? 'Send my enquiry →' : 'Continue →';
-      if (focus) { const heading = form.querySelector('[data-step="' + step + '"] h2'); heading.tabIndex = -1; heading.focus({preventScroll:true}); root.scrollIntoView({block:'start',behavior:'smooth'}); } adapt();
+      if (focus) { const heading = fluentPanel && step === 5 ? fluentPanel.querySelector('h2') : form.querySelector('[data-step="' + step + '"] h2'); heading.tabIndex = -1; heading.focus({preventScroll:true}); root.scrollIntoView({block:'start',behavior:'smooth'}); } adapt();
     };
     const validate = () => {
       const p = payload(), e = {};
@@ -61,7 +71,7 @@
     };
     const result = q => {
       const box = root.querySelector('.pe-result'); box.replaceChildren();
-      form.querySelector('[data-step="5"] h2 + p').textContent = (q.state === 'custom' ? 'Your custom-quote request is ready.' : 'Your estimate is ready.') + ' Add your contact details so we can follow up.';
+      (fluentPanel || form.querySelector('[data-step="5"]')).querySelector('h2 + p').textContent = (q.state === 'custom' ? 'Your custom-quote request is ready.' : 'Your estimate is ready.') + ' Add your contact details so we can follow up.';
       const heading = document.createElement('h3'); heading.className = 'pe-range'; heading.textContent = q.state === 'estimate' ? 'AUD ' + q.low + '–' + q.high : 'Let’s prepare a custom quote';box.append(heading);
       if(q.state==='custom') { const intro=document.createElement('p');intro.textContent='This one needs a human eye. Send us your details (and a few photos on WhatsApp if you like) and we’ll come back with a proper quote. We aim to reply within 2 hours during the day, and always within 24 hours.';box.append(intro); const reasons={bedrooms:'Properties with 6+ bedrooms need a tailored quote.',bathrooms:'Properties with 5+ bathrooms need a tailored quote.',furnished:'Furnished End of Lease properties need a tailored quote.',extra_wall_scope:'Extra wall spot cleaning needs a custom quote so we can confirm the additional work.',suburb:'We might still come to you! Send your details and we’ll let you know.',missing_price:'An applicable approved price is unavailable. We will confirm your quote personally.'}; const ul=document.createElement('ul'); q.reasons.forEach(k=>{const li=document.createElement('li');li.textContent=reasons[k]||'Please send an enquiry for a tailored quote.';ul.append(li);});box.append(ul); }
       else { const details=document.createElement('details'),summary=document.createElement('summary');summary.textContent='View price breakdown';details.append(summary);q.lines.forEach(line=>{const row=document.createElement('div');row.className='pe-price-line';const label=document.createElement('span'),amount=document.createElement('strong');label.textContent=line.label;amount.textContent='AUD '+Number(line.amount).toFixed(2);row.append(label,amount);details.append(row);});const note=document.createElement('p');note.textContent='Minimum charge applied where needed. The range is ±10%, rounded to the nearest AUD 5.';details.append(note);box.append(details); }
@@ -73,6 +83,14 @@
         else step++; show(root.querySelector('.pe-success').hidden);
       } catch(e){if(e.expired){step=3;show(true);}errors(form,e);}finally{busy=false;next.disabled=false;back.disabled=false;if(root.querySelector('.pe-success').hidden)show(false);}
     });
+    if (fluentPanel) {
+      fluentPanel.querySelector('.pe-fluent-back').addEventListener('click', () => { step = 4; show(true); });
+      document.addEventListener('prime:enquiry-saved', event => {
+        if (!fluentPanel.contains(event.detail.form)) return;
+        fluentPanel.querySelector('.pe-fluent-back').hidden = true;
+        root.querySelector('.pe-progress').hidden = true;
+      });
+    }
     back.addEventListener('click',()=>{if(!busy){errors(form);step=Math.max(0,step-1);show(true);}});
     form.addEventListener('submit',e=>{e.preventDefault();next.click();});form.addEventListener('change',adapt);
     const params=new URLSearchParams(location.search),s=params.get('prime_service');if(['lease','regular','deep','carpet'].includes(s)){form.querySelector('[name="service"][value="'+s+'"]').checked=true;const b=params.get('prime_bedrooms');if(/^[0-6]$/.test(b||''))form.elements.bedrooms.value=b;if(['weekly','fortnightly'].includes(params.get('frequency')))form.elements.frequency.value=params.get('frequency');if(params.get('furnished')==='1')form.elements.furnished.checked=true;}

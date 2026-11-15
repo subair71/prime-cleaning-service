@@ -1,0 +1,73 @@
+<?php
+/**
+ * ONE-TIME OFFLINE REVIEW IMPORT. Never install in wp-content or call from HTTP.
+ * wp eval-file tools/import-native-review.php
+ * Requires PRIME_NATIVE_REVIEW=1, a fresh noindex local/staging WordPress,
+ * Kadence, Kadence Blocks and Fluent Forms. Does not install an estimator.
+ */
+if (PHP_SAPI !== 'cli' || !defined('ABSPATH') || getenv('PRIME_NATIVE_REVIEW') !== '1') {
+    throw new RuntimeException('Run via WP-CLI with PRIME_NATIVE_REVIEW=1 on a fresh review installation.');
+}
+if (!in_array(wp_get_environment_type(), ['local', 'staging'], true) || (int)get_option('blog_public') !== 0) {
+    throw new RuntimeException('Only an isolated noindex local/staging review is supported.');
+}
+if (get_option('prime_native_review_imported')) throw new RuntimeException('Already imported. Existing edits will not be overwritten.');
+foreach (get_posts(['post_type'=>['page','post','attachment','wp_block'], 'post_status'=>'any', 'numberposts'=>-1]) as $post) {
+    if (!in_array($post->post_name, ['sample-page','privacy-policy','hello-world'], true)) {
+        throw new RuntimeException('Existing content found. Use the existing-site migration guide, not this fresh-review importer.');
+    }
+}
+if (!wp_get_theme('kadence')->exists() || !defined('KADENCE_BLOCKS_VERSION') || !defined('FLUENTFORM_VERSION')) {
+    throw new RuntimeException('Install and activate the native dependencies first.');
+}
+if (wpFluent()->table('fluentform_submissions')->count() || wpFluent()->table('fluentform_forms')->whereNotIn('title', ['Contact Form Demo','Subscription Form'])->count()) {
+    throw new RuntimeException('Existing forms or entries found; refusing to modify this installation.');
+}
+if (in_array('prime-cleaning-estimator/prime-cleaning-estimator.php', get_option('active_plugins', []), true)) {
+    throw new RuntimeException('The custom estimator must not be active on this isolated review.');
+}
+$root=dirname(__DIR__).'/docs/native-migration';
+$read=fn($file)=>json_decode(file_get_contents($root.'/exports/'.$file), true, 512, JSON_THROW_ON_ERROR);
+$pages=$read('page-manifest.json');$media=$read('media-manifest.json');$source='http://127.0.0.1:4173';
+require_once ABSPATH.'wp-admin/includes/file.php';require_once ABSPATH.'wp-admin/includes/media.php';require_once ABSPATH.'wp-admin/includes/image.php';
+$replace=[$source=>untrailingslashit(home_url())];$image_ids=[];
+foreach ($media as $key=>$m) {
+    $tmp=wp_tempnam($m['file']);copy($root.'/exports/media/'.$m['file'],$tmp);
+    $id=media_handle_sideload(['name'=>$m['file'],'tmp_name'=>$tmp],0,'Prime '.$key.' interior');
+    if(is_wp_error($id))throw new RuntimeException($id->get_error_message());
+    $replace[$m['url']]=wp_get_attachment_url($id);$image_ids[$m['id']]=$id;
+    update_post_meta($id,'_wp_attachment_image_alt',['regular'=>'Light-filled living room','lease'=>'Empty room with timber floors','carpet'=>'Carpet extraction wand'][$key]);
+}
+// Import through the plugin's own supported export/import service, not custom field handling.
+$forms=$read('fluentforms-contact.json');
+$tmp=wp_tempnam('prime-native-contact.json');file_put_contents($tmp,strtr(wp_json_encode($forms,JSON_UNESCAPED_SLASHES),$replace));
+$file=new FluentForm\Framework\Http\Request\File($tmp,'prime-native-contact.json','application/json');
+$result=FluentForm\App\Services\Transfer\TransferService::importForms($file);unlink($tmp);
+$form_id=(int)array_key_first($result['inserted_forms']);
+$replace['[fluentform id="'.$forms[0]['id'].'"]']='[fluentform id="'.$form_id.'"]';
+$rewrite=function($content)use($replace,$image_ids){
+    $content=strtr($content,$replace);
+    $content=preg_replace_callback('/"id":(\d+)/',fn($m)=>'"id":'.($image_ids[(int)$m[1]]??$m[1]),$content);
+    return preg_replace_callback('/wp-image-(\d+)/',fn($m)=>'wp-image-'.($image_ids[(int)$m[1]]??$m[1]),$content);
+};
+$ids=[];
+foreach($pages as $page){
+    $old=get_page_by_path($page['slug']);
+    $id=wp_insert_post(wp_slash(['ID'=>$old?$old->ID:0,'post_type'=>'page','post_name'=>$page['slug'],'post_title'=>$page['title'],'post_status'=>$page['status'],'post_content'=>$rewrite(file_get_contents($root.'/'.$page['file']))]),true);
+    if(is_wp_error($id))throw new RuntimeException($id->get_error_message());$ids[$page['key']]=$id;
+}
+foreach(['sample-page','hello-world'] as $slug){$post=get_page_by_path($slug,OBJECT,['post','page']);if($post)wp_update_post(['ID'=>$post->ID,'post_status'=>'draft']);}
+switch_theme('kadence');
+foreach($read('theme-mods-kadence.json') as $key=>$value){if(in_array($key,['custom_css_post_id','nav_menu_locations','sidebars_widgets'],true))continue;set_theme_mod($key,json_decode(strtr(wp_json_encode($value,JSON_UNESCAPED_SLASHES),$replace),true));}
+update_option('kadence_global_palette',file_get_contents($root.'/exports/kadence-global-palette.json'));
+$widgets=$read('widget-block.json');foreach($widgets as &$widget)if(is_array($widget)&&isset($widget['content']))$widget['content']=$rewrite($widget['content']);unset($widget);
+update_option('widget_block',$widgets);wp_set_sidebars_widgets($read('sidebars-widgets.json'));
+$menu=wp_create_nav_menu('Prime main navigation');if(is_wp_error($menu))throw new RuntimeException($menu->get_error_message());
+$add=function($key,$label,$parent=0)use($menu,$ids){return wp_update_nav_menu_item($menu,0,['menu-item-title'=>$label,'menu-item-object'=>'page','menu-item-object-id'=>$ids[$key],'menu-item-type'=>'post_type','menu-item-status'=>'publish','menu-item-parent-id'=>$parent]);};
+$add('home','Home');$parent=wp_update_nav_menu_item($menu,0,['menu-item-title'=>'Services','menu-item-type'=>'custom','menu-item-url'=>'#','menu-item-status'=>'publish']);
+foreach(['regular'=>'Regular & Deep Cleaning','lease'=>'End of Lease Cleaning','carpet'=>'Carpet Steam Cleaning'] as $key=>$label)$add($key,$label,$parent);
+foreach(['prices'=>'Prices','about'=>'About','contact'=>'Contact'] as $key=>$label)$add($key,$label);
+set_theme_mod('nav_menu_locations',['primary'=>$menu,'mobile'=>$menu]);
+foreach(['blogname'=>'Prime Domestic','blogdescription'=>'& Cleaning Services','show_on_front'=>'page','page_on_front'=>$ids['home'],'wp_page_for_privacy_policy'=>$ids['privacy'],'timezone_string'=>'Australia/Melbourne','permalink_structure'=>'/%postname%/','_fluentform_global_form_settings'=>['misc'=>['honeypotStatus'=>'yes']]] as $key=>$value)update_option($key,$value);
+update_option('prime_native_review_imported',['pages'=>$ids,'contact_form'=>$form_id,'date'=>gmdate('c')],false);flush_rewrite_rules(false);
+echo 'Native review imported: '.count($ids).' pages, contact form '.$form_id.'. Fluent Forms Pro estimator is NOT installed. No notifications enabled.'.PHP_EOL;

@@ -1,5 +1,7 @@
 # Prime Domestic & Cleaning Services — Melbourne
 
+**Native WordPress migration (15 November 2026):** [Kadence review, native exports, screenshots and remaining blockers](docs/native-migration/README.md). Eleven native block layouts and a standalone contact form are implemented. **The Fluent Forms Pro estimator and full handover are blocked** pending Pro, approved pricing/suburbs and actual-site migration/validation. Same branch and draft PR #7; no merge or production deployment. The earlier Free/custom bridge is superseded and does not meet the contract.
+
 **Client review refinements (13 November 2026):** [Full-page screenshots, proposal checklist, test results and editing guide](docs/client-review/README.md). Feature branch only; no merge or production deployment.
 
 **Previous content review (13 November 2026):** [November 12 implementation, screenshots, tests and editing guide](docs/nov12-review/README.md). This feature branch is for review only; see its outstanding client inputs and browser-QA limits. Do not use the older demo instructions below as launch approval.
