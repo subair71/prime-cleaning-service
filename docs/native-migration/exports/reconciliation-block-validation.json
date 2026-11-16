@@ -1,0 +1,57 @@
+[
+  {
+    "page": "about.html",
+    "blocks": 59,
+    "invalid": []
+  },
+  {
+    "page": "blog.html",
+    "blocks": 19,
+    "invalid": []
+  },
+  {
+    "page": "carpet.html",
+    "blocks": 105,
+    "invalid": []
+  },
+  {
+    "page": "contact.html",
+    "blocks": 36,
+    "invalid": []
+  },
+  {
+    "page": "home.html",
+    "blocks": 131,
+    "invalid": []
+  },
+  {
+    "page": "lease.html",
+    "blocks": 86,
+    "invalid": []
+  },
+  {
+    "page": "office.html",
+    "blocks": 48,
+    "invalid": []
+  },
+  {
+    "page": "prices.html",
+    "blocks": 28,
+    "invalid": []
+  },
+  {
+    "page": "privacy.html",
+    "blocks": 150,
+    "invalid": []
+  },
+  {
+    "page": "regular.html",
+    "blocks": 114,
+    "invalid": []
+  },
+  {
+    "page": "terms.html",
+    "blocks": 11,
+    "invalid": []
+  }
+]

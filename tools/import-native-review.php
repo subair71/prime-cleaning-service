@@ -30,13 +30,15 @@ $root=dirname(__DIR__).'/docs/native-migration';
 $read=fn($file)=>json_decode(file_get_contents($root.'/exports/'.$file), true, 512, JSON_THROW_ON_ERROR);
 $pages=$read('page-manifest.json');$media=$read('media-manifest.json');$source='http://127.0.0.1:4173';
 require_once ABSPATH.'wp-admin/includes/file.php';require_once ABSPATH.'wp-admin/includes/media.php';require_once ABSPATH.'wp-admin/includes/image.php';
-$replace=[$source=>untrailingslashit(home_url())];$image_ids=[];
+$replace=[$source=>untrailingslashit(home_url())];$image_ids=[];$site_logo=0;
 foreach ($media as $key=>$m) {
     $tmp=wp_tempnam($m['file']);copy($root.'/exports/media/'.$m['file'],$tmp);
     $id=media_handle_sideload(['name'=>$m['file'],'tmp_name'=>$tmp],0,'Prime '.$key.' interior');
     if(is_wp_error($id))throw new RuntimeException($id->get_error_message());
-    $replace[$m['url']]=wp_get_attachment_url($id);$image_ids[$m['id']]=$id;
-    update_post_meta($id,'_wp_attachment_image_alt',['regular'=>'Light-filled living room','lease'=>'Empty room with timber floors','carpet'=>'Carpet extraction wand'][$key]);
+    if(isset($m['url']))$replace[$m['url']]=wp_get_attachment_url($id);
+    if(isset($m['id']))$image_ids[$m['id']]=$id;
+    if(($m['role']??'')==='site-logo')$site_logo=$id;
+    update_post_meta($id,'_wp_attachment_image_alt',$m['alt']??'');
 }
 // Import through the plugin's own supported export/import service, not custom field handling.
 $forms=$read('fluentforms-contact.json');
@@ -56,9 +58,10 @@ foreach($pages as $page){
     $id=wp_insert_post(wp_slash(['ID'=>$old?$old->ID:0,'post_type'=>'page','post_name'=>$page['slug'],'post_title'=>$page['title'],'post_status'=>$page['status'],'post_content'=>$rewrite(file_get_contents($root.'/'.$page['file']))]),true);
     if(is_wp_error($id))throw new RuntimeException($id->get_error_message());$ids[$page['key']]=$id;
 }
-foreach(['sample-page','hello-world'] as $slug){$post=get_page_by_path($slug,OBJECT,['post','page']);if($post)wp_update_post(['ID'=>$post->ID,'post_status'=>'draft']);}
+foreach(['sample-page','hello-world','privacy-policy'] as $slug){$post=get_page_by_path($slug,OBJECT,['post','page']);if($post)wp_update_post(['ID'=>$post->ID,'post_status'=>'draft']);}
 switch_theme('kadence');
 foreach($read('theme-mods-kadence.json') as $key=>$value){if(in_array($key,['custom_css_post_id','nav_menu_locations','sidebars_widgets'],true))continue;set_theme_mod($key,json_decode(strtr(wp_json_encode($value,JSON_UNESCAPED_SLASHES),$replace),true));}
+if($site_logo)set_theme_mod('custom_logo',$site_logo);
 update_option('kadence_global_palette',file_get_contents($root.'/exports/kadence-global-palette.json'));
 $widgets=$read('widget-block.json');foreach($widgets as &$widget)if(is_array($widget)&&isset($widget['content']))$widget['content']=$rewrite($widget['content']);unset($widget);
 update_option('widget_block',$widgets);wp_set_sidebars_widgets($read('sidebars-widgets.json'));

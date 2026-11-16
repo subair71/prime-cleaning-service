@@ -1,0 +1,21 @@
+id,synthetic_fixture_not_business_rate,signed_expected_total_aud,signed_expected_low_aud,signed_expected_high_aud,pro_result
+N01,Regular one-off; base200; single storey; zone1,200,180,220,NOT RUN — Pro unavailable; decisions pending
+N02,Regular weekly; base200; single storey; zone1,170,155,185,NOT RUN — Pro unavailable; decisions pending
+N03,Regular fortnightly; base200; double storey; zone1,195.50,175,215,NOT RUN — Pro unavailable; decisions pending
+N04,Deep; Regular base200; single storey; zone1,300,270,330,NOT RUN — Pro unavailable; decisions pending
+N05,Deep; Regular base200; double storey; zone1,345,310,380,NOT RUN — Pro unavailable; decisions pending
+N06,EOL; EOL base400; single storey; zone1,400,360,440,NOT RUN — Pro unavailable; decisions pending
+N07,EOL; base400; double storey; extra45; zone2 travel30,535,480,590,NOT RUN — Pro unavailable; decisions pending
+N08,Carpet-only subtotal70; minimum110; zone1,110,100,120,NOT RUN — Pro unavailable; decisions pending
+N09,Regular one-off; base200; extra120; zone2 travel30,350,315,385,NOT RUN — Pro unavailable; decisions pending
+N10,Regular weekly; base200; double storey; extra45; zone2 travel30,270.50,245,300,NOT RUN — Pro unavailable; decisions pending
+N11,Deep; Regular base101; single storey; zone2 travel30; no intermediate rounding,181.50,165,200,NOT RUN — Pro unavailable; decisions pending
+N12,Regular monthly; base200; single storey; zone1; no recurring discount,200,180,220,NOT RUN — Pro unavailable; decisions pending
+C01,6+ bedrooms,CUSTOM QUOTE,,,NOT RUN — Pro unavailable; decisions pending
+C02,5+ bathrooms,CUSTOM QUOTE,,,NOT RUN — Pro unavailable; decisions pending
+C03,Furnished End of Lease,CUSTOM QUOTE,,,NOT RUN — Pro unavailable; decisions pending
+C04,Unlisted suburb,CUSTOM QUOTE,,,NOT RUN — Pro unavailable; decisions pending
+C05,Selected base cell or extra rate missing,CUSTOM QUOTE,,,NOT RUN — Pro unavailable; decisions pending
+S01,Submit; change rate and option label; read entry; export CSV; resend email,ORIGINAL VALUES PRESERVED,,,NOT RUN — Pro unavailable; decisions pending
+S02,Rapid double submit / retry after dropped response,ONE LOGICAL ENQUIRY / AGREED RETRY BEHAVIOUR,,,NOT RUN — Pro unavailable; decisions pending
+S03,Alter browser calculation / omit required hidden selection,SERVER VALIDATION / DOCUMENTED NATIVE LIMITATION,,,NOT RUN — Pro unavailable; decisions pending

@@ -10,9 +10,9 @@ Activate the native plugins, set `WP_ENVIRONMENT_TYPE` to `local`/`staging` in t
 PRIME_NATIVE_REVIEW=1 wp --path=/absolute/path/to/review-wordpress eval-file /absolute/path/to/repository/tools/import-native-review.php
 ```
 
-The importer refuses existing non-default content/forms, any Fluent Forms entries, production/indexed sites, active custom estimator and repeated imports. It imports the three media files through the Media Library, imports the contact form through Fluent Forms' own import service, remaps URLs/image/form IDs, creates the 11 block pages, restores native Kadence/widget settings and builds the menu. It sets Home and the supplied Privacy page, Melbourne timezone and readable permalinks. It does not send notifications, install paid products, restore a database, import customers or deploy anything.
+The importer refuses existing non-default content/forms, any Fluent Forms entries, production/indexed sites, active custom estimator and repeated imports. It imports the three service images and the client logo through the Media Library, imports the contact form through Fluent Forms' own import service, remaps URLs/image/form IDs, creates the 11 block pages, restores native Kadence/widget settings and builds the menu. It sets Home and the supplied Privacy page, Melbourne timezone and readable permalinks. It does not send notifications, install paid products, restore a database, import customers or deploy anything.
 
-The supported WXR and Fluent Forms JSON exports are also included for manual migration. WXR is a **content export, not a full backup**. Its source attachment URLs are localhost and cannot be fetched by another host. Use the tested fresh-review importer to sideload the bundled images and remap their IDs, or upload the three images and reconnect Image/Cover blocks through the editor. Never assume importing XML alone restores media/theme/form configuration.
+The supported WXR and Fluent Forms JSON exports are also included for manual migration. WXR is a **content export, not a full backup**. Its source attachment URLs are localhost and cannot be fetched by another host. Use the tested fresh-review importer to sideload the bundled images and remap their IDs, or upload the four supplied image files and reconnect Image/Cover blocks through the editor. Never assume importing XML alone restores media/theme/form configuration.
 
 Review the saved blocks and native settings. No PHP/JS generator needs to remain installed. Keep staging private using the hosting platform's normal controls; WordPress noindex is not access protection.
 
@@ -29,7 +29,7 @@ Do not run the fresh-review importer against the existing site. Its refusal is i
 7. Only after replacements pass, switch to parent Kadence and deactivate the custom estimator/bridge on staging. Remove obsolete shortcodes, snippets, custom CSS and theme-asset references from stored content. Do not delete legacy tables/customer records. Verify every page and enquiry journey with custom code disabled.
 8. Run browser, accessibility, iPhone Safari, native-editor save, Pro pricing/tamper/duplicate/error-recovery, SMTP, backups and hosting checks. Enable native local-font serving on the real host and verify the privacy-policy claims. Keep the PR draft until all gaps are resolved.
 
-Production deployment and merge are outside this authorized milestone. No production operation has been performed.
+Production cutover is blocked by the unresolved acceptance items and missing hosting access. No production operation has been performed.
 
 ## Rollback
 

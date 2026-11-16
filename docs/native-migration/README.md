@@ -1,16 +1,16 @@
 # Native WordPress migration — review milestone
 
-**Not ready to merge, deploy or hand over.** The page/layout migration is implemented and verified in isolated WordPress installations. The complete estimator is **not implemented**: licensed Fluent Forms Pro, approved rates/suburbs and the actual installation/database were not available. This supersedes the earlier Free-plugin/custom-calculator bridge, which does not meet the client’s contract.
+**Not ready to deploy or hand over.** The page/layout migration is implemented and verified in isolated WordPress installations. The complete estimator is **not implemented**: licensed Fluent Forms Pro, approved rates/suburbs and the actual installation/database were not available. This supersedes the earlier Free-plugin/custom-calculator bridge, which does not meet the client’s contract.
 
-Branch: `feature/prime-fluent-forms-builder` · Draft PR: #7 · 15 November 2026.
+PR #7 was merged. Follow-up work: `feature/prime-native-reconciliation`, 16 November 2026. See [current verification](QA-RECONCILIATION.md) and [decisions](DECISIONS.md). The screenshot table below belongs to the earlier milestone; it does not show the revised hero/logo.
 
 ## What is implemented
 
 - Eleven page layouts made from registered WordPress blocks, with no Custom HTML blocks, custom shortcodes or project CSS/JS. Kadence Blocks is active and available in the visual editor; these layouts use core blocks where those controls suffice.
 - Standard Kadence parent theme; native Customizer palette, typography, header button, desktop menu, mobile drawer and four footer widget areas. Menus and footer content are editable through WordPress.
-- Existing service images copied into the Media Library; active pages no longer reference child-theme assets.
+- Client-supplied logo and existing service images copied into the Media Library; active pages no longer reference child-theme assets.
 - Native Fluent Forms contact form, consent, required-field validation, entry storage, honeypot and confirmation. Its normal export is included. No custom bridge, tokens, hidden calculator payload or custom form CSS/JS.
-- Blog uses the native Query Loop. Genuine review content was not supplied; no invented reviews or sample ratings are published. Office and Terms originals remain drafts. The supplied approved Privacy copy is published in the clean review; existing-site publication states must be preserved during the real migration.
+- Blog uses the native Query Loop. Derick’s supplied Google review link is included; the genuine live review feed remains unconfigured. No invented reviews or sample ratings are published. Office and Terms originals remain drafts. The supplied approved Privacy copy is published in the clean review; existing-site publication states must be preserved during the real migration.
 - Clear unavailable-estimator message and phone/WhatsApp quote actions in the review. This is a visible **temporary gap**, not an estimator replacement. Instant-calculation claims were softened where necessary; original approved wording remains in Git history.
 
 Both the parent theme and native plugins work with the custom child theme and Prime estimator disabled. A second import test used an installation where those custom directories do not exist. The legacy files remain in this branch for rollback until the complete estimator/history replacements pass acceptance. Do not activate them as a workaround for missing Pro.
@@ -29,7 +29,11 @@ Both the parent theme and native plugins work with the custom child theme and Pr
 
 The offline importer under `tools/` configures a fresh review site through WordPress and Fluent Forms APIs once. It is **not a plugin**, is never installed in the web root, and is not needed to render or edit the resulting site. It refuses production, indexed sites, existing content/forms/entries, and repeated imports. It does not activate or emulate Pro.
 
-## Screenshots
+## Current portable previews
+
+[Home](previews/home.html) · [Regular](previews/regular.html) · [End of Lease](previews/lease.html) · [Carpet](previews/carpet.html) · [Prices](previews/prices.html) · [About](previews/about.html) · [Contact](previews/contact.html) · [Blog](previews/blog.html) · [Privacy](previews/privacy.html). These are static renders of native WordPress output, not pages to paste into HTML blocks. Forms/scripts are disabled. See [preview limitations](previews/README.md).
+
+## Historical screenshots
 
 Desktop captures are full pages; mobile captures show the first 900 pixels of each 390px review frame. Frames use desktop Chromium, not iPhone Safari. Draft screenshots are disposable review copies; the original pages remain unpublished and the copies are excluded from the exports.
 

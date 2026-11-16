@@ -1,0 +1,10 @@
+{
+  "environment": "disposable SQLite review, not client VentraIP/MySQL",
+  "database_integrity": "ok",
+  "logical_database_match": true,
+  "media_files": 4,
+  "all_media_hashes_match": true,
+  "synthetic_entries_restored": 2,
+  "client_backup_completed": false,
+  "live_restoration_completed": false
+}
