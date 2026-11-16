@@ -36,3 +36,7 @@ Keep `wp_pce_enquiries` (actual table prefix may differ), all related options an
 Before real cutover, use the existing enquiry CSV export and retain a complete database backup. The CSV includes references, statuses, customer/property details and frozen quote JSON; it does **not** preserve every email/error/request-key field, so CSV alone is insufficient. Verify row counts, sample snapshots and reference mappings against the database backup.
 
 The old states `new`, `contacted`, `quoted`, `closed`, `won`, `lost`, sequential `PDC-…` references, frozen server quote snapshots, retry/idempotency handling, email handoff/error tracking and review approval UI are not claimed equivalent to Fluent Forms defaults. Establish supported native handling or agree a documented archive/operational alternative. Merely leaving inaccessible tables behind does not satisfy the client's independent-history-access requirement.
+
+## 16 November follow-up
+
+The signed no-photo light-teal hero, supplied logo, native desktop sticky header and fresh-review root URLs are now reconciled. Unconfirmed minimum, bed-making and policy commitments were removed. Current conflicts are in DECISIONS.md; previous assertions about approved source defaults must not be treated as approval. Native Pro status handling is a documented gap, not a paid-licence assumption. See QA-RECONCILIATION.md for current evidence and untested items. The client VentraIP site remains inaccessible and unaudited beyond supplied sources.
