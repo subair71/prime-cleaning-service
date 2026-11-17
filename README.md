@@ -2,14 +2,14 @@
 
 Current work uses **WordPress.org, Kadence Free, native/Kadence blocks and Fluent Forms**. Every delivered page section is editable in the normal block editor. The custom theme/calculator from the earlier prototype is retained only as migration history and must not be activated as a substitute for the contracted native build.
 
-The native migration from PR #7 is already merged. The follow-up branch `feature/prime-native-reconciliation` corrects the no-photo light-teal hero, imports the client logo, enables Kadence's desktop sticky header, aligns fresh-review URLs with the signed proposal and removes unresolved pricing/policy claims. It does not deploy to the client site.
+The current enhancement branch `feature/prime-native-visual-enhancement` refines all ten agreed page layouts, native Kadence typography/spacing, mobile navigation, footer and contact form. A plugin-managed mobile action bar is configured in an isolated review. Native exports, before/after screenshots and a clean-import test are included. It does not deploy to the client site.
 
-**Launch is blocked:** Fluent Forms Pro feasibility, current-site backups/migration, final pricing/policies, native status/reference handling, fixed mobile actions, real reviews, emails and device/hosting acceptance remain incomplete.
+**Launch is blocked:** complete Fluent Forms Pro estimator, client-site backups/migration, approved rates/policies, historical status/reference handling, real reviews, email delivery and physical-device/hosting acceptance remain incomplete. See the [current enhancement review](docs/native-migration/ENHANCEMENT.md) for implemented changes and limitations.
 
 - [Review package, exports and previews](docs/native-migration/README.md)
 - [Client decisions and access required](docs/native-migration/DECISIONS.md)
 - [Fluent Forms feasibility](docs/native-migration/ESTIMATOR.md)
-- [Current verification](docs/native-migration/QA-RECONCILIATION.md)
+- [Current verification](docs/native-migration/ENHANCEMENT.md#validation-and-limits)
 - [Migration and rollback](docs/native-migration/MIGRATION.md)
 - [Handover guide](docs/native-migration/HANDOVER.md)
 

@@ -1,5 +1,5 @@
 # Portable native renders
 
-Generated from the disposable WordPress installation after reconciliation. These HTML files are review snapshots, not implementation files to paste into WordPress. The actual editable content is in ../pages and the WXR export. Styles and page images are embedded; Google Fonts still require network access. Form submission and scripts are disabled.
+Regenerated from the enhanced disposable WordPress installation on 17 November 2026. These HTML files are static review snapshots, not implementation files to paste into WordPress. Actual editable content is in ../pages and the WXR export. Native styles are embedded; images reference the bundled ../exports/media files. Font files may require network access. Forms and scripts are disabled; the fixed mobile action bar is omitted because its script must reserve page space.
 
-No current visual-browser or Safari validation is claimed. Terms and Office remain drafts and are not included. Older screenshots elsewhere in this package predate the new hero/logo.
+For tested interactive layouts and mobile actions, use the real browser screenshots in ../screenshots/enhancement. Desktop Chromium and narrow-frame checks are recorded in ../ENHANCEMENT.md; physical Safari is not certified. Terms and Office remain drafts and are not included here.

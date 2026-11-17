@@ -1,0 +1,148 @@
+{
+  "environment": "Chromium desktop, 390x844 iframe with 375 CSS px content area; not physical iPhone Safari",
+  "pages": [
+    {
+      "page": "regular",
+      "desktop": {
+        "brokenImages": 0,
+        "h1": "Regular house cleaning in Malvern East and Melbourne’s south-east",
+        "scrollWidth": 1348,
+        "width": 1348
+      },
+      "mobile": {
+        "brokenImages": 0,
+        "scrollWidth": 375,
+        "width": 375
+      }
+    },
+    {
+      "page": "lease",
+      "desktop": {
+        "brokenImages": 0,
+        "h1": "End of lease cleaning in Malvern East and surrounds",
+        "scrollWidth": 1348,
+        "width": 1348
+      },
+      "mobile": {
+        "brokenImages": 0,
+        "scrollWidth": 375,
+        "width": 375
+      }
+    },
+    {
+      "page": "carpet",
+      "desktop": {
+        "brokenImages": 0,
+        "h1": "Carpet steam cleaning in Malvern East and surrounds",
+        "scrollWidth": 1348,
+        "width": 1348
+      },
+      "mobile": {
+        "brokenImages": 0,
+        "scrollWidth": 375,
+        "width": 375
+      }
+    },
+    {
+      "page": "prices",
+      "desktop": {
+        "brokenImages": 0,
+        "h1": "Cleaning prices and instant estimate",
+        "scrollWidth": 1348,
+        "width": 1348
+      },
+      "mobile": {
+        "brokenImages": 0,
+        "scrollWidth": 375,
+        "width": 375
+      }
+    },
+    {
+      "page": "about",
+      "desktop": {
+        "brokenImages": 0,
+        "h1": "About Prime Domestic",
+        "scrollWidth": 1348,
+        "width": 1348
+      },
+      "mobile": {
+        "brokenImages": 0,
+        "scrollWidth": 375,
+        "width": 375
+      }
+    },
+    {
+      "page": "contact",
+      "desktop": {
+        "brokenImages": 0,
+        "h1": "Get in touch",
+        "scrollWidth": 1348,
+        "width": 1348
+      },
+      "mobile": {
+        "brokenImages": 0,
+        "scrollWidth": 375,
+        "width": 375
+      }
+    },
+    {
+      "page": "blog",
+      "desktop": {
+        "brokenImages": 0,
+        "h1": "Tips from the cleaning cupboard",
+        "scrollWidth": 1348,
+        "width": 1348
+      },
+      "mobile": {
+        "brokenImages": 0,
+        "scrollWidth": 375,
+        "width": 375
+      }
+    },
+    {
+      "page": "privacy",
+      "desktop": {
+        "brokenImages": 0,
+        "h1": "Privacy Policy",
+        "scrollWidth": 1348,
+        "width": 1348
+      },
+      "mobile": {
+        "brokenImages": 0,
+        "scrollWidth": 375,
+        "width": 375
+      }
+    },
+    {
+      "page": "home",
+      "desktop": {
+        "brokenImages": 0,
+        "h1": "A cleaner home. More time for you.",
+        "scrollWidth": 1348,
+        "width": 1348
+      },
+      "mobile": {
+        "brokenImages": 0,
+        "scrollWidth": 375,
+        "width": 375
+      }
+    }
+  ],
+  "interactions": {
+    "blank_form_errors": true,
+    "valid_contact_confirmation": true,
+    "faq_enter_toggle": true,
+    "faq_keyboard_focus_visible": true,
+    "mobile_menu_and_submenu": true,
+    "mobile_bar_hides_for_input_focus": true,
+    "mobile_action_label_height": 12,
+    "mobile_action_bar_height": 72
+  },
+  "unverified": [
+    "Physical iPhone Safari and keyboard",
+    "SMTP/inbox delivery",
+    "Paid estimator",
+    "Cookie-banner overlap",
+    "Production performance"
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "engine": "Installed WordPress JavaScript definitions + Kadence Blocks 3.9.0, JSDOM; serialization validation, not editor UI",
+  "pages": {
+    "about.html": {
+      "blocks": 55,
+      "invalid": 0,
+      "invalidTypes": []
+    },
+    "blog.html": {
+      "blocks": 19,
+      "invalid": 0,
+      "invalidTypes": []
+    },
+    "carpet.html": {
+      "blocks": 96,
+      "invalid": 0,
+      "invalidTypes": []
+    },
+    "contact.html": {
+      "blocks": 32,
+      "invalid": 0,
+      "invalidTypes": []
+    },
+    "home.html": {
+      "blocks": 116,
+      "invalid": 0,
+      "invalidTypes": []
+    },
+    "lease.html": {
+      "blocks": 84,
+      "invalid": 0,
+      "invalidTypes": []
+    },
+    "office.html": {
+      "blocks": 48,
+      "invalid": 0,
+      "invalidTypes": []
+    },
+    "prices.html": {
+      "blocks": 46,
+      "invalid": 0,
+      "invalidTypes": []
+    },
+    "privacy.html": {
+      "blocks": 160,
+      "invalid": 0,
+      "invalidTypes": []
+    },
+    "regular.html": {
+      "blocks": 109,
+      "invalid": 0,
+      "invalidTypes": []
+    },
+    "terms.html": {
+      "blocks": 11,
+      "invalid": 0,
+      "invalidTypes": []
+    }
+  },
+  "widgets": {
+    "2": {
+      "blocks": 3,
+      "invalid": 0,
+      "invalidTypes": []
+    },
+    "3": {
+      "blocks": 4,
+      "invalid": 0,
+      "invalidTypes": []
+    },
+    "4": {
+      "blocks": 6,
+      "invalid": 0,
+      "invalidTypes": []
+    },
+    "5": {
+      "blocks": 5,
+      "invalid": 0,
+      "invalidTypes": []
+    }
+  }
+}

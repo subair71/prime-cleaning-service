@@ -1,0 +1,41 @@
+{
+  "scope": "Specified global text/button colour pairs only; not a full rendered accessibility audit",
+  "checks": [
+    {
+      "foreground": "#087f80",
+      "background": "#ffffff",
+      "ratio": 4.82,
+      "normal_text_AA": true
+    },
+    {
+      "foreground": "#ffffff",
+      "background": "#087f80",
+      "ratio": 4.82,
+      "normal_text_AA": true
+    },
+    {
+      "foreground": "#263d42",
+      "background": "#ffffff",
+      "ratio": 11.48,
+      "normal_text_AA": true
+    },
+    {
+      "foreground": "#263d42",
+      "background": "#edf8f6",
+      "ratio": 10.59,
+      "normal_text_AA": true
+    },
+    {
+      "foreground": "#163d44",
+      "background": "#edf8f6",
+      "ratio": 10.84,
+      "normal_text_AA": true
+    },
+    {
+      "foreground": "#ffffff",
+      "background": "#163d44",
+      "ratio": 11.76,
+      "normal_text_AA": true
+    }
+  ]
+}

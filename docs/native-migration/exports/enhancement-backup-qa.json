@@ -1,0 +1,10 @@
+{
+  "scope": "Disposable local SQLite database and media only; not the client host backup or MySQL restore",
+  "checks": {
+    "sqlite_integrity": true,
+    "logical_database_match": true,
+    "native_enquiries_retained": true,
+    "media_hashes_match": true
+  },
+  "synthetic_entries": 2
+}

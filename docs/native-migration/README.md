@@ -2,11 +2,12 @@
 
 **Not ready to deploy or hand over.** The page/layout migration is implemented and verified in isolated WordPress installations. The complete estimator is **not implemented**: licensed Fluent Forms Pro, approved rates/suburbs and the actual installation/database were not available. This supersedes the earlier Free-plugin/custom-calculator bridge, which does not meet the client’s contract.
 
-PR #7 was merged. Follow-up work: `feature/prime-native-reconciliation`, 16 November 2026. See [current verification](QA-RECONCILIATION.md) and [decisions](DECISIONS.md). The screenshot table below belongs to the earlier milestone; it does not show the revised hero/logo.
+Current work: `feature/prime-native-visual-enhancement`, 17 November 2026. See the [page changes, plugin inventory, current screenshots and verification](ENHANCEMENT.md). Earlier screenshots at the bottom of this page are historical.
 
 ## What is implemented
 
-- Eleven page layouts made from registered WordPress blocks, with no Custom HTML blocks, custom shortcodes or project CSS/JS. Kadence Blocks is active and available in the visual editor; these layouts use core blocks where those controls suffice.
+- Ten enhanced agreed page layouts plus the preserved hidden Office draft, made from registered WordPress/Kadence blocks, with no Custom HTML blocks, custom shortcodes or project CSS/JS. Kadence Blocks is active and available in the visual editor; these layouts use responsive Kadence Row Layout/Section blocks and core blocks where those controls suffice.
+- Plugin-managed Call/WhatsApp/Estimate mobile actions are configured in the isolated review; physical iPhone and active-link accessibility acceptance remain outstanding.
 - Standard Kadence parent theme; native Customizer palette, typography, header button, desktop menu, mobile drawer and four footer widget areas. Menus and footer content are editable through WordPress.
 - Client-supplied logo and existing service images copied into the Media Library; active pages no longer reference child-theme assets.
 - Native Fluent Forms contact form, consent, required-field validation, entry storage, honeypot and confirmation. Its normal export is included. No custom bridge, tokens, hidden calculator payload or custom form CSS/JS.

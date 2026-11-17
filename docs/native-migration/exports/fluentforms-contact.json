@@ -10,7 +10,7 @@
           "index": 2,
           "element": "input_text",
           "attributes": {
-            "autocomplete": "",
+            "autocomplete": "name",
             "type": "text",
             "name": "name",
             "value": "",
@@ -48,7 +48,7 @@
           "index": 2,
           "element": "input_text",
           "attributes": {
-            "autocomplete": "",
+            "autocomplete": "tel",
             "type": "text",
             "name": "phone",
             "value": "",
@@ -86,13 +86,13 @@
           "index": 1,
           "element": "input_email",
           "attributes": {
-            "autocomplete": "",
+            "autocomplete": "email",
             "type": "email",
             "name": "email",
             "value": "",
             "id": "",
             "class": "",
-            "placeholder": "Email Address"
+            "placeholder": "you@example.com"
           },
           "settings": {
             "container_class": "",
@@ -130,7 +130,7 @@
           "index": 2,
           "element": "input_text",
           "attributes": {
-            "autocomplete": "",
+            "autocomplete": "address-level2",
             "type": "text",
             "name": "suburb",
             "value": "",

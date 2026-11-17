@@ -26,6 +26,7 @@ if (wpFluent()->table('fluentform_submissions')->count() || wpFluent()->table('f
 if (in_array('prime-cleaning-estimator/prime-cleaning-estimator.php', get_option('active_plugins', []), true)) {
     throw new RuntimeException('The custom estimator must not be active on this isolated review.');
 }
+if (!class_exists('DSMobileMenu\\Ajax\\MenuItemsAjax')) throw new RuntimeException('Activate DS Mobile Menu before importing this review.');
 $root=dirname(__DIR__).'/docs/native-migration';
 $read=fn($file)=>json_decode(file_get_contents($root.'/exports/'.$file), true, 512, JSON_THROW_ON_ERROR);
 $pages=$read('page-manifest.json');$media=$read('media-manifest.json');$source='http://127.0.0.1:4173';
@@ -63,6 +64,17 @@ switch_theme('kadence');
 foreach($read('theme-mods-kadence.json') as $key=>$value){if(in_array($key,['custom_css_post_id','nav_menu_locations','sidebars_widgets'],true))continue;set_theme_mod($key,json_decode(strtr(wp_json_encode($value,JSON_UNESCAPED_SLASHES),$replace),true));}
 if($site_logo)set_theme_mod('custom_logo',$site_logo);
 update_option('kadence_global_palette',file_get_contents($root.'/exports/kadence-global-palette.json'));
+// One-time application of the plugin's native export through its own sanitizers.
+$bar=json_decode(strtr(wp_json_encode($read('mobile-actions.json'),JSON_UNESCAPED_SLASHES),$replace),true);
+$bar_sanitize=new DSMobileMenu\Ajax\MenuItemsAjax();
+update_option('dsmm_active_layout',$bar['dsmm_active_layout']);
+update_option('dsmm_menu_items',$bar_sanitize->sanitize_items($bar['dsmm_menu_items']));
+update_option('dsmm_visibility_rules',$bar_sanitize->sanitize_visibility_rules($bar['dsmm_visibility_rules']));
+update_option('dsmm_general_settings',$bar_sanitize->sanitize_general_settings($bar['dsmm_general_settings']));
+$style_sanitize=new DSMobileMenu\Ajax\StyleAjax(new DSMobileMenu\Core\StyleGenerator());
+update_option('dsmm_style_settings',$style_sanitize->sanitize($bar['dsmm_style_settings']));
+update_option('dsmm_wc_settings',$bar['dsmm_wc_settings']);
+(new DSMobileMenu\Core\StyleGenerator())->generate();
 $widgets=$read('widget-block.json');foreach($widgets as &$widget)if(is_array($widget)&&isset($widget['content']))$widget['content']=$rewrite($widget['content']);unset($widget);
 update_option('widget_block',$widgets);wp_set_sidebars_widgets($read('sidebars-widgets.json'));
 $menu=wp_create_nav_menu('Prime main navigation');if(is_wp_error($menu))throw new RuntimeException($menu->get_error_message());

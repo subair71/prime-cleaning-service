@@ -1,1 +1,80 @@
-{"palette":[{"color":"#007f7a","slug":"palette1","name":"Color 1"},{"color":"#006963","slug":"palette2","name":"Color 2"},{"color":"#101d2a","slug":"palette3","name":"Color 3"},{"color":"#33454c","slug":"palette4","name":"Color 4"},{"color":"#465760","slug":"palette5","name":"Color 5"},{"color":"#7b9393","slug":"palette6","name":"Color 6"},{"color":"#dce6e6","slug":"palette7","name":"Color 7"},{"color":"#eaf8f6","slug":"palette8","name":"Color 8"},{"color":"#ffffff","slug":"palette9","name":"Color 9"},{"color":"#FfFfFf","slug":"palette10","name":"Palette Color Complement"},{"color":"#13612e","slug":"palette11","name":"Palette Color Success"},{"color":"#1159af","slug":"palette12","name":"Palette Color Info"},{"color":"#b82105","slug":"palette13","name":"Palette Color Alert"},{"color":"#f7630c","slug":"palette14","name":"Palette Color Warning"},{"color":"#f5a524","slug":"palette15","name":"Palette Color Rating"}],"active":"palette"}
+{
+  "palette": [
+    {
+      "color": "#087f80",
+      "slug": "palette1",
+      "name": "Prime teal"
+    },
+    {
+      "color": "#066667",
+      "slug": "palette2",
+      "name": "Deep teal"
+    },
+    {
+      "color": "#163d44",
+      "slug": "palette3",
+      "name": "Heading"
+    },
+    {
+      "color": "#263d42",
+      "slug": "palette4",
+      "name": "Body"
+    },
+    {
+      "color": "#4d656b",
+      "slug": "palette5",
+      "name": "Muted text"
+    },
+    {
+      "color": "#647b80",
+      "slug": "palette6",
+      "name": "Subtle text"
+    },
+    {
+      "color": "#d6e5e3",
+      "slug": "palette7",
+      "name": "Border"
+    },
+    {
+      "color": "#edf8f6",
+      "slug": "palette8",
+      "name": "Pale teal"
+    },
+    {
+      "color": "#ffffff",
+      "slug": "palette9",
+      "name": "White"
+    },
+    {
+      "color": "#FfFfFf",
+      "slug": "palette10",
+      "name": "Palette Color Complement"
+    },
+    {
+      "color": "#13612e",
+      "slug": "palette11",
+      "name": "Palette Color Success"
+    },
+    {
+      "color": "#1159af",
+      "slug": "palette12",
+      "name": "Palette Color Info"
+    },
+    {
+      "color": "#b82105",
+      "slug": "palette13",
+      "name": "Palette Color Alert"
+    },
+    {
+      "color": "#f7630c",
+      "slug": "palette14",
+      "name": "Palette Color Warning"
+    },
+    {
+      "color": "#f5a524",
+      "slug": "palette15",
+      "name": "Palette Color Rating"
+    }
+  ],
+  "active": "palette"
+}

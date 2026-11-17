@@ -1,0 +1,11 @@
+{
+    "type": "direct native PHP submission service; not browser\/SMTP",
+    "checks": {
+        "blank_rejected": true,
+        "blank_not_saved": true,
+        "one_entry_saved": true,
+        "submitted_fields_preserved": true,
+        "confirmation_has_no_review_request": true
+    },
+    "external_notifications_enabled": false
+}

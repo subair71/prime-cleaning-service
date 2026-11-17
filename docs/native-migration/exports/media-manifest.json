@@ -1,25 +1,27 @@
 {
-  "regular": {
-    "id": 20,
-    "url": "http://127.0.0.1:4173/wp-content/uploads/2026/11/prime-regular-1280.webp",
-    "file": "prime-regular-1280.webp",
-    "alt": "Light-filled living room"
-  },
-  "lease": {
-    "id": 21,
-    "url": "http://127.0.0.1:4173/wp-content/uploads/2026/11/prime-lease-1280.webp",
-    "file": "prime-lease-1280.webp",
-    "alt": "Empty room with timber floors"
-  },
-  "carpet": {
-    "id": 22,
-    "url": "http://127.0.0.1:4173/wp-content/uploads/2026/11/prime-carpet-1280.webp",
-    "file": "prime-carpet-1280.webp",
-    "alt": "Carpet extraction wand"
-  },
-  "logo": {
-    "file": "prime-client-logo.png",
-    "alt": "Prime Domestic and Cleaning Services",
-    "role": "site-logo"
-  }
+    "regular": {
+        "id": 4,
+        "url": "http://127.0.0.1:4173/wp-content/uploads/2026/11/prime-regular-1280.webp",
+        "file": "prime-regular-1280.webp",
+        "alt": "Light-filled living room"
+    },
+    "lease": {
+        "id": 5,
+        "url": "http://127.0.0.1:4173/wp-content/uploads/2026/11/prime-lease-1280.webp",
+        "file": "prime-lease-1280.webp",
+        "alt": "Empty room with timber floors"
+    },
+    "carpet": {
+        "id": 6,
+        "url": "http://127.0.0.1:4173/wp-content/uploads/2026/11/prime-carpet-1280.webp",
+        "file": "prime-carpet-1280.webp",
+        "alt": "Carpet extraction wand"
+    },
+    "logo": {
+        "file": "prime-client-logo.png",
+        "alt": "Prime Domestic and Cleaning Services",
+        "role": "site-logo",
+        "id": 7,
+        "url": "http://127.0.0.1:4173/wp-content/uploads/2026/11/prime-client-logo.png"
+    }
 }

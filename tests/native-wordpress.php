@@ -7,7 +7,7 @@ if(wp_get_environment_type()!=='local'||get_option('blog_public'))throw new Runt
 $checks=0;$fail=[];$check=function($label,$pass)use(&$checks,&$fail){$checks++;if(!$pass)$fail[]=$label;};
 $check('parent Kadence active',get_option('stylesheet')==='kadence'&&get_option('template')==='kadence');
 $check('custom classes absent',!class_exists('PCE_Approved')&&!class_exists('PCE_Fluent_Forms')&&!function_exists('prime_pattern'));
-$check('only native plugins active',!array_diff(get_option('active_plugins'),['fluentform/fluentform.php','fluentformpro/fluentformpro.php','kadence-blocks/kadence-blocks.php']));
+$check('only native plugins active',!array_diff(get_option('active_plugins'),['fluentform/fluentform.php','fluentformpro/fluentformpro.php','kadence-blocks/kadence-blocks.php','devstack-mobile-menu/devstack-mobile-menu.php']));
 $check('no custom theme CSS',!wp_get_custom_css());
 $check('supplied logo imported',has_custom_logo()&&get_post_meta(get_theme_mod('custom_logo'),'_wp_attachment_image_alt',true)==='Prime Domestic and Cleaning Services');
 $check('desktop native sticky header',get_theme_mod('header_sticky')==='main');
@@ -18,13 +18,18 @@ foreach($manifest as $page){
  $check($page['key'].' correct status',$p->post_status===$page['status']);
  $check($page['key'].' has no custom markup',!preg_match('/\[prime_|pp-|kadence-child|prime-cleaning-estimator|<!-- wp:html/',$p->post_content));
  $check($page['key'].' no old page template',!get_post_meta($p->ID,'_wp_page_template',true)||get_post_meta($p->ID,'_wp_page_template',true)==='default');
- $native=true;$walk=function($blocks)use(&$walk,&$native){foreach($blocks as $b){if($b['blockName']!==null&&!str_starts_with($b['blockName'],'core/'))$native=false;if($b['blockName']&&!WP_Block_Type_Registry::get_instance()->is_registered($b['blockName']))$native=false;$walk($b['innerBlocks']);}};$walk(parse_blocks($p->post_content));$check($page['key'].' registered native blocks',$native);
+ $native=true;$walk=function($blocks)use(&$walk,&$native){foreach($blocks as $b){if($b['blockName']!==null&&!str_starts_with($b['blockName'],'core/')&&!in_array($b['blockName'],['kadence/rowlayout','kadence/column'],true))$native=false;if($b['blockName']&&!WP_Block_Type_Registry::get_instance()->is_registered($b['blockName']))$native=false;$walk($b['innerBlocks']);}};$walk(parse_blocks($p->post_content));$check($page['key'].' registered native blocks',$native);
  $check($page['key'].' no stale source domain',home_url()==='http://127.0.0.1:4173'||!str_contains($p->post_content,'http://127.0.0.1:4173'));
  $contents[$page['key']]=$p->post_content;
 }
-$hero=explode('<!-- /wp:cover -->',$contents['home'])[0];
-$check('signed hero has no photograph',!str_contains($hero,'<img')&&str_contains($hero,'#eaf8f6'));
-$check('unconfirmed minimum not advertised',!str_contains(implode('', $contents),'AUD 110.00'));
+$hero=serialize_block(parse_blocks($contents['home'])[0]);
+$check('signed hero has no photograph',!str_contains($hero,'<img')&&str_contains($hero,'#edf8f6'));
+$bar=get_option('dsmm_menu_items');
+$check('three labelled mobile actions',array_column($bar,'label')===['Call','WhatsApp','Estimate']);
+$check('mobile action destinations',array_column($bar,'url')===['tel:+61491245156','https://wa.me/61491245156',home_url('/prices/#estimate')]);
+$check('native safe area enabled',get_option('dsmm_style_settings')['safe_area_support']===true);
+$check('bar limited to smaller screens',get_option('dsmm_visibility_rules')['hide_on_desktop']===true);
+$check('unconfirmed minimum not advertised' ,!str_contains(implode('', $contents),'AUD 110.00'));
 $check('unresolved bed making removed',!str_contains($contents['regular'],'beds made'));
 $form=wpFluent()->table('fluentform_forms')->where('title','Prime — Native contact')->first();$check('native contact exists',(bool)$form);
 $definition=json_decode($form->form_fields,true);$names=array_column(array_column($definition['fields'],'attributes'),'name');
