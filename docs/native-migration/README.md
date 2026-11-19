@@ -2,7 +2,7 @@
 
 The native page package includes the editable Request a Quote estimator and Derick’s approved prices. Follow the [staging installation and acceptance checks](ESTIMATOR.md) before publishing.
 
-Current work: `feature/prime-native-visual-enhancement`, 17 November 2026. See the [page changes, plugin inventory, current screenshots and verification](ENHANCEMENT.md). Earlier screenshots at the bottom of this page are historical.
+For an existing LocalWP site, [import the updated header and footer](HANDOVER.md#applying-the-header-and-footer-to-prime-in-localwp). Preview the updated [mobile](screenshots/prime-header-footer-mobile.webp) and [desktop](screenshots/prime-header-footer-desktop.webp) layouts. See the [17 November page design and plugin review](ENHANCEMENT.md) for earlier layouts.
 
 ## What is implemented
 
