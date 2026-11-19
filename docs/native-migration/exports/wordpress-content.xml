@@ -357,362 +357,501 @@
 		<dc:creator><![CDATA[]]></dc:creator>
 		<guid isPermaLink="false">http://127.0.0.1:4173/?page_id=8</guid>
 		<description></description>
-		<content:encoded><![CDATA[<!-- wp:kadence/rowlayout {"uniqueID":"home_005","columns":1,"collapseGutter":"custom","customRowGutter":[24,24,20],"columnGutter":"custom","customGutter":[24,24,20],"colLayout":"equal","htmlTag":"section","maxWidth":1180,"bgColor":"#edf8f6","align":"full","tabletPadding":[48,24,48,24],"columnsInnerHeight":true,"padding":[64,24,64,24],"mobilePadding":[40,20,40,20],"margin":[0,0,0,0],"kbVersion":2,"metadata":{"name":"Home hero"}} -->
-<!-- wp:kadence/column {"uniqueID":"home_004"} -->
-<div class="wp-block-kadence-column kadence-columnhome_004"><div class="kt-inside-inner-col"><!-- wp:kadence/rowlayout {"uniqueID":"home_003","tabletLayout":"row","collapseGutter":"custom","customRowGutter":[24,24,20],"columnGutter":"custom","customGutter":[48,32,24],"colLayout":"equal","verticalAlignment":"middle","firstColumnWidth":56,"secondColumnWidth":44,"columnsInnerHeight":true,"padding":[0,0,0,0],"margin":[0,0,0,0],"kbVersion":2} -->
-<!-- wp:kadence/column {"uniqueID":"home_001"} -->
-<div class="wp-block-kadence-column kadence-columnhome_001"><div class="kt-inside-inner-col"><!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"16px"}},"color":{"text":"#163d44"},"typography":{"fontSize":"14px","fontWeight":"700","letterSpacing":"0.06em","textTransform":"uppercase"},"elements":{"link":{"color":{"text":"#163d44"}}}}} -->
-<p class="has-text-color has-link-color" style="color:#163d44;margin-top:0;margin-bottom:16px;font-size:14px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase">Family-run in Malvern East</p>
-<!-- /wp:paragraph -->
+		<content:encoded><![CDATA[<!-- wp:kadence/rowlayout {"uniqueID":"primehome_015","columns":1,"collapseGutter":"none","columnGutter":"none","colLayout":"equal","htmlTag":"section","maxWidth":1328,"bgColor":"#f2f7fd","align":"full","tabletPadding":[54,24,54,24],"padding":[80,24,80,24],"mobilePadding":[42,20,42,20],"margin":[0,0,0,0],"kbVersion":2,"metadata":{"name":"Home hero"}} -->
+<!-- wp:kadence/column {"uniqueID":"primehome_014"} -->
+<div class="wp-block-kadence-column kadence-columnprimehome_014"><div class="kt-inside-inner-col"><!-- wp:kadence/rowlayout {"uniqueID":"primehome_013","tabletLayout":"row","collapseGutter":"custom","customRowGutter":[40,24,18],"columnGutter":"custom","customGutter":[40,24,18],"colLayout":"equal","verticalAlignment":"middle","firstColumnWidth":58,"secondColumnWidth":42,"columnsInnerHeight":true,"padding":[0,0,0,0],"margin":[0,0,0,0],"kbVersion":2} -->
+<!-- wp:kadence/column {"uniqueID":"primehome_009"} -->
+<div class="wp-block-kadence-column kadence-columnprimehome_009"><div class="kt-inside-inner-col"><!-- wp:kadence/advancedheading {"uniqueID":"primehome_001","align":"left","color":"#0e7490","typography":"Instrument Sans","googleFont":true,"fontWeight":"700","margin":[0,0,20,0],"padding":[5,12,5,12],"htmlTag":"p","background":"#ffffff","fontSize":[13,13,13],"fontHeight":[20,20,20],"fontHeightType":"px","maxWidth":[213,213,213],"icon":"fe_checkCircle","iconColor":"#0e7490","iconSize":[20,20,20],"borderStyle":[{"top":["#e2e8f0","solid",1],"right":["#e2e8f0","solid",1],"bottom":["#e2e8f0","solid",1],"left":["#e2e8f0","solid",1],"unit":"px"}],"borderRadius":[99,99,99,99]} -->
+<p class="kt-adv-headingprimehome_001 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_001">Family-run in Malvern East</p>
+<!-- /wp:kadence/advancedheading -->
 
-<!-- wp:heading {"level":1,"style":{"spacing":{"margin":{"top":"0","bottom":"16px"}},"color":{"text":"#163d44"}}} -->
-<h1 class="wp-block-heading has-text-color" style="color:#163d44;margin-top:0;margin-bottom:16px">A cleaner home. More time for you.</h1>
-<!-- /wp:heading -->
+<!-- wp:kadence/advancedheading {"level":1,"uniqueID":"primehome_002","align":"left","color":"#0f172a","letterSpacing":-1,"typography":"Wix Madefor Display","googleFont":true,"fontWeight":"700","margin":[0,0,20,0],"fontSize":[48,46,46],"fontHeight":[56,57,57],"fontHeightType":"px"} -->
+<h1 class="kt-adv-headingprimehome_002 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_002">Home cleaning in Malvern East and Melbourne's south-east</h1>
+<!-- /wp:kadence/advancedheading -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"16px"}},"typography":{"fontSize":"18px"},"color":{"text":"#263d42"},"elements":{"link":{"color":{"text":"#163d44"}}}}} -->
-<p class="has-text-color has-link-color" style="color:#263d42;margin-top:0;margin-bottom:16px;font-size:18px">Regular, end-of-lease and carpet cleaning around Malvern East. A family team who care for your home like their own.</p>
+<!-- wp:kadence/advancedheading {"uniqueID":"primehome_003","align":"left","color":"#334155","typography":"Instrument Sans","googleFont":true,"fontWeight":"400","margin":[0,0,24,0],"htmlTag":"p","fontSize":[16,16,16],"fontHeight":[25,25,25],"fontHeightType":"px","maxWidth":[570,570,""]} -->
+<p class="kt-adv-headingprimehome_003 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_003">We're a small family team who clean like it's our own place — minus the arguments about whose turn it is. Get an instant estimate in about a minute.</p>
+<!-- /wp:kadence/advancedheading -->
+
+<!-- wp:kadence/advancedbtn {"hAlign":"left","btnCount":3,"uniqueID":"primehome_007","margin":[0,0,0,0],"gap":[14,14,12]} -->
+<div class="wp-block-kadence-advancedbtn kb-buttons-wrap kb-btnsprimehome_007"><!-- wp:kadence/singlebtn {"uniqueID":"primehome_004","text":"Get my estimate","link":"#estimator-section","padding":[12,21,12,21],"color":"#ffffff","background":"#0e7490","colorHover":"#ffffff","backgroundHover":"#0e7490","borderStyle":[{"top":["#0e7490","solid",1],"right":["#0e7490","solid",1],"bottom":["#0e7490","solid",1],"left":["#0e7490","solid",1],"unit":"px"}],"borderRadius":[8,8,8,8],"icon":"fe_arrowRight","iconSize":[16,16,16],"typography":[{"size":[14,14,14],"sizeType":"px","weight":"700"}]} /-->
+
+<!-- wp:kadence/singlebtn {"uniqueID":"primehome_005","text":"Call us","link":"tel:+61491245156","padding":[12,21,12,21],"color":"#0f172a","background":"#ffffff","colorHover":"#0f172a","backgroundHover":"#ffffff","borderStyle":[{"top":["#e2e8f0","solid",1],"right":["#e2e8f0","solid",1],"bottom":["#e2e8f0","solid",1],"left":["#e2e8f0","solid",1],"unit":"px"}],"borderRadius":[8,8,8,8],"icon":"fe_phone","iconSide":"left","iconSize":[16,16,16],"typography":[{"size":[14,14,14],"sizeType":"px","weight":"700"}]} /-->
+
+<!-- wp:kadence/singlebtn {"uniqueID":"primehome_006","text":"WhatsApp us","link":"https://wa.me/61491245156","padding":[12,21,12,21],"color":"#047857","background":"#ffffff","colorHover":"#047857","backgroundHover":"#ffffff","borderStyle":[{"top":["#e2e8f0","solid",1],"right":["#e2e8f0","solid",1],"bottom":["#e2e8f0","solid",1],"left":["#e2e8f0","solid",1],"unit":"px"}],"borderRadius":[8,8,8,8],"icon":"fe_messageCircle","iconSide":"left","iconSize":[16,16,16],"typography":[{"size":[14,14,14],"sizeType":"px","weight":"700"}]} /--></div>
+<!-- /wp:kadence/advancedbtn -->
+
+<!-- wp:kadence/advancedheading {"uniqueID":"primehome_008","align":"left","color":"#334155","typography":"Instrument Sans","googleFont":true,"fontWeight":"400","margin":[20,0,0,0],"htmlTag":"p","fontSize":[13,13,13],"fontHeight":[20,20,20],"fontHeightType":"px"} -->
+<p class="kt-adv-headingprimehome_008 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_008">Pay on completion • We bring everything • Fast, friendly replies</p>
+<!-- /wp:kadence/advancedheading --></div></div>
+<!-- /wp:kadence/column -->
+
+<!-- wp:kadence/column {"background":"#ffffff","borderRadius":[14,14,14,14],"uniqueID":"primehome_012","displayShadow":true,"shadow":[{"color":"#0f172a","opacity":0.07,"spread":0,"blur":9,"hOffset":0,"vOffset":2,"inset":false}],"padding":[28,28,28,28],"mobilePadding":[22,22,22,22],"borderStyle":[{"top":["#e2e8f0","solid",1],"right":["#e2e8f0","solid",1],"bottom":["#e2e8f0","solid",1],"left":["#e2e8f0","solid",1],"unit":"px"}],"metadata":{"name":"Quick estimate"}} -->
+<div class="wp-block-kadence-column kadence-columnprimehome_012"><div class="kt-inside-inner-col"><!-- wp:kadence/advancedheading {"uniqueID":"primehome_010","align":"left","color":"#0e7490","typography":"Instrument Sans","googleFont":true,"fontWeight":"700","margin":[0,0,5,0],"htmlTag":"p","fontSize":[12,12,12],"fontHeight":[19,19,19],"fontHeightType":"px"} -->
+<p class="kt-adv-headingprimehome_010 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_010">QUICK ESTIMATE</p>
+<!-- /wp:kadence/advancedheading -->
+
+<!-- wp:kadence/advancedheading {"level":3,"uniqueID":"primehome_011","align":"left","color":"#0f172a","typography":"Wix Madefor Display","googleFont":true,"fontWeight":"700","margin":[0,0,16,0],"anchor":"quote","fontSize":[24,24,24],"fontHeight":[28,30,30],"fontHeightType":"px"} -->
+<h3 id="quote" class="kt-adv-headingprimehome_011 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_011">What does your place need?</h3>
+<!-- /wp:kadence/advancedheading -->
+
+<!-- wp:shortcode -->
+[fluentform title="Prime | Quick Estimate"]
+<!-- /wp:shortcode --></div></div>
+<!-- /wp:kadence/column -->
+<!-- /wp:kadence/rowlayout --></div></div>
+<!-- /wp:kadence/column -->
+<!-- /wp:kadence/rowlayout -->
+
+<!-- wp:kadence/rowlayout {"uniqueID":"primehome_030","columns":1,"collapseGutter":"none","columnGutter":"none","colLayout":"equal","htmlTag":"section","maxWidth":1328,"bgColor":"#ffffff","align":"full","tabletPadding":[38,24,38,24],"padding":[38,24,38,24],"mobilePadding":[38,20,38,20],"margin":[0,0,0,0],"kbVersion":2,"metadata":{"name":"Why choose Prime"}} -->
+<!-- wp:kadence/column {"uniqueID":"primehome_029"} -->
+<div class="wp-block-kadence-column kadence-columnprimehome_029"><div class="kt-inside-inner-col"><!-- wp:kadence/rowlayout {"uniqueID":"primehome_028","columns":4,"tabletLayout":"two-grid","collapseGutter":"custom","customRowGutter":[24,24,18],"columnGutter":"custom","customGutter":[24,24,18],"colLayout":"equal","columnsInnerHeight":true,"padding":[0,0,0,0],"margin":[0,0,0,0],"kbVersion":2} -->
+<!-- wp:kadence/column {"uniqueID":"primehome_018"} -->
+<div class="wp-block-kadence-column kadence-columnprimehome_018"><div class="kt-inside-inner-col"><!-- wp:kadence/advancedheading {"level":3,"uniqueID":"primehome_016","align":"left","color":"#0f172a","typography":"Wix Madefor Display","googleFont":true,"fontWeight":"700","margin":[0,0,6,0],"fontSize":[17,17,17],"fontHeight":[20,21,21],"fontHeightType":"px","icon":"fe_creditCard","iconColor":"#0e7490","iconSize":[20,20,20]} -->
+<h3 class="kt-adv-headingprimehome_016 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_016">Pay when it's done</h3>
+<!-- /wp:kadence/advancedheading -->
+
+<!-- wp:kadence/advancedheading {"uniqueID":"primehome_017","align":"left","color":"#334155","typography":"Instrument Sans","googleFont":true,"fontWeight":"400","margin":[0,0,0,0],"htmlTag":"p","fontSize":[14,14,14],"fontHeight":[22,22,22],"fontHeightType":"px"} -->
+<p class="kt-adv-headingprimehome_017 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_017">No deposits. You pay after the clean, by bank transfer or PayID.</p>
+<!-- /wp:kadence/advancedheading --></div></div>
+<!-- /wp:kadence/column -->
+
+<!-- wp:kadence/column {"uniqueID":"primehome_021"} -->
+<div class="wp-block-kadence-column kadence-columnprimehome_021"><div class="kt-inside-inner-col"><!-- wp:kadence/advancedheading {"level":3,"uniqueID":"primehome_019","align":"left","color":"#0f172a","typography":"Wix Madefor Display","googleFont":true,"fontWeight":"700","margin":[0,0,6,0],"fontSize":[17,17,17],"fontHeight":[20,21,21],"fontHeightType":"px","icon":"fe_packageIcon","iconColor":"#0e7490","iconSize":[20,20,20]} -->
+<h3 class="kt-adv-headingprimehome_019 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_019">We bring it all</h3>
+<!-- /wp:kadence/advancedheading -->
+
+<!-- wp:kadence/advancedheading {"uniqueID":"primehome_020","align":"left","color":"#334155","typography":"Instrument Sans","googleFont":true,"fontWeight":"400","margin":[0,0,0,0],"htmlTag":"p","fontSize":[14,14,14],"fontHeight":[22,22,22],"fontHeightType":"px"} -->
+<p class="kt-adv-headingprimehome_020 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_020">Equipment and products included, low-tox where possible. Just leave the water and power on.</p>
+<!-- /wp:kadence/advancedheading --></div></div>
+<!-- /wp:kadence/column -->
+
+<!-- wp:kadence/column {"uniqueID":"primehome_024"} -->
+<div class="wp-block-kadence-column kadence-columnprimehome_024"><div class="kt-inside-inner-col"><!-- wp:kadence/advancedheading {"level":3,"uniqueID":"primehome_022","align":"left","color":"#0f172a","typography":"Wix Madefor Display","googleFont":true,"fontWeight":"700","margin":[0,0,6,0],"fontSize":[17,17,17],"fontHeight":[20,21,21],"fontHeightType":"px","icon":"fe_users","iconColor":"#0e7490","iconSize":[20,20,20]} -->
+<h3 class="kt-adv-headingprimehome_022 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_022">Local, not a franchise</h3>
+<!-- /wp:kadence/advancedheading -->
+
+<!-- wp:kadence/advancedheading {"uniqueID":"primehome_023","align":"left","color":"#334155","typography":"Instrument Sans","googleFont":true,"fontWeight":"400","margin":[0,0,0,0],"htmlTag":"p","fontSize":[14,14,14],"fontHeight":[22,22,22],"fontHeightType":"px"} -->
+<p class="kt-adv-headingprimehome_023 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_023">You deal with us directly, from the first message to the final wipe.</p>
+<!-- /wp:kadence/advancedheading --></div></div>
+<!-- /wp:kadence/column -->
+
+<!-- wp:kadence/column {"uniqueID":"primehome_027"} -->
+<div class="wp-block-kadence-column kadence-columnprimehome_027"><div class="kt-inside-inner-col"><!-- wp:kadence/advancedheading {"level":3,"uniqueID":"primehome_025","align":"left","color":"#0f172a","typography":"Wix Madefor Display","googleFont":true,"fontWeight":"700","margin":[0,0,6,0],"fontSize":[17,17,17],"fontHeight":[20,21,21],"fontHeightType":"px","icon":"fe_shield","iconColor":"#0e7490","iconSize":[20,20,20]} -->
+<h3 class="kt-adv-headingprimehome_025 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_025">Working with Children Check</h3>
+<!-- /wp:kadence/advancedheading -->
+
+<!-- wp:kadence/advancedheading {"uniqueID":"primehome_026","align":"left","color":"#334155","typography":"Instrument Sans","googleFont":true,"fontWeight":"400","margin":[0,0,0,0],"htmlTag":"p","fontSize":[14,14,14],"fontHeight":[22,22,22],"fontHeightType":"px"} -->
+<p class="kt-adv-headingprimehome_026 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_026">Derick holds a Victorian WWCC, because trust matters at home.</p>
+<!-- /wp:kadence/advancedheading --></div></div>
+<!-- /wp:kadence/column -->
+<!-- /wp:kadence/rowlayout --></div></div>
+<!-- /wp:kadence/column -->
+<!-- /wp:kadence/rowlayout -->
+
+<!-- wp:kadence/rowlayout {"uniqueID":"primehome_054","columns":1,"collapseGutter":"none","columnGutter":"none","colLayout":"equal","htmlTag":"section","maxWidth":1328,"bgColor":"#f8fafc","align":"full","tabletPadding":[54,24,54,24],"padding":[64,24,64,24],"mobilePadding":[42,20,42,20],"margin":[0,0,0,0],"anchor":"services-section","kbVersion":2,"metadata":{"name":"Cleaning services"}} -->
+<!-- wp:kadence/column {"uniqueID":"primehome_053"} -->
+<div class="wp-block-kadence-column kadence-columnprimehome_053"><div class="kt-inside-inner-col"><!-- wp:kadence/advancedheading {"uniqueID":"primehome_049","align":"center","color":"#0e7490","typography":"Instrument Sans","googleFont":true,"fontWeight":"700","margin":[0,0,5,0],"htmlTag":"p","fontSize":[12,12,12],"fontHeight":[19,19,19],"fontHeightType":"px"} -->
+<p class="kt-adv-headingprimehome_049 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_049">SERVICES</p>
+<!-- /wp:kadence/advancedheading -->
+
+<!-- wp:kadence/advancedheading {"uniqueID":"primehome_050","align":"center","color":"#0f172a","typography":"Wix Madefor Display","googleFont":true,"fontWeight":"700","margin":[0,0,10,0],"fontSize":[36,28,28],"fontHeight":[42,34,34],"fontHeightType":"px"} -->
+<h2 class="kt-adv-headingprimehome_050 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_050">What we clean</h2>
+<!-- /wp:kadence/advancedheading -->
+
+<!-- wp:kadence/advancedheading {"uniqueID":"primehome_051","align":"center","color":"#334155","typography":"Instrument Sans","googleFont":true,"fontWeight":"400","margin":[0,0,34,0],"htmlTag":"p","fontSize":[16,16,16],"fontHeight":[25,25,25],"fontHeightType":"px"} -->
+<p class="kt-adv-headingprimehome_051 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_051">Pick the clean that fits your week. Here are the starting prices from our estimator.</p>
+<!-- /wp:kadence/advancedheading -->
+
+<!-- wp:kadence/rowlayout {"uniqueID":"primehome_052","columns":3,"collapseGutter":"custom","customRowGutter":[32,24,18],"columnGutter":"custom","customGutter":[32,24,18],"colLayout":"equal","columnsInnerHeight":true,"padding":[0,0,0,0],"margin":[0,0,0,0],"kbVersion":2} -->
+<!-- wp:kadence/column {"background":"#ffffff","borderRadius":[14,14,14,14],"uniqueID":"primehome_036","displayShadow":true,"shadow":[{"color":"#0f172a","opacity":0.07,"spread":0,"blur":9,"hOffset":0,"vOffset":2,"inset":false}],"padding":[24,24,24,24],"mobilePadding":[22,22,22,22],"borderStyle":[{"top":["#e2e8f0","solid",1],"right":["#e2e8f0","solid",1],"bottom":["#e2e8f0","solid",1],"left":["#e2e8f0","solid",1],"unit":"px"}]} -->
+<div class="wp-block-kadence-column kadence-columnprimehome_036"><div class="kt-inside-inner-col"><!-- wp:kadence/icon {"uniqueID":"primehome_032","textAlignment":"left"} -->
+<div class="wp-block-kadence-icon kt-svg-icons kt-svg-iconsprimehome_032 alignnone"><!-- wp:kadence/single-icon {"uniqueID":"primehome_031","icon":"fe_home","size":24,"color":"#0e7490","background":"#e0f2fe","borderRadius":18,"padding":[10,10,10,10],"style":"stacked"} -->
+<div class="wp-block-kadence-single-icon kt-svg-style-stacked kt-svg-icon-wrap kt-svg-item-primehome_031"><span data-name="fe_home" data-stroke="2" class="kadence-dynamic-icon"></span></div>
+<!-- /wp:kadence/single-icon --></div>
+<!-- /wp:kadence/icon -->
+
+<!-- wp:kadence/advancedheading {"level":3,"uniqueID":"primehome_033","align":"left","color":"#0f172a","typography":"Wix Madefor Display","googleFont":true,"fontWeight":"700","margin":[0,0,12,0],"fontSize":[20,20,20],"fontHeight":[23,25,25],"fontHeightType":"px"} -->
+<h3 class="kt-adv-headingprimehome_033 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_033">Regular &amp; Deep Cleaning</h3>
+<!-- /wp:kadence/advancedheading -->
+
+<!-- wp:kadence/advancedheading {"uniqueID":"primehome_034","align":"left","color":"#334155","typography":"Instrument Sans","googleFont":true,"fontWeight":"400","margin":[0,0,20,0],"htmlTag":"p","fontSize":[14,14,14],"fontHeight":[22,22,22],"fontHeightType":"px"} -->
+<p class="kt-adv-headingprimehome_034 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_034">Weekly, fortnightly or a one-off reset. Save 15% on the base clean with weekly or fortnightly regular visits.</p>
+<!-- /wp:kadence/advancedheading -->
+
+<!-- wp:kadence/advancedheading {"uniqueID":"primehome_035","align":"left","color":"#0e7490","typography":"Instrument Sans","googleFont":true,"fontWeight":"700","margin":[0,0,6,0],"htmlTag":"p","fontSize":[14,14,14],"fontHeight":[22,22,22],"fontHeightType":"px"} -->
+<p class="kt-adv-headingprimehome_035 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_035">From $110</p>
+<!-- /wp:kadence/advancedheading -->
+
+<!-- wp:paragraph {"style":{"color":{"text":"#0e7490"},"typography":{"fontSize":"14px","fontWeight":"600"},"spacing":{"margin":{"top":"8px","bottom":"0"}}}} -->
+<p class="has-text-color" style="color:#0e7490;margin-top:8px;margin-bottom:0;font-size:14px;font-weight:600"><a href="/regular-house-cleaning/">See what’s included →</a></p>
 <!-- /wp:paragraph --></div></div>
 <!-- /wp:kadence/column -->
 
-<!-- wp:kadence/column {"background":"#ffffff","borderRadius":[12,12,12,12],"uniqueID":"home_002","textColor":"#263d42","padding":[24,24,24,24],"mobilePadding":[20,20,20,20],"borderStyle":[{"top":["#d6e5e3","solid",1],"right":["#d6e5e3","solid",1],"bottom":["#d6e5e3","solid",1],"left":["#d6e5e3","solid",1],"unit":"px"}],"metadata":{"name":"Request a quote"}} -->
-<div class="wp-block-kadence-column kadence-columnhome_002"><div class="kt-inside-inner-col"><!-- wp:heading {"anchor":"quote","style":{"typography":{"fontSize":"24px"},"spacing":{"margin":{"top":"0","bottom":"16px"}}}} -->
-<h2 class="wp-block-heading" id="quote" style="margin-top:0;margin-bottom:16px;font-size:24px">Let’s find your clean</h2>
-<!-- /wp:heading -->
+<!-- wp:kadence/column {"background":"#ffffff","borderRadius":[14,14,14,14],"uniqueID":"primehome_042","displayShadow":true,"shadow":[{"color":"#0f172a","opacity":0.07,"spread":0,"blur":9,"hOffset":0,"vOffset":2,"inset":false}],"padding":[24,24,24,24],"mobilePadding":[22,22,22,22],"borderStyle":[{"top":["#e2e8f0","solid",1],"right":["#e2e8f0","solid",1],"bottom":["#e2e8f0","solid",1],"left":["#e2e8f0","solid",1],"unit":"px"}]} -->
+<div class="wp-block-kadence-column kadence-columnprimehome_042"><div class="kt-inside-inner-col"><!-- wp:kadence/icon {"uniqueID":"primehome_038","textAlignment":"left"} -->
+<div class="wp-block-kadence-icon kt-svg-icons kt-svg-iconsprimehome_038 alignnone"><!-- wp:kadence/single-icon {"uniqueID":"primehome_037","icon":"fe_unlock","size":24,"color":"#0e7490","background":"#e0f2fe","borderRadius":18,"padding":[10,10,10,10],"style":"stacked"} -->
+<div class="wp-block-kadence-single-icon kt-svg-style-stacked kt-svg-icon-wrap kt-svg-item-primehome_037"><span data-name="fe_unlock" data-stroke="2" class="kadence-dynamic-icon"></span></div>
+<!-- /wp:kadence/single-icon --></div>
+<!-- /wp:kadence/icon -->
 
-<!-- wp:paragraph -->
-<p>Tell us about the clean you need and your preferred dates.</p>
-<!-- /wp:paragraph -->
+<!-- wp:kadence/advancedheading {"level":3,"uniqueID":"primehome_039","align":"left","color":"#0f172a","typography":"Wix Madefor Display","googleFont":true,"fontWeight":"700","margin":[0,0,12,0],"fontSize":[20,20,20],"fontHeight":[23,25,25],"fontHeightType":"px"} -->
+<h3 class="kt-adv-headingprimehome_039 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_039">End of Lease Cleaning</h3>
+<!-- /wp:kadence/advancedheading -->
 
-<!-- wp:buttons -->
-<div class="wp-block-buttons"><!-- wp:button {"style":{"border":{"radius":"8px"},"color":{"background":"#087f80","text":"#ffffff"},"spacing":{"padding":{"top":"13px","bottom":"13px","left":"22px","right":"22px"}},"typography":{"fontSize":"16px","fontWeight":"600"}}} -->
-<div class="wp-block-button"><a class="wp-block-button__link has-text-color has-background has-custom-font-size wp-element-button" href="http://127.0.0.1:4173/prices/#estimate" style="border-radius:8px;color:#ffffff;background-color:#087f80;padding-top:13px;padding-right:22px;padding-bottom:13px;padding-left:22px;font-size:16px;font-weight:600">Request a quote</a></div>
-<!-- /wp:button -->
+<!-- wp:kadence/advancedheading {"uniqueID":"primehome_040","align":"left","color":"#334155","typography":"Instrument Sans","googleFont":true,"fontWeight":"400","margin":[0,0,20,0],"htmlTag":"p","fontSize":[14,14,14],"fontHeight":[22,22,22],"fontHeightType":"px"} -->
+<p class="kt-adv-headingprimehome_040 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_040">Moving out? We follow the agent checklist so you can focus on the boxes.</p>
+<!-- /wp:kadence/advancedheading -->
 
-<!-- wp:button {"style":{"border":{"radius":"8px"},"color":{"background":"#087f80","text":"#ffffff"},"spacing":{"padding":{"top":"13px","bottom":"13px","left":"22px","right":"22px"}},"typography":{"fontSize":"16px","fontWeight":"600"}}} -->
-<div class="wp-block-button"><a class="wp-block-button__link has-text-color has-background has-custom-font-size wp-element-button" href="tel:+61491245156" style="border-radius:8px;color:#ffffff;background-color:#087f80;padding-top:13px;padding-right:22px;padding-bottom:13px;padding-left:22px;font-size:16px;font-weight:600">Call 0491 245 156</a></div>
-<!-- /wp:button -->
+<!-- wp:kadence/advancedheading {"uniqueID":"primehome_041","align":"left","color":"#0e7490","typography":"Instrument Sans","googleFont":true,"fontWeight":"700","margin":[0,0,6,0],"htmlTag":"p","fontSize":[14,14,14],"fontHeight":[22,22,22],"fontHeightType":"px"} -->
+<p class="kt-adv-headingprimehome_041 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_041">From $250</p>
+<!-- /wp:kadence/advancedheading -->
 
-<!-- wp:button {"style":{"border":{"radius":"8px"},"color":{"background":"#087f80","text":"#ffffff"},"spacing":{"padding":{"top":"13px","bottom":"13px","left":"22px","right":"22px"}},"typography":{"fontSize":"16px","fontWeight":"600"}}} -->
-<div class="wp-block-button"><a class="wp-block-button__link has-text-color has-background has-custom-font-size wp-element-button" href="https://wa.me/61491245156" style="border-radius:8px;color:#ffffff;background-color:#087f80;padding-top:13px;padding-right:22px;padding-bottom:13px;padding-left:22px;font-size:16px;font-weight:600">WhatsApp us</a></div>
-<!-- /wp:button --></div>
-<!-- /wp:buttons -->
+<!-- wp:paragraph {"style":{"color":{"text":"#0e7490"},"typography":{"fontSize":"14px","fontWeight":"600"},"spacing":{"margin":{"top":"8px","bottom":"0"}}}} -->
+<p class="has-text-color" style="color:#0e7490;margin-top:8px;margin-bottom:0;font-size:14px;font-weight:600"><a href="/end-of-lease-cleaning/">See what’s included →</a></p>
+<!-- /wp:paragraph --></div></div>
+<!-- /wp:kadence/column -->
 
-<!-- wp:paragraph {"style":{"typography":{"fontSize":"14px"}}} -->
-<p style="font-size:14px">Your enquiry is not a confirmed booking. We confirm the scope and price before work begins.</p>
+<!-- wp:kadence/column {"background":"#ffffff","borderRadius":[14,14,14,14],"uniqueID":"primehome_048","displayShadow":true,"shadow":[{"color":"#0f172a","opacity":0.07,"spread":0,"blur":9,"hOffset":0,"vOffset":2,"inset":false}],"padding":[24,24,24,24],"mobilePadding":[22,22,22,22],"borderStyle":[{"top":["#e2e8f0","solid",1],"right":["#e2e8f0","solid",1],"bottom":["#e2e8f0","solid",1],"left":["#e2e8f0","solid",1],"unit":"px"}]} -->
+<div class="wp-block-kadence-column kadence-columnprimehome_048"><div class="kt-inside-inner-col"><!-- wp:kadence/icon {"uniqueID":"primehome_044","textAlignment":"left"} -->
+<div class="wp-block-kadence-icon kt-svg-icons kt-svg-iconsprimehome_044 alignnone"><!-- wp:kadence/single-icon {"uniqueID":"primehome_043","icon":"fe_layers","size":24,"color":"#0e7490","background":"#e0f2fe","borderRadius":18,"padding":[10,10,10,10],"style":"stacked"} -->
+<div class="wp-block-kadence-single-icon kt-svg-style-stacked kt-svg-icon-wrap kt-svg-item-primehome_043"><span data-name="fe_layers" data-stroke="2" class="kadence-dynamic-icon"></span></div>
+<!-- /wp:kadence/single-icon --></div>
+<!-- /wp:kadence/icon -->
+
+<!-- wp:kadence/advancedheading {"level":3,"uniqueID":"primehome_045","align":"left","color":"#0f172a","typography":"Wix Madefor Display","googleFont":true,"fontWeight":"700","margin":[0,0,12,0],"fontSize":[20,20,20],"fontHeight":[23,25,25],"fontHeightType":"px"} -->
+<h3 class="kt-adv-headingprimehome_045 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_045">Carpet Steam Cleaning</h3>
+<!-- /wp:kadence/advancedheading -->
+
+<!-- wp:kadence/advancedheading {"uniqueID":"primehome_046","align":"left","color":"#334155","typography":"Instrument Sans","googleFont":true,"fontWeight":"400","margin":[0,0,20,0],"htmlTag":"p","fontSize":[14,14,14],"fontHeight":[22,22,22],"fontHeightType":"px"} -->
+<p class="kt-adv-headingprimehome_046 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_046">Hot-water extraction that lifts the stuff vacuuming pretends isn't there.</p>
+<!-- /wp:kadence/advancedheading -->
+
+<!-- wp:kadence/advancedheading {"uniqueID":"primehome_047","align":"left","color":"#0e7490","typography":"Instrument Sans","googleFont":true,"fontWeight":"700","margin":[0,0,6,0],"htmlTag":"p","fontSize":[14,14,14],"fontHeight":[22,22,22],"fontHeightType":"px"} -->
+<p class="kt-adv-headingprimehome_047 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_047">From $45 per bedroom · $110 job minimum</p>
+<!-- /wp:kadence/advancedheading -->
+
+<!-- wp:paragraph {"style":{"color":{"text":"#0e7490"},"typography":{"fontSize":"14px","fontWeight":"600"},"spacing":{"margin":{"top":"8px","bottom":"0"}}}} -->
+<p class="has-text-color" style="color:#0e7490;margin-top:8px;margin-bottom:0;font-size:14px;font-weight:600"><a href="/carpet-steam-cleaning/">See what’s included →</a></p>
 <!-- /wp:paragraph --></div></div>
 <!-- /wp:kadence/column -->
 <!-- /wp:kadence/rowlayout --></div></div>
 <!-- /wp:kadence/column -->
 <!-- /wp:kadence/rowlayout -->
 
-<!-- wp:kadence/rowlayout {"uniqueID":"home_012","columns":1,"collapseGutter":"custom","customRowGutter":[24,24,20],"columnGutter":"custom","customGutter":[24,24,20],"colLayout":"equal","htmlTag":"section","maxWidth":1180,"bgColor":"#ffffff","align":"full","tabletPadding":[48,24,48,24],"columnsInnerHeight":true,"padding":[32,24,32,24],"mobilePadding":[24,20,24,20],"margin":[0,0,0,0],"kbVersion":2,"metadata":{"name":"Page section"}} -->
-<!-- wp:kadence/column {"uniqueID":"home_011"} -->
-<div class="wp-block-kadence-column kadence-columnhome_011"><div class="kt-inside-inner-col"><!-- wp:kadence/rowlayout {"uniqueID":"home_010","columns":4,"tabletLayout":"two-grid","collapseGutter":"custom","customRowGutter":[24,24,20],"columnGutter":"custom","customGutter":[24,24,20],"colLayout":"equal","columnsInnerHeight":true,"padding":[0,0,0,0],"margin":[0,0,0,0],"kbVersion":2} -->
-<!-- wp:kadence/column {"background":"#ffffff","borderRadius":[12,12,12,12],"uniqueID":"home_006","textColor":"#263d42","padding":[24,24,24,24],"mobilePadding":[20,20,20,20],"borderStyle":[{"top":["#d6e5e3","solid",1],"right":["#d6e5e3","solid",1],"bottom":["#d6e5e3","solid",1],"left":["#d6e5e3","solid",1],"unit":"px"}],"metadata":{"name":"Editable content card"}} -->
-<div class="wp-block-kadence-column kadence-columnhome_006"><div class="kt-inside-inner-col"><!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"top":"0","bottom":"16px"}},"typography":{}}} -->
-<h3 class="wp-block-heading" style="margin-top:0;margin-bottom:16px">Pay when it's done</h3>
-<!-- /wp:heading -->
+<!-- wp:kadence/rowlayout {"uniqueID":"primehome_071","columns":1,"collapseGutter":"none","columnGutter":"none","colLayout":"equal","htmlTag":"section","maxWidth":1328,"bgColor":"#ffffff","align":"full","tabletPadding":[54,24,54,24],"padding":[64,24,64,24],"mobilePadding":[42,20,42,20],"margin":[0,0,0,0],"kbVersion":2,"metadata":{"name":"How it works"}} -->
+<!-- wp:kadence/column {"uniqueID":"primehome_070"} -->
+<div class="wp-block-kadence-column kadence-columnprimehome_070"><div class="kt-inside-inner-col"><!-- wp:kadence/advancedheading {"uniqueID":"primehome_067","align":"center","color":"#0e7490","typography":"Instrument Sans","googleFont":true,"fontWeight":"700","margin":[0,0,5,0],"htmlTag":"p","fontSize":[12,12,12],"fontHeight":[19,19,19],"fontHeightType":"px"} -->
+<p class="kt-adv-headingprimehome_067 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_067">PROCESS</p>
+<!-- /wp:kadence/advancedheading -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"16px"}}}} -->
-<p style="margin-top:0;margin-bottom:16px">No deposits. You pay after the clean, by bank transfer or PayID.</p>
-<!-- /wp:paragraph --></div></div>
+<!-- wp:kadence/advancedheading {"uniqueID":"primehome_068","align":"center","color":"#0f172a","typography":"Wix Madefor Display","googleFont":true,"fontWeight":"700","margin":[0,0,36,0],"fontSize":[36,28,28],"fontHeight":[42,34,34],"fontHeightType":"px"} -->
+<h2 class="kt-adv-headingprimehome_068 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_068">Booking a clean is easier than finding matching socks</h2>
+<!-- /wp:kadence/advancedheading -->
+
+<!-- wp:kadence/rowlayout {"uniqueID":"primehome_069","columns":3,"collapseGutter":"custom","customRowGutter":[32,24,18],"columnGutter":"custom","customGutter":[32,24,18],"colLayout":"equal","columnsInnerHeight":true,"padding":[0,0,0,0],"margin":[0,0,0,0],"kbVersion":2} -->
+<!-- wp:kadence/column {"uniqueID":"primehome_058"} -->
+<div class="wp-block-kadence-column kadence-columnprimehome_058"><div class="kt-inside-inner-col"><!-- wp:kadence/advancedheading {"uniqueID":"primehome_055","align":"center","color":"#0e7490","typography":"Instrument Sans","googleFont":true,"fontWeight":"700","margin":[0,0,8,0],"htmlTag":"p","fontSize":[24,24,24],"fontHeight":[37,37,37],"fontHeightType":"px"} -->
+<p class="kt-adv-headingprimehome_055 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_055">1</p>
+<!-- /wp:kadence/advancedheading -->
+
+<!-- wp:kadence/advancedheading {"level":3,"uniqueID":"primehome_056","align":"center","color":"#0f172a","typography":"Wix Madefor Display","googleFont":true,"fontWeight":"700","margin":[0,0,12,0],"fontSize":[20,20,20],"fontHeight":[23,25,25],"fontHeightType":"px"} -->
+<h3 class="kt-adv-headingprimehome_056 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_056">Get your estimate</h3>
+<!-- /wp:kadence/advancedheading -->
+
+<!-- wp:kadence/advancedheading {"uniqueID":"primehome_057","align":"center","color":"#334155","typography":"Instrument Sans","googleFont":true,"fontWeight":"400","margin":[0,0,0,0],"htmlTag":"p","fontSize":[15,15,15],"fontHeight":[23,23,23],"fontHeightType":"px"} -->
+<p class="kt-adv-headingprimehome_057 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_057">Pick your service and rooms. See a price range instantly.</p>
+<!-- /wp:kadence/advancedheading --></div></div>
 <!-- /wp:kadence/column -->
 
-<!-- wp:kadence/column {"background":"#ffffff","borderRadius":[12,12,12,12],"uniqueID":"home_007","textColor":"#263d42","padding":[24,24,24,24],"mobilePadding":[20,20,20,20],"borderStyle":[{"top":["#d6e5e3","solid",1],"right":["#d6e5e3","solid",1],"bottom":["#d6e5e3","solid",1],"left":["#d6e5e3","solid",1],"unit":"px"}],"metadata":{"name":"Editable content card"}} -->
-<div class="wp-block-kadence-column kadence-columnhome_007"><div class="kt-inside-inner-col"><!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"top":"0","bottom":"16px"}},"typography":{}}} -->
-<h3 class="wp-block-heading" style="margin-top:0;margin-bottom:16px">We bring it all</h3>
-<!-- /wp:heading -->
+<!-- wp:kadence/column {"uniqueID":"primehome_062"} -->
+<div class="wp-block-kadence-column kadence-columnprimehome_062"><div class="kt-inside-inner-col"><!-- wp:kadence/advancedheading {"uniqueID":"primehome_059","align":"center","color":"#0e7490","typography":"Instrument Sans","googleFont":true,"fontWeight":"700","margin":[0,0,8,0],"htmlTag":"p","fontSize":[24,24,24],"fontHeight":[37,37,37],"fontHeightType":"px"} -->
+<p class="kt-adv-headingprimehome_059 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_059">2</p>
+<!-- /wp:kadence/advancedheading -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"16px"}}}} -->
-<p style="margin-top:0;margin-bottom:16px">Equipment and products included, low-tox where possible. Just leave the water and power on.</p>
-<!-- /wp:paragraph --></div></div>
+<!-- wp:kadence/advancedheading {"level":3,"uniqueID":"primehome_060","align":"center","color":"#0f172a","typography":"Wix Madefor Display","googleFont":true,"fontWeight":"700","margin":[0,0,12,0],"fontSize":[20,20,20],"fontHeight":[23,25,25],"fontHeightType":"px"} -->
+<h3 class="kt-adv-headingprimehome_060 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_060">We confirm the details</h3>
+<!-- /wp:kadence/advancedheading -->
+
+<!-- wp:kadence/advancedheading {"uniqueID":"primehome_061","align":"center","color":"#334155","typography":"Instrument Sans","googleFont":true,"fontWeight":"400","margin":[0,0,0,0],"htmlTag":"p","fontSize":[15,15,15],"fontHeight":[23,23,23],"fontHeightType":"px"} -->
+<p class="kt-adv-headingprimehome_061 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_061">We aim to reply within 2 hours and offer you the earliest time that suits you.</p>
+<!-- /wp:kadence/advancedheading --></div></div>
 <!-- /wp:kadence/column -->
 
-<!-- wp:kadence/column {"background":"#ffffff","borderRadius":[12,12,12,12],"uniqueID":"home_008","textColor":"#263d42","padding":[24,24,24,24],"mobilePadding":[20,20,20,20],"borderStyle":[{"top":["#d6e5e3","solid",1],"right":["#d6e5e3","solid",1],"bottom":["#d6e5e3","solid",1],"left":["#d6e5e3","solid",1],"unit":"px"}],"metadata":{"name":"Editable content card"}} -->
-<div class="wp-block-kadence-column kadence-columnhome_008"><div class="kt-inside-inner-col"><!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"top":"0","bottom":"16px"}},"typography":{}}} -->
-<h3 class="wp-block-heading" style="margin-top:0;margin-bottom:16px">Local, not a franchise</h3>
-<!-- /wp:heading -->
+<!-- wp:kadence/column {"uniqueID":"primehome_066"} -->
+<div class="wp-block-kadence-column kadence-columnprimehome_066"><div class="kt-inside-inner-col"><!-- wp:kadence/advancedheading {"uniqueID":"primehome_063","align":"center","color":"#0e7490","typography":"Instrument Sans","googleFont":true,"fontWeight":"700","margin":[0,0,8,0],"htmlTag":"p","fontSize":[24,24,24],"fontHeight":[37,37,37],"fontHeightType":"px"} -->
+<p class="kt-adv-headingprimehome_063 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_063">3</p>
+<!-- /wp:kadence/advancedheading -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"16px"}}}} -->
-<p style="margin-top:0;margin-bottom:16px">You deal with us directly, from the first message to the final wipe.</p>
-<!-- /wp:paragraph --></div></div>
-<!-- /wp:kadence/column -->
+<!-- wp:kadence/advancedheading {"level":3,"uniqueID":"primehome_064","align":"center","color":"#0f172a","typography":"Wix Madefor Display","googleFont":true,"fontWeight":"700","margin":[0,0,12,0],"fontSize":[20,20,20],"fontHeight":[23,25,25],"fontHeightType":"px"} -->
+<h3 class="kt-adv-headingprimehome_064 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_064">We clean, you relax</h3>
+<!-- /wp:kadence/advancedheading -->
 
-<!-- wp:kadence/column {"background":"#ffffff","borderRadius":[12,12,12,12],"uniqueID":"home_009","textColor":"#263d42","padding":[24,24,24,24],"mobilePadding":[20,20,20,20],"borderStyle":[{"top":["#d6e5e3","solid",1],"right":["#d6e5e3","solid",1],"bottom":["#d6e5e3","solid",1],"left":["#d6e5e3","solid",1],"unit":"px"}],"metadata":{"name":"Editable content card"}} -->
-<div class="wp-block-kadence-column kadence-columnhome_009"><div class="kt-inside-inner-col"><!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"top":"0","bottom":"16px"}},"typography":{}}} -->
-<h3 class="wp-block-heading" style="margin-top:0;margin-bottom:16px">Working with Children Check</h3>
-<!-- /wp:heading -->
-
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"16px"}}}} -->
-<p style="margin-top:0;margin-bottom:16px">Derick holds a Victorian WWCC, because trust matters at home.</p>
-<!-- /wp:paragraph --></div></div>
-<!-- /wp:kadence/column -->
-<!-- /wp:kadence/rowlayout --></div></div>
-<!-- /wp:kadence/column -->
-<!-- /wp:kadence/rowlayout -->
-
-<!-- wp:kadence/rowlayout {"uniqueID":"home_018","columns":1,"collapseGutter":"custom","customRowGutter":[24,24,20],"columnGutter":"custom","customGutter":[24,24,20],"colLayout":"equal","htmlTag":"section","maxWidth":1180,"bgColor":"#edf8f6","align":"full","tabletPadding":[48,24,48,24],"columnsInnerHeight":true,"padding":[64,24,64,24],"mobilePadding":[40,20,40,20],"margin":[0,0,0,0],"kbVersion":2,"metadata":{"name":"Page section"}} -->
-<!-- wp:kadence/column {"uniqueID":"home_017"} -->
-<div class="wp-block-kadence-column kadence-columnhome_017"><div class="kt-inside-inner-col"><!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"16px"}},"color":{"text":"#087f80"},"typography":{"fontSize":"14px","fontWeight":"700","letterSpacing":"0.06em","textTransform":"uppercase"}}} -->
-<p class="has-text-color" style="color:#087f80;margin-top:0;margin-bottom:16px;font-size:14px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase">SMALL TEAM. SPOTLESS HOMES. ZERO FUSS.</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:heading {"style":{"spacing":{"margin":{"top":"0","bottom":"16px"}}}} -->
-<h2 class="wp-block-heading" style="margin-top:0;margin-bottom:16px">What we clean</h2>
-<!-- /wp:heading -->
-
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"16px"}}}} -->
-<p style="margin-top:0;margin-bottom:16px">Pick the clean that fits your week. Ask us for a personalised quote based on your home and cleaning needs.</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:kadence/rowlayout {"uniqueID":"home_016","columns":3,"tabletLayout":"two-grid","collapseGutter":"custom","customRowGutter":[24,24,20],"columnGutter":"custom","customGutter":[24,24,20],"colLayout":"equal","columnsInnerHeight":true,"padding":[0,0,0,0],"margin":[0,0,0,0],"kbVersion":2} -->
-<!-- wp:kadence/column {"background":"#ffffff","borderRadius":[12,12,12,12],"uniqueID":"home_013","textColor":"#263d42","padding":[24,24,24,24],"mobilePadding":[20,20,20,20],"borderStyle":[{"top":["#d6e5e3","solid",1],"right":["#d6e5e3","solid",1],"bottom":["#d6e5e3","solid",1],"left":["#d6e5e3","solid",1],"unit":"px"}],"metadata":{"name":"Editable content card"}} -->
-<div class="wp-block-kadence-column kadence-columnhome_013"><div class="kt-inside-inner-col"><!-- wp:image {"id":4,"aspectRatio":"4/3","scale":"cover","sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"12px","width":"0px"}}} -->
-<figure class="wp-block-image size-full has-custom-border"><img src="http://127.0.0.1:4173/wp-content/uploads/2026/11/prime-regular-1280.webp" alt="Light-filled living room" class="wp-image-4" style="border-width:0px;border-radius:12px;aspect-ratio:4/3;object-fit:cover"/></figure>
-<!-- /wp:image -->
-
-<!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"top":"0","bottom":"16px"}},"typography":{}}} -->
-<h3 class="wp-block-heading" style="margin-top:0;margin-bottom:16px">Regular &amp; Deep Cleaning</h3>
-<!-- /wp:heading -->
-
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"16px"}}}} -->
-<p style="margin-top:0;margin-bottom:16px">Weekly, fortnightly or a one-off reset. Usually the same friendly faces each visit, and 15% off for regulars.</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"style":{"color":{"text":"#087f80"},"typography":{"fontWeight":"700","fontSize":"22px"}}} -->
-<p class="has-text-color" style="color:#087f80;font-size:22px;font-weight:700">Request a custom quote</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:buttons {"style":{"spacing":{"margin":{"top":"16px","bottom":"16px"}}}} -->
-<div class="wp-block-buttons" style="margin-top:16px;margin-bottom:16px"><!-- wp:button {"className":"is-style-outline","style":{"border":{"radius":"8px","width":"1px","color":"#087f80"},"color":{"background":"transparent","text":"#087f80"},"spacing":{"padding":{"top":"13px","bottom":"13px","left":"22px","right":"22px"}},"typography":{"fontSize":"16px","fontWeight":"600"}}} -->
-<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-text-color has-background has-border-color has-custom-font-size wp-element-button" href="http://127.0.0.1:4173/regular-house-cleaning/" style="border-color:#087f80;border-width:1px;border-radius:8px;color:#087f80;background-color:transparent;padding-top:13px;padding-right:22px;padding-bottom:13px;padding-left:22px;font-size:16px;font-weight:600">See what's included</a></div>
-<!-- /wp:button --></div>
-<!-- /wp:buttons --></div></div>
-<!-- /wp:kadence/column -->
-
-<!-- wp:kadence/column {"background":"#ffffff","borderRadius":[12,12,12,12],"uniqueID":"home_014","textColor":"#263d42","padding":[24,24,24,24],"mobilePadding":[20,20,20,20],"borderStyle":[{"top":["#d6e5e3","solid",1],"right":["#d6e5e3","solid",1],"bottom":["#d6e5e3","solid",1],"left":["#d6e5e3","solid",1],"unit":"px"}],"metadata":{"name":"Editable content card"}} -->
-<div class="wp-block-kadence-column kadence-columnhome_014"><div class="kt-inside-inner-col"><!-- wp:image {"id":5,"aspectRatio":"4/3","scale":"cover","sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"12px","width":"0px"}}} -->
-<figure class="wp-block-image size-full has-custom-border"><img src="http://127.0.0.1:4173/wp-content/uploads/2026/11/prime-lease-1280.webp" alt="Empty room with timber floors" class="wp-image-5" style="border-width:0px;border-radius:12px;aspect-ratio:4/3;object-fit:cover"/></figure>
-<!-- /wp:image -->
-
-<!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"top":"0","bottom":"16px"}},"typography":{}}} -->
-<h3 class="wp-block-heading" style="margin-top:0;margin-bottom:16px">End of Lease Cleaning</h3>
-<!-- /wp:heading -->
-
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"16px"}}}} -->
-<p style="margin-top:0;margin-bottom:16px">Moving out? We follow the agent checklist so you can focus on the boxes.</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"style":{"color":{"text":"#087f80"},"typography":{"fontWeight":"700","fontSize":"22px"}}} -->
-<p class="has-text-color" style="color:#087f80;font-size:22px;font-weight:700">Request a custom quote</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:buttons {"style":{"spacing":{"margin":{"top":"16px","bottom":"16px"}}}} -->
-<div class="wp-block-buttons" style="margin-top:16px;margin-bottom:16px"><!-- wp:button {"className":"is-style-outline","style":{"border":{"radius":"8px","width":"1px","color":"#087f80"},"color":{"background":"transparent","text":"#087f80"},"spacing":{"padding":{"top":"13px","bottom":"13px","left":"22px","right":"22px"}},"typography":{"fontSize":"16px","fontWeight":"600"}}} -->
-<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-text-color has-background has-border-color has-custom-font-size wp-element-button" href="http://127.0.0.1:4173/end-of-lease-cleaning/" style="border-color:#087f80;border-width:1px;border-radius:8px;color:#087f80;background-color:transparent;padding-top:13px;padding-right:22px;padding-bottom:13px;padding-left:22px;font-size:16px;font-weight:600">See what's included</a></div>
-<!-- /wp:button --></div>
-<!-- /wp:buttons --></div></div>
-<!-- /wp:kadence/column -->
-
-<!-- wp:kadence/column {"background":"#ffffff","borderRadius":[12,12,12,12],"uniqueID":"home_015","textColor":"#263d42","padding":[24,24,24,24],"mobilePadding":[20,20,20,20],"borderStyle":[{"top":["#d6e5e3","solid",1],"right":["#d6e5e3","solid",1],"bottom":["#d6e5e3","solid",1],"left":["#d6e5e3","solid",1],"unit":"px"}],"metadata":{"name":"Editable content card"}} -->
-<div class="wp-block-kadence-column kadence-columnhome_015"><div class="kt-inside-inner-col"><!-- wp:image {"id":6,"aspectRatio":"4/3","scale":"cover","sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"12px","width":"0px"}}} -->
-<figure class="wp-block-image size-full has-custom-border"><img src="http://127.0.0.1:4173/wp-content/uploads/2026/11/prime-carpet-1280.webp" alt="Carpet extraction wand" class="wp-image-6" style="border-width:0px;border-radius:12px;aspect-ratio:4/3;object-fit:cover"/></figure>
-<!-- /wp:image -->
-
-<!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"top":"0","bottom":"16px"}},"typography":{}}} -->
-<h3 class="wp-block-heading" style="margin-top:0;margin-bottom:16px">Carpet Steam Cleaning</h3>
-<!-- /wp:heading -->
-
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"16px"}}}} -->
-<p style="margin-top:0;margin-bottom:16px">Hot-water extraction that lifts the stuff vacuuming pretends isn't there.</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"style":{"color":{"text":"#087f80"},"typography":{"fontWeight":"700","fontSize":"22px"}}} -->
-<p class="has-text-color" style="color:#087f80;font-size:22px;font-weight:700">Request a custom quote</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:buttons {"style":{"spacing":{"margin":{"top":"16px","bottom":"16px"}}}} -->
-<div class="wp-block-buttons" style="margin-top:16px;margin-bottom:16px"><!-- wp:button {"className":"is-style-outline","style":{"border":{"radius":"8px","width":"1px","color":"#087f80"},"color":{"background":"transparent","text":"#087f80"},"spacing":{"padding":{"top":"13px","bottom":"13px","left":"22px","right":"22px"}},"typography":{"fontSize":"16px","fontWeight":"600"}}} -->
-<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-text-color has-background has-border-color has-custom-font-size wp-element-button" href="http://127.0.0.1:4173/carpet-steam-cleaning/" style="border-color:#087f80;border-width:1px;border-radius:8px;color:#087f80;background-color:transparent;padding-top:13px;padding-right:22px;padding-bottom:13px;padding-left:22px;font-size:16px;font-weight:600">See what's included</a></div>
-<!-- /wp:button --></div>
-<!-- /wp:buttons --></div></div>
+<!-- wp:kadence/advancedheading {"uniqueID":"primehome_065","align":"center","color":"#334155","typography":"Instrument Sans","googleFont":true,"fontWeight":"400","margin":[0,0,0,0],"htmlTag":"p","fontSize":[15,15,15],"fontHeight":[23,23,23],"fontHeightType":"px"} -->
+<p class="kt-adv-headingprimehome_065 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_065">Pay once it's done. Not happy with something on our checklist? Tell us within 24 hours and we'll come back to fix it, free.</p>
+<!-- /wp:kadence/advancedheading --></div></div>
 <!-- /wp:kadence/column -->
 <!-- /wp:kadence/rowlayout --></div></div>
 <!-- /wp:kadence/column -->
 <!-- /wp:kadence/rowlayout -->
 
-<!-- wp:kadence/rowlayout {"uniqueID":"home_024","columns":1,"collapseGutter":"custom","customRowGutter":[24,24,20],"columnGutter":"custom","customGutter":[24,24,20],"colLayout":"equal","htmlTag":"section","maxWidth":1180,"bgColor":"#ffffff","align":"full","tabletPadding":[48,24,48,24],"columnsInnerHeight":true,"padding":[64,24,64,24],"mobilePadding":[40,20,40,20],"margin":[0,0,0,0],"kbVersion":2,"metadata":{"name":"Page section"}} -->
-<!-- wp:kadence/column {"uniqueID":"home_023"} -->
-<div class="wp-block-kadence-column kadence-columnhome_023"><div class="kt-inside-inner-col"><!-- wp:heading {"style":{"spacing":{"margin":{"top":"0","bottom":"16px"}}}} -->
-<h2 class="wp-block-heading" style="margin-top:0;margin-bottom:16px">How it works</h2>
-<!-- /wp:heading -->
+<!-- wp:kadence/rowlayout {"uniqueID":"primehome_090","columns":1,"collapseGutter":"none","columnGutter":"none","colLayout":"equal","htmlTag":"section","maxWidth":1328,"bgColor":"#f8fafc","align":"full","tabletPadding":[54,24,54,24],"padding":[64,24,64,24],"mobilePadding":[42,20,42,20],"margin":[0,0,0,0],"anchor":"estimator-section","kbVersion":2,"metadata":{"name":"Estimator and booking"}} -->
+<!-- wp:kadence/column {"uniqueID":"primehome_089"} -->
+<div class="wp-block-kadence-column kadence-columnprimehome_089"><div class="kt-inside-inner-col"><!-- wp:kadence/advancedheading {"uniqueID":"primehome_072","align":"center","color":"#0e7490","typography":"Instrument Sans","googleFont":true,"fontWeight":"700","margin":[0,0,5,0],"htmlTag":"p","fontSize":[12,12,12],"fontHeight":[19,19,19],"fontHeightType":"px"} -->
+<p class="kt-adv-headingprimehome_072 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_072">ESTIMATOR &amp; BOOKING</p>
+<!-- /wp:kadence/advancedheading -->
 
-<!-- wp:kadence/rowlayout {"uniqueID":"home_022","columns":3,"tabletLayout":"two-grid","collapseGutter":"custom","customRowGutter":[24,24,20],"columnGutter":"custom","customGutter":[24,24,20],"colLayout":"equal","columnsInnerHeight":true,"padding":[0,0,0,0],"margin":[0,0,0,0],"kbVersion":2} -->
-<!-- wp:kadence/column {"background":"#ffffff","borderRadius":[12,12,12,12],"uniqueID":"home_019","textColor":"#263d42","padding":[24,24,24,24],"mobilePadding":[20,20,20,20],"borderStyle":[{"top":["#d6e5e3","solid",1],"right":["#d6e5e3","solid",1],"bottom":["#d6e5e3","solid",1],"left":["#d6e5e3","solid",1],"unit":"px"}],"metadata":{"name":"Editable content card"}} -->
-<div class="wp-block-kadence-column kadence-columnhome_019"><div class="kt-inside-inner-col"><!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"top":"0","bottom":"16px"}},"typography":{}}} -->
-<h3 class="wp-block-heading" style="margin-top:0;margin-bottom:16px">01 · Get your estimate</h3>
-<!-- /wp:heading -->
+<!-- wp:kadence/advancedheading {"uniqueID":"primehome_073","align":"center","color":"#0f172a","typography":"Wix Madefor Display","googleFont":true,"fontWeight":"700","margin":[0,0,10,0],"fontSize":[36,28,28],"fontHeight":[42,34,34],"fontHeightType":"px"} -->
+<h2 class="kt-adv-headingprimehome_073 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_073">Cleaning prices and instant estimate</h2>
+<!-- /wp:kadence/advancedheading -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"16px"}}}} -->
-<p style="margin-top:0;margin-bottom:16px">Tell us about your service, rooms and cleaning needs.</p>
-<!-- /wp:paragraph --></div></div>
+<!-- wp:kadence/advancedheading {"uniqueID":"primehome_074","align":"center","color":"#334155","typography":"Instrument Sans","googleFont":true,"fontWeight":"400","margin":[0,0,34,0],"htmlTag":"p","fontSize":[16,16,16],"fontHeight":[25,25,25],"fontHeightType":"px"} -->
+<p class="kt-adv-headingprimehome_074 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_074">Pick your service and tell us about your place for an estimate in Australian dollars.</p>
+<!-- /wp:kadence/advancedheading -->
+
+<!-- wp:kadence/rowlayout {"uniqueID":"primehome_088","tabletLayout":"row","collapseGutter":"custom","customRowGutter":[32,24,18],"columnGutter":"custom","customGutter":[32,24,18],"colLayout":"equal","firstColumnWidth":58,"secondColumnWidth":42,"columnsInnerHeight":true,"padding":[0,0,0,0],"margin":[0,0,0,0],"kbVersion":2} -->
+<!-- wp:kadence/column {"background":"#ffffff","borderRadius":[14,14,14,14],"uniqueID":"primehome_075","displayShadow":true,"shadow":[{"color":"#0f172a","opacity":0.07,"spread":0,"blur":9,"hOffset":0,"vOffset":2,"inset":false}],"padding":[26,26,26,26],"mobilePadding":[22,22,22,22],"borderStyle":[{"top":["#e2e8f0","solid",1],"right":["#e2e8f0","solid",1],"bottom":["#e2e8f0","solid",1],"left":["#e2e8f0","solid",1],"unit":"px"}],"metadata":{"name":"Detailed estimate and enquiry"}} -->
+<div class="wp-block-kadence-column kadence-columnprimehome_075"><div class="kt-inside-inner-col"><!-- wp:shortcode -->
+[fluentform title="Prime | Request a Quote"]
+<!-- /wp:shortcode --></div></div>
 <!-- /wp:kadence/column -->
 
-<!-- wp:kadence/column {"background":"#ffffff","borderRadius":[12,12,12,12],"uniqueID":"home_020","textColor":"#263d42","padding":[24,24,24,24],"mobilePadding":[20,20,20,20],"borderStyle":[{"top":["#d6e5e3","solid",1],"right":["#d6e5e3","solid",1],"bottom":["#d6e5e3","solid",1],"left":["#d6e5e3","solid",1],"unit":"px"}],"metadata":{"name":"Editable content card"}} -->
-<div class="wp-block-kadence-column kadence-columnhome_020"><div class="kt-inside-inner-col"><!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"top":"0","bottom":"16px"}},"typography":{}}} -->
-<h3 class="wp-block-heading" style="margin-top:0;margin-bottom:16px">02 · We confirm the details</h3>
-<!-- /wp:heading -->
+<!-- wp:kadence/column {"uniqueID":"primehome_087"} -->
+<div class="wp-block-kadence-column kadence-columnprimehome_087"><div class="kt-inside-inner-col"><!-- wp:kadence/column {"background":"#e0f2fe","borderRadius":[14,14,14,14],"uniqueID":"primehome_080","displayShadow":true,"shadow":[{"color":"#0f172a","opacity":0.07,"spread":0,"blur":9,"hOffset":0,"vOffset":2,"inset":false}],"padding":[24,24,24,24],"mobilePadding":[22,22,22,22],"borderStyle":[{"top":["#e2e8f0","solid",1],"right":["#e2e8f0","solid",1],"bottom":["#e2e8f0","solid",1],"left":["#e2e8f0","solid",1],"unit":"px"}]} -->
+<div class="wp-block-kadence-column kadence-columnprimehome_080"><div class="kt-inside-inner-col"><!-- wp:kadence/advancedheading {"uniqueID":"primehome_076","align":"left","color":"#0e7490","typography":"Instrument Sans","googleFont":true,"fontWeight":"700","margin":[0,0,5,0],"htmlTag":"p","fontSize":[12,12,12],"fontHeight":[19,19,19],"fontHeightType":"px"} -->
+<p class="kt-adv-headingprimehome_076 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_076">YOUR ESTIMATE</p>
+<!-- /wp:kadence/advancedheading -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"16px"}}}} -->
-<p style="margin-top:0;margin-bottom:16px">We aim to reply within 2 hours during the day, and always within 24 hours.</p>
-<!-- /wp:paragraph --></div></div>
+<!-- wp:kadence/advancedheading {"level":3,"uniqueID":"primehome_077","align":"left","color":"#0f172a","typography":"Wix Madefor Display","googleFont":true,"fontWeight":"700","margin":[0,0,12,0],"fontSize":[22,22,22],"fontHeight":[26,27,27],"fontHeightType":"px"} -->
+<h3 class="kt-adv-headingprimehome_077 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_077">What your range includes</h3>
+<!-- /wp:kadence/advancedheading -->
+
+<!-- wp:kadence/advancedheading {"uniqueID":"primehome_078","align":"left","color":"#334155","typography":"Instrument Sans","googleFont":true,"fontWeight":"400","margin":[0,0,12,0],"htmlTag":"p","fontSize":[16,16,16],"fontHeight":[25,25,25],"fontHeightType":"px"} -->
+<p class="kt-adv-headingprimehome_078 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_078">Your range updates in the form as you choose your service and extras. We confirm the final price before starting work.</p>
+<!-- /wp:kadence/advancedheading -->
+
+<!-- wp:kadence/advancedheading {"uniqueID":"primehome_079","align":"left","color":"#334155","typography":"Instrument Sans","googleFont":true,"fontWeight":"400","margin":[0,0,0,0],"htmlTag":"p","fontSize":[14,14,14],"fontHeight":[22,22,22],"fontHeightType":"px"} -->
+<p class="kt-adv-headingprimehome_079 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_079">Equipment and products are included. No GST is charged. Travel is free in Zone 1 and $30 per visit in Zone 2. The $110 minimum applies to Regular, Deep and carpet cleaning.</p>
+<!-- /wp:kadence/advancedheading --></div></div>
 <!-- /wp:kadence/column -->
 
-<!-- wp:kadence/column {"background":"#ffffff","borderRadius":[12,12,12,12],"uniqueID":"home_021","textColor":"#263d42","padding":[24,24,24,24],"mobilePadding":[20,20,20,20],"borderStyle":[{"top":["#d6e5e3","solid",1],"right":["#d6e5e3","solid",1],"bottom":["#d6e5e3","solid",1],"left":["#d6e5e3","solid",1],"unit":"px"}],"metadata":{"name":"Editable content card"}} -->
-<div class="wp-block-kadence-column kadence-columnhome_021"><div class="kt-inside-inner-col"><!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"top":"0","bottom":"16px"}},"typography":{}}} -->
-<h3 class="wp-block-heading" style="margin-top:0;margin-bottom:16px">03 · We clean, you relax</h3>
-<!-- /wp:heading -->
+<!-- wp:kadence/column {"uniqueID":"primehome_086"} -->
+<div class="wp-block-kadence-column kadence-columnprimehome_086"><div class="kt-inside-inner-col"><!-- wp:kadence/advancedheading {"level":3,"uniqueID":"primehome_081","align":"left","color":"#0f172a","typography":"Wix Madefor Display","googleFont":true,"fontWeight":"700","margin":[22,0,6,0],"fontSize":[20,20,20],"fontHeight":[23,25,25],"fontHeightType":"px"} -->
+<h3 class="kt-adv-headingprimehome_081 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_081">Got a question?</h3>
+<!-- /wp:kadence/advancedheading -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"16px"}}}} -->
-<p style="margin-top:0;margin-bottom:16px">Pay once the clean is complete. If you have a concern about the agreed checklist, please contact us promptly so we can review it with you.</p>
-<!-- /wp:paragraph --></div></div>
-<!-- /wp:kadence/column -->
-<!-- /wp:kadence/rowlayout --></div></div>
-<!-- /wp:kadence/column -->
-<!-- /wp:kadence/rowlayout -->
+<!-- wp:kadence/advancedheading {"uniqueID":"primehome_082","align":"left","color":"#334155","typography":"Instrument Sans","googleFont":true,"fontWeight":"400","margin":[0,0,12,0],"htmlTag":"p","fontSize":[15,15,15],"fontHeight":[23,23,23],"fontHeightType":"px"} -->
+<p class="kt-adv-headingprimehome_082 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_082">Message us on WhatsApp or call 0491 245 156.</p>
+<!-- /wp:kadence/advancedheading -->
 
-<!-- wp:kadence/rowlayout {"uniqueID":"home_042","columns":1,"collapseGutter":"custom","customRowGutter":[24,24,20],"columnGutter":"custom","customGutter":[24,24,20],"colLayout":"equal","htmlTag":"section","maxWidth":1180,"bgColor":"#edf8f6","align":"full","tabletPadding":[48,24,48,24],"columnsInnerHeight":true,"padding":[64,24,64,24],"mobilePadding":[40,20,40,20],"margin":[0,0,0,0],"kbVersion":2,"metadata":{"name":"Google review link — live feed pending"}} -->
-<!-- wp:kadence/column {"uniqueID":"home_041"} -->
-<div class="wp-block-kadence-column kadence-columnhome_041"><div class="kt-inside-inner-col"><!-- wp:heading -->
-<h2 class="wp-block-heading">Google reviews</h2>
-<!-- /wp:heading -->
+<!-- wp:kadence/advancedbtn {"hAlign":"left","btnCount":2,"uniqueID":"primehome_085","margin":[0,0,0,0],"gap":[14,14,12]} -->
+<div class="wp-block-kadence-advancedbtn kb-buttons-wrap kb-btnsprimehome_085"><!-- wp:kadence/singlebtn {"uniqueID":"primehome_083","text":"WhatsApp us","link":"https://wa.me/61491245156","padding":[12,21,12,21],"color":"#ffffff","background":"#047857","colorHover":"#ffffff","backgroundHover":"#047857","borderStyle":[{"top":["#047857","solid",1],"right":["#047857","solid",1],"bottom":["#047857","solid",1],"left":["#047857","solid",1],"unit":"px"}],"borderRadius":[8,8,8,8],"icon":"fe_messageCircle","iconSide":"left","iconSize":[16,16,16],"typography":[{"size":[14,14,14],"sizeType":"px","weight":"700"}]} /-->
 
-<!-- wp:paragraph -->
-<p>Had a clean with Prime? Share your experience on Google.</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:buttons -->
-<div class="wp-block-buttons"><!-- wp:button {"style":{"border":{"radius":"8px"},"spacing":{"padding":{"top":"13px","bottom":"13px","left":"22px","right":"22px"}},"typography":{"fontSize":"16px","fontWeight":"600"}}} -->
-<div class="wp-block-button"><a class="wp-block-button__link has-custom-font-size wp-element-button" href="https://g.page/r/CXZrY-YL446oEBM/review" style="border-radius:8px;padding-top:13px;padding-right:22px;padding-bottom:13px;padding-left:22px;font-size:16px;font-weight:600">Review us on Google</a></div>
-<!-- /wp:button --></div>
-<!-- /wp:buttons --></div></div>
-<!-- /wp:kadence/column -->
-<!-- /wp:kadence/rowlayout -->
-
-<!-- wp:kadence/rowlayout {"uniqueID":"home_029","columns":1,"collapseGutter":"custom","customRowGutter":[24,24,20],"columnGutter":"custom","customGutter":[24,24,20],"colLayout":"equal","htmlTag":"section","maxWidth":1180,"bgColor":"#ffffff","align":"full","tabletPadding":[48,24,48,24],"columnsInnerHeight":true,"padding":[64,24,64,24],"mobilePadding":[40,20,40,20],"margin":[0,0,0,0],"kbVersion":2,"metadata":{"name":"Page section"}} -->
-<!-- wp:kadence/column {"uniqueID":"home_028"} -->
-<div class="wp-block-kadence-column kadence-columnhome_028"><div class="kt-inside-inner-col"><!-- wp:kadence/rowlayout {"uniqueID":"home_027","collapseGutter":"custom","customRowGutter":[24,24,20],"columnGutter":"custom","customGutter":[24,24,20],"colLayout":"equal","verticalAlignment":"middle","firstColumnWidth":44,"secondColumnWidth":56,"columnsInnerHeight":true,"padding":[0,0,0,0],"margin":[0,0,0,0],"kbVersion":2} -->
-<!-- wp:kadence/column {"uniqueID":"home_025"} -->
-<div class="wp-block-kadence-column kadence-columnhome_025"><div class="kt-inside-inner-col"><!-- wp:heading {"style":{"spacing":{"margin":{"top":"0","bottom":"16px"}}}} -->
-<h2 class="wp-block-heading" style="margin-top:0;margin-bottom:16px">Where we clean</h2>
-<!-- /wp:heading -->
-
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"16px"}}}} -->
-<p style="margin-top:0;margin-bottom:16px">We're based in Malvern East and cover suburbs within about 25 km. Free travel within 15 km, a flat $30 travel fee for 15–25 km, and further out by arrangement.</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:buttons {"style":{"spacing":{"margin":{"top":"16px","bottom":"16px"}}}} -->
-<div class="wp-block-buttons" style="margin-top:16px;margin-bottom:16px"><!-- wp:button {"style":{"border":{"radius":"8px"},"color":{"background":"#087f80","text":"#ffffff"},"spacing":{"padding":{"top":"13px","bottom":"13px","left":"22px","right":"22px"}},"typography":{"fontSize":"16px","fontWeight":"600"}}} -->
-<div class="wp-block-button"><a class="wp-block-button__link has-text-color has-background has-custom-font-size wp-element-button" href="http://127.0.0.1:4173/contact/" style="border-radius:8px;color:#ffffff;background-color:#087f80;padding-top:13px;padding-right:22px;padding-bottom:13px;padding-left:22px;font-size:16px;font-weight:600">See all suburbs</a></div>
-<!-- /wp:button --></div>
-<!-- /wp:buttons --></div></div>
-<!-- /wp:kadence/column -->
-
-<!-- wp:kadence/column {"uniqueID":"home_026"} -->
-<div class="wp-block-kadence-column kadence-columnhome_026"><div class="kt-inside-inner-col"><!-- wp:image {"id":4,"aspectRatio":"4/3","scale":"cover","sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"12px","width":"0px"}}} -->
-<figure class="wp-block-image size-full has-custom-border"><img src="http://127.0.0.1:4173/wp-content/uploads/2026/11/prime-regular-1280.webp" alt="Light-filled living room" class="wp-image-4" style="border-width:0px;border-radius:12px;aspect-ratio:4/3;object-fit:cover"/></figure>
-<!-- /wp:image --></div></div>
-<!-- /wp:kadence/column -->
-<!-- /wp:kadence/rowlayout --></div></div>
-<!-- /wp:kadence/column -->
-<!-- /wp:kadence/rowlayout -->
-
-<!-- wp:kadence/rowlayout {"uniqueID":"home_034","columns":1,"collapseGutter":"custom","customRowGutter":[24,24,20],"columnGutter":"custom","customGutter":[24,24,20],"colLayout":"equal","htmlTag":"section","maxWidth":1180,"bgColor":"#ffffff","align":"full","tabletPadding":[48,24,48,24],"columnsInnerHeight":true,"padding":[64,24,64,24],"mobilePadding":[40,20,40,20],"margin":[0,0,0,0],"kbVersion":2,"metadata":{"name":"Page section"}} -->
-<!-- wp:kadence/column {"uniqueID":"home_033"} -->
-<div class="wp-block-kadence-column kadence-columnhome_033"><div class="kt-inside-inner-col"><!-- wp:kadence/rowlayout {"uniqueID":"home_032","collapseGutter":"custom","customRowGutter":[24,24,20],"columnGutter":"custom","customGutter":[24,24,20],"colLayout":"equal","columnsInnerHeight":true,"padding":[0,0,0,0],"margin":[0,0,0,0],"kbVersion":2} -->
-<!-- wp:kadence/column {"uniqueID":"home_030"} -->
-<div class="wp-block-kadence-column kadence-columnhome_030"><div class="kt-inside-inner-col"><!-- wp:heading {"style":{"spacing":{"margin":{"top":"0","bottom":"16px"}}}} -->
-<h2 class="wp-block-heading" style="margin-top:0;margin-bottom:16px">Frequently asked questions</h2>
-<!-- /wp:heading -->
-
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"16px"}}}} -->
-<p style="margin-top:0;margin-bottom:16px">A few helpful details before you enquire.</p>
-<!-- /wp:paragraph --></div></div>
-<!-- /wp:kadence/column -->
-
-<!-- wp:kadence/column {"uniqueID":"home_031"} -->
-<div class="wp-block-kadence-column kadence-columnhome_031"><div class="kt-inside-inner-col"><!-- wp:details {"style":{"spacing":{"padding":{"top":"16px","bottom":"16px","left":"18px","right":"18px"},"margin":{"top":"0","bottom":"12px"}},"border":{"color":"#d6e5e3","width":"1px","radius":"8px"},"color":{"background":"#ffffff"}}} -->
-<details class="wp-block-details has-border-color has-background" style="border-color:#d6e5e3;border-width:1px;border-radius:8px;background-color:#ffffff;margin-top:0;margin-bottom:12px;padding-top:16px;padding-right:18px;padding-bottom:16px;padding-left:18px"><summary>Do I need to be home?</summary><!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"16px"}}}} -->
-<p style="margin-top:0;margin-bottom:16px">Not at all. Many clients arrange access for the day, like a key left in an agreed spot or a neighbour letting us in. We don't keep keys or record codes.</p>
-<!-- /wp:paragraph --></details>
-<!-- /wp:details -->
-
-<!-- wp:details {"style":{"spacing":{"padding":{"top":"16px","bottom":"16px","left":"18px","right":"18px"},"margin":{"top":"0","bottom":"12px"}},"border":{"color":"#d6e5e3","width":"1px","radius":"8px"},"color":{"background":"#ffffff"}}} -->
-<details class="wp-block-details has-border-color has-background" style="border-color:#d6e5e3;border-width:1px;border-radius:8px;background-color:#ffffff;margin-top:0;margin-bottom:12px;padding-top:16px;padding-right:18px;padding-bottom:16px;padding-left:18px"><summary>Do you bring your own supplies?</summary><!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"16px"}}}} -->
-<p style="margin-top:0;margin-bottom:16px">Yes. We bring all equipment and products, low-tox where possible. We only need water and power on site.</p>
-<!-- /wp:paragraph --></details>
-<!-- /wp:details -->
-
-<!-- wp:details {"style":{"spacing":{"padding":{"top":"16px","bottom":"16px","left":"18px","right":"18px"},"margin":{"top":"0","bottom":"12px"}},"border":{"color":"#d6e5e3","width":"1px","radius":"8px"},"color":{"background":"#ffffff"}}} -->
-<details class="wp-block-details has-border-color has-background" style="border-color:#d6e5e3;border-width:1px;border-radius:8px;background-color:#ffffff;margin-top:0;margin-bottom:12px;padding-top:16px;padding-right:18px;padding-bottom:16px;padding-left:18px"><summary>Is the online price final?</summary><!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"16px"}}}} -->
-<p style="margin-top:0;margin-bottom:16px">It's an estimate based on what you tell us. We confirm the final price before we start, so there are no surprises.</p>
-<!-- /wp:paragraph --></details>
-<!-- /wp:details -->
-
-<!-- wp:details {"style":{"spacing":{"padding":{"top":"16px","bottom":"16px","left":"18px","right":"18px"},"margin":{"top":"0","bottom":"12px"}},"border":{"color":"#d6e5e3","width":"1px","radius":"8px"},"color":{"background":"#ffffff"}}} -->
-<details class="wp-block-details has-border-color has-background" style="border-color:#d6e5e3;border-width:1px;border-radius:8px;background-color:#ffffff;margin-top:0;margin-bottom:12px;padding-top:16px;padding-right:18px;padding-bottom:16px;padding-left:18px"><summary>What if I'm not happy?</summary><!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"16px"}}}} -->
-<p style="margin-top:0;margin-bottom:16px">Please contact us promptly with any concern about the agreed checklist so we can review it with you.</p>
-<!-- /wp:paragraph --></details>
-<!-- /wp:details -->
-
-<!-- wp:details {"style":{"spacing":{"padding":{"top":"16px","bottom":"16px","left":"18px","right":"18px"},"margin":{"top":"0","bottom":"12px"}},"border":{"color":"#d6e5e3","width":"1px","radius":"8px"},"color":{"background":"#ffffff"}}} -->
-<details class="wp-block-details has-border-color has-background" style="border-color:#d6e5e3;border-width:1px;border-radius:8px;background-color:#ffffff;margin-top:0;margin-bottom:12px;padding-top:16px;padding-right:18px;padding-bottom:16px;padding-left:18px"><summary>I have a dog. Is that okay?</summary><!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"16px"}}}} -->
-<p style="margin-top:0;margin-bottom:16px">Absolutely. We love pets, we just ask that they're secured while we work, mainly so they don't 'help' with the mop.</p>
-<!-- /wp:paragraph --></details>
-<!-- /wp:details --></div></div>
-<!-- /wp:kadence/column -->
-<!-- /wp:kadence/rowlayout --></div></div>
-<!-- /wp:kadence/column -->
-<!-- /wp:kadence/rowlayout -->
-
-<!-- wp:kadence/rowlayout {"uniqueID":"home_040","columns":1,"collapseGutter":"custom","customRowGutter":[24,24,20],"columnGutter":"custom","customGutter":[24,24,20],"colLayout":"equal","htmlTag":"section","maxWidth":1180,"bgColor":"#ffffff","align":"full","tabletPadding":[48,24,48,24],"columnsInnerHeight":true,"padding":[64,24,64,24],"mobilePadding":[40,20,40,20],"margin":[0,0,0,0],"kbVersion":2,"metadata":{"name":"Page section"}} -->
-<!-- wp:kadence/column {"uniqueID":"home_039"} -->
-<div class="wp-block-kadence-column kadence-columnhome_039"><div class="kt-inside-inner-col"><!-- wp:kadence/column {"background":"#087f80","borderRadius":[12,12,12,12],"uniqueID":"home_038","textColor":"#ffffff","padding":[24,24,24,24],"mobilePadding":[20,20,20,20]} -->
-<div class="wp-block-kadence-column kadence-columnhome_038"><div class="kt-inside-inner-col"><!-- wp:kadence/rowlayout {"uniqueID":"home_037","collapseGutter":"custom","customRowGutter":[24,24,20],"columnGutter":"custom","customGutter":[24,24,20],"colLayout":"equal","verticalAlignment":"middle","columnsInnerHeight":true,"padding":[0,0,0,0],"margin":[0,0,0,0],"kbVersion":2} -->
-<!-- wp:kadence/column {"uniqueID":"home_035"} -->
-<div class="wp-block-kadence-column kadence-columnhome_035"><div class="kt-inside-inner-col"><!-- wp:heading {"style":{"spacing":{"margin":{"top":"0","bottom":"16px"}},"color":{"text":"#ffffff"}}} -->
-<h2 class="wp-block-heading has-text-color" style="color:#ffffff;margin-top:0;margin-bottom:16px">Ready for a cleaner home and a free weekend?</h2>
-<!-- /wp:heading -->
-
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"16px"}},"color":{"text":"#ffffff"},"elements":{"link":{"color":{"text":"#ffffff"}}}}} -->
-<p class="has-text-color has-link-color" style="color:#ffffff;margin-top:0;margin-bottom:16px">Call or message us for a personalised quote. We're real people, and we reply.</p>
-<!-- /wp:paragraph --></div></div>
-<!-- /wp:kadence/column -->
-
-<!-- wp:kadence/column {"uniqueID":"home_036"} -->
-<div class="wp-block-kadence-column kadence-columnhome_036"><div class="kt-inside-inner-col"><!-- wp:buttons {"style":{"spacing":{"margin":{"top":"16px","bottom":"16px"}}}} -->
-<div class="wp-block-buttons" style="margin-top:16px;margin-bottom:16px"><!-- wp:button {"style":{"border":{"radius":"8px"},"color":{"background":"#ffffff","text":"#087f80"},"spacing":{"padding":{"top":"13px","bottom":"13px","left":"22px","right":"22px"}},"typography":{"fontSize":"16px","fontWeight":"600"}}} -->
-<div class="wp-block-button"><a class="wp-block-button__link has-text-color has-background has-custom-font-size wp-element-button" href="http://127.0.0.1:4173/prices/#estimate" style="border-radius:8px;color:#087f80;background-color:#ffffff;padding-top:13px;padding-right:22px;padding-bottom:13px;padding-left:22px;font-size:16px;font-weight:600">Request a quote</a></div>
-<!-- /wp:button --></div>
-<!-- /wp:buttons -->
-
-<!-- wp:buttons {"style":{"spacing":{"margin":{"top":"16px","bottom":"16px"}}}} -->
-<div class="wp-block-buttons" style="margin-top:16px;margin-bottom:16px"><!-- wp:button {"className":"is-style-outline","style":{"border":{"radius":"8px","width":"1px","color":"#ffffff"},"color":{"background":"transparent","text":"#ffffff"},"spacing":{"padding":{"top":"13px","bottom":"13px","left":"22px","right":"22px"}},"typography":{"fontSize":"16px","fontWeight":"600"}}} -->
-<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-text-color has-background has-border-color has-custom-font-size wp-element-button" href="https://wa.me/61491245156" style="border-color:#ffffff;border-width:1px;border-radius:8px;color:#ffffff;background-color:transparent;padding-top:13px;padding-right:22px;padding-bottom:13px;padding-left:22px;font-size:16px;font-weight:600">WhatsApp us</a></div>
-<!-- /wp:button --></div>
-<!-- /wp:buttons -->
-
-<!-- wp:buttons {"style":{"spacing":{"margin":{"top":"16px","bottom":"16px"}}}} -->
-<div class="wp-block-buttons" style="margin-top:16px;margin-bottom:16px"><!-- wp:button {"className":"is-style-outline","style":{"border":{"radius":"8px","width":"1px","color":"#ffffff"},"color":{"background":"transparent","text":"#ffffff"},"spacing":{"padding":{"top":"13px","bottom":"13px","left":"22px","right":"22px"}},"typography":{"fontSize":"16px","fontWeight":"600"}}} -->
-<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-text-color has-background has-border-color has-custom-font-size wp-element-button" href="tel:+61491245156" style="border-color:#ffffff;border-width:1px;border-radius:8px;color:#ffffff;background-color:transparent;padding-top:13px;padding-right:22px;padding-bottom:13px;padding-left:22px;font-size:16px;font-weight:600">Call us</a></div>
-<!-- /wp:button --></div>
-<!-- /wp:buttons --></div></div>
-<!-- /wp:kadence/column -->
-<!-- /wp:kadence/rowlayout --></div></div>
+<!-- wp:kadence/singlebtn {"uniqueID":"primehome_084","text":"Call us","link":"tel:+61491245156","padding":[12,21,12,21],"color":"#0f172a","background":"#ffffff","colorHover":"#0f172a","backgroundHover":"#ffffff","borderStyle":[{"top":["#e2e8f0","solid",1],"right":["#e2e8f0","solid",1],"bottom":["#e2e8f0","solid",1],"left":["#e2e8f0","solid",1],"unit":"px"}],"borderRadius":[8,8,8,8],"icon":"fe_phone","iconSide":"left","iconSize":[16,16,16],"typography":[{"size":[14,14,14],"sizeType":"px","weight":"700"}]} /--></div>
+<!-- /wp:kadence/advancedbtn --></div></div>
 <!-- /wp:kadence/column --></div></div>
 <!-- /wp:kadence/column -->
+<!-- /wp:kadence/rowlayout --></div></div>
+<!-- /wp:kadence/column -->
 <!-- /wp:kadence/rowlayout -->
-]]></content:encoded>
+
+<!-- wp:kadence/rowlayout {"uniqueID":"primehome_097","columns":1,"collapseGutter":"none","columnGutter":"none","colLayout":"equal","htmlTag":"section","maxWidth":1328,"bgColor":"#f8fafc","align":"full","tabletPadding":[54,24,54,24],"padding":[64,24,64,24],"mobilePadding":[42,20,42,20],"margin":[0,0,0,0],"kbVersion":2,"metadata":{"name":"Google reviews"}} -->
+<!-- wp:kadence/column {"uniqueID":"primehome_096"} -->
+<div class="wp-block-kadence-column kadence-columnprimehome_096"><div class="kt-inside-inner-col"><!-- wp:kadence/advancedheading {"uniqueID":"primehome_091","align":"center","color":"#0e7490","typography":"Instrument Sans","googleFont":true,"fontWeight":"700","margin":[0,0,5,0],"htmlTag":"p","fontSize":[12,12,12],"fontHeight":[19,19,19],"fontHeightType":"px"} -->
+<p class="kt-adv-headingprimehome_091 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_091">REVIEWS</p>
+<!-- /wp:kadence/advancedheading -->
+
+<!-- wp:kadence/advancedheading {"uniqueID":"primehome_092","align":"center","color":"#0f172a","typography":"Wix Madefor Display","googleFont":true,"fontWeight":"700","margin":[0,0,10,0],"fontSize":[36,28,28],"fontHeight":[42,34,34],"fontHeightType":"px"} -->
+<h2 class="kt-adv-headingprimehome_092 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_092">Don’t just take our word for it</h2>
+<!-- /wp:kadence/advancedheading -->
+
+<!-- wp:kadence/advancedheading {"uniqueID":"primehome_093","align":"center","color":"#334155","typography":"Instrument Sans","googleFont":true,"fontWeight":"400","margin":[0,0,34,0],"htmlTag":"p","fontSize":[16,16,16],"fontHeight":[25,25,25],"fontHeightType":"px"} -->
+<p class="kt-adv-headingprimehome_093 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_093">Find Prime Domestic &amp; Cleaning Services on Google.</p>
+<!-- /wp:kadence/advancedheading -->
+
+<!-- wp:kadence/advancedbtn {"uniqueID":"primehome_095","margin":[0,0,0,0],"gap":[14,14,12]} -->
+<div class="wp-block-kadence-advancedbtn kb-buttons-wrap kb-btnsprimehome_095"><!-- wp:kadence/singlebtn {"uniqueID":"primehome_094","text":"Review us on Google","link":"https://g.page/r/CXZrY-YL446oEBM/review","padding":[12,21,12,21],"color":"#0e7490","background":"#ffffff","colorHover":"#0e7490","backgroundHover":"#ffffff","borderStyle":[{"top":["#e2e8f0","solid",1],"right":["#e2e8f0","solid",1],"bottom":["#e2e8f0","solid",1],"left":["#e2e8f0","solid",1],"unit":"px"}],"borderRadius":[8,8,8,8],"typography":[{"size":[14,14,14],"sizeType":"px","weight":"700"}]} /--></div>
+<!-- /wp:kadence/advancedbtn --></div></div>
+<!-- /wp:kadence/column -->
+<!-- /wp:kadence/rowlayout -->
+
+<!-- wp:kadence/rowlayout {"uniqueID":"primehome_112","columns":1,"collapseGutter":"none","columnGutter":"none","colLayout":"equal","htmlTag":"section","maxWidth":1328,"bgColor":"#ffffff","align":"full","tabletPadding":[54,24,54,24],"padding":[64,24,64,24],"mobilePadding":[42,20,42,20],"margin":[0,0,0,0],"anchor":"contact-areas","kbVersion":2,"metadata":{"name":"Service areas"}} -->
+<!-- wp:kadence/column {"uniqueID":"primehome_111"} -->
+<div class="wp-block-kadence-column kadence-columnprimehome_111"><div class="kt-inside-inner-col"><!-- wp:kadence/advancedheading {"uniqueID":"primehome_106","align":"center","color":"#0e7490","typography":"Instrument Sans","googleFont":true,"fontWeight":"700","margin":[0,0,5,0],"htmlTag":"p","fontSize":[12,12,12],"fontHeight":[19,19,19],"fontHeightType":"px"} -->
+<p class="kt-adv-headingprimehome_106 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_106">SERVICE AREAS</p>
+<!-- /wp:kadence/advancedheading -->
+
+<!-- wp:kadence/advancedheading {"uniqueID":"primehome_107","align":"center","color":"#0f172a","typography":"Wix Madefor Display","googleFont":true,"fontWeight":"700","margin":[0,0,10,0],"fontSize":[36,28,28],"fontHeight":[42,34,34],"fontHeightType":"px"} -->
+<h2 class="kt-adv-headingprimehome_107 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_107">Where we clean</h2>
+<!-- /wp:kadence/advancedheading -->
+
+<!-- wp:kadence/advancedheading {"uniqueID":"primehome_108","align":"center","color":"#334155","typography":"Instrument Sans","googleFont":true,"fontWeight":"400","margin":[0,0,34,0],"htmlTag":"p","fontSize":[16,16,16],"fontHeight":[25,25,25],"fontHeightType":"px"} -->
+<p class="kt-adv-headingprimehome_108 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_108">We're based in Malvern East and cover suburbs within about 25 km. Free travel within 15 km, a flat $30 travel fee for 15–25 km, and further out by arrangement.</p>
+<!-- /wp:kadence/advancedheading -->
+
+<!-- wp:kadence/rowlayout {"uniqueID":"primehome_109","collapseGutter":"custom","customRowGutter":[32,24,18],"columnGutter":"custom","customGutter":[32,24,18],"colLayout":"equal","columnsInnerHeight":true,"padding":[0,0,0,0],"margin":[0,0,0,0],"kbVersion":2} -->
+<!-- wp:kadence/column {"background":"#f8fafc","borderRadius":[14,14,14,14],"uniqueID":"primehome_101","displayShadow":true,"shadow":[{"color":"#0f172a","opacity":0.07,"spread":0,"blur":9,"hOffset":0,"vOffset":2,"inset":false}],"padding":[24,24,24,24],"mobilePadding":[22,22,22,22],"borderStyle":[{"top":["#e2e8f0","solid",1],"right":["#e2e8f0","solid",1],"bottom":["#e2e8f0","solid",1],"left":["#e2e8f0","solid",1],"unit":"px"}]} -->
+<div class="wp-block-kadence-column kadence-columnprimehome_101"><div class="kt-inside-inner-col"><!-- wp:kadence/advancedheading {"level":3,"uniqueID":"primehome_098","align":"left","color":"#0f172a","typography":"Wix Madefor Display","googleFont":true,"fontWeight":"700","margin":[0,0,12,0],"fontSize":[20,20,20],"fontHeight":[23,25,25],"fontHeightType":"px","icon":"fe_mapPin","iconColor":"#0e7490","iconSize":[20,20,20]} -->
+<h3 class="kt-adv-headingprimehome_098 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_098">Zone 1 · Free travel</h3>
+<!-- /wp:kadence/advancedheading -->
+
+<!-- wp:kadence/advancedheading {"uniqueID":"primehome_099","align":"left","color":"#0e7490","typography":"Instrument Sans","googleFont":true,"fontWeight":"600","margin":[0,0,12,0],"htmlTag":"p","fontSize":[14,14,14],"fontHeight":[22,22,22],"fontHeightType":"px"} -->
+<p class="kt-adv-headingprimehome_099 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_099">Within 15 km of Malvern East</p>
+<!-- /wp:kadence/advancedheading -->
+
+<!-- wp:kadence/advancedheading {"uniqueID":"primehome_100","align":"left","color":"#334155","typography":"Instrument Sans","googleFont":true,"fontWeight":"400","margin":[0,0,0,0],"htmlTag":"p","fontSize":[15,15,15],"fontHeight":[23,23,23],"fontHeightType":"px"} -->
+<p class="kt-adv-headingprimehome_100 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_100">Armadale · Ashburton · Bentleigh · Bentleigh East · Burwood · Camberwell · Carnegie · Caulfield · Caulfield East · Caulfield North · Caulfield South · Chadstone · Clayton · Elsternwick · Glen Iris · Hawthorn · Hughesdale · Malvern · Malvern East · McKinnon · Mount Waverley · Murrumbeena · Oakleigh · Ormond · Prahran · St Kilda East · Toorak</p>
+<!-- /wp:kadence/advancedheading --></div></div>
+<!-- /wp:kadence/column -->
+
+<!-- wp:kadence/column {"background":"#f8fafc","borderRadius":[14,14,14,14],"uniqueID":"primehome_105","displayShadow":true,"shadow":[{"color":"#0f172a","opacity":0.07,"spread":0,"blur":9,"hOffset":0,"vOffset":2,"inset":false}],"padding":[24,24,24,24],"mobilePadding":[22,22,22,22],"borderStyle":[{"top":["#e2e8f0","solid",1],"right":["#e2e8f0","solid",1],"bottom":["#e2e8f0","solid",1],"left":["#e2e8f0","solid",1],"unit":"px"}]} -->
+<div class="wp-block-kadence-column kadence-columnprimehome_105"><div class="kt-inside-inner-col"><!-- wp:kadence/advancedheading {"level":3,"uniqueID":"primehome_102","align":"left","color":"#0f172a","typography":"Wix Madefor Display","googleFont":true,"fontWeight":"700","margin":[0,0,12,0],"fontSize":[20,20,20],"fontHeight":[23,25,25],"fontHeightType":"px","icon":"fe_mapPin","iconColor":"#0e7490","iconSize":[20,20,20]} -->
+<h3 class="kt-adv-headingprimehome_102 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_102">Zone 2 · $30 per visit</h3>
+<!-- /wp:kadence/advancedheading -->
+
+<!-- wp:kadence/advancedheading {"uniqueID":"primehome_103","align":"left","color":"#0e7490","typography":"Instrument Sans","googleFont":true,"fontWeight":"600","margin":[0,0,12,0],"htmlTag":"p","fontSize":[14,14,14],"fontHeight":[22,22,22],"fontHeightType":"px"} -->
+<p class="kt-adv-headingprimehome_103 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_103">15–25 km from Malvern East</p>
+<!-- /wp:kadence/advancedheading -->
+
+<!-- wp:kadence/advancedheading {"uniqueID":"primehome_104","align":"left","color":"#334155","typography":"Instrument Sans","googleFont":true,"fontWeight":"400","margin":[0,0,0,0],"htmlTag":"p","fontSize":[15,15,15],"fontHeight":[23,23,23],"fontHeightType":"px"} -->
+<p class="kt-adv-headingprimehome_104 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_104">Blackburn · Box Hill · Brighton · Cheltenham · Doncaster · Glen Waverley · Melbourne CBD · Mentone · Moorabbin · Mulgrave · Noble Park · Nunawading · Springvale · Wheelers Hill</p>
+<!-- /wp:kadence/advancedheading --></div></div>
+<!-- /wp:kadence/column -->
+<!-- /wp:kadence/rowlayout -->
+
+<!-- wp:kadence/advancedheading {"uniqueID":"primehome_110","align":"center","color":"#334155","typography":"Instrument Sans","googleFont":true,"fontWeight":"400","margin":[18,0,0,0],"htmlTag":"p","fontSize":[14,14,14],"fontHeight":[22,22,22],"fontHeightType":"px"} -->
+<p class="kt-adv-headingprimehome_110 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_110">Don’t see your suburb? Ask anyway, we might still come to you.</p>
+<!-- /wp:kadence/advancedheading --></div></div>
+<!-- /wp:kadence/column -->
+<!-- /wp:kadence/rowlayout -->
+
+<!-- wp:kadence/rowlayout {"uniqueID":"primehome_131","columns":1,"collapseGutter":"none","columnGutter":"none","colLayout":"equal","htmlTag":"section","maxWidth":1328,"bgColor":"#f8fafc","align":"full","tabletPadding":[54,24,54,24],"padding":[64,24,64,24],"mobilePadding":[42,20,42,20],"margin":[0,0,0,0],"anchor":"about-story","kbVersion":2,"metadata":{"name":"About Prime"}} -->
+<!-- wp:kadence/column {"uniqueID":"primehome_130"} -->
+<div class="wp-block-kadence-column kadence-columnprimehome_130"><div class="kt-inside-inner-col"><!-- wp:kadence/rowlayout {"uniqueID":"primehome_129","tabletLayout":"row","collapseGutter":"custom","customRowGutter":[40,24,18],"columnGutter":"custom","customGutter":[40,24,18],"colLayout":"equal","verticalAlignment":"middle","firstColumnWidth":58,"secondColumnWidth":42,"columnsInnerHeight":true,"padding":[0,0,0,0],"margin":[0,0,0,0],"kbVersion":2} -->
+<!-- wp:kadence/column {"uniqueID":"primehome_126"} -->
+<div class="wp-block-kadence-column kadence-columnprimehome_126"><div class="kt-inside-inner-col"><!-- wp:kadence/advancedheading {"uniqueID":"primehome_121","align":"left","color":"#0e7490","typography":"Instrument Sans","googleFont":true,"fontWeight":"700","margin":[0,0,5,0],"htmlTag":"p","fontSize":[12,12,12],"fontHeight":[19,19,19],"fontHeightType":"px"} -->
+<p class="kt-adv-headingprimehome_121 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_121">ABOUT PRIME DOMESTIC</p>
+<!-- /wp:kadence/advancedheading -->
+
+<!-- wp:kadence/advancedheading {"uniqueID":"primehome_122","align":"left","color":"#0f172a","typography":"Wix Madefor Display","googleFont":true,"fontWeight":"700","margin":[0,0,12,0],"fontSize":[36,28,28],"fontHeight":[42,34,34],"fontHeightType":"px"} -->
+<h2 class="kt-adv-headingprimehome_122 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_122">A small family-run cleaning team from Malvern East. No call centre, no big franchise, just us.</h2>
+<!-- /wp:kadence/advancedheading -->
+
+<!-- wp:kadence/advancedheading {"uniqueID":"primehome_123","align":"left","color":"#334155","typography":"Instrument Sans","googleFont":true,"fontWeight":"400","margin":[0,0,12,0],"htmlTag":"p","fontSize":[16,16,16],"fontHeight":[25,25,25],"fontHeightType":"px"} -->
+<p class="kt-adv-headingprimehome_123 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_123">Prime Domestic and Cleaning Services is a family business based in Malvern East. It's led by Derick, with his wife and a couple of trusted helpers, and we look after homes across Melbourne's south-east.</p>
+<!-- /wp:kadence/advancedheading -->
+
+<!-- wp:kadence/advancedheading {"uniqueID":"primehome_124","align":"left","color":"#334155","typography":"Instrument Sans","googleFont":true,"fontWeight":"400","margin":[0,0,12,0],"htmlTag":"p","fontSize":[16,16,16],"fontHeight":[25,25,25],"fontHeightType":"px"} -->
+<p class="kt-adv-headingprimehome_124 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_124">We started because we kept hearing the same thing from friends and neighbours: cleaners who don't turn up, prices that change on the day, and a different stranger every visit. We thought: we can do better than that.</p>
+<!-- /wp:kadence/advancedheading -->
+
+<!-- wp:kadence/advancedheading {"uniqueID":"primehome_125","align":"left","color":"#334155","typography":"Instrument Sans","googleFont":true,"fontWeight":"400","margin":[0,0,12,0],"htmlTag":"p","fontSize":[16,16,16],"fontHeight":[25,25,25],"fontHeightType":"px"} -->
+<p class="kt-adv-headingprimehome_125 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_125">So we keep things simple. We quote clearly, we turn up when we say we will, and we clean your home the way we'd want ours cleaned. If something isn't right, we come back and fix it.</p>
+<!-- /wp:kadence/advancedheading --></div></div>
+<!-- /wp:kadence/column -->
+
+<!-- wp:kadence/column {"background":"#ffffff","borderRadius":[14,14,14,14],"uniqueID":"primehome_128","displayShadow":true,"shadow":[{"color":"#0f172a","opacity":0.07,"spread":0,"blur":9,"hOffset":0,"vOffset":2,"inset":false}],"padding":[24,24,24,24],"mobilePadding":[22,22,22,22],"borderStyle":[{"top":["#e2e8f0","solid",1],"right":["#e2e8f0","solid",1],"bottom":["#e2e8f0","solid",1],"left":["#e2e8f0","solid",1],"unit":"px"}]} -->
+<div class="wp-block-kadence-column kadence-columnprimehome_128"><div class="kt-inside-inner-col"><!-- wp:kadence/advancedheading {"level":3,"uniqueID":"primehome_127","align":"left","color":"#0f172a","typography":"Wix Madefor Display","googleFont":true,"fontWeight":"700","margin":[0,0,12,0],"fontSize":[20,20,20],"fontHeight":[23,25,25],"fontHeightType":"px"} -->
+<h3 class="kt-adv-headingprimehome_127 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_127">What we care about</h3>
+<!-- /wp:kadence/advancedheading -->
+
+<!-- wp:kadence/advancedheading {"level":4,"uniqueID":"primehome_113","align":"left","color":"#0f172a","typography":"Wix Madefor Display","googleFont":true,"fontWeight":"700","margin":[0,0,3,0],"fontSize":[16,16,16],"fontHeight":[19,20,20],"fontHeightType":"px"} -->
+<h4 class="kt-adv-headingprimehome_113 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_113">Clean means clean</h4>
+<!-- /wp:kadence/advancedheading -->
+
+<!-- wp:kadence/advancedheading {"uniqueID":"primehome_114","align":"left","color":"#334155","typography":"Instrument Sans","googleFont":true,"fontWeight":"400","margin":[0,0,12,0],"htmlTag":"p","fontSize":[14,14,14],"fontHeight":[22,22,22],"fontHeightType":"px"} -->
+<p class="kt-adv-headingprimehome_114 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_114">We clean your kitchen and bathroom the way we'd want ours done: properly, not just quickly.</p>
+<!-- /wp:kadence/advancedheading -->
+
+<!-- wp:kadence/advancedheading {"level":4,"uniqueID":"primehome_115","align":"left","color":"#0f172a","typography":"Wix Madefor Display","googleFont":true,"fontWeight":"700","margin":[0,0,3,0],"fontSize":[16,16,16],"fontHeight":[19,20,20],"fontHeightType":"px"} -->
+<h4 class="kt-adv-headingprimehome_115 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_115">Familiar faces</h4>
+<!-- /wp:kadence/advancedheading -->
+
+<!-- wp:kadence/advancedheading {"uniqueID":"primehome_116","align":"left","color":"#334155","typography":"Instrument Sans","googleFont":true,"fontWeight":"400","margin":[0,0,12,0],"htmlTag":"p","fontSize":[14,14,14],"fontHeight":[22,22,22],"fontHeightType":"px"} -->
+<p class="kt-adv-headingprimehome_116 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_116">Regular clients usually see the same small team. No strangers, no re-explaining where the spare towels go.</p>
+<!-- /wp:kadence/advancedheading -->
+
+<!-- wp:kadence/advancedheading {"level":4,"uniqueID":"primehome_117","align":"left","color":"#0f172a","typography":"Wix Madefor Display","googleFont":true,"fontWeight":"700","margin":[0,0,3,0],"fontSize":[16,16,16],"fontHeight":[19,20,20],"fontHeightType":"px"} -->
+<h4 class="kt-adv-headingprimehome_117 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_117">Honest prices</h4>
+<!-- /wp:kadence/advancedheading -->
+
+<!-- wp:kadence/advancedheading {"uniqueID":"primehome_118","align":"left","color":"#334155","typography":"Instrument Sans","googleFont":true,"fontWeight":"400","margin":[0,0,12,0],"htmlTag":"p","fontSize":[14,14,14],"fontHeight":[22,22,22],"fontHeightType":"px"} -->
+<p class="kt-adv-headingprimehome_118 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_118">You see an estimate before you book and we confirm the final price before we start.</p>
+<!-- /wp:kadence/advancedheading -->
+
+<!-- wp:kadence/advancedheading {"level":4,"uniqueID":"primehome_119","align":"left","color":"#0f172a","typography":"Wix Madefor Display","googleFont":true,"fontWeight":"700","margin":[0,0,3,0],"fontSize":[16,16,16],"fontHeight":[19,20,20],"fontHeightType":"px"} -->
+<h4 class="kt-adv-headingprimehome_119 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_119">We own our mistakes</h4>
+<!-- /wp:kadence/advancedheading -->
+
+<!-- wp:kadence/advancedheading {"uniqueID":"primehome_120","align":"left","color":"#334155","typography":"Instrument Sans","googleFont":true,"fontWeight":"400","margin":[0,0,12,0],"htmlTag":"p","fontSize":[14,14,14],"fontHeight":[22,22,22],"fontHeightType":"px"} -->
+<p class="kt-adv-headingprimehome_120 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_120">Tell us within 24 hours (72 hours for end of lease agent reports) and we'll come back and fix it, free.</p>
+<!-- /wp:kadence/advancedheading --></div></div>
+<!-- /wp:kadence/column -->
+<!-- /wp:kadence/rowlayout --></div></div>
+<!-- /wp:kadence/column -->
+<!-- /wp:kadence/rowlayout -->
+
+<!-- wp:kadence/rowlayout {"uniqueID":"primehome_140","columns":1,"collapseGutter":"none","columnGutter":"none","colLayout":"equal","htmlTag":"section","maxWidth":864,"bgColor":"#ffffff","align":"full","tabletPadding":[54,24,54,24],"padding":[64,24,64,24],"mobilePadding":[42,20,42,20],"margin":[0,0,0,0],"kbVersion":2,"metadata":{"name":"Frequently asked questions"}} -->
+<!-- wp:kadence/column {"uniqueID":"primehome_139"} -->
+<div class="wp-block-kadence-column kadence-columnprimehome_139"><div class="kt-inside-inner-col"><!-- wp:kadence/advancedheading {"uniqueID":"primehome_137","align":"center","color":"#0e7490","typography":"Instrument Sans","googleFont":true,"fontWeight":"700","margin":[0,0,5,0],"htmlTag":"p","fontSize":[12,12,12],"fontHeight":[19,19,19],"fontHeightType":"px"} -->
+<p class="kt-adv-headingprimehome_137 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_137">FAQS</p>
+<!-- /wp:kadence/advancedheading -->
+
+<!-- wp:kadence/advancedheading {"uniqueID":"primehome_138","align":"center","color":"#0f172a","typography":"Wix Madefor Display","googleFont":true,"fontWeight":"700","margin":[0,0,36,0],"fontSize":[36,28,28],"fontHeight":[42,34,34],"fontHeightType":"px"} -->
+<h2 class="kt-adv-headingprimehome_138 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_138">Frequently asked questions</h2>
+<!-- /wp:kadence/advancedheading -->
+
+<!-- wp:details {"style":{"color":{"background":"#f8fafc","text":"#0f172a"},"border":{"color":"#e2e8f0","width":"1px","style":"solid","radius":"10px"},"spacing":{"padding":{"top":"14px","bottom":"14px","left":"18px","right":"18px"},"margin":{"bottom":"12px"}}}} -->
+<details class="wp-block-details has-border-color has-text-color has-background" style="border-color:#e2e8f0;border-style:solid;border-width:1px;border-radius:10px;color:#0f172a;background-color:#f8fafc;margin-bottom:12px;padding-top:14px;padding-right:18px;padding-bottom:14px;padding-left:18px"><summary>Do I need to be home?</summary><!-- wp:kadence/advancedheading {"uniqueID":"primehome_132","align":"left","color":"#334155","typography":"Instrument Sans","googleFont":true,"fontWeight":"400","margin":[12,0,0,0],"htmlTag":"p","fontSize":[15,15,15],"fontHeight":[23,23,23],"fontHeightType":"px"} -->
+<p class="kt-adv-headingprimehome_132 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_132">Not at all. Many clients arrange access for the day, like a key left in an agreed spot or a neighbour letting us in. We don't keep keys or record codes.</p>
+<!-- /wp:kadence/advancedheading --></details>
+<!-- /wp:details -->
+
+<!-- wp:details {"style":{"color":{"background":"#f8fafc","text":"#0f172a"},"border":{"color":"#e2e8f0","width":"1px","style":"solid","radius":"10px"},"spacing":{"padding":{"top":"14px","bottom":"14px","left":"18px","right":"18px"},"margin":{"bottom":"12px"}}}} -->
+<details class="wp-block-details has-border-color has-text-color has-background" style="border-color:#e2e8f0;border-style:solid;border-width:1px;border-radius:10px;color:#0f172a;background-color:#f8fafc;margin-bottom:12px;padding-top:14px;padding-right:18px;padding-bottom:14px;padding-left:18px"><summary>Do you bring your own supplies?</summary><!-- wp:kadence/advancedheading {"uniqueID":"primehome_133","align":"left","color":"#334155","typography":"Instrument Sans","googleFont":true,"fontWeight":"400","margin":[12,0,0,0],"htmlTag":"p","fontSize":[15,15,15],"fontHeight":[23,23,23],"fontHeightType":"px"} -->
+<p class="kt-adv-headingprimehome_133 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_133">Yes. We bring all equipment and products, low-tox where possible. We only need water and power onsite.</p>
+<!-- /wp:kadence/advancedheading --></details>
+<!-- /wp:details -->
+
+<!-- wp:details {"style":{"color":{"background":"#f8fafc","text":"#0f172a"},"border":{"color":"#e2e8f0","width":"1px","style":"solid","radius":"10px"},"spacing":{"padding":{"top":"14px","bottom":"14px","left":"18px","right":"18px"},"margin":{"bottom":"12px"}}}} -->
+<details class="wp-block-details has-border-color has-text-color has-background" style="border-color:#e2e8f0;border-style:solid;border-width:1px;border-radius:10px;color:#0f172a;background-color:#f8fafc;margin-bottom:12px;padding-top:14px;padding-right:18px;padding-bottom:14px;padding-left:18px"><summary>Is the online price final?</summary><!-- wp:kadence/advancedheading {"uniqueID":"primehome_134","align":"left","color":"#334155","typography":"Instrument Sans","googleFont":true,"fontWeight":"400","margin":[12,0,0,0],"htmlTag":"p","fontSize":[15,15,15],"fontHeight":[23,23,23],"fontHeightType":"px"} -->
+<p class="kt-adv-headingprimehome_134 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_134">It's an estimate based on what you tell us. We confirm the final price before we start, so there are no surprises.</p>
+<!-- /wp:kadence/advancedheading --></details>
+<!-- /wp:details -->
+
+<!-- wp:details {"style":{"color":{"background":"#f8fafc","text":"#0f172a"},"border":{"color":"#e2e8f0","width":"1px","style":"solid","radius":"10px"},"spacing":{"padding":{"top":"14px","bottom":"14px","left":"18px","right":"18px"},"margin":{"bottom":"12px"}}}} -->
+<details class="wp-block-details has-border-color has-text-color has-background" style="border-color:#e2e8f0;border-style:solid;border-width:1px;border-radius:10px;color:#0f172a;background-color:#f8fafc;margin-bottom:12px;padding-top:14px;padding-right:18px;padding-bottom:14px;padding-left:18px"><summary>What if I'm not happy?</summary><!-- wp:kadence/advancedheading {"uniqueID":"primehome_135","align":"left","color":"#334155","typography":"Instrument Sans","googleFont":true,"fontWeight":"400","margin":[12,0,0,0],"htmlTag":"p","fontSize":[15,15,15],"fontHeight":[23,23,23],"fontHeightType":"px"} -->
+<p class="kt-adv-headingprimehome_135 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_135">Tell us within 24 hours (photos help) and we'll come back and fix anything on our checklist, at no cost. For end of lease cleans, you have 72 hours to pass on anything the agent flags.</p>
+<!-- /wp:kadence/advancedheading --></details>
+<!-- /wp:details -->
+
+<!-- wp:details {"style":{"color":{"background":"#f8fafc","text":"#0f172a"},"border":{"color":"#e2e8f0","width":"1px","style":"solid","radius":"10px"},"spacing":{"padding":{"top":"14px","bottom":"14px","left":"18px","right":"18px"},"margin":{"bottom":"12px"}}}} -->
+<details class="wp-block-details has-border-color has-text-color has-background" style="border-color:#e2e8f0;border-style:solid;border-width:1px;border-radius:10px;color:#0f172a;background-color:#f8fafc;margin-bottom:12px;padding-top:14px;padding-right:18px;padding-bottom:14px;padding-left:18px"><summary>I have a dog. Is that okay?</summary><!-- wp:kadence/advancedheading {"uniqueID":"primehome_136","align":"left","color":"#334155","typography":"Instrument Sans","googleFont":true,"fontWeight":"400","margin":[12,0,0,0],"htmlTag":"p","fontSize":[15,15,15],"fontHeight":[23,23,23],"fontHeightType":"px"} -->
+<p class="kt-adv-headingprimehome_136 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_136">Absolutely. We love pets, we just ask that they're secured while we work, mainly so they don't 'help' with the mop.</p>
+<!-- /wp:kadence/advancedheading --></details>
+<!-- /wp:details --></div></div>
+<!-- /wp:kadence/column -->
+<!-- /wp:kadence/rowlayout -->
+
+<!-- wp:kadence/rowlayout {"uniqueID":"primehome_148","columns":1,"collapseGutter":"none","columnGutter":"none","colLayout":"equal","htmlTag":"section","maxWidth":910,"bgColor":"#0e7490","align":"full","tabletPadding":[54,24,54,24],"padding":[64,24,64,24],"mobilePadding":[42,20,42,20],"margin":[0,0,0,0],"kbVersion":2,"metadata":{"name":"Get an estimate"}} -->
+<!-- wp:kadence/column {"uniqueID":"primehome_147"} -->
+<div class="wp-block-kadence-column kadence-columnprimehome_147"><div class="kt-inside-inner-col"><!-- wp:kadence/advancedheading {"uniqueID":"primehome_141","align":"center","color":"#ffffff","typography":"Wix Madefor Display","googleFont":true,"fontWeight":"700","margin":[0,0,12,0],"fontSize":[36,28,28],"fontHeight":[42,34,34],"fontHeightType":"px"} -->
+<h2 class="kt-adv-headingprimehome_141 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_141">Ready for a cleaner home and a free weekend?</h2>
+<!-- /wp:kadence/advancedheading -->
+
+<!-- wp:kadence/advancedheading {"uniqueID":"primehome_142","align":"center","color":"#ffffff","typography":"Instrument Sans","googleFont":true,"fontWeight":"400","margin":[0,0,22,0],"htmlTag":"p","fontSize":[16,16,16],"fontHeight":[25,25,25],"fontHeightType":"px"} -->
+<p class="kt-adv-headingprimehome_142 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingprimehome_142">Get your estimate in about a minute, or just call or message us. We're real people, and we reply.</p>
+<!-- /wp:kadence/advancedheading -->
+
+<!-- wp:kadence/advancedbtn {"btnCount":3,"uniqueID":"primehome_146","margin":[0,0,0,0],"gap":[14,14,12]} -->
+<div class="wp-block-kadence-advancedbtn kb-buttons-wrap kb-btnsprimehome_146"><!-- wp:kadence/singlebtn {"uniqueID":"primehome_143","text":"Get my estimate","link":"#estimator-section","padding":[12,21,12,21],"color":"#0e7490","background":"#ffffff","colorHover":"#0e7490","backgroundHover":"#ffffff","borderStyle":[{"top":["#e2e8f0","solid",1],"right":["#e2e8f0","solid",1],"bottom":["#e2e8f0","solid",1],"left":["#e2e8f0","solid",1],"unit":"px"}],"borderRadius":[8,8,8,8],"icon":"fe_arrowRight","iconSize":[16,16,16],"typography":[{"size":[14,14,14],"sizeType":"px","weight":"700"}]} /-->
+
+<!-- wp:kadence/singlebtn {"uniqueID":"primehome_144","text":"Call 0491 245 156","link":"tel:+61491245156","padding":[12,21,12,21],"color":"#ffffff","background":"#075985","colorHover":"#ffffff","backgroundHover":"#075985","borderStyle":[{"top":["#075985","solid",1],"right":["#075985","solid",1],"bottom":["#075985","solid",1],"left":["#075985","solid",1],"unit":"px"}],"borderRadius":[8,8,8,8],"icon":"fe_phone","iconSide":"left","iconSize":[16,16,16],"typography":[{"size":[14,14,14],"sizeType":"px","weight":"700"}]} /-->
+
+<!-- wp:kadence/singlebtn {"uniqueID":"primehome_145","text":"WhatsApp us","link":"https://wa.me/61491245156","padding":[12,21,12,21],"color":"#ffffff","background":"#047857","colorHover":"#ffffff","backgroundHover":"#047857","borderStyle":[{"top":["#047857","solid",1],"right":["#047857","solid",1],"bottom":["#047857","solid",1],"left":["#047857","solid",1],"unit":"px"}],"borderRadius":[8,8,8,8],"icon":"fe_messageCircle","iconSide":"left","iconSize":[16,16,16],"typography":[{"size":[14,14,14],"sizeType":"px","weight":"700"}]} /--></div>
+<!-- /wp:kadence/advancedbtn --></div></div>
+<!-- /wp:kadence/column -->
+<!-- /wp:kadence/rowlayout -->]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>8</wp:post_id>
 		<wp:post_date><![CDATA[2026-11-16 23:38:33]]></wp:post_date>

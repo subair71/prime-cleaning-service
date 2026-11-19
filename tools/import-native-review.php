@@ -78,10 +78,12 @@ $replace['[fluentform id="' . $source_contact_id . '"]'] = '[fluentform id="' . 
 $quote_form_id = null;
 if (defined('FLUENTFORMPRO_VERSION')) {
     $quote_form_id = $import_form('fluentforms-quote.json');
+    $import_form('fluentforms-home-quick.json');
 } else {
-    // The existing call and WhatsApp buttons below this block still work in a Free-only review.
-    $replace["<!-- wp:shortcode -->\n" . '[fluentform title="Prime | Request a Quote"]' . "\n<!-- /wp:shortcode -->"] =
-        '<!-- wp:paragraph --><p>Please call or message us for a personalised quote.</p><!-- /wp:paragraph -->';
+    foreach (['Prime | Quick Estimate', 'Prime | Request a Quote'] as $title) {
+        $block = "<!-- wp:shortcode -->\n" . '[fluentform title="' . $title . '"]' . "\n<!-- /wp:shortcode -->";
+        $replace[$block] = '<!-- wp:paragraph --><p>Please call or message us for a personalised quote.</p><!-- /wp:paragraph -->';
+    }
 }
 $rewrite=function($content)use($replace,$image_ids){
     $content=strtr($content,$replace);

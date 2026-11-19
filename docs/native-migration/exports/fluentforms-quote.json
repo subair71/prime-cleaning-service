@@ -39,7 +39,7 @@
             "class": ""
           },
           "settings": {
-            "dynamic_default_value": "",
+            "dynamic_default_value": "{get.prime_service}",
             "label": "Which service do you need?",
             "admin_field_label": "Which service do you need?",
             "help_message": "",
@@ -672,7 +672,7 @@
             "class": ""
           },
           "settings": {
-            "dynamic_default_value": "",
+            "dynamic_default_value": "{get.prime_size}",
             "label": "Bedrooms and bathrooms",
             "admin_field_label": "Regular and Deep property size",
             "help_message": "",
@@ -893,7 +893,7 @@
             "class": ""
           },
           "settings": {
-            "dynamic_default_value": "",
+            "dynamic_default_value": "{get.prime_size}",
             "label": "Bedrooms and bathrooms",
             "admin_field_label": "End of Lease property size",
             "help_message": "",
