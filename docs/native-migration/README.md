@@ -2,7 +2,7 @@
 
 The native page package includes the editable Request a Quote estimator and Derick’s approved prices. Follow the [staging installation and acceptance checks](ESTIMATOR.md) before publishing.
 
-For an existing LocalWP site, [import the updated header and footer](HANDOVER.md#applying-the-header-and-footer-to-prime-in-localwp). Preview the updated [mobile](screenshots/prime-header-footer-mobile.webp) and [desktop](screenshots/prime-header-footer-desktop.webp) layouts. See the [17 November page design and plugin review](ENHANCEMENT.md) for earlier layouts.
+For an existing LocalWP site, [import the updated header and footer](HANDOVER.md#applying-the-header-and-footer-to-prime-in-localwp). See the footer on [mobile](screenshots/prime-header-footer-mobile.webp) and [desktop](screenshots/prime-header-footer-desktop.webp). See the [17 November page design and plugin review](ENHANCEMENT.md) for earlier layouts.
 
 ## What is implemented
 

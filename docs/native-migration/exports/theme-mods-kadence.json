@@ -122,11 +122,11 @@
     "size": 0.9,
     "unit": "em"
   },
-  "footer_middle_columns": "3",
+  "footer_middle_columns": "4",
   "footer_middle_layout": {
     "desktop": "equal",
-    "tablet": "equal",
-    "mobile": "last-row"
+    "tablet": "two-grid",
+    "mobile": "row"
   },
   "footer_middle_background": {
     "desktop": {
@@ -135,7 +135,7 @@
   },
   "footer_bottom_background": {
     "desktop": {
-      "color": "#0b2529"
+      "color": "#102f33"
     }
   },
   "footer_middle_widget_title": {
@@ -268,27 +268,25 @@
   },
   "footer_items": {
     "top": {
-      "top_1": [
-        "footer-widget1"
-      ],
-      "top_2": [
-        "footer-social"
-      ],
+      "top_1": [],
+      "top_2": [],
       "top_3": [],
       "top_4": [],
       "top_5": []
     },
     "middle": {
       "middle_1": [
-        "footer-widget2"
+        "footer-widget1"
       ],
       "middle_2": [
-        "footer-widget3"
+        "footer-widget2"
       ],
       "middle_3": [
+        "footer-widget3"
+      ],
+      "middle_4": [
         "footer-widget4"
       ],
-      "middle_4": [],
       "middle_5": []
     },
     "bottom": {
@@ -585,146 +583,11 @@
       "desktop": 1.5
     }
   },
-  "footer_top_columns": "2",
-  "footer_top_layout": {
-    "desktop": "left-golden",
-    "tablet": "equal",
-    "mobile": "row"
-  },
-  "footer_top_background": {
-    "desktop": {
-      "color": "#155957"
-    }
-  },
-  "footer_top_top_border": {
-    "desktop": {
-      "width": 4,
-      "unit": "px",
-      "style": "solid",
-      "color": "#8cd8bd"
-    }
-  },
-  "footer_top_top_spacing": {
-    "size": {
-      "desktop": 29,
-      "tablet": 25,
-      "mobile": 23
-    },
-    "unit": {
-      "desktop": "px",
-      "tablet": "px",
-      "mobile": "px"
-    }
-  },
-  "footer_top_bottom_spacing": {
-    "size": {
-      "desktop": 29,
-      "tablet": 25,
-      "mobile": 23
-    },
-    "unit": {
-      "desktop": "px",
-      "tablet": "px",
-      "mobile": "px"
-    }
-  },
-  "footer_top_column_spacing": {
-    "size": {
-      "desktop": 44,
-      "tablet": 24,
-      "mobile": 15
-    },
-    "unit": {
-      "desktop": "px",
-      "tablet": "px",
-      "mobile": "px"
-    }
-  },
-  "footer_top_widget_content": {
-    "family": "inherit",
-    "google": false,
-    "weight": "400",
-    "variant": "regular",
-    "size": {
-      "desktop": 16
-    },
-    "lineHeight": {
-      "desktop": 1.5
-    },
-    "color": "#f2faf6"
-  },
-  "footer_top_widget_title": {
-    "family": "inherit",
-    "google": false,
-    "weight": "600",
-    "variant": "600",
-    "size": {
-      "desktop": 20
-    },
-    "lineHeight": {
-      "desktop": 1.5
-    },
-    "color": "#ffffff"
-  },
-  "footer_social_items": {
-    "items": [
-      {
-        "id": "whatsapp",
-        "enabled": true,
-        "source": "icon",
-        "url": "",
-        "imageid": "",
-        "width": 24,
-        "icon": "whatsapp",
-        "label": "Message us on WhatsApp"
-      }
-    ]
-  },
-  "whatsapp_link": "https://wa.me/61491245156",
-  "footer_social_show_label": true,
-  "footer_social_align": {
-    "desktop": "right",
-    "tablet": "right",
-    "mobile": "left"
-  },
-  "footer_social_vertical_align": {
-    "desktop": "middle",
-    "tablet": "middle",
-    "mobile": "top"
-  },
-  "footer_social_color": {
-    "color": "#103e3c",
-    "hover": "#07312f"
-  },
-  "footer_social_background": {
-    "color": "#d5f5e2",
-    "hover": "#ffffff"
-  },
-  "footer_social_border_radius": {
-    "size": 28,
-    "unit": "px"
-  },
-  "footer_social_icon_size": {
-    "size": 21,
-    "unit": "px"
-  },
-  "footer_social_typography": {
-    "family": "inherit",
-    "google": false,
-    "weight": "600",
-    "variant": "600",
-    "size": {
-      "desktop": 15
-    },
-    "lineHeight": {
-      "desktop": 1.5
-    }
-  },
   "footer_middle_column_spacing": {
     "size": {
-      "desktop": 46,
-      "tablet": 24,
-      "mobile": 19
+      "desktop": 32,
+      "tablet": 26,
+      "mobile": 18
     },
     "unit": {
       "desktop": "px",
@@ -780,5 +643,13 @@
       "desktop": 1.5
     },
     "color": "#c2dbd7"
+  },
+  "footer_middle_top_border": {
+    "desktop": {
+      "width": 3,
+      "unit": "px",
+      "style": "solid",
+      "color": "#8cd8bd"
+    }
   }
 }
