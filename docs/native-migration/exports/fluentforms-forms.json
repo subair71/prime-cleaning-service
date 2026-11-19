@@ -1,0 +1,1157 @@
+[
+    {
+        "id": 3,
+        "title": "Prime \u2014 Contact",
+        "status": "published",
+        "appearance_settings": null,
+        "form_fields": {
+            "fields": [
+                {
+                    "index": 2,
+                    "element": "input_text",
+                    "attributes": {
+                        "autocomplete": "name",
+                        "type": "text",
+                        "name": "name",
+                        "value": "",
+                        "class": "",
+                        "placeholder": "",
+                        "maxlength": 200
+                    },
+                    "settings": {
+                        "container_class": "prime-ff-half",
+                        "label": "Full name",
+                        "label_placement": "",
+                        "admin_field_label": "Full name",
+                        "help_message": "",
+                        "prefix_label": "",
+                        "suffix_label": "",
+                        "validation_rules": {
+                            "required": {
+                                "value": true,
+                                "message": "Please complete this field.",
+                                "global": false
+                            }
+                        },
+                        "conditional_logics": [],
+                        "is_unique": "no",
+                        "unique_validation_message": "This value need to be unique."
+                    },
+                    "editor_options": {
+                        "title": "Simple Text",
+                        "icon_class": "ff-edit-text",
+                        "template": "inputText"
+                    },
+                    "uniqElKey": "prime_name"
+                },
+                {
+                    "index": 2,
+                    "element": "input_text",
+                    "attributes": {
+                        "autocomplete": "tel",
+                        "type": "tel",
+                        "name": "phone",
+                        "value": "",
+                        "class": "",
+                        "placeholder": "",
+                        "maxlength": 25
+                    },
+                    "settings": {
+                        "container_class": "prime-ff-half",
+                        "label": "Mobile number",
+                        "label_placement": "",
+                        "admin_field_label": "Mobile number",
+                        "help_message": "",
+                        "prefix_label": "",
+                        "suffix_label": "",
+                        "validation_rules": {
+                            "required": {
+                                "value": true,
+                                "message": "Please complete this field.",
+                                "global": false
+                            }
+                        },
+                        "conditional_logics": [],
+                        "is_unique": "no",
+                        "unique_validation_message": "This value need to be unique."
+                    },
+                    "editor_options": {
+                        "title": "Simple Text",
+                        "icon_class": "ff-edit-text",
+                        "template": "inputText"
+                    },
+                    "uniqElKey": "prime_phone"
+                },
+                {
+                    "index": 1,
+                    "element": "input_email",
+                    "attributes": {
+                        "autocomplete": "email",
+                        "type": "email",
+                        "name": "email",
+                        "value": "",
+                        "id": "",
+                        "class": "",
+                        "placeholder": "Email Address",
+                        "maxlength": 200
+                    },
+                    "settings": {
+                        "container_class": "prime-ff-half",
+                        "label": "Email address",
+                        "label_placement": "",
+                        "help_message": "",
+                        "admin_field_label": "Email address",
+                        "prefix_label": "",
+                        "suffix_label": "",
+                        "validation_rules": {
+                            "required": {
+                                "value": true,
+                                "message": "Please complete this field.",
+                                "global": false
+                            },
+                            "email": {
+                                "value": true,
+                                "message": "This field must contain a valid email",
+                                "global_message": "This field must contain a valid email",
+                                "global": true
+                            }
+                        },
+                        "conditional_logics": [],
+                        "is_unique": "no",
+                        "unique_validation_message": "Email address need to be unique."
+                    },
+                    "editor_options": {
+                        "title": "Email",
+                        "icon_class": "ff-edit-email",
+                        "template": "inputText"
+                    },
+                    "uniqElKey": "prime_email"
+                },
+                {
+                    "index": 2,
+                    "element": "input_text",
+                    "attributes": {
+                        "autocomplete": "address-level2",
+                        "type": "text",
+                        "name": "suburb_name",
+                        "value": "",
+                        "class": "",
+                        "placeholder": "",
+                        "maxlength": 200
+                    },
+                    "settings": {
+                        "container_class": "prime-ff-half",
+                        "label": "Suburb",
+                        "label_placement": "",
+                        "admin_field_label": "Suburb",
+                        "help_message": "",
+                        "prefix_label": "",
+                        "suffix_label": "",
+                        "validation_rules": {
+                            "required": {
+                                "value": true,
+                                "message": "Please complete this field.",
+                                "global": false
+                            }
+                        },
+                        "conditional_logics": [],
+                        "is_unique": "no",
+                        "unique_validation_message": "This value need to be unique."
+                    },
+                    "editor_options": {
+                        "title": "Simple Text",
+                        "icon_class": "ff-edit-text",
+                        "template": "inputText"
+                    },
+                    "uniqElKey": "prime_suburb_name"
+                },
+                {
+                    "index": 3,
+                    "element": "textarea",
+                    "attributes": {
+                        "autocomplete": "",
+                        "name": "notes",
+                        "value": "",
+                        "id": "",
+                        "class": "",
+                        "placeholder": "",
+                        "rows": 4,
+                        "cols": 2,
+                        "maxlength": 3000
+                    },
+                    "settings": {
+                        "container_class": "prime-ff-full",
+                        "label": "Your enquiry",
+                        "admin_field_label": "Your enquiry",
+                        "label_placement": "",
+                        "help_message": "",
+                        "prefix_label": "",
+                        "suffix_label": "",
+                        "validation_rules": {
+                            "required": {
+                                "value": true,
+                                "message": "Please complete this field.",
+                                "global": false
+                            }
+                        },
+                        "conditional_logics": []
+                    },
+                    "editor_options": {
+                        "title": "Text Area",
+                        "icon_class": "ff-edit-textarea",
+                        "template": "inputTextarea"
+                    },
+                    "uniqElKey": "prime_notes"
+                },
+                {
+                    "index": 5,
+                    "element": "terms_and_condition",
+                    "attributes": {
+                        "type": "checkbox",
+                        "name": "consent",
+                        "value": false,
+                        "class": ""
+                    },
+                    "settings": {
+                        "tnc_html": "I agree to Prime Domestic contacting me about this enquiry. See our <a href=\"http://prime-cleaning-service.local/privacy-policy/\">Privacy Policy</a>.",
+                        "has_checkbox": true,
+                        "admin_field_label": "Contact consent",
+                        "container_class": "prime-ff-full",
+                        "validation_rules": {
+                            "required": {
+                                "value": true,
+                                "message": "Please complete this field.",
+                                "global": false
+                            }
+                        },
+                        "conditional_logics": [],
+                        "label": "Contact consent"
+                    },
+                    "editor_options": {
+                        "title": "Terms & Conditions",
+                        "icon_class": "ff-edit-terms-condition",
+                        "template": "termsCheckbox"
+                    },
+                    "uniqElKey": "prime_consent"
+                },
+                {
+                    "index": 0,
+                    "element": "input_hidden",
+                    "attributes": {
+                        "type": "hidden",
+                        "name": "request_key",
+                        "value": ""
+                    },
+                    "settings": {
+                        "admin_field_label": "Request key",
+                        "label": "Request key"
+                    },
+                    "editor_options": {
+                        "title": "Hidden Field",
+                        "icon_class": "ff-edit-hidden-field",
+                        "template": "inputHidden"
+                    },
+                    "uniqElKey": "prime_request_key"
+                },
+                {
+                    "index": 0,
+                    "element": "input_hidden",
+                    "attributes": {
+                        "type": "hidden",
+                        "name": "quote_token",
+                        "value": ""
+                    },
+                    "settings": {
+                        "admin_field_label": "Quote token",
+                        "label": "Quote token"
+                    },
+                    "editor_options": {
+                        "title": "Hidden Field",
+                        "icon_class": "ff-edit-hidden-field",
+                        "template": "inputHidden"
+                    },
+                    "uniqElKey": "prime_quote_token"
+                },
+                {
+                    "index": 0,
+                    "element": "input_hidden",
+                    "attributes": {
+                        "type": "hidden",
+                        "name": "prime_estimate_summary",
+                        "value": ""
+                    },
+                    "settings": {
+                        "admin_field_label": "Estimate summary",
+                        "label": "Estimate summary"
+                    },
+                    "editor_options": {
+                        "title": "Hidden Field",
+                        "icon_class": "ff-edit-hidden-field",
+                        "template": "inputHidden"
+                    },
+                    "uniqElKey": "prime_prime_estimate_summary"
+                },
+                {
+                    "index": 0,
+                    "element": "input_hidden",
+                    "attributes": {
+                        "type": "hidden",
+                        "name": "prime_estimate",
+                        "value": ""
+                    },
+                    "settings": {
+                        "admin_field_label": "Frozen estimate",
+                        "label": "Frozen estimate"
+                    },
+                    "editor_options": {
+                        "title": "Hidden Field",
+                        "icon_class": "ff-edit-hidden-field",
+                        "template": "inputHidden"
+                    },
+                    "uniqElKey": "prime_prime_estimate"
+                }
+            ],
+            "submitButton": {
+                "uniqElKey": "el_1524065200616",
+                "element": "button",
+                "attributes": {
+                    "type": "submit",
+                    "class": ""
+                },
+                "settings": {
+                    "align": "left",
+                    "button_style": "default",
+                    "container_class": "",
+                    "help_message": "",
+                    "background_color": "#1a7efb",
+                    "button_size": "md",
+                    "color": "#ffffff",
+                    "button_ui": {
+                        "type": "default",
+                        "text": "Send message",
+                        "img_url": ""
+                    }
+                },
+                "editor_options": {
+                    "title": "Submit Button"
+                }
+            }
+        },
+        "has_payment": "0",
+        "type": "form",
+        "conditions": null,
+        "created_by": "1",
+        "created_at": "2026-11-15 08:07:26",
+        "updated_at": "2026-11-15 08:07:26",
+        "form_meta": [
+            {
+                "id": 17,
+                "form_id": "3",
+                "meta_key": "_ff_form_styles",
+                "value": "[]"
+            },
+            {
+                "id": 14,
+                "form_id": "3",
+                "meta_key": "_ff_selected_style",
+                "value": "ffs_default"
+            },
+            {
+                "id": 16,
+                "form_id": "3",
+                "meta_key": "ffs_default",
+                "value": ""
+            },
+            {
+                "id": 10,
+                "form_id": "3",
+                "meta_key": "formSettings",
+                "value": "{\"confirmation\":{\"redirectTo\":\"samePage\",\"messageToShow\":\"Thank you. Your enquiry has been saved. Your preferred date is a request, not a confirmed booking.\",\"customPage\":null,\"samePageFormBehavior\":\"hide_form\",\"customUrl\":null},\"restrictions\":{\"limitNumberOfEntries\":{\"enabled\":false,\"numberOfEntries\":null,\"period\":\"total\",\"limitReachedMsg\":\"Maximum number of entries exceeded.\"},\"scheduleForm\":{\"enabled\":false,\"start\":null,\"end\":null,\"selectedDays\":null,\"pendingMsg\":\"Form submission is not started yet.\",\"expiredMsg\":\"Form submission is now closed.\"},\"requireLogin\":{\"enabled\":false,\"requireLoginMsg\":\"You must be logged in to submit the form.\"},\"denyEmptySubmission\":{\"enabled\":false,\"message\":\"Sorry, you cannot submit an empty form. Let's hear what you wanna say.\"},\"restrictForm\":{\"enabled\":false,\"fields\":{\"ip\":{\"status\":false,\"values\":\"\",\"message\":\"Sorry! You can't submit a form from your IP address.\",\"validation_type\":\"fail_on_condition_met\"},\"country\":{\"status\":false,\"values\":[],\"message\":\"Sorry! You can't submit a form the country you are residing.\",\"validation_type\":\"fail_on_condition_met\"},\"keywords\":{\"status\":false,\"values\":\"\",\"message\":\"Sorry! Your submission contains some restricted keywords.\"}}}},\"layout\":{\"labelPlacement\":\"top\",\"asteriskPlacement\":\"asterisk-right\",\"helpMessagePlacement\":\"with_label\",\"errorMessagePlacement\":\"inline\",\"cssClassName\":\"prime-ff-fields\"},\"delete_entry_on_submission\":\"no\",\"conv_form_per_step_save\":false,\"conv_form_resume_from_last_step\":false}"
+            },
+            {
+                "id": 11,
+                "form_id": "3",
+                "meta_key": "notifications",
+                "value": "[]"
+            }
+        ],
+        "metas": [
+            {
+                "id": 17,
+                "form_id": "3",
+                "meta_key": "_ff_form_styles",
+                "value": "[]"
+            },
+            {
+                "id": 14,
+                "form_id": "3",
+                "meta_key": "_ff_selected_style",
+                "value": "ffs_default"
+            },
+            {
+                "id": 16,
+                "form_id": "3",
+                "meta_key": "ffs_default",
+                "value": ""
+            },
+            {
+                "id": 10,
+                "form_id": "3",
+                "meta_key": "formSettings",
+                "value": "{\"confirmation\":{\"redirectTo\":\"samePage\",\"messageToShow\":\"Thank you. Your enquiry has been saved. Your preferred date is a request, not a confirmed booking.\",\"customPage\":null,\"samePageFormBehavior\":\"hide_form\",\"customUrl\":null},\"restrictions\":{\"limitNumberOfEntries\":{\"enabled\":false,\"numberOfEntries\":null,\"period\":\"total\",\"limitReachedMsg\":\"Maximum number of entries exceeded.\"},\"scheduleForm\":{\"enabled\":false,\"start\":null,\"end\":null,\"selectedDays\":null,\"pendingMsg\":\"Form submission is not started yet.\",\"expiredMsg\":\"Form submission is now closed.\"},\"requireLogin\":{\"enabled\":false,\"requireLoginMsg\":\"You must be logged in to submit the form.\"},\"denyEmptySubmission\":{\"enabled\":false,\"message\":\"Sorry, you cannot submit an empty form. Let's hear what you wanna say.\"},\"restrictForm\":{\"enabled\":false,\"fields\":{\"ip\":{\"status\":false,\"values\":\"\",\"message\":\"Sorry! You can't submit a form from your IP address.\",\"validation_type\":\"fail_on_condition_met\"},\"country\":{\"status\":false,\"values\":[],\"message\":\"Sorry! You can't submit a form the country you are residing.\",\"validation_type\":\"fail_on_condition_met\"},\"keywords\":{\"status\":false,\"values\":\"\",\"message\":\"Sorry! Your submission contains some restricted keywords.\"}}}},\"layout\":{\"labelPlacement\":\"top\",\"asteriskPlacement\":\"asterisk-right\",\"helpMessagePlacement\":\"with_label\",\"errorMessagePlacement\":\"inline\",\"cssClassName\":\"prime-ff-fields\"},\"delete_entry_on_submission\":\"no\",\"conv_form_per_step_save\":false,\"conv_form_resume_from_last_step\":false}"
+            },
+            {
+                "id": 11,
+                "form_id": "3",
+                "meta_key": "notifications",
+                "value": "[]"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "title": "Prime \u2014 Quote enquiry",
+        "status": "published",
+        "appearance_settings": null,
+        "form_fields": {
+            "fields": [
+                {
+                    "index": 2,
+                    "element": "input_text",
+                    "attributes": {
+                        "autocomplete": "name",
+                        "type": "text",
+                        "name": "name",
+                        "value": "",
+                        "class": "",
+                        "placeholder": "",
+                        "maxlength": 200
+                    },
+                    "settings": {
+                        "container_class": "prime-ff-half",
+                        "label": "Full name",
+                        "label_placement": "",
+                        "admin_field_label": "Full name",
+                        "help_message": "",
+                        "prefix_label": "",
+                        "suffix_label": "",
+                        "validation_rules": {
+                            "required": {
+                                "value": true,
+                                "message": "Please complete this field.",
+                                "global": false
+                            }
+                        },
+                        "conditional_logics": [],
+                        "is_unique": "no",
+                        "unique_validation_message": "This value need to be unique."
+                    },
+                    "editor_options": {
+                        "title": "Simple Text",
+                        "icon_class": "ff-edit-text",
+                        "template": "inputText"
+                    },
+                    "uniqElKey": "prime_name"
+                },
+                {
+                    "index": 2,
+                    "element": "input_text",
+                    "attributes": {
+                        "autocomplete": "tel",
+                        "type": "tel",
+                        "name": "phone",
+                        "value": "",
+                        "class": "",
+                        "placeholder": "",
+                        "maxlength": 25
+                    },
+                    "settings": {
+                        "container_class": "prime-ff-half",
+                        "label": "Mobile number",
+                        "label_placement": "",
+                        "admin_field_label": "Mobile number",
+                        "help_message": "",
+                        "prefix_label": "",
+                        "suffix_label": "",
+                        "validation_rules": {
+                            "required": {
+                                "value": true,
+                                "message": "Please complete this field.",
+                                "global": false
+                            }
+                        },
+                        "conditional_logics": [],
+                        "is_unique": "no",
+                        "unique_validation_message": "This value need to be unique."
+                    },
+                    "editor_options": {
+                        "title": "Simple Text",
+                        "icon_class": "ff-edit-text",
+                        "template": "inputText"
+                    },
+                    "uniqElKey": "prime_phone"
+                },
+                {
+                    "index": 1,
+                    "element": "input_email",
+                    "attributes": {
+                        "autocomplete": "email",
+                        "type": "email",
+                        "name": "email",
+                        "value": "",
+                        "id": "",
+                        "class": "",
+                        "placeholder": "Email Address",
+                        "maxlength": 200
+                    },
+                    "settings": {
+                        "container_class": "prime-ff-half",
+                        "label": "Email address",
+                        "label_placement": "",
+                        "help_message": "",
+                        "admin_field_label": "Email address",
+                        "prefix_label": "",
+                        "suffix_label": "",
+                        "validation_rules": {
+                            "required": {
+                                "value": true,
+                                "message": "Please complete this field.",
+                                "global": false
+                            },
+                            "email": {
+                                "value": true,
+                                "message": "This field must contain a valid email",
+                                "global_message": "This field must contain a valid email",
+                                "global": true
+                            }
+                        },
+                        "conditional_logics": [],
+                        "is_unique": "no",
+                        "unique_validation_message": "Email address need to be unique."
+                    },
+                    "editor_options": {
+                        "title": "Email",
+                        "icon_class": "ff-edit-email",
+                        "template": "inputText"
+                    },
+                    "uniqElKey": "prime_email"
+                },
+                {
+                    "index": 2,
+                    "element": "input_text",
+                    "attributes": {
+                        "autocomplete": "address-level2",
+                        "type": "text",
+                        "name": "suburb_name",
+                        "value": "",
+                        "class": "",
+                        "placeholder": "",
+                        "maxlength": 200,
+                        "readonly": true
+                    },
+                    "settings": {
+                        "container_class": "prime-ff-half",
+                        "label": "Suburb",
+                        "label_placement": "",
+                        "admin_field_label": "Suburb",
+                        "help_message": "",
+                        "prefix_label": "",
+                        "suffix_label": "",
+                        "validation_rules": {
+                            "required": {
+                                "value": true,
+                                "message": "Please complete this field.",
+                                "global": false
+                            }
+                        },
+                        "conditional_logics": [],
+                        "is_unique": "no",
+                        "unique_validation_message": "This value need to be unique."
+                    },
+                    "editor_options": {
+                        "title": "Simple Text",
+                        "icon_class": "ff-edit-text",
+                        "template": "inputText"
+                    },
+                    "uniqElKey": "prime_suburb_name"
+                },
+                {
+                    "index": 2,
+                    "element": "input_text",
+                    "attributes": {
+                        "autocomplete": "",
+                        "type": "date",
+                        "name": "preferred_date",
+                        "value": "",
+                        "class": "",
+                        "placeholder": "",
+                        "maxlength": ""
+                    },
+                    "settings": {
+                        "container_class": "prime-ff-half",
+                        "label": "Preferred date",
+                        "label_placement": "",
+                        "admin_field_label": "Preferred date",
+                        "help_message": "",
+                        "prefix_label": "",
+                        "suffix_label": "",
+                        "validation_rules": {
+                            "required": {
+                                "value": true,
+                                "message": "Please complete this field.",
+                                "global": false
+                            }
+                        },
+                        "conditional_logics": [],
+                        "is_unique": "no",
+                        "unique_validation_message": "This value need to be unique."
+                    },
+                    "editor_options": {
+                        "title": "Simple Text",
+                        "icon_class": "ff-edit-text",
+                        "template": "inputText"
+                    },
+                    "uniqElKey": "prime_preferred_date"
+                },
+                {
+                    "index": 2,
+                    "element": "input_text",
+                    "attributes": {
+                        "autocomplete": "",
+                        "type": "text",
+                        "name": "additional_dates",
+                        "value": "",
+                        "class": "",
+                        "placeholder": "",
+                        "maxlength": ""
+                    },
+                    "settings": {
+                        "container_class": "prime-ff-half",
+                        "label": "Additional preferred dates (optional)",
+                        "label_placement": "",
+                        "admin_field_label": "Additional preferred dates (optional)",
+                        "help_message": "",
+                        "prefix_label": "",
+                        "suffix_label": "",
+                        "validation_rules": {
+                            "required": {
+                                "value": false,
+                                "message": "Please complete this field.",
+                                "global": false
+                            }
+                        },
+                        "conditional_logics": [],
+                        "is_unique": "no",
+                        "unique_validation_message": "This value need to be unique."
+                    },
+                    "editor_options": {
+                        "title": "Simple Text",
+                        "icon_class": "ff-edit-text",
+                        "template": "inputText"
+                    },
+                    "uniqElKey": "prime_additional_dates"
+                },
+                {
+                    "index": 7,
+                    "element": "select",
+                    "attributes": {
+                        "autocomplete": "",
+                        "name": "time_preference",
+                        "value": "",
+                        "id": "",
+                        "class": ""
+                    },
+                    "settings": {
+                        "dynamic_default_value": "",
+                        "label": "Time preference (optional)",
+                        "admin_field_label": "Time preference (optional)",
+                        "help_message": "",
+                        "container_class": "prime-ff-half",
+                        "label_placement": "",
+                        "placeholder": "Please select",
+                        "advanced_options": [
+                            {
+                                "label": "Morning",
+                                "value": "morning",
+                                "calc_value": ""
+                            },
+                            {
+                                "label": "Afternoon",
+                                "value": "afternoon",
+                                "calc_value": ""
+                            }
+                        ],
+                        "calc_value_status": false,
+                        "enable_image_input": false,
+                        "values_visible": false,
+                        "enable_option_groups": "no",
+                        "enable_select_2": "no",
+                        "validation_rules": {
+                            "required": {
+                                "value": false,
+                                "message": "Please complete this field.",
+                                "global": false
+                            }
+                        },
+                        "conditional_logics": [],
+                        "randomize_options": "no"
+                    },
+                    "editor_options": {
+                        "title": "Dropdown",
+                        "icon_class": "ff-edit-dropdown",
+                        "element": "select",
+                        "template": "select"
+                    },
+                    "uniqElKey": "prime_time_preference"
+                },
+                {
+                    "index": 7,
+                    "element": "select",
+                    "attributes": {
+                        "autocomplete": "",
+                        "name": "parking",
+                        "value": "",
+                        "id": "",
+                        "class": ""
+                    },
+                    "settings": {
+                        "dynamic_default_value": "",
+                        "label": "Parking / access",
+                        "admin_field_label": "Parking / access",
+                        "help_message": "",
+                        "container_class": "prime-ff-half",
+                        "label_placement": "",
+                        "placeholder": "Please select",
+                        "advanced_options": [
+                            {
+                                "label": "Parking available",
+                                "value": "available",
+                                "calc_value": ""
+                            },
+                            {
+                                "label": "Limited parking",
+                                "value": "limited",
+                                "calc_value": ""
+                            },
+                            {
+                                "label": "Please discuss access",
+                                "value": "discuss",
+                                "calc_value": ""
+                            }
+                        ],
+                        "calc_value_status": false,
+                        "enable_image_input": false,
+                        "values_visible": false,
+                        "enable_option_groups": "no",
+                        "enable_select_2": "no",
+                        "validation_rules": {
+                            "required": {
+                                "value": true,
+                                "message": "Please complete this field.",
+                                "global": false
+                            }
+                        },
+                        "conditional_logics": [],
+                        "randomize_options": "no"
+                    },
+                    "editor_options": {
+                        "title": "Dropdown",
+                        "icon_class": "ff-edit-dropdown",
+                        "element": "select",
+                        "template": "select"
+                    },
+                    "uniqElKey": "prime_parking"
+                },
+                {
+                    "index": 7,
+                    "element": "select",
+                    "attributes": {
+                        "autocomplete": "",
+                        "name": "condition",
+                        "value": "",
+                        "id": "",
+                        "class": ""
+                    },
+                    "settings": {
+                        "dynamic_default_value": "",
+                        "label": "Property condition (optional)",
+                        "admin_field_label": "Property condition (optional)",
+                        "help_message": "",
+                        "container_class": "prime-ff-half",
+                        "label_placement": "",
+                        "placeholder": "Please select",
+                        "advanced_options": [
+                            {
+                                "label": "Regularly maintained",
+                                "value": "maintained",
+                                "calc_value": ""
+                            },
+                            {
+                                "label": "Needs extra attention",
+                                "value": "heavy",
+                                "calc_value": ""
+                            },
+                            {
+                                "label": "Please discuss",
+                                "value": "discuss",
+                                "calc_value": ""
+                            }
+                        ],
+                        "calc_value_status": false,
+                        "enable_image_input": false,
+                        "values_visible": false,
+                        "enable_option_groups": "no",
+                        "enable_select_2": "no",
+                        "validation_rules": {
+                            "required": {
+                                "value": false,
+                                "message": "Please complete this field.",
+                                "global": false
+                            }
+                        },
+                        "conditional_logics": [],
+                        "randomize_options": "no"
+                    },
+                    "editor_options": {
+                        "title": "Dropdown",
+                        "icon_class": "ff-edit-dropdown",
+                        "element": "select",
+                        "template": "select"
+                    },
+                    "uniqElKey": "prime_condition"
+                },
+                {
+                    "index": 7,
+                    "element": "select",
+                    "attributes": {
+                        "autocomplete": "",
+                        "name": "pets",
+                        "value": "",
+                        "id": "",
+                        "class": ""
+                    },
+                    "settings": {
+                        "dynamic_default_value": "",
+                        "label": "Pets (optional)",
+                        "admin_field_label": "Pets (optional)",
+                        "help_message": "",
+                        "container_class": "prime-ff-half",
+                        "label_placement": "",
+                        "placeholder": "Please select",
+                        "advanced_options": [
+                            {
+                                "label": "Yes",
+                                "value": "yes",
+                                "calc_value": ""
+                            },
+                            {
+                                "label": "No",
+                                "value": "no",
+                                "calc_value": ""
+                            }
+                        ],
+                        "calc_value_status": false,
+                        "enable_image_input": false,
+                        "values_visible": false,
+                        "enable_option_groups": "no",
+                        "enable_select_2": "no",
+                        "validation_rules": {
+                            "required": {
+                                "value": false,
+                                "message": "Please complete this field.",
+                                "global": false
+                            }
+                        },
+                        "conditional_logics": [],
+                        "randomize_options": "no"
+                    },
+                    "editor_options": {
+                        "title": "Dropdown",
+                        "icon_class": "ff-edit-dropdown",
+                        "element": "select",
+                        "template": "select"
+                    },
+                    "uniqElKey": "prime_pets"
+                },
+                {
+                    "index": 2,
+                    "element": "input_text",
+                    "attributes": {
+                        "autocomplete": "",
+                        "type": "text",
+                        "name": "referral",
+                        "value": "",
+                        "class": "",
+                        "placeholder": "",
+                        "maxlength": ""
+                    },
+                    "settings": {
+                        "container_class": "prime-ff-half",
+                        "label": "How did you hear about us? (optional)",
+                        "label_placement": "",
+                        "admin_field_label": "How did you hear about us? (optional)",
+                        "help_message": "",
+                        "prefix_label": "",
+                        "suffix_label": "",
+                        "validation_rules": {
+                            "required": {
+                                "value": false,
+                                "message": "Please complete this field.",
+                                "global": false
+                            }
+                        },
+                        "conditional_logics": [],
+                        "is_unique": "no",
+                        "unique_validation_message": "This value need to be unique."
+                    },
+                    "editor_options": {
+                        "title": "Simple Text",
+                        "icon_class": "ff-edit-text",
+                        "template": "inputText"
+                    },
+                    "uniqElKey": "prime_referral"
+                },
+                {
+                    "index": 3,
+                    "element": "textarea",
+                    "attributes": {
+                        "autocomplete": "",
+                        "name": "notes",
+                        "value": "",
+                        "id": "",
+                        "class": "",
+                        "placeholder": "",
+                        "rows": 4,
+                        "cols": 2,
+                        "maxlength": 3000
+                    },
+                    "settings": {
+                        "container_class": "prime-ff-full",
+                        "label": "Notes (optional)",
+                        "admin_field_label": "Notes (optional)",
+                        "label_placement": "",
+                        "help_message": "",
+                        "prefix_label": "",
+                        "suffix_label": "",
+                        "validation_rules": {
+                            "required": {
+                                "value": false,
+                                "message": "Please complete this field.",
+                                "global": false
+                            }
+                        },
+                        "conditional_logics": []
+                    },
+                    "editor_options": {
+                        "title": "Text Area",
+                        "icon_class": "ff-edit-textarea",
+                        "template": "inputTextarea"
+                    },
+                    "uniqElKey": "prime_notes"
+                },
+                {
+                    "index": 5,
+                    "element": "terms_and_condition",
+                    "attributes": {
+                        "type": "checkbox",
+                        "name": "consent",
+                        "value": false,
+                        "class": ""
+                    },
+                    "settings": {
+                        "tnc_html": "I agree to Prime Domestic contacting me about this enquiry. See our <a href=\"http://prime-cleaning-service.local/privacy-policy/\">Privacy Policy</a>.",
+                        "has_checkbox": true,
+                        "admin_field_label": "Contact consent",
+                        "container_class": "prime-ff-full",
+                        "validation_rules": {
+                            "required": {
+                                "value": true,
+                                "message": "Please complete this field.",
+                                "global": false
+                            }
+                        },
+                        "conditional_logics": [],
+                        "label": "Contact consent"
+                    },
+                    "editor_options": {
+                        "title": "Terms & Conditions",
+                        "icon_class": "ff-edit-terms-condition",
+                        "template": "termsCheckbox"
+                    },
+                    "uniqElKey": "prime_consent"
+                },
+                {
+                    "index": 0,
+                    "element": "input_hidden",
+                    "attributes": {
+                        "type": "hidden",
+                        "name": "request_key",
+                        "value": ""
+                    },
+                    "settings": {
+                        "admin_field_label": "Request key",
+                        "label": "Request key"
+                    },
+                    "editor_options": {
+                        "title": "Hidden Field",
+                        "icon_class": "ff-edit-hidden-field",
+                        "template": "inputHidden"
+                    },
+                    "uniqElKey": "prime_request_key"
+                },
+                {
+                    "index": 0,
+                    "element": "input_hidden",
+                    "attributes": {
+                        "type": "hidden",
+                        "name": "quote_token",
+                        "value": ""
+                    },
+                    "settings": {
+                        "admin_field_label": "Quote token",
+                        "label": "Quote token"
+                    },
+                    "editor_options": {
+                        "title": "Hidden Field",
+                        "icon_class": "ff-edit-hidden-field",
+                        "template": "inputHidden"
+                    },
+                    "uniqElKey": "prime_quote_token"
+                },
+                {
+                    "index": 0,
+                    "element": "input_hidden",
+                    "attributes": {
+                        "type": "hidden",
+                        "name": "prime_estimate_summary",
+                        "value": ""
+                    },
+                    "settings": {
+                        "admin_field_label": "Estimate summary",
+                        "label": "Estimate summary"
+                    },
+                    "editor_options": {
+                        "title": "Hidden Field",
+                        "icon_class": "ff-edit-hidden-field",
+                        "template": "inputHidden"
+                    },
+                    "uniqElKey": "prime_prime_estimate_summary"
+                },
+                {
+                    "index": 0,
+                    "element": "input_hidden",
+                    "attributes": {
+                        "type": "hidden",
+                        "name": "prime_estimate",
+                        "value": ""
+                    },
+                    "settings": {
+                        "admin_field_label": "Frozen estimate",
+                        "label": "Frozen estimate"
+                    },
+                    "editor_options": {
+                        "title": "Hidden Field",
+                        "icon_class": "ff-edit-hidden-field",
+                        "template": "inputHidden"
+                    },
+                    "uniqElKey": "prime_prime_estimate"
+                }
+            ],
+            "submitButton": {
+                "uniqElKey": "el_1524065200616",
+                "element": "button",
+                "attributes": {
+                    "type": "submit",
+                    "class": ""
+                },
+                "settings": {
+                    "align": "left",
+                    "button_style": "default",
+                    "container_class": "",
+                    "help_message": "",
+                    "background_color": "#1a7efb",
+                    "button_size": "md",
+                    "color": "#ffffff",
+                    "button_ui": {
+                        "type": "default",
+                        "text": "Send my enquiry \u2192",
+                        "img_url": ""
+                    }
+                },
+                "editor_options": {
+                    "title": "Submit Button"
+                }
+            }
+        },
+        "has_payment": "0",
+        "type": "form",
+        "conditions": null,
+        "created_by": "1",
+        "created_at": "2026-11-15 08:07:26",
+        "updated_at": "2026-11-15 08:07:26",
+        "form_meta": [
+            {
+                "id": 19,
+                "form_id": "4",
+                "meta_key": "_ff_form_styles",
+                "value": "{\"container_styles\":{\"backgroundImage\":{\"label\":\"Background Image\",\"key\":\"backgroundImage\",\"element\":\"ff_background_image\",\"value\":{\"type\":\"classic\",\"image\":{\"url\":\"\",\"position\":{\"value\":\"\",\"valueX\":{\"type\":\"px\",\"value\":\"\"},\"valueY\":{\"type\":\"px\",\"value\":\"\"}},\"size\":{\"value\":\"\",\"valueX\":{\"type\":\"px\",\"value\":\"\"},\"valueY\":{\"type\":\"px\",\"value\":\"\"}},\"attachment\":\"\",\"repeat\":\"\"},\"gradient\":{\"type\":\"radial\",\"position\":\"center center\",\"angle\":{\"type\":\"deg\",\"value\":0},\"primary\":{\"color\":\"\",\"location\":{\"type\":\"%\",\"value\":50}},\"secondary\":{\"color\":\"\",\"location\":{\"type\":\"%\",\"value\":50}}}}},\"backgroundColor\":{\"label\":\"Background Color\",\"key\":\"backgroundColor\",\"element\":\"ff_color\",\"value\":\"\"},\"color\":{\"label\":\"Color\",\"key\":\"color\",\"element\":\"ff_color\",\"value\":\"\"},\"padding\":{\"label\":\"Padding\",\"element\":\"ff_around_item\",\"key\":\"padding\",\"value\":{\"type\":\"px\",\"top\":\"\",\"left\":\"\",\"right\":\"\",\"bottom\":\"\",\"linked\":\"yes\"},\"type\":\"px\"},\"margin\":{\"label\":\"Margin\",\"element\":\"ff_around_item\",\"key\":\"margin\",\"value\":{\"type\":\"px\",\"top\":\"\",\"left\":\"\",\"right\":\"\",\"bottom\":\"\",\"linked\":\"yes\"},\"type\":\"px\"},\"boxshadow\":{\"key\":\"boxshadow\",\"element\":\"ff_boxshadow_config\",\"label\":\"Box Shadow\",\"value\":{\"horizontal\":{\"type\":\"px\",\"value\":\"0\"},\"vertical\":{\"type\":\"px\",\"value\":\"0\"},\"blur\":{\"type\":\"px\",\"value\":\"0\"},\"spread\":{\"type\":\"px\",\"value\":\"0\"},\"color\":\"\",\"position\":\"\"}},\"border\":{\"label\":\"Form Border Settings\",\"key\":\"border\",\"status_label\":\"Enable Form Border\",\"element\":\"ff_border_config\",\"value\":{\"border_radius\":{\"type\":\"px\",\"top\":\"\",\"left\":\"\",\"right\":\"\",\"bottom\":\"\",\"linked\":\"yes\"},\"border_width\":{\"type\":\"px\",\"top\":\"\",\"left\":\"\",\"right\":\"\",\"bottom\":\"\",\"linked\":\"yes\"},\"border_type\":\"solid\",\"border_color\":\"\",\"status\":\"\"},\"type\":\"px\"}},\"asterisk_styles\":{\"color_asterisk\":{\"label\":\"Color\",\"key\":\"color\",\"element\":\"ff_color\",\"value\":\"\"}},\"inline_error_msg_style\":{\"color\":{\"label\":\"Color\",\"key\":\"color\",\"element\":\"ff_color\",\"value\":\"\"},\"allignment\":{\"label\":\"Alignment\",\"value\":\"left\",\"element\":\"ff_allignment_item\"},\"padding\":{\"label\":\"Padding\",\"element\":\"ff_around_item\",\"key\":\"padding\",\"value\":{\"type\":\"px\",\"top\":\"\",\"left\":\"\",\"right\":\"\",\"bottom\":\"\",\"linked\":\"yes\"},\"type\":\"px\"},\"typography\":{\"label\":\"Typography\",\"key\":\"typography\",\"element\":\"ff_typography\",\"value\":{\"fontSize\":{\"type\":\"px\",\"value\":\"\"},\"fontWeight\":\"\",\"transform\":\"\",\"fontStyle\":\"\",\"textDecoration\":\"\",\"lineHeight\":{\"type\":\"px\",\"value\":\"\"},\"letterSpacing\":{\"type\":\"px\",\"value\":\"\"},\"wordSpacing\":{\"type\":\"px\",\"value\":\"\"}}}},\"success_msg_style\":{\"color\":{\"label\":\"Color\",\"key\":\"color\",\"element\":\"ff_color\",\"value\":\"\"},\"backgroundColor\":{\"label\":\"Background Color\",\"key\":\"backgroundColor\",\"element\":\"ff_color\",\"value\":\"\"},\"allignment\":{\"label\":\"Alignment\",\"value\":\"left\",\"element\":\"ff_allignment_item\"},\"width\":{\"key\":\"width\",\"label\":\"Width\",\"element\":\"ff_unit_value\",\"units\":[\"%\",\"px\",\"em\",\"ram\",\"custom\"],\"config\":{\"px_max\":1200,\"em_rem_max\":100},\"value\":{\"type\":\"%\",\"value\":\"\"}},\"padding\":{\"label\":\"Padding\",\"element\":\"ff_around_item\",\"key\":\"padding\",\"value\":{\"type\":\"px\",\"top\":\"\",\"left\":\"\",\"right\":\"\",\"bottom\":\"\",\"linked\":\"yes\"},\"type\":\"px\"},\"margin\":{\"label\":\"Margin\",\"element\":\"ff_around_item\",\"key\":\"margin\",\"value\":{\"type\":\"px\",\"top\":\"\",\"left\":\"\",\"right\":\"\",\"bottom\":\"\",\"linked\":\"yes\"},\"type\":\"px\"},\"typography\":{\"label\":\"Typography\",\"key\":\"typography\",\"element\":\"ff_typography\",\"value\":{\"fontSize\":{\"type\":\"px\",\"value\":\"\"},\"fontWeight\":\"\",\"transform\":\"\",\"fontStyle\":\"\",\"textDecoration\":\"\",\"lineHeight\":{\"type\":\"px\",\"value\":\"\"},\"letterSpacing\":{\"type\":\"px\",\"value\":\"\"},\"wordSpacing\":{\"type\":\"px\",\"value\":\"\"}}},\"boxshadow\":{\"key\":\"boxshadow\",\"element\":\"ff_boxshadow_config\",\"label\":\"Box Shadow\",\"value\":{\"horizontal\":{\"type\":\"px\",\"value\":\"0\"},\"vertical\":{\"type\":\"px\",\"value\":\"0\"},\"blur\":{\"type\":\"px\",\"value\":\"0\"},\"spread\":{\"type\":\"px\",\"value\":\"0\"},\"color\":\"\",\"position\":\"\"}},\"border\":{\"label\":\"\",\"key\":\"border\",\"status_label\":\"Custom Border\",\"element\":\"ff_border_config\",\"value\":{\"border_radius\":{\"type\":\"px\",\"top\":\"\",\"left\":\"\",\"right\":\"\",\"bottom\":\"\",\"linked\":\"yes\"},\"border_width\":{\"type\":\"px\",\"top\":\"\",\"left\":\"\",\"right\":\"\",\"bottom\":\"\",\"linked\":\"yes\"},\"border_type\":\"solid\",\"border_color\":\"\",\"status\":\"\"},\"type\":\"px\"}},\"error_msg_style\":{\"color\":{\"label\":\"Color\",\"key\":\"color\",\"element\":\"ff_color\",\"value\":\"\"},\"backgroundColor\":{\"label\":\"Background Color\",\"key\":\"backgroundColor\",\"element\":\"ff_color\",\"value\":\"\"},\"allignment\":{\"label\":\"Alignment\",\"value\":\"left\",\"element\":\"ff_allignment_item\"},\"width\":{\"key\":\"width\",\"label\":\"Width\",\"element\":\"ff_unit_value\",\"units\":[\"%\",\"px\",\"em\",\"ram\",\"custom\"],\"config\":{\"px_max\":1200,\"em_rem_max\":100},\"value\":{\"type\":\"%\",\"value\":\"\"}},\"padding\":{\"label\":\"Padding\",\"element\":\"ff_around_item\",\"key\":\"padding\",\"value\":{\"type\":\"px\",\"top\":\"\",\"left\":\"\",\"right\":\"\",\"bottom\":\"\",\"linked\":\"yes\"},\"type\":\"px\"},\"margin\":{\"label\":\"Margin\",\"element\":\"ff_around_item\",\"key\":\"margin\",\"value\":{\"type\":\"px\",\"top\":\"\",\"left\":\"\",\"right\":\"\",\"bottom\":\"\",\"linked\":\"yes\"},\"type\":\"px\"},\"typography\":{\"label\":\"Typography\",\"key\":\"typography\",\"element\":\"ff_typography\",\"value\":{\"fontSize\":{\"type\":\"px\",\"value\":\"\"},\"fontWeight\":\"\",\"transform\":\"\",\"fontStyle\":\"\",\"textDecoration\":\"\",\"lineHeight\":{\"type\":\"px\",\"value\":\"\"},\"letterSpacing\":{\"type\":\"px\",\"value\":\"\"},\"wordSpacing\":{\"type\":\"px\",\"value\":\"\"}}},\"boxshadow\":{\"key\":\"boxshadow\",\"element\":\"ff_boxshadow_config\",\"label\":\"Box Shadow\",\"value\":{\"horizontal\":{\"type\":\"px\",\"value\":\"0\"},\"vertical\":{\"type\":\"px\",\"value\":\"0\"},\"blur\":{\"type\":\"px\",\"value\":\"0\"},\"spread\":{\"type\":\"px\",\"value\":\"0\"},\"color\":\"\",\"position\":\"\"}},\"border\":{\"label\":\"\",\"key\":\"border\",\"status_label\":\"Custom Border\",\"element\":\"ff_border_config\",\"value\":{\"border_radius\":{\"type\":\"px\",\"top\":\"\",\"left\":\"\",\"right\":\"\",\"bottom\":\"\",\"linked\":\"yes\"},\"border_width\":{\"type\":\"px\",\"top\":\"\",\"left\":\"\",\"right\":\"\",\"bottom\":\"\",\"linked\":\"yes\"},\"border_type\":\"solid\",\"border_color\":\"\",\"status\":\"\"},\"type\":\"px\"}},\"label_styles\":{\"color\":{\"label\":\"Color\",\"key\":\"color\",\"element\":\"ff_color\",\"value\":\"\"},\"typography\":{\"label\":\"Typography\",\"key\":\"typography\",\"element\":\"ff_typography\",\"value\":{\"fontSize\":{\"type\":\"px\",\"value\":\"\"},\"fontWeight\":\"\",\"transform\":\"\",\"fontStyle\":\"\",\"textDecoration\":\"\",\"lineHeight\":{\"type\":\"px\",\"value\":\"\"},\"letterSpacing\":{\"type\":\"px\",\"value\":\"\"},\"wordSpacing\":{\"type\":\"px\",\"value\":\"\"}}}},\"input_styles\":{\"all_tabs\":{\"label\":\"\",\"element\":\"ff_tabs\",\"tabs\":{\"normal\":{\"key\":\"normal\",\"label\":\"Normal\",\"value\":{\"color\":{\"label\":\"Color\",\"key\":\"color\",\"element\":\"ff_color\",\"value\":\"\"},\"backgroundColor\":{\"label\":\"Background Color\",\"key\":\"backgroundColor\",\"element\":\"ff_color\",\"value\":\"\"},\"padding\":{\"label\":\"Padding\",\"element\":\"ff_around_item\",\"key\":\"padding\",\"value\":{\"type\":\"px\",\"top\":\"\",\"left\":\"\",\"right\":\"\",\"bottom\":\"\",\"linked\":\"yes\"},\"type\":\"px\"},\"margin\":{\"label\":\"Margin\",\"element\":\"ff_around_item\",\"key\":\"margin\",\"value\":{\"type\":\"px\",\"top\":\"\",\"left\":\"\",\"right\":\"\",\"bottom\":\"\",\"linked\":\"yes\"},\"type\":\"px\"},\"typography\":{\"label\":\"Typography\",\"key\":\"typography\",\"element\":\"ff_typography\",\"value\":{\"fontSize\":{\"type\":\"px\",\"value\":\"\"},\"fontWeight\":\"\",\"transform\":\"\",\"fontStyle\":\"\",\"textDecoration\":\"\",\"lineHeight\":{\"type\":\"px\",\"value\":\"\"},\"letterSpacing\":{\"type\":\"px\",\"value\":\"\"},\"wordSpacing\":{\"type\":\"px\",\"value\":\"\"}}},\"boxshadow\":{\"key\":\"boxshadow\",\"element\":\"ff_boxshadow_config\",\"label\":\"Box Shadow\",\"value\":{\"horizontal\":{\"type\":\"px\",\"value\":\"0\"},\"vertical\":{\"type\":\"px\",\"value\":\"0\"},\"blur\":{\"type\":\"px\",\"value\":\"0\"},\"spread\":{\"type\":\"px\",\"value\":\"0\"},\"color\":\"\",\"position\":\"\"}},\"border\":{\"label\":\"\",\"key\":\"border\",\"status_label\":\"Use custom Border style\",\"element\":\"ff_border_config\",\"value\":{\"border_radius\":{\"type\":\"px\",\"top\":\"\",\"left\":\"\",\"right\":\"\",\"bottom\":\"\",\"linked\":\"yes\"},\"border_width\":{\"top\":\"1\",\"left\":\"1\",\"right\":\"1\",\"bottom\":\"1\",\"linked\":\"yes\",\"type\":\"px\"},\"border_type\":\"solid\",\"border_color\":\"rgba(79, 75, 75, 1)\",\"status\":\"no\"},\"type\":\"px\"}}},\"focus\":{\"key\":\"focus\",\"label\":\"Focus\",\"value\":{\"color\":{\"label\":\"Color\",\"key\":\"color\",\"element\":\"ff_color\",\"value\":\"\"},\"backgroundColor\":{\"label\":\"Background Color\",\"key\":\"backgroundColor\",\"element\":\"ff_color\",\"value\":\"\"},\"padding\":{\"label\":\"Padding\",\"element\":\"ff_around_item\",\"key\":\"padding\",\"value\":{\"type\":\"px\",\"top\":\"\",\"left\":\"\",\"right\":\"\",\"bottom\":\"\",\"linked\":\"yes\"},\"type\":\"px\"},\"margin\":{\"label\":\"Margin\",\"element\":\"ff_around_item\",\"key\":\"margin\",\"value\":{\"type\":\"px\",\"top\":\"\",\"left\":\"\",\"right\":\"\",\"bottom\":\"\",\"linked\":\"yes\"},\"type\":\"px\"},\"typography\":{\"label\":\"Typography\",\"key\":\"typography\",\"element\":\"ff_typography\",\"value\":{\"fontSize\":{\"type\":\"px\",\"value\":\"\"},\"fontWeight\":\"\",\"transform\":\"\",\"fontStyle\":\"\",\"textDecoration\":\"\",\"lineHeight\":{\"type\":\"px\",\"value\":\"\"},\"letterSpacing\":{\"type\":\"px\",\"value\":\"\"},\"wordSpacing\":{\"type\":\"px\",\"value\":\"\"}}},\"boxshadow\":{\"key\":\"boxshadow\",\"element\":\"ff_boxshadow_config\",\"label\":\"Box Shadow\",\"value\":{\"horizontal\":{\"type\":\"px\",\"value\":\"0\"},\"vertical\":{\"type\":\"px\",\"value\":\"0\"},\"blur\":{\"type\":\"px\",\"value\":\"0\"},\"spread\":{\"type\":\"px\",\"value\":\"0\"},\"color\":\"\",\"position\":\"\"}},\"border\":{\"label\":\"\",\"key\":\"border\",\"status_label\":\"Use custom Border style\",\"element\":\"ff_border_config\",\"value\":{\"border_radius\":{\"type\":\"px\",\"top\":\"\",\"left\":\"\",\"right\":\"\",\"bottom\":\"\",\"linked\":\"yes\"},\"border_width\":{\"top\":\"1\",\"left\":\"1\",\"right\":\"1\",\"bottom\":\"1\",\"linked\":\"yes\",\"type\":\"px\"},\"border_type\":\"solid\",\"border_color\":\"rgba(79, 75, 75, 1)\",\"status\":\"no\"},\"type\":\"px\"}}}}}},\"placeholder_styles\":{\"color\":{\"label\":\"Color\",\"key\":\"color\",\"element\":\"ff_color\",\"value\":\"\"},\"typography\":{\"label\":\"Typography\",\"key\":\"typography\",\"element\":\"ff_typography\",\"value\":{\"fontSize\":{\"type\":\"px\",\"value\":\"\"},\"fontWeight\":\"\",\"transform\":\"\",\"fontStyle\":\"\",\"textDecoration\":\"\",\"lineHeight\":{\"type\":\"px\",\"value\":\"\"},\"letterSpacing\":{\"type\":\"px\",\"value\":\"\"},\"wordSpacing\":{\"type\":\"px\",\"value\":\"\"}}}},\"submit_button_style\":{\"allignment\":{\"label\":\"Alignment\",\"element\":\"ff_allignment_item\",\"value\":\"\"},\"all_tabs\":{\"label\":\"\",\"element\":\"ff_tabs\",\"tabs\":{\"normal\":{\"key\":\"normal\",\"label\":\"Normal\",\"value\":{\"color\":{\"label\":\"Color\",\"key\":\"color\",\"element\":\"ff_color\",\"value\":\"\"},\"backgroundColor\":{\"label\":\"Background Color\",\"key\":\"backgroundColor\",\"element\":\"ff_color\",\"value\":\"\"},\"height\":{\"key\":\"height\",\"label\":\"Button Height\",\"element\":\"ff_unit_value\",\"value\":{\"type\":\"px\",\"value\":\"\"}},\"width\":{\"label\":\"Button Width\",\"key\":\"width\",\"type\":\"custom\",\"value\":\"\"},\"padding\":{\"label\":\"Padding\",\"element\":\"ff_around_item\",\"key\":\"padding\",\"value\":{\"type\":\"px\",\"top\":\"\",\"left\":\"\",\"right\":\"\",\"bottom\":\"\",\"linked\":\"yes\"},\"type\":\"px\"},\"margin\":{\"label\":\"Margin\",\"element\":\"ff_around_item\",\"key\":\"margin\",\"value\":{\"type\":\"px\",\"top\":\"\",\"left\":\"\",\"right\":\"\",\"bottom\":\"\",\"linked\":\"yes\"},\"type\":\"px\"},\"typography\":{\"label\":\"Typography\",\"key\":\"typography\",\"element\":\"ff_typography\",\"value\":{\"fontSize\":{\"type\":\"px\",\"value\":\"\"},\"fontWeight\":\"\",\"transform\":\"\",\"fontStyle\":\"\",\"textDecoration\":\"\",\"lineHeight\":{\"type\":\"px\",\"value\":\"\"},\"letterSpacing\":{\"type\":\"px\",\"value\":\"\"},\"wordSpacing\":{\"type\":\"px\",\"value\":\"\"}}},\"boxshadow\":{\"key\":\"boxshadow\",\"element\":\"ff_boxshadow_config\",\"label\":\"Box Shadow\",\"value\":{\"horizontal\":{\"type\":\"px\",\"value\":\"0\"},\"vertical\":{\"type\":\"px\",\"value\":\"0\"},\"blur\":{\"type\":\"px\",\"value\":\"0\"},\"spread\":{\"type\":\"px\",\"value\":\"0\"},\"color\":\"\",\"position\":\"\"}},\"border\":{\"label\":\"Border\",\"key\":\"border\",\"status_label\":\"Custom Border\",\"element\":\"ff_border_config\",\"value\":{\"border_radius\":{\"type\":\"px\",\"top\":\"\",\"left\":\"\",\"right\":\"\",\"bottom\":\"\",\"linked\":\"yes\"},\"border_width\":{\"type\":\"px\",\"top\":\"\",\"left\":\"\",\"right\":\"\",\"bottom\":\"\",\"linked\":\"yes\"},\"border_type\":\"solid\",\"border_color\":\"\",\"status\":\"\"},\"type\":\"px\"}}},\"hover\":{\"key\":\"hover\",\"label\":\"Hover\",\"value\":{\"color\":{\"label\":\"Color\",\"key\":\"color\",\"element\":\"ff_color\",\"value\":\"\"},\"backgroundColor\":{\"label\":\"Background Color\",\"key\":\"backgroundColor\",\"element\":\"ff_color\",\"value\":\"\"},\"typography\":{\"label\":\"Typography\",\"key\":\"typography\",\"element\":\"ff_typography\",\"value\":{\"fontSize\":{\"type\":\"px\",\"value\":\"\"},\"fontWeight\":\"\",\"transform\":\"\",\"fontStyle\":\"\",\"textDecoration\":\"\",\"lineHeight\":{\"type\":\"px\",\"value\":\"\"},\"letterSpacing\":{\"type\":\"px\",\"value\":\"\"},\"wordSpacing\":{\"type\":\"px\",\"value\":\"\"}}},\"boxshadow\":{\"key\":\"boxshadow\",\"element\":\"ff_boxshadow_config\",\"label\":\"Box Shadow\",\"value\":{\"horizontal\":{\"type\":\"px\",\"value\":\"0\"},\"vertical\":{\"type\":\"px\",\"value\":\"0\"},\"blur\":{\"type\":\"px\",\"value\":\"0\"},\"spread\":{\"type\":\"px\",\"value\":\"0\"},\"color\":\"\",\"position\":\"\"}},\"border\":{\"label\":\"Border\",\"key\":\"border\",\"status_label\":\"Custom Border\",\"element\":\"ff_border_config\",\"value\":{\"border_radius\":{\"type\":\"px\",\"top\":\"\",\"left\":\"\",\"right\":\"\",\"bottom\":\"\",\"linked\":\"yes\"},\"border_width\":{\"type\":\"px\",\"top\":\"\",\"left\":\"\",\"right\":\"\",\"bottom\":\"\",\"linked\":\"yes\"},\"border_type\":\"solid\",\"border_color\":\"\",\"status\":\"\"},\"type\":\"px\"}}}},\"status\":\"yes\"}},\"radio_checkbox_style\":{\"color\":{\"label\":\"Items Color\",\"key\":\"color\",\"element\":\"ff_color\",\"value\":\"\"},\"size\":{\"key\":\"size\",\"label\":\"Size\",\"element\":\"ff_unit_value\",\"config\":{\"px_max\":50,\"em_rem_max\":5},\"value\":{\"type\":\"px\",\"value\":\"\"}},\"radio_checkbox\":{\"label\":\"\",\"element\":\"ff_radio_checkbox\",\"status_label\":\"Enable Smart UI\",\"value\":{\"color\":{\"label\":\"Color\",\"key\":\"color\",\"element\":\"ff_color\",\"value\":\"\"},\"active_color\":{\"label\":\"Checked Background Colors\",\"key\":\"color\",\"element\":\"ff_color\",\"value\":\"\"},\"margin\":{\"label\":\"Smart UI Margin\",\"element\":\"ff_around_item\",\"key\":\"margin\",\"value\":{\"type\":\"px\",\"top\":\"\",\"left\":\"\",\"right\":\"\",\"bottom\":\"\",\"linked\":\"yes\"},\"type\":\"px\"},\"border\":{\"label\":\"Custom Border\",\"key\":\"border\",\"status_label\":\"Use custom Border style\",\"element\":\"ff_border_config\",\"value\":{\"border_radius\":{\"type\":\"px\",\"top\":\"\",\"left\":\"\",\"right\":\"\",\"bottom\":\"\",\"linked\":\"yes\"},\"border_width\":{\"type\":\"px\",\"top\":\"1\",\"left\":\"1\",\"right\":\"1\",\"bottom\":\"1\",\"linked\":\"yes\"},\"border_type\":\"solid\",\"border_color\":\"#404040\",\"status\":\"\",\"radio_border_status\":\"no\"},\"type\":\"px\"}},\"status\":\"no\"}}}"
+            },
+            {
+                "id": 15,
+                "form_id": "4",
+                "meta_key": "_ff_selected_style",
+                "value": "ffs_default"
+            },
+            {
+                "id": 18,
+                "form_id": "4",
+                "meta_key": "ffs_default",
+                "value": ".fluentform_wrapper_4.ffs_default_wrap .ff-el-input--content .error , .fluentform_wrapper_4.ffs_default_wrap .error-text{ text-align: left; } .fluentform_wrapper_4.ffs_default_wrap .ff-message-success{ text-align: left; } .fluentform_wrapper_4.ffs_default_wrap .ff-errors-in-stack { text-align: left; }"
+            },
+            {
+                "id": 12,
+                "form_id": "4",
+                "meta_key": "formSettings",
+                "value": "{\"confirmation\":{\"redirectTo\":\"samePage\",\"messageToShow\":\"Thank you. Your enquiry has been saved. Your preferred date is a request, not a confirmed booking.\",\"customPage\":null,\"samePageFormBehavior\":\"hide_form\",\"customUrl\":null},\"restrictions\":{\"limitNumberOfEntries\":{\"enabled\":false,\"numberOfEntries\":null,\"period\":\"total\",\"limitReachedMsg\":\"Maximum number of entries exceeded.\"},\"scheduleForm\":{\"enabled\":false,\"start\":null,\"end\":null,\"selectedDays\":null,\"pendingMsg\":\"Form submission is not started yet.\",\"expiredMsg\":\"Form submission is now closed.\"},\"requireLogin\":{\"enabled\":false,\"requireLoginMsg\":\"You must be logged in to submit the form.\"},\"denyEmptySubmission\":{\"enabled\":false,\"message\":\"Sorry, you cannot submit an empty form. Let's hear what you wanna say.\"},\"restrictForm\":{\"enabled\":false,\"fields\":{\"ip\":{\"status\":false,\"values\":\"\",\"message\":\"Sorry! You can't submit a form from your IP address.\",\"validation_type\":\"fail_on_condition_met\"},\"country\":{\"status\":false,\"values\":[],\"message\":\"Sorry! You can't submit a form the country you are residing.\",\"validation_type\":\"fail_on_condition_met\"},\"keywords\":{\"status\":false,\"values\":\"\",\"message\":\"Sorry! Your submission contains some restricted keywords.\"}}}},\"layout\":{\"labelPlacement\":\"top\",\"asteriskPlacement\":\"asterisk-right\",\"helpMessagePlacement\":\"with_label\",\"errorMessagePlacement\":\"inline\",\"cssClassName\":\"prime-ff-fields\"},\"delete_entry_on_submission\":\"no\",\"conv_form_per_step_save\":false,\"conv_form_resume_from_last_step\":false}"
+            },
+            {
+                "id": 13,
+                "form_id": "4",
+                "meta_key": "notifications",
+                "value": "[]"
+            }
+        ],
+        "metas": [
+            {
+                "id": 19,
+                "form_id": "4",
+                "meta_key": "_ff_form_styles",
+                "value": "{\"container_styles\":{\"backgroundImage\":{\"label\":\"Background Image\",\"key\":\"backgroundImage\",\"element\":\"ff_background_image\",\"value\":{\"type\":\"classic\",\"image\":{\"url\":\"\",\"position\":{\"value\":\"\",\"valueX\":{\"type\":\"px\",\"value\":\"\"},\"valueY\":{\"type\":\"px\",\"value\":\"\"}},\"size\":{\"value\":\"\",\"valueX\":{\"type\":\"px\",\"value\":\"\"},\"valueY\":{\"type\":\"px\",\"value\":\"\"}},\"attachment\":\"\",\"repeat\":\"\"},\"gradient\":{\"type\":\"radial\",\"position\":\"center center\",\"angle\":{\"type\":\"deg\",\"value\":0},\"primary\":{\"color\":\"\",\"location\":{\"type\":\"%\",\"value\":50}},\"secondary\":{\"color\":\"\",\"location\":{\"type\":\"%\",\"value\":50}}}}},\"backgroundColor\":{\"label\":\"Background Color\",\"key\":\"backgroundColor\",\"element\":\"ff_color\",\"value\":\"\"},\"color\":{\"label\":\"Color\",\"key\":\"color\",\"element\":\"ff_color\",\"value\":\"\"},\"padding\":{\"label\":\"Padding\",\"element\":\"ff_around_item\",\"key\":\"padding\",\"value\":{\"type\":\"px\",\"top\":\"\",\"left\":\"\",\"right\":\"\",\"bottom\":\"\",\"linked\":\"yes\"},\"type\":\"px\"},\"margin\":{\"label\":\"Margin\",\"element\":\"ff_around_item\",\"key\":\"margin\",\"value\":{\"type\":\"px\",\"top\":\"\",\"left\":\"\",\"right\":\"\",\"bottom\":\"\",\"linked\":\"yes\"},\"type\":\"px\"},\"boxshadow\":{\"key\":\"boxshadow\",\"element\":\"ff_boxshadow_config\",\"label\":\"Box Shadow\",\"value\":{\"horizontal\":{\"type\":\"px\",\"value\":\"0\"},\"vertical\":{\"type\":\"px\",\"value\":\"0\"},\"blur\":{\"type\":\"px\",\"value\":\"0\"},\"spread\":{\"type\":\"px\",\"value\":\"0\"},\"color\":\"\",\"position\":\"\"}},\"border\":{\"label\":\"Form Border Settings\",\"key\":\"border\",\"status_label\":\"Enable Form Border\",\"element\":\"ff_border_config\",\"value\":{\"border_radius\":{\"type\":\"px\",\"top\":\"\",\"left\":\"\",\"right\":\"\",\"bottom\":\"\",\"linked\":\"yes\"},\"border_width\":{\"type\":\"px\",\"top\":\"\",\"left\":\"\",\"right\":\"\",\"bottom\":\"\",\"linked\":\"yes\"},\"border_type\":\"solid\",\"border_color\":\"\",\"status\":\"\"},\"type\":\"px\"}},\"asterisk_styles\":{\"color_asterisk\":{\"label\":\"Color\",\"key\":\"color\",\"element\":\"ff_color\",\"value\":\"\"}},\"inline_error_msg_style\":{\"color\":{\"label\":\"Color\",\"key\":\"color\",\"element\":\"ff_color\",\"value\":\"\"},\"allignment\":{\"label\":\"Alignment\",\"value\":\"left\",\"element\":\"ff_allignment_item\"},\"padding\":{\"label\":\"Padding\",\"element\":\"ff_around_item\",\"key\":\"padding\",\"value\":{\"type\":\"px\",\"top\":\"\",\"left\":\"\",\"right\":\"\",\"bottom\":\"\",\"linked\":\"yes\"},\"type\":\"px\"},\"typography\":{\"label\":\"Typography\",\"key\":\"typography\",\"element\":\"ff_typography\",\"value\":{\"fontSize\":{\"type\":\"px\",\"value\":\"\"},\"fontWeight\":\"\",\"transform\":\"\",\"fontStyle\":\"\",\"textDecoration\":\"\",\"lineHeight\":{\"type\":\"px\",\"value\":\"\"},\"letterSpacing\":{\"type\":\"px\",\"value\":\"\"},\"wordSpacing\":{\"type\":\"px\",\"value\":\"\"}}}},\"success_msg_style\":{\"color\":{\"label\":\"Color\",\"key\":\"color\",\"element\":\"ff_color\",\"value\":\"\"},\"backgroundColor\":{\"label\":\"Background Color\",\"key\":\"backgroundColor\",\"element\":\"ff_color\",\"value\":\"\"},\"allignment\":{\"label\":\"Alignment\",\"value\":\"left\",\"element\":\"ff_allignment_item\"},\"width\":{\"key\":\"width\",\"label\":\"Width\",\"element\":\"ff_unit_value\",\"units\":[\"%\",\"px\",\"em\",\"ram\",\"custom\"],\"config\":{\"px_max\":1200,\"em_rem_max\":100},\"value\":{\"type\":\"%\",\"value\":\"\"}},\"padding\":{\"label\":\"Padding\",\"element\":\"ff_around_item\",\"key\":\"padding\",\"value\":{\"type\":\"px\",\"top\":\"\",\"left\":\"\",\"right\":\"\",\"bottom\":\"\",\"linked\":\"yes\"},\"type\":\"px\"},\"margin\":{\"label\":\"Margin\",\"element\":\"ff_around_item\",\"key\":\"margin\",\"value\":{\"type\":\"px\",\"top\":\"\",\"left\":\"\",\"right\":\"\",\"bottom\":\"\",\"linked\":\"yes\"},\"type\":\"px\"},\"typography\":{\"label\":\"Typography\",\"key\":\"typography\",\"element\":\"ff_typography\",\"value\":{\"fontSize\":{\"type\":\"px\",\"value\":\"\"},\"fontWeight\":\"\",\"transform\":\"\",\"fontStyle\":\"\",\"textDecoration\":\"\",\"lineHeight\":{\"type\":\"px\",\"value\":\"\"},\"letterSpacing\":{\"type\":\"px\",\"value\":\"\"},\"wordSpacing\":{\"type\":\"px\",\"value\":\"\"}}},\"boxshadow\":{\"key\":\"boxshadow\",\"element\":\"ff_boxshadow_config\",\"label\":\"Box Shadow\",\"value\":{\"horizontal\":{\"type\":\"px\",\"value\":\"0\"},\"vertical\":{\"type\":\"px\",\"value\":\"0\"},\"blur\":{\"type\":\"px\",\"value\":\"0\"},\"spread\":{\"type\":\"px\",\"value\":\"0\"},\"color\":\"\",\"position\":\"\"}},\"border\":{\"label\":\"\",\"key\":\"border\",\"status_label\":\"Custom Border\",\"element\":\"ff_border_config\",\"value\":{\"border_radius\":{\"type\":\"px\",\"top\":\"\",\"left\":\"\",\"right\":\"\",\"bottom\":\"\",\"linked\":\"yes\"},\"border_width\":{\"type\":\"px\",\"top\":\"\",\"left\":\"\",\"right\":\"\",\"bottom\":\"\",\"linked\":\"yes\"},\"border_type\":\"solid\",\"border_color\":\"\",\"status\":\"\"},\"type\":\"px\"}},\"error_msg_style\":{\"color\":{\"label\":\"Color\",\"key\":\"color\",\"element\":\"ff_color\",\"value\":\"\"},\"backgroundColor\":{\"label\":\"Background Color\",\"key\":\"backgroundColor\",\"element\":\"ff_color\",\"value\":\"\"},\"allignment\":{\"label\":\"Alignment\",\"value\":\"left\",\"element\":\"ff_allignment_item\"},\"width\":{\"key\":\"width\",\"label\":\"Width\",\"element\":\"ff_unit_value\",\"units\":[\"%\",\"px\",\"em\",\"ram\",\"custom\"],\"config\":{\"px_max\":1200,\"em_rem_max\":100},\"value\":{\"type\":\"%\",\"value\":\"\"}},\"padding\":{\"label\":\"Padding\",\"element\":\"ff_around_item\",\"key\":\"padding\",\"value\":{\"type\":\"px\",\"top\":\"\",\"left\":\"\",\"right\":\"\",\"bottom\":\"\",\"linked\":\"yes\"},\"type\":\"px\"},\"margin\":{\"label\":\"Margin\",\"element\":\"ff_around_item\",\"key\":\"margin\",\"value\":{\"type\":\"px\",\"top\":\"\",\"left\":\"\",\"right\":\"\",\"bottom\":\"\",\"linked\":\"yes\"},\"type\":\"px\"},\"typography\":{\"label\":\"Typography\",\"key\":\"typography\",\"element\":\"ff_typography\",\"value\":{\"fontSize\":{\"type\":\"px\",\"value\":\"\"},\"fontWeight\":\"\",\"transform\":\"\",\"fontStyle\":\"\",\"textDecoration\":\"\",\"lineHeight\":{\"type\":\"px\",\"value\":\"\"},\"letterSpacing\":{\"type\":\"px\",\"value\":\"\"},\"wordSpacing\":{\"type\":\"px\",\"value\":\"\"}}},\"boxshadow\":{\"key\":\"boxshadow\",\"element\":\"ff_boxshadow_config\",\"label\":\"Box Shadow\",\"value\":{\"horizontal\":{\"type\":\"px\",\"value\":\"0\"},\"vertical\":{\"type\":\"px\",\"value\":\"0\"},\"blur\":{\"type\":\"px\",\"value\":\"0\"},\"spread\":{\"type\":\"px\",\"value\":\"0\"},\"color\":\"\",\"position\":\"\"}},\"border\":{\"label\":\"\",\"key\":\"border\",\"status_label\":\"Custom Border\",\"element\":\"ff_border_config\",\"value\":{\"border_radius\":{\"type\":\"px\",\"top\":\"\",\"left\":\"\",\"right\":\"\",\"bottom\":\"\",\"linked\":\"yes\"},\"border_width\":{\"type\":\"px\",\"top\":\"\",\"left\":\"\",\"right\":\"\",\"bottom\":\"\",\"linked\":\"yes\"},\"border_type\":\"solid\",\"border_color\":\"\",\"status\":\"\"},\"type\":\"px\"}},\"label_styles\":{\"color\":{\"label\":\"Color\",\"key\":\"color\",\"element\":\"ff_color\",\"value\":\"\"},\"typography\":{\"label\":\"Typography\",\"key\":\"typography\",\"element\":\"ff_typography\",\"value\":{\"fontSize\":{\"type\":\"px\",\"value\":\"\"},\"fontWeight\":\"\",\"transform\":\"\",\"fontStyle\":\"\",\"textDecoration\":\"\",\"lineHeight\":{\"type\":\"px\",\"value\":\"\"},\"letterSpacing\":{\"type\":\"px\",\"value\":\"\"},\"wordSpacing\":{\"type\":\"px\",\"value\":\"\"}}}},\"input_styles\":{\"all_tabs\":{\"label\":\"\",\"element\":\"ff_tabs\",\"tabs\":{\"normal\":{\"key\":\"normal\",\"label\":\"Normal\",\"value\":{\"color\":{\"label\":\"Color\",\"key\":\"color\",\"element\":\"ff_color\",\"value\":\"\"},\"backgroundColor\":{\"label\":\"Background Color\",\"key\":\"backgroundColor\",\"element\":\"ff_color\",\"value\":\"\"},\"padding\":{\"label\":\"Padding\",\"element\":\"ff_around_item\",\"key\":\"padding\",\"value\":{\"type\":\"px\",\"top\":\"\",\"left\":\"\",\"right\":\"\",\"bottom\":\"\",\"linked\":\"yes\"},\"type\":\"px\"},\"margin\":{\"label\":\"Margin\",\"element\":\"ff_around_item\",\"key\":\"margin\",\"value\":{\"type\":\"px\",\"top\":\"\",\"left\":\"\",\"right\":\"\",\"bottom\":\"\",\"linked\":\"yes\"},\"type\":\"px\"},\"typography\":{\"label\":\"Typography\",\"key\":\"typography\",\"element\":\"ff_typography\",\"value\":{\"fontSize\":{\"type\":\"px\",\"value\":\"\"},\"fontWeight\":\"\",\"transform\":\"\",\"fontStyle\":\"\",\"textDecoration\":\"\",\"lineHeight\":{\"type\":\"px\",\"value\":\"\"},\"letterSpacing\":{\"type\":\"px\",\"value\":\"\"},\"wordSpacing\":{\"type\":\"px\",\"value\":\"\"}}},\"boxshadow\":{\"key\":\"boxshadow\",\"element\":\"ff_boxshadow_config\",\"label\":\"Box Shadow\",\"value\":{\"horizontal\":{\"type\":\"px\",\"value\":\"0\"},\"vertical\":{\"type\":\"px\",\"value\":\"0\"},\"blur\":{\"type\":\"px\",\"value\":\"0\"},\"spread\":{\"type\":\"px\",\"value\":\"0\"},\"color\":\"\",\"position\":\"\"}},\"border\":{\"label\":\"\",\"key\":\"border\",\"status_label\":\"Use custom Border style\",\"element\":\"ff_border_config\",\"value\":{\"border_radius\":{\"type\":\"px\",\"top\":\"\",\"left\":\"\",\"right\":\"\",\"bottom\":\"\",\"linked\":\"yes\"},\"border_width\":{\"top\":\"1\",\"left\":\"1\",\"right\":\"1\",\"bottom\":\"1\",\"linked\":\"yes\",\"type\":\"px\"},\"border_type\":\"solid\",\"border_color\":\"rgba(79, 75, 75, 1)\",\"status\":\"no\"},\"type\":\"px\"}}},\"focus\":{\"key\":\"focus\",\"label\":\"Focus\",\"value\":{\"color\":{\"label\":\"Color\",\"key\":\"color\",\"element\":\"ff_color\",\"value\":\"\"},\"backgroundColor\":{\"label\":\"Background Color\",\"key\":\"backgroundColor\",\"element\":\"ff_color\",\"value\":\"\"},\"padding\":{\"label\":\"Padding\",\"element\":\"ff_around_item\",\"key\":\"padding\",\"value\":{\"type\":\"px\",\"top\":\"\",\"left\":\"\",\"right\":\"\",\"bottom\":\"\",\"linked\":\"yes\"},\"type\":\"px\"},\"margin\":{\"label\":\"Margin\",\"element\":\"ff_around_item\",\"key\":\"margin\",\"value\":{\"type\":\"px\",\"top\":\"\",\"left\":\"\",\"right\":\"\",\"bottom\":\"\",\"linked\":\"yes\"},\"type\":\"px\"},\"typography\":{\"label\":\"Typography\",\"key\":\"typography\",\"element\":\"ff_typography\",\"value\":{\"fontSize\":{\"type\":\"px\",\"value\":\"\"},\"fontWeight\":\"\",\"transform\":\"\",\"fontStyle\":\"\",\"textDecoration\":\"\",\"lineHeight\":{\"type\":\"px\",\"value\":\"\"},\"letterSpacing\":{\"type\":\"px\",\"value\":\"\"},\"wordSpacing\":{\"type\":\"px\",\"value\":\"\"}}},\"boxshadow\":{\"key\":\"boxshadow\",\"element\":\"ff_boxshadow_config\",\"label\":\"Box Shadow\",\"value\":{\"horizontal\":{\"type\":\"px\",\"value\":\"0\"},\"vertical\":{\"type\":\"px\",\"value\":\"0\"},\"blur\":{\"type\":\"px\",\"value\":\"0\"},\"spread\":{\"type\":\"px\",\"value\":\"0\"},\"color\":\"\",\"position\":\"\"}},\"border\":{\"label\":\"\",\"key\":\"border\",\"status_label\":\"Use custom Border style\",\"element\":\"ff_border_config\",\"value\":{\"border_radius\":{\"type\":\"px\",\"top\":\"\",\"left\":\"\",\"right\":\"\",\"bottom\":\"\",\"linked\":\"yes\"},\"border_width\":{\"top\":\"1\",\"left\":\"1\",\"right\":\"1\",\"bottom\":\"1\",\"linked\":\"yes\",\"type\":\"px\"},\"border_type\":\"solid\",\"border_color\":\"rgba(79, 75, 75, 1)\",\"status\":\"no\"},\"type\":\"px\"}}}}}},\"placeholder_styles\":{\"color\":{\"label\":\"Color\",\"key\":\"color\",\"element\":\"ff_color\",\"value\":\"\"},\"typography\":{\"label\":\"Typography\",\"key\":\"typography\",\"element\":\"ff_typography\",\"value\":{\"fontSize\":{\"type\":\"px\",\"value\":\"\"},\"fontWeight\":\"\",\"transform\":\"\",\"fontStyle\":\"\",\"textDecoration\":\"\",\"lineHeight\":{\"type\":\"px\",\"value\":\"\"},\"letterSpacing\":{\"type\":\"px\",\"value\":\"\"},\"wordSpacing\":{\"type\":\"px\",\"value\":\"\"}}}},\"submit_button_style\":{\"allignment\":{\"label\":\"Alignment\",\"element\":\"ff_allignment_item\",\"value\":\"\"},\"all_tabs\":{\"label\":\"\",\"element\":\"ff_tabs\",\"tabs\":{\"normal\":{\"key\":\"normal\",\"label\":\"Normal\",\"value\":{\"color\":{\"label\":\"Color\",\"key\":\"color\",\"element\":\"ff_color\",\"value\":\"\"},\"backgroundColor\":{\"label\":\"Background Color\",\"key\":\"backgroundColor\",\"element\":\"ff_color\",\"value\":\"\"},\"height\":{\"key\":\"height\",\"label\":\"Button Height\",\"element\":\"ff_unit_value\",\"value\":{\"type\":\"px\",\"value\":\"\"}},\"width\":{\"label\":\"Button Width\",\"key\":\"width\",\"type\":\"custom\",\"value\":\"\"},\"padding\":{\"label\":\"Padding\",\"element\":\"ff_around_item\",\"key\":\"padding\",\"value\":{\"type\":\"px\",\"top\":\"\",\"left\":\"\",\"right\":\"\",\"bottom\":\"\",\"linked\":\"yes\"},\"type\":\"px\"},\"margin\":{\"label\":\"Margin\",\"element\":\"ff_around_item\",\"key\":\"margin\",\"value\":{\"type\":\"px\",\"top\":\"\",\"left\":\"\",\"right\":\"\",\"bottom\":\"\",\"linked\":\"yes\"},\"type\":\"px\"},\"typography\":{\"label\":\"Typography\",\"key\":\"typography\",\"element\":\"ff_typography\",\"value\":{\"fontSize\":{\"type\":\"px\",\"value\":\"\"},\"fontWeight\":\"\",\"transform\":\"\",\"fontStyle\":\"\",\"textDecoration\":\"\",\"lineHeight\":{\"type\":\"px\",\"value\":\"\"},\"letterSpacing\":{\"type\":\"px\",\"value\":\"\"},\"wordSpacing\":{\"type\":\"px\",\"value\":\"\"}}},\"boxshadow\":{\"key\":\"boxshadow\",\"element\":\"ff_boxshadow_config\",\"label\":\"Box Shadow\",\"value\":{\"horizontal\":{\"type\":\"px\",\"value\":\"0\"},\"vertical\":{\"type\":\"px\",\"value\":\"0\"},\"blur\":{\"type\":\"px\",\"value\":\"0\"},\"spread\":{\"type\":\"px\",\"value\":\"0\"},\"color\":\"\",\"position\":\"\"}},\"border\":{\"label\":\"Border\",\"key\":\"border\",\"status_label\":\"Custom Border\",\"element\":\"ff_border_config\",\"value\":{\"border_radius\":{\"type\":\"px\",\"top\":\"\",\"left\":\"\",\"right\":\"\",\"bottom\":\"\",\"linked\":\"yes\"},\"border_width\":{\"type\":\"px\",\"top\":\"\",\"left\":\"\",\"right\":\"\",\"bottom\":\"\",\"linked\":\"yes\"},\"border_type\":\"solid\",\"border_color\":\"\",\"status\":\"\"},\"type\":\"px\"}}},\"hover\":{\"key\":\"hover\",\"label\":\"Hover\",\"value\":{\"color\":{\"label\":\"Color\",\"key\":\"color\",\"element\":\"ff_color\",\"value\":\"\"},\"backgroundColor\":{\"label\":\"Background Color\",\"key\":\"backgroundColor\",\"element\":\"ff_color\",\"value\":\"\"},\"typography\":{\"label\":\"Typography\",\"key\":\"typography\",\"element\":\"ff_typography\",\"value\":{\"fontSize\":{\"type\":\"px\",\"value\":\"\"},\"fontWeight\":\"\",\"transform\":\"\",\"fontStyle\":\"\",\"textDecoration\":\"\",\"lineHeight\":{\"type\":\"px\",\"value\":\"\"},\"letterSpacing\":{\"type\":\"px\",\"value\":\"\"},\"wordSpacing\":{\"type\":\"px\",\"value\":\"\"}}},\"boxshadow\":{\"key\":\"boxshadow\",\"element\":\"ff_boxshadow_config\",\"label\":\"Box Shadow\",\"value\":{\"horizontal\":{\"type\":\"px\",\"value\":\"0\"},\"vertical\":{\"type\":\"px\",\"value\":\"0\"},\"blur\":{\"type\":\"px\",\"value\":\"0\"},\"spread\":{\"type\":\"px\",\"value\":\"0\"},\"color\":\"\",\"position\":\"\"}},\"border\":{\"label\":\"Border\",\"key\":\"border\",\"status_label\":\"Custom Border\",\"element\":\"ff_border_config\",\"value\":{\"border_radius\":{\"type\":\"px\",\"top\":\"\",\"left\":\"\",\"right\":\"\",\"bottom\":\"\",\"linked\":\"yes\"},\"border_width\":{\"type\":\"px\",\"top\":\"\",\"left\":\"\",\"right\":\"\",\"bottom\":\"\",\"linked\":\"yes\"},\"border_type\":\"solid\",\"border_color\":\"\",\"status\":\"\"},\"type\":\"px\"}}}},\"status\":\"yes\"}},\"radio_checkbox_style\":{\"color\":{\"label\":\"Items Color\",\"key\":\"color\",\"element\":\"ff_color\",\"value\":\"\"},\"size\":{\"key\":\"size\",\"label\":\"Size\",\"element\":\"ff_unit_value\",\"config\":{\"px_max\":50,\"em_rem_max\":5},\"value\":{\"type\":\"px\",\"value\":\"\"}},\"radio_checkbox\":{\"label\":\"\",\"element\":\"ff_radio_checkbox\",\"status_label\":\"Enable Smart UI\",\"value\":{\"color\":{\"label\":\"Color\",\"key\":\"color\",\"element\":\"ff_color\",\"value\":\"\"},\"active_color\":{\"label\":\"Checked Background Colors\",\"key\":\"color\",\"element\":\"ff_color\",\"value\":\"\"},\"margin\":{\"label\":\"Smart UI Margin\",\"element\":\"ff_around_item\",\"key\":\"margin\",\"value\":{\"type\":\"px\",\"top\":\"\",\"left\":\"\",\"right\":\"\",\"bottom\":\"\",\"linked\":\"yes\"},\"type\":\"px\"},\"border\":{\"label\":\"Custom Border\",\"key\":\"border\",\"status_label\":\"Use custom Border style\",\"element\":\"ff_border_config\",\"value\":{\"border_radius\":{\"type\":\"px\",\"top\":\"\",\"left\":\"\",\"right\":\"\",\"bottom\":\"\",\"linked\":\"yes\"},\"border_width\":{\"type\":\"px\",\"top\":\"1\",\"left\":\"1\",\"right\":\"1\",\"bottom\":\"1\",\"linked\":\"yes\"},\"border_type\":\"solid\",\"border_color\":\"#404040\",\"status\":\"\",\"radio_border_status\":\"no\"},\"type\":\"px\"}},\"status\":\"no\"}}}"
+            },
+            {
+                "id": 15,
+                "form_id": "4",
+                "meta_key": "_ff_selected_style",
+                "value": "ffs_default"
+            },
+            {
+                "id": 18,
+                "form_id": "4",
+                "meta_key": "ffs_default",
+                "value": ".fluentform_wrapper_4.ffs_default_wrap .ff-el-input--content .error , .fluentform_wrapper_4.ffs_default_wrap .error-text{ text-align: left; } .fluentform_wrapper_4.ffs_default_wrap .ff-message-success{ text-align: left; } .fluentform_wrapper_4.ffs_default_wrap .ff-errors-in-stack { text-align: left; }"
+            },
+            {
+                "id": 12,
+                "form_id": "4",
+                "meta_key": "formSettings",
+                "value": "{\"confirmation\":{\"redirectTo\":\"samePage\",\"messageToShow\":\"Thank you. Your enquiry has been saved. Your preferred date is a request, not a confirmed booking.\",\"customPage\":null,\"samePageFormBehavior\":\"hide_form\",\"customUrl\":null},\"restrictions\":{\"limitNumberOfEntries\":{\"enabled\":false,\"numberOfEntries\":null,\"period\":\"total\",\"limitReachedMsg\":\"Maximum number of entries exceeded.\"},\"scheduleForm\":{\"enabled\":false,\"start\":null,\"end\":null,\"selectedDays\":null,\"pendingMsg\":\"Form submission is not started yet.\",\"expiredMsg\":\"Form submission is now closed.\"},\"requireLogin\":{\"enabled\":false,\"requireLoginMsg\":\"You must be logged in to submit the form.\"},\"denyEmptySubmission\":{\"enabled\":false,\"message\":\"Sorry, you cannot submit an empty form. Let's hear what you wanna say.\"},\"restrictForm\":{\"enabled\":false,\"fields\":{\"ip\":{\"status\":false,\"values\":\"\",\"message\":\"Sorry! You can't submit a form from your IP address.\",\"validation_type\":\"fail_on_condition_met\"},\"country\":{\"status\":false,\"values\":[],\"message\":\"Sorry! You can't submit a form the country you are residing.\",\"validation_type\":\"fail_on_condition_met\"},\"keywords\":{\"status\":false,\"values\":\"\",\"message\":\"Sorry! Your submission contains some restricted keywords.\"}}}},\"layout\":{\"labelPlacement\":\"top\",\"asteriskPlacement\":\"asterisk-right\",\"helpMessagePlacement\":\"with_label\",\"errorMessagePlacement\":\"inline\",\"cssClassName\":\"prime-ff-fields\"},\"delete_entry_on_submission\":\"no\",\"conv_form_per_step_save\":false,\"conv_form_resume_from_last_step\":false}"
+            },
+            {
+                "id": 13,
+                "form_id": "4",
+                "meta_key": "notifications",
+                "value": "[]"
+            }
+        ]
+    }
+]

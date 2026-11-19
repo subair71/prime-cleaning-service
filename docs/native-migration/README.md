@@ -25,6 +25,8 @@ Both the parent theme and native plugins work with the custom child theme and Pr
 - [Validation and limitations](QA.md)
 - [Native WordPress content export](exports/wordpress-content.xml)
 - [Native contact-form export](exports/fluentforms-contact.json)
+- [Native quote-enquiry form export](exports/fluentforms-quote-enquiry.json)
+- [Combined Fluent Forms export](exports/fluentforms-forms.json)
 
 `pages/*.html` contains serialized **editable WordPress blocks**, not custom HTML sections. `exports/` contains native configuration, page/media manifests and the original image files. These files are necessary because a Git pull does not update the WordPress database.
 
