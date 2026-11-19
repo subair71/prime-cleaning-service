@@ -46,17 +46,18 @@ The service comparisons now use labelled cards; edit their Heading and Paragraph
 
 1. In the Prime site's WordPress dashboard, open **Plugins → Add New Plugin**. Install and activate **Customizer Export/Import** by Beaver Builder.
 2. Open **Appearance → Customize → Export/Import**. Click **Export** to download a copy of the current theme settings. For a complete rollback point, use Local’s site export before importing.
-3. Under **Import**, choose [Prime-Header-Footer.dat](exports/Prime-Header-Footer.dat), leave **Download and import image files?** unchecked and click **Import**. Open the site in a fresh tab.
-4. Check the desktop phone link and **Request a quote** button, then open **Menu** on a narrow screen. At the footer, check the WhatsApp button, services, company links and contact details.
+3. To update an existing two-tone footer, choose [Prime-Single-Footer.dat](exports/Prime-Single-Footer.dat). For the complete header and footer on a fresh setup, choose [Prime-Header-Footer.dat](exports/Prime-Header-Footer.dat). Leave **Download and import image files?** unchecked, click **Import** and open the site in a fresh tab.
+4. Check the desktop phone link and **Request a quote** button, then open **Menu** on a narrow screen. At the footer, check the four widget areas and the WhatsApp link under **Get in touch**.
 
-The preset expects Prime’s Kadence parent theme and the existing four footer widget areas. It places Footer 1 in the upper brand row and Footer 2–4 in the lower row. It sets the desktop phone and footer WhatsApp destinations. The site supplies its own logo, navigation menus, quote URL, copyright and widget text. Import the preset once when adopting the design. Importing it again reapplies its layout and style settings.
+The preset expects Prime’s Kadence parent theme and the existing four footer widget areas. The four widget areas share one dark row on desktop, wrap into two columns on tablet and stack on mobile. The copyright appears below a thin divider. The site supplies its own logo, navigation menus, quote URL, copyright and widget text. Import the preset once when adopting the design. Importing it again reapplies its layout and style settings.
 
 | To edit | Where to go |
 | --- | --- |
 | Desktop service area and phone label | Appearance → Customize → Header → Top Row → HTML or Social |
-| Phone or WhatsApp destination | Appearance → Customize → General → Social Links |
+| Desktop header phone destination | Appearance → Customize → General → Social Links |
 | Quote button or mobile Menu button | Appearance → Customize → Header → Button or the mobile Trigger |
 | Footer brand, services, company and contact text | Appearance → Widgets → Footer 1 through Footer 4 |
-| Footer WhatsApp label, row colours and spacing | Appearance → Customize → Footer → Social or the relevant row |
+| Footer WhatsApp label and destination | Appearance → Widgets → Footer 4 → WhatsApp link |
+| Footer colours and spacing | Appearance → Customize → Footer → Middle Row or Bottom Row |
 
 The plugin transfers the preset. Kadence renders the design and provides the editing controls afterward.
