@@ -80,8 +80,8 @@
       "tablet": ""
     }
   },
-  "header_button_label": "Request a quote",
-  "header_button_link": "http://127.0.0.1:4173/get-a-quote/",
+  "header_button_label": "Get my estimate",
+  "header_button_link": "/#estimator-section",
   "header_button_radius": {
     "size": [
       28,
@@ -94,7 +94,7 @@
   },
   "header_main_height": {
     "size": {
-      "desktop": 84,
+      "desktop": 80,
       "tablet": 72,
       "mobile": 70
     },
@@ -130,12 +130,12 @@
   },
   "footer_middle_background": {
     "desktop": {
-      "color": "#102f33"
+      "color": "#0f172a"
     }
   },
   "footer_bottom_background": {
     "desktop": {
-      "color": "#102f33"
+      "color": "#0f172a"
     }
   },
   "footer_middle_widget_title": {
@@ -152,13 +152,13 @@
     "lineHeight": {
       "desktop": 1.6
     },
-    "color": "#d0e3de"
+    "color": "#cbd5e1"
   },
   "footer_middle_widget_content_color": {
     "color": "#ffffff",
     "hover": "#7adad1"
   },
-  "footer_html_content": "{copyright} {year} Prime Domestic and Cleaning Services \u00b7 ABN 16 938 734 164 \u00b7 Melbourne, Australia",
+  "footer_html_content": "{copyright} {year} Prime Domestic and Cleaning Services · ABN 16 938 734 164 · Payment is due on completion · No GST charged. &nbsp; <a href=\"https://www.primedomestic.com.au/privacy/\">Privacy Policy</a> · <a href=\"https://www.primedomestic.com.au/terms/\">Terms of Service</a>",
   "footer_html_color": {
     "color": "#c2dbd7",
     "hover": "#ffffff"
@@ -225,10 +225,11 @@
         "logo"
       ],
       "main_left_center": [],
-      "main_center": [],
+      "main_center": [
+        "navigation"
+      ],
       "main_right_center": [],
       "main_right": [
-        "navigation",
         "button"
       ]
     },
@@ -459,7 +460,7 @@
     "unit": "px",
     "locked": false
   },
-  "header_html_content": "Malvern East &nbsp;\u00b7&nbsp; Melbourne\u2019s south-east",
+  "header_html_content": "Small family team • Malvern East &amp; Melbourne's South-East &nbsp; | &nbsp; Pay on completion · No deposits",
   "header_html_typography": {
     "family": "inherit",
     "google": false,
@@ -475,7 +476,7 @@
   },
   "header_top_height": {
     "size": {
-      "desktop": 36
+      "desktop": 34
     },
     "unit": {
       "desktop": "px"
@@ -483,7 +484,7 @@
   },
   "header_top_background": {
     "desktop": {
-      "color": "#123d40"
+      "color": "#0f172a"
     }
   },
   "header_social_items": {
@@ -541,18 +542,18 @@
   },
   "header_button_size": "custom",
   "header_button_background": {
-    "color": "#09645f",
-    "hover": "#074d49"
+    "color": "#0e7490",
+    "hover": "#075985"
   },
   "header_button_color": {
     "color": "#ffffff",
     "hover": "#ffffff"
   },
-  "primary_navigation_style": "underline",
+  "primary_navigation_style": "standard",
   "primary_navigation_color": {
-    "color": "#183c3d",
-    "hover": "#09645f",
-    "active": "#09645f"
+    "color": "#334155",
+    "hover": "#0e7490",
+    "active": "#0e7490"
   },
   "mobile_trigger_label": "Menu",
   "mobile_trigger_style": "bordered",
@@ -596,7 +597,7 @@
     }
   },
   "footer_middle_link_colors": {
-    "color": "#e0f5eb",
+    "color": "#e2e8f0",
     "hover": "#ffffff"
   },
   "footer_bottom_top_border": {
@@ -604,7 +605,7 @@
       "width": 1,
       "unit": "px",
       "style": "solid",
-      "color": "#305655"
+      "color": "#334155"
     }
   },
   "footer_bottom_top_spacing": {
@@ -646,10 +647,10 @@
   },
   "footer_middle_top_border": {
     "desktop": {
-      "width": 3,
+      "width": 1,
       "unit": "px",
       "style": "solid",
-      "color": "#8cd8bd"
+      "color": "#e2e8f0"
     }
   }
 }
