@@ -81,7 +81,7 @@
     }
   },
   "header_button_label": "Request a quote",
-  "header_button_link": "http://127.0.0.1:4173/prices/#estimate",
+  "header_button_link": "http://127.0.0.1:4173/get-a-quote/",
   "header_button_radius": {
     "size": [
       28,
