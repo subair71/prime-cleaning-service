@@ -29,7 +29,7 @@ $check('three labelled mobile actions',array_column($bar,'label')===['Call','Wha
 $check('mobile action destinations',array_column($bar,'url')===['tel:+61491245156','https://wa.me/61491245156',home_url('/prices/#estimate')]);
 $check('native safe area enabled',get_option('dsmm_style_settings')['safe_area_support']===true);
 $check('bar limited to smaller screens',get_option('dsmm_visibility_rules')['hide_on_desktop']===true);
-$check('unconfirmed minimum not advertised' ,!str_contains(implode('', $contents),'AUD 110.00'));
+$check('approved service minimum displayed', str_contains($contents['prices'], 'End of Lease has no minimum'));
 $check('unresolved bed making removed',!str_contains($contents['regular'],'beds made'));
 $form=wpFluent()->table('fluentform_forms')->where('title','Prime — Native contact')->first();$check('native contact exists',(bool)$form);
 $definition=json_decode($form->form_fields,true);$names=array_column(array_column($definition['fields'],'attributes'),'name');
@@ -41,8 +41,24 @@ $check('no custom form code',!$custom);$check('notifications disabled in QA',!$n
 $check('native honeypot configured',get_option('_fluentform_global_form_settings')['misc']['honeypotStatus']==='yes');
 $menu=wp_get_nav_menu_items(get_theme_mod('nav_menu_locations')['primary']);$check('native navigation has eight items',count($menu)===8);
 $draft_ids=array_map(fn($slug)=>get_page_by_path($slug)->ID,['office-cleaning','terms']);$check('drafts absent from menu',!array_intersect($draft_ids,array_column($menu,'object_id')));
-$price=get_page_by_path('prices')->post_content;$check('estimator blocker visible',str_contains($price,'Online estimates are currently unavailable'));
-$check('no pretend numeric estimator',!str_contains($price,'[fluentform')&&!shortcode_exists('prime_cleaning_estimator'));
+$price = $contents['prices'];
+$check('homepage quote link', str_contains($contents['home'], 'id="quote"') && str_contains($contents['home'], home_url('/prices/#estimate')));
+$check('prices quote anchors', str_contains($price, '"anchor":"estimate"') && str_contains($price, 'id="quote"'));
+$quote = wpFluent()->table('fluentform_forms')->where('title', 'Prime | Request a Quote')->first();
+if (defined('FLUENTFORMPRO_VERSION')) {
+    $check('native quote form imported', (bool) $quote);
+    $check('prices embeds estimator', str_contains($price, '[fluentform title="Prime | Request a Quote"]'));
+    if ($quote) {
+        $feeds = wpFluent()->table('fluentform_form_meta')->where('form_id', $quote->id)->where('meta_key', 'notifications')->get();
+        $check('two review quote notifications configured', count($feeds) === 2);
+        foreach ($feeds as $feed) {
+            $check('review quote notification muted', json_decode($feed->value, true)['enabled'] === false);
+        }
+    }
+} else {
+    $check('free-only review offers a custom quote', str_contains($price, 'Please call or message us for a personalised quote.'));
+    $check('free-only review omits Pro estimator', !$quote && !str_contains($price, '[fluentform'));
+}
 $office=get_page_by_path('office-cleaning');$original=$office->post_content;
 try{$test=$original."\n<!-- wp:paragraph --><p>Native save roundtrip QA</p><!-- /wp:paragraph -->";wp_update_post(wp_slash(['ID'=>$office->ID,'post_content'=>$test]));clean_post_cache($office->ID);$check('native block edit persists',get_post($office->ID)->post_content===$test);}finally{wp_update_post(wp_slash(['ID'=>$office->ID,'post_content'=>$original]));}
 $check('test edit restored',get_post($office->ID)->post_content===$original);

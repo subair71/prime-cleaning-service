@@ -3,7 +3,7 @@
  * ONE-TIME OFFLINE REVIEW IMPORT. Never install in wp-content or call from HTTP.
  * wp eval-file tools/import-native-review.php
  * Requires PRIME_NATIVE_REVIEW=1, a fresh noindex local/staging WordPress,
- * Kadence, Kadence Blocks and Fluent Forms. Does not install an estimator.
+ * Kadence, Kadence Blocks and Fluent Forms. Imports the quote estimator when Fluent Forms Pro is active.
  */
 if (PHP_SAPI !== 'cli' || !defined('ABSPATH') || getenv('PRIME_NATIVE_REVIEW') !== '1') {
     throw new RuntimeException('Run via WP-CLI with PRIME_NATIVE_REVIEW=1 on a fresh review installation.');
@@ -42,12 +42,47 @@ foreach ($media as $key=>$m) {
     update_post_meta($id,'_wp_attachment_image_alt',$m['alt']??'');
 }
 // Import through the plugin's own supported export/import service, not custom field handling.
-$forms=$read('fluentforms-contact.json');
-$tmp=wp_tempnam('prime-native-contact.json');file_put_contents($tmp,strtr(wp_json_encode($forms,JSON_UNESCAPED_SLASHES),$replace));
-$file=new FluentForm\Framework\Http\Request\File($tmp,'prime-native-contact.json','application/json');
-$result=FluentForm\App\Services\Transfer\TransferService::importForms($file);unlink($tmp);
-$form_id=(int)array_key_first($result['inserted_forms']);
-$replace['[fluentform id="'.$forms[0]['id'].'"]']='[fluentform id="'.$form_id.'"]';
+$import_form = function (string $filename) use ($read, &$replace): int {
+    $forms = $read($filename);
+    // Keep the business recipients in the portable export, and mute them in disposable reviews.
+    foreach ($forms[0]['metas'] as &$meta) {
+        if ($meta['meta_key'] === 'notifications') {
+            $settings = json_decode($meta['value'], true, 512, JSON_THROW_ON_ERROR);
+            if ($settings) {
+                $settings['enabled'] = false;
+                $meta['value'] = wp_json_encode($settings);
+            }
+        }
+    }
+    unset($meta);
+    $tmp = wp_tempnam($filename);
+    try {
+        $payload = strtr(wp_json_encode($forms, JSON_UNESCAPED_SLASHES), $replace);
+        if (file_put_contents($tmp, $payload) === false) {
+            throw new RuntimeException("Could not prepare $filename");
+        }
+        $file = new FluentForm\Framework\Http\Request\File($tmp, $filename, 'application/json');
+        $result = FluentForm\App\Services\Transfer\TransferService::importForms($file);
+        $form_id = (int) array_key_first($result['inserted_forms']);
+        if (!$form_id) {
+            throw new RuntimeException("Could not import $filename");
+        }
+        return $form_id;
+    } finally {
+        wp_delete_file($tmp);
+    }
+};
+$form_id = $import_form('fluentforms-contact.json');
+$source_contact_id = $read('fluentforms-contact.json')[0]['id'];
+$replace['[fluentform id="' . $source_contact_id . '"]'] = '[fluentform id="' . $form_id . '"]';
+$quote_form_id = null;
+if (defined('FLUENTFORMPRO_VERSION')) {
+    $quote_form_id = $import_form('fluentforms-quote.json');
+} else {
+    // The existing call and WhatsApp buttons below this block still work in a Free-only review.
+    $replace["<!-- wp:shortcode -->\n" . '[fluentform title="Prime | Request a Quote"]' . "\n<!-- /wp:shortcode -->"] =
+        '<!-- wp:paragraph --><p>Please call or message us for a personalised quote.</p><!-- /wp:paragraph -->';
+}
 $rewrite=function($content)use($replace,$image_ids){
     $content=strtr($content,$replace);
     $content=preg_replace_callback('/"id":(\d+)/',fn($m)=>'"id":'.($image_ids[(int)$m[1]]??$m[1]),$content);
@@ -84,5 +119,7 @@ foreach(['regular'=>'Regular & Deep Cleaning','lease'=>'End of Lease Cleaning','
 foreach(['prices'=>'Prices','about'=>'About','contact'=>'Contact'] as $key=>$label)$add($key,$label);
 set_theme_mod('nav_menu_locations',['primary'=>$menu,'mobile'=>$menu]);
 foreach(['blogname'=>'Prime Domestic','blogdescription'=>'& Cleaning Services','show_on_front'=>'page','page_on_front'=>$ids['home'],'wp_page_for_privacy_policy'=>$ids['privacy'],'timezone_string'=>'Australia/Melbourne','permalink_structure'=>'/%postname%/','_fluentform_global_form_settings'=>['misc'=>['honeypotStatus'=>'yes']]] as $key=>$value)update_option($key,$value);
-update_option('prime_native_review_imported',['pages'=>$ids,'contact_form'=>$form_id,'date'=>gmdate('c')],false);flush_rewrite_rules(false);
-echo 'Native review imported: '.count($ids).' pages, contact form '.$form_id.'. Fluent Forms Pro estimator is NOT installed. No notifications enabled.'.PHP_EOL;
+update_option('prime_native_review_imported',['pages'=>$ids,'contact_form'=>$form_id,'quote_form'=>$quote_form_id,'date'=>gmdate('c')],false);flush_rewrite_rules(false);
+echo 'Imported ' . count($ids) . ' pages and contact form ' . $form_id . '. ';
+echo $quote_form_id ? 'Quote estimator ' . $quote_form_id . ' imported. ' : 'Quote page uses the phone and WhatsApp fallback. ';
+echo 'Review notifications are disabled.' . PHP_EOL;

@@ -4,11 +4,11 @@ Current work uses **WordPress.org, Kadence Free, native/Kadence blocks and Fluen
 
 The current enhancement branch `feature/prime-native-visual-enhancement` refines all ten agreed page layouts, native Kadence typography/spacing, mobile navigation, footer and contact form. A plugin-managed mobile action bar is configured in an isolated review. Native exports, before/after screenshots and a clean-import test are included. It does not deploy to the client site.
 
-**Launch is blocked:** complete Fluent Forms Pro estimator, client-site backups/migration, approved rates/policies, historical status/reference handling, real reviews, email delivery and physical-device/hosting acceptance remain incomplete. See the [current enhancement review](docs/native-migration/ENHANCEMENT.md) for implemented changes and limitations.
+The native **Request a Quote** estimator uses Derick’s completed pricing sheet. The homepage and Prices page connect to the form. [Import the form on staging and check the rates](docs/native-migration/ESTIMATOR.md). Launch still requires licensed-host verification, client-site backups/migration, approved policies, historical reference handling, real reviews, email delivery and physical-device acceptance. See the [current enhancement review](docs/native-migration/ENHANCEMENT.md) for implemented changes and limitations.
 
 - [Review package, exports and previews](docs/native-migration/README.md)
 - [Client decisions and access required](docs/native-migration/DECISIONS.md)
-- [Fluent Forms feasibility](docs/native-migration/ESTIMATOR.md)
+- [Estimator setup and price editing](docs/native-migration/ESTIMATOR.md)
 - [Current verification](docs/native-migration/ENHANCEMENT.md#validation-and-limits)
 - [Migration and rollback](docs/native-migration/MIGRATION.md)
 - [Handover guide](docs/native-migration/HANDOVER.md)

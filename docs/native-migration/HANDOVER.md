@@ -22,7 +22,7 @@ Use List View to select nested sections/cards. The source HTML files are migrati
 
 The Office and Terms drafts should stay unpublished until approved. Review the actual site's Privacy publication state before migration. The clean review includes the supplied Privacy v1.2 copy, but hosting/privacy claims still require verification on the intended host.
 
-**Prices, suburbs and estimator entries:** exact client instructions will be supplied after Fluent Forms Pro is installed and the full estimator passes the editing demonstration in `ESTIMATOR.md`. The old Prime settings menu and the previous Free/custom bridge are not acceptable handover solutions.
+**Prices, suburbs and estimator entries** are managed in Fluent Forms. Use the [field-by-field editing guide and staging acceptance cases](ESTIMATOR.md). The old Prime settings menu and the previous Free/custom bridge are not acceptable handover solutions.
 
 **Old enquiries:** the current package does not migrate customer records. Retain the complete database backup and enquiry CSV; verify a supported independent archive/access method before retiring the custom admin UI.
 
@@ -40,4 +40,4 @@ See DECISIONS.md for withheld claims and QA-RECONCILIATION.md for actual tests. 
 
 For section spacing, use Pages → Edit → List View → select **Row Layout** → block Settings → responsive Padding and Columns. For a card, select its **Section** block and use Background, Border, Border Radius and Padding. Use the desktop/tablet/mobile selectors in the native controls. Select an Image block for Replace, Crop/Aspect Ratio and alt text. Do not edit the serialized source files for routine changes.
 
-The service comparisons now use labelled cards; edit their Heading and Paragraph blocks. Home's quote card is a temporary availability message, not an estimator. Prices and suburb mapping administration cannot be demonstrated until the actual Pro form is implemented and accepted. See ENHANCEMENT.md for current screenshots, plugin limitations and all outstanding tests.
+The service comparisons now use labelled cards; edit their Heading and Paragraph blocks. Home’s quote card opens the Prices page. See ESTIMATOR.md for the current form and ENHANCEMENT.md for the earlier visual review.

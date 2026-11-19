@@ -1,6 +1,6 @@
 # Native WordPress migration — review milestone
 
-**Not ready to deploy or hand over.** The page/layout migration is implemented and verified in isolated WordPress installations. The complete estimator is **not implemented**: licensed Fluent Forms Pro, approved rates/suburbs and the actual installation/database were not available. This supersedes the earlier Free-plugin/custom-calculator bridge, which does not meet the client’s contract.
+The native page package includes the editable Request a Quote estimator and Derick’s approved prices. Follow the [staging installation and acceptance checks](ESTIMATOR.md) before publishing.
 
 Current work: `feature/prime-native-visual-enhancement`, 17 November 2026. See the [page changes, plugin inventory, current screenshots and verification](ENHANCEMENT.md). Earlier screenshots at the bottom of this page are historical.
 
@@ -12,7 +12,7 @@ Current work: `feature/prime-native-visual-enhancement`, 17 November 2026. See t
 - Client-supplied logo and existing service images copied into the Media Library; active pages no longer reference child-theme assets.
 - Native Fluent Forms contact form, consent, required-field validation, entry storage, honeypot and confirmation. Its normal export is included. No custom bridge, tokens, hidden calculator payload or custom form CSS/JS.
 - Blog uses the native Query Loop. Derick’s supplied Google review link is included; the genuine live review feed remains unconfigured. No invented reviews or sample ratings are published. Office and Terms originals remain drafts. The supplied approved Privacy copy is published in the clean review; existing-site publication states must be preserved during the real migration.
-- Clear unavailable-estimator message and phone/WhatsApp quote actions in the review. This is a visible **temporary gap**, not an estimator replacement. Instant-calculation claims were softened where necessary; original approved wording remains in Git history.
+- The Prices page embeds the native Fluent Forms estimator. Free-only review installations use the phone and WhatsApp fallback.
 
 Both the parent theme and native plugins work with the custom child theme and Prime estimator disabled. A second import test used an installation where those custom directories do not exist. The legacy files remain in this branch for rollback until the complete estimator/history replacements pass acceptance. Do not activate them as a workaround for missing Pro.
 
@@ -24,6 +24,7 @@ Both the parent theme and native plugins work with the custom child theme and Pr
 - [Client handover draft](HANDOVER.md)
 - [Validation and limitations](QA.md)
 - [Native WordPress content export](exports/wordpress-content.xml)
+- [Native quote-form export](exports/fluentforms-quote.json)
 - [Native contact-form export](exports/fluentforms-contact.json)
 
 `pages/*.html` contains serialized **editable WordPress blocks**, not custom HTML sections. `exports/` contains native configuration, page/media manifests and the original image files. These files are necessary because a Git pull does not update the WordPress database.
