@@ -2,12 +2,14 @@
 
 The [Fluent Forms Pro import](exports/fluentforms-quote.json) contains Derick’s two pricing grids, carpet and extra rates, 41 suburb and postcode combinations, custom quote rules, and enquiry workflow. Regular and Deep share a base price. End of Lease includes floor-reachable inside windows and inside cupboards. Zone 2 travel adds $30 on every visit. Regular, Deep and carpet jobs have a $110 minimum, including the lower end of the range.
 
-## Apply to an existing WordPress site
+## Apply to the existing Prime site in LocalWP
 
-1. On protected staging with Fluent Forms Pro active, open **Fluent Forms → Tools → Import Forms**. Import the JSON once and find **Prime | Request a Quote** in All Forms. If a previous copy already exists, review its entries and use its ID in the page block to distinguish versions.
+1. In Local, select the existing Prime site, start it and open **WP Admin**. With Fluent Forms Pro active, go to **Fluent Forms → Tools → Import Forms**. Choose `fluentforms-quote.json` from this repository’s `docs/native-migration/exports` folder and import it once. Find **Prime | Request a Quote** in All Forms. If a previous copy already exists, review its entries and use its ID in the page block to distinguish versions.
 2. Edit the existing quote page. Replace the previous form with a **Fluent Forms** block and select the imported form. The repository’s Prices page uses a native Shortcode block with `[fluentform title="Prime | Request a Quote"]`. Keep the existing page URL and the anchors used by quote buttons. The repository uses `/prices/#estimate` and accepts `/prices/#quote`; the public homepage has also used `#quote`.
-3. Review the two notifications in **Settings & Integrations → Email Notifications**. Priced and custom requests go to **info@primedomestic.com.au**. Set up staging mail capture before test submissions. Confirmation includes the entry reference and a WhatsApp photo link. The reference is generated from the native entry ID. Check it against historical references before rollout.
-4. Open the quote page in staging and check the prices below, submit both a priced and a custom request, and verify the saved entries, notifications and the iPhone Safari flow. Keep the original form and its entries when switching the page.
+3. Review the two notifications in **Settings & Integrations → Email Notifications**. Priced and custom requests go to **info@primedomestic.com.au**. Use the local mail catcher for test submissions. If the site is configured to send via external SMTP or an email API, route test mail locally first. Confirmation includes the entry reference and a WhatsApp photo link. The reference is generated from the native entry ID. Check it against historical references before rollout.
+4. Open the quote page using **Open site** in Local and check the prices below, submit both a priced and a custom request, and verify the saved entries, notifications and the iPhone Safari flow. Keep the original form and its entries when switching the page.
+
+WordPress stores the embedded form and the page edit in the local database. A Git pull supplies the export files. Importing the form and updating the existing page applies them to LocalWP.
 
 For empty review installations the [importer](../../tools/import-native-review.php) imports the form when Pro is active and disables its outgoing notifications. With Fluent Forms Free the Prices page offers phone and WhatsApp enquiries.
 
