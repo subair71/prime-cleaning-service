@@ -17,7 +17,11 @@ Reviewed 16 November 2026 against the attached WhatsApp export, `Prime-Final-Web
 
 The user/client must supply written decisions. This register records uncertainty; it does not approve alternatives. Keep all affected launch content/configuration blocked until reconciled.
 
-## Access and evidence still needed
+## November 19 estimator update
+
+Derick’s completed estimator sheet resolves the pricing grids, suburb zones, service minimum, lower range floor, Deep calculation, included extras and custom conditions in the earlier register. The [current form and staging guide](ESTIMATOR.md) supersede those earlier open pricing items.
+
+## Access and evidence still needed as of November 16
 
 Client-owned VentraIP staging/admin and backup access; current database/media/enquiry snapshot; approved workbook and Terms; actual Google review widget configuration (the October 26 review link is available); authorised Google Workspace sender/SMTP configuration. No passwords should be placed in Git or this document.
 

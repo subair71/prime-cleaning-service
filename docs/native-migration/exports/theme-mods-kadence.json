@@ -84,19 +84,19 @@
   "header_button_link": "http://127.0.0.1:4173/prices/#estimate",
   "header_button_radius": {
     "size": [
-      9,
-      9,
-      9,
-      9
+      28,
+      28,
+      28,
+      28
     ],
     "unit": "px",
     "locked": true
   },
   "header_main_height": {
     "size": {
-      "desktop": 88,
-      "tablet": 80,
-      "mobile": 72
+      "desktop": 84,
+      "tablet": 72,
+      "mobile": 70
     },
     "unit": {
       "desktop": "px",
@@ -119,33 +119,40 @@
     "color": "palette3"
   },
   "primary_navigation_spacing": {
-    "size": 1.1,
+    "size": 0.9,
     "unit": "em"
   },
-  "footer_middle_columns": "4",
+  "footer_middle_columns": "3",
   "footer_middle_layout": {
     "desktop": "equal",
-    "tablet": "two-grid",
-    "mobile": "row"
+    "tablet": "equal",
+    "mobile": "last-row"
   },
   "footer_middle_background": {
     "desktop": {
-      "color": "#163d44"
+      "color": "#102f33"
     }
   },
   "footer_bottom_background": {
     "desktop": {
-      "color": "#163d44"
+      "color": "#0b2529"
     }
   },
   "footer_middle_widget_title": {
     "color": "#ffffff"
   },
   "footer_middle_widget_content": {
-    "color": "#f4f7f8",
+    "family": "inherit",
+    "google": false,
+    "weight": "400",
+    "variant": "regular",
     "size": {
-      "desktop": 16
-    }
+      "desktop": 15
+    },
+    "lineHeight": {
+      "desktop": 1.6
+    },
+    "color": "#d0e3de"
   },
   "footer_middle_widget_content_color": {
     "color": "#ffffff",
@@ -153,7 +160,7 @@
   },
   "footer_html_content": "{copyright} {year} Prime Domestic and Cleaning Services \u00b7 ABN 16 938 734 164 \u00b7 Melbourne, Australia",
   "footer_html_color": {
-    "color": "#f4f7f8",
+    "color": "#c2dbd7",
     "hover": "#ffffff"
   },
   "h1_font": {
@@ -203,11 +210,15 @@
   },
   "header_desktop_items": {
     "top": {
-      "top_left": [],
+      "top_left": [
+        "html"
+      ],
       "top_left_center": [],
       "top_center": [],
       "top_right_center": [],
-      "top_right": []
+      "top_right": [
+        "social"
+      ]
     },
     "main": {
       "main_left": [
@@ -257,25 +268,27 @@
   },
   "footer_items": {
     "top": {
-      "top_1": [],
-      "top_2": [],
+      "top_1": [
+        "footer-widget1"
+      ],
+      "top_2": [
+        "footer-social"
+      ],
       "top_3": [],
       "top_4": [],
       "top_5": []
     },
     "middle": {
       "middle_1": [
-        "footer-widget1"
-      ],
-      "middle_2": [
         "footer-widget2"
       ],
-      "middle_3": [
+      "middle_2": [
         "footer-widget3"
       ],
-      "middle_4": [
+      "middle_3": [
         "footer-widget4"
       ],
+      "middle_4": [],
       "middle_5": []
     },
     "bottom": {
@@ -290,21 +303,25 @@
   },
   "footer_middle_top_spacing": {
     "size": {
-      "desktop": 48,
-      "mobile": 36
+      "desktop": 36,
+      "tablet": 30,
+      "mobile": 26
     },
     "unit": {
       "desktop": "px",
+      "tablet": "px",
       "mobile": "px"
     }
   },
   "footer_middle_bottom_spacing": {
     "size": {
-      "desktop": 48,
-      "mobile": 36
+      "desktop": 36,
+      "tablet": 30,
+      "mobile": 26
     },
     "unit": {
       "desktop": "px",
+      "tablet": "px",
       "mobile": "px"
     }
   },
@@ -386,9 +403,9 @@
   "header_button_padding": {
     "size": [
       13,
-      20,
+      23,
       13,
-      20
+      23
     ],
     "unit": "px",
     "locked": false
@@ -431,17 +448,337 @@
     "variant": "600"
   },
   "mobile_trigger_icon_size": {
-    "size": 24,
+    "size": 20,
     "unit": "px"
   },
   "mobile_trigger_padding": {
     "size": [
+      11,
       12,
-      12,
-      12,
+      11,
       12
     ],
     "unit": "px",
-    "locked": true
+    "locked": false
+  },
+  "header_html_content": "Malvern East &nbsp;\u00b7&nbsp; Melbourne\u2019s south-east",
+  "header_html_typography": {
+    "family": "inherit",
+    "google": false,
+    "weight": "500",
+    "variant": "500",
+    "size": {
+      "desktop": 13
+    },
+    "lineHeight": {
+      "desktop": 1.5
+    },
+    "color": "#e7f5f2"
+  },
+  "header_top_height": {
+    "size": {
+      "desktop": 36
+    },
+    "unit": {
+      "desktop": "px"
+    }
+  },
+  "header_top_background": {
+    "desktop": {
+      "color": "#123d40"
+    }
+  },
+  "header_social_items": {
+    "items": [
+      {
+        "id": "phone",
+        "enabled": true,
+        "source": "icon",
+        "url": "",
+        "imageid": "",
+        "width": 24,
+        "icon": "phoneAlt2",
+        "label": "0491 245 156"
+      }
+    ]
+  },
+  "phone_link": "+61491245156",
+  "header_social_show_label": true,
+  "header_social_color": {
+    "color": "#ffffff",
+    "hover": "#c0ffed"
+  },
+  "header_social_background": {
+    "color": "transparent",
+    "hover": "transparent"
+  },
+  "header_social_icon_size": {
+    "size": 15,
+    "unit": "px"
+  },
+  "header_social_typography": {
+    "family": "inherit",
+    "google": false,
+    "weight": "600",
+    "variant": "600",
+    "size": {
+      "desktop": 13
+    },
+    "lineHeight": {
+      "desktop": 1.5
+    }
+  },
+  "header_main_background": {
+    "desktop": {
+      "color": "#ffffff"
+    }
+  },
+  "header_main_bottom_border": {
+    "desktop": {
+      "width": 1,
+      "unit": "px",
+      "style": "solid",
+      "color": "#c5dcd7"
+    }
+  },
+  "header_button_size": "custom",
+  "header_button_background": {
+    "color": "#09645f",
+    "hover": "#074d49"
+  },
+  "header_button_color": {
+    "color": "#ffffff",
+    "hover": "#ffffff"
+  },
+  "primary_navigation_style": "underline",
+  "primary_navigation_color": {
+    "color": "#183c3d",
+    "hover": "#09645f",
+    "active": "#09645f"
+  },
+  "mobile_trigger_label": "Menu",
+  "mobile_trigger_style": "bordered",
+  "mobile_trigger_icon": "menu2",
+  "mobile_trigger_border": {
+    "width": 1,
+    "unit": "px",
+    "style": "solid",
+    "color": "#276563"
+  },
+  "mobile_trigger_color": {
+    "color": "#174a48",
+    "hover": "#ffffff"
+  },
+  "mobile_trigger_background": {
+    "color": "#e4f3ee",
+    "hover": "#145853"
+  },
+  "mobile_trigger_typography": {
+    "family": "inherit",
+    "google": false,
+    "weight": "600",
+    "variant": "600",
+    "size": {
+      "desktop": 14
+    },
+    "lineHeight": {
+      "desktop": 1.5
+    }
+  },
+  "footer_top_columns": "2",
+  "footer_top_layout": {
+    "desktop": "left-golden",
+    "tablet": "equal",
+    "mobile": "row"
+  },
+  "footer_top_background": {
+    "desktop": {
+      "color": "#155957"
+    }
+  },
+  "footer_top_top_border": {
+    "desktop": {
+      "width": 4,
+      "unit": "px",
+      "style": "solid",
+      "color": "#8cd8bd"
+    }
+  },
+  "footer_top_top_spacing": {
+    "size": {
+      "desktop": 29,
+      "tablet": 25,
+      "mobile": 23
+    },
+    "unit": {
+      "desktop": "px",
+      "tablet": "px",
+      "mobile": "px"
+    }
+  },
+  "footer_top_bottom_spacing": {
+    "size": {
+      "desktop": 29,
+      "tablet": 25,
+      "mobile": 23
+    },
+    "unit": {
+      "desktop": "px",
+      "tablet": "px",
+      "mobile": "px"
+    }
+  },
+  "footer_top_column_spacing": {
+    "size": {
+      "desktop": 44,
+      "tablet": 24,
+      "mobile": 15
+    },
+    "unit": {
+      "desktop": "px",
+      "tablet": "px",
+      "mobile": "px"
+    }
+  },
+  "footer_top_widget_content": {
+    "family": "inherit",
+    "google": false,
+    "weight": "400",
+    "variant": "regular",
+    "size": {
+      "desktop": 16
+    },
+    "lineHeight": {
+      "desktop": 1.5
+    },
+    "color": "#f2faf6"
+  },
+  "footer_top_widget_title": {
+    "family": "inherit",
+    "google": false,
+    "weight": "600",
+    "variant": "600",
+    "size": {
+      "desktop": 20
+    },
+    "lineHeight": {
+      "desktop": 1.5
+    },
+    "color": "#ffffff"
+  },
+  "footer_social_items": {
+    "items": [
+      {
+        "id": "whatsapp",
+        "enabled": true,
+        "source": "icon",
+        "url": "",
+        "imageid": "",
+        "width": 24,
+        "icon": "whatsapp",
+        "label": "Message us on WhatsApp"
+      }
+    ]
+  },
+  "whatsapp_link": "https://wa.me/61491245156",
+  "footer_social_show_label": true,
+  "footer_social_align": {
+    "desktop": "right",
+    "tablet": "right",
+    "mobile": "left"
+  },
+  "footer_social_vertical_align": {
+    "desktop": "middle",
+    "tablet": "middle",
+    "mobile": "top"
+  },
+  "footer_social_color": {
+    "color": "#103e3c",
+    "hover": "#07312f"
+  },
+  "footer_social_background": {
+    "color": "#d5f5e2",
+    "hover": "#ffffff"
+  },
+  "footer_social_border_radius": {
+    "size": 28,
+    "unit": "px"
+  },
+  "footer_social_icon_size": {
+    "size": 21,
+    "unit": "px"
+  },
+  "footer_social_typography": {
+    "family": "inherit",
+    "google": false,
+    "weight": "600",
+    "variant": "600",
+    "size": {
+      "desktop": 15
+    },
+    "lineHeight": {
+      "desktop": 1.5
+    }
+  },
+  "footer_middle_column_spacing": {
+    "size": {
+      "desktop": 46,
+      "tablet": 24,
+      "mobile": 19
+    },
+    "unit": {
+      "desktop": "px",
+      "tablet": "px",
+      "mobile": "px"
+    }
+  },
+  "footer_middle_link_colors": {
+    "color": "#e0f5eb",
+    "hover": "#ffffff"
+  },
+  "footer_bottom_top_border": {
+    "desktop": {
+      "width": 1,
+      "unit": "px",
+      "style": "solid",
+      "color": "#305655"
+    }
+  },
+  "footer_bottom_top_spacing": {
+    "size": {
+      "desktop": 16,
+      "tablet": 15,
+      "mobile": 14
+    },
+    "unit": {
+      "desktop": "px",
+      "tablet": "px",
+      "mobile": "px"
+    }
+  },
+  "footer_bottom_bottom_spacing": {
+    "size": {
+      "desktop": 16,
+      "tablet": 15,
+      "mobile": 14
+    },
+    "unit": {
+      "desktop": "px",
+      "tablet": "px",
+      "mobile": "px"
+    }
+  },
+  "footer_html_typography": {
+    "family": "inherit",
+    "google": false,
+    "weight": "400",
+    "variant": "regular",
+    "size": {
+      "desktop": 13
+    },
+    "lineHeight": {
+      "desktop": 1.5
+    },
+    "color": "#c2dbd7"
   }
 }
