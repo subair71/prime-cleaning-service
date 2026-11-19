@@ -1,6 +1,6 @@
 # Native WordPress migration — review milestone
 
-For the latest homepage, [download the LocalWP package](exports/Prime-Homepage-LocalWP.zip) and [follow the homepage installation guide](HOME.md). Preview it on [desktop](screenshots/reference-home-desktop.webp) or [mobile](screenshots/reference-home-mobile.webp). The [full page](screenshots/reference-home-full.webp) shows all ten sections.
+For the latest homepage, [download the LocalWP package](exports/Prime-Homepage-LocalWP.zip) and [follow the homepage installation guide](HOME.md). Preview it on [desktop](screenshots/reference-home-desktop.webp) or [mobile](screenshots/reference-home-mobile.webp). The [full page](screenshots/reference-home-full.webp) shows all ten sections. The screenshots use an isolated WordPress installation with Kadence Blocks and Fluent Forms Free. The licensed Pro calculation and final submission still need a staging check.
 
 The native page package includes the editable Request a Quote estimator and Derick’s approved prices. Follow the [staging installation and acceptance checks](ESTIMATOR.md) before publishing.
 

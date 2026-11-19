@@ -3,25 +3,29 @@
         "id": 4,
         "url": "http://127.0.0.1:4173/wp-content/uploads/2026/11/prime-regular-1280.webp",
         "file": "prime-regular-1280.webp",
-        "alt": "Light-filled living room"
+        "alt": "Light-filled living room",
+        "source_url": "https://raw.githubusercontent.com/subair71/prime-cleaning-service/bef750ceb95accb992ff375728cffbb98736f40a/docs/native-migration/exports/media/prime-regular-1280.webp"
     },
     "lease": {
         "id": 5,
         "url": "http://127.0.0.1:4173/wp-content/uploads/2026/11/prime-lease-1280.webp",
         "file": "prime-lease-1280.webp",
-        "alt": "Empty room with timber floors"
+        "alt": "Empty room with timber floors",
+        "source_url": "https://raw.githubusercontent.com/subair71/prime-cleaning-service/bef750ceb95accb992ff375728cffbb98736f40a/docs/native-migration/exports/media/prime-lease-1280.webp"
     },
     "carpet": {
         "id": 6,
         "url": "http://127.0.0.1:4173/wp-content/uploads/2026/11/prime-carpet-1280.webp",
         "file": "prime-carpet-1280.webp",
-        "alt": "Carpet extraction wand"
+        "alt": "Carpet extraction wand",
+        "source_url": "https://raw.githubusercontent.com/subair71/prime-cleaning-service/bef750ceb95accb992ff375728cffbb98736f40a/docs/native-migration/exports/media/prime-carpet-1280.webp"
     },
     "logo": {
         "file": "prime-client-logo.png",
         "alt": "Prime Domestic and Cleaning Services",
         "role": "site-logo",
         "id": 7,
-        "url": "http://127.0.0.1:4173/wp-content/uploads/2026/11/prime-client-logo.png"
+        "url": "http://127.0.0.1:4173/wp-content/uploads/2026/11/prime-client-logo.png",
+        "source_url": "https://raw.githubusercontent.com/subair71/prime-cleaning-service/bef750ceb95accb992ff375728cffbb98736f40a/docs/native-migration/exports/media/prime-client-logo.png"
     }
 }

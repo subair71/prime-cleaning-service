@@ -37,6 +37,7 @@ foreach ($media as $key=>$m) {
     $id=media_handle_sideload(['name'=>$m['file'],'tmp_name'=>$tmp],0,'Prime '.$key.' interior');
     if(is_wp_error($id))throw new RuntimeException($id->get_error_message());
     if(isset($m['url']))$replace[$m['url']]=wp_get_attachment_url($id);
+    if(isset($m['source_url']))$replace[$m['source_url']]=wp_get_attachment_url($id);
     if(isset($m['id']))$image_ids[$m['id']]=$id;
     if(($m['role']??'')==='site-logo')$site_logo=$id;
     update_post_meta($id,'_wp_attachment_image_alt',$m['alt']??'');
@@ -78,9 +79,15 @@ $replace['[fluentform id="' . $source_contact_id . '"]'] = '[fluentform id="' . 
 $quote_form_id = null;
 if (defined('FLUENTFORMPRO_VERSION')) {
     $quote_form_id = $import_form('fluentforms-quote.json');
-    $import_form('fluentforms-home-quick.json');
+    $home_forms = [
+        'Prime | Quick Estimate' => $import_form('fluentforms-home-quick.json'),
+        'Prime | Homepage Estimate' => $import_form('fluentforms-home-detailed.json'),
+    ];
+    foreach ($home_forms as $title => $id) {
+        $replace['[fluentform title="' . $title . '"]'] = '[fluentform id="' . $id . '"]';
+    }
 } else {
-    foreach (['Prime | Quick Estimate', 'Prime | Request a Quote'] as $title) {
+    foreach (['Prime | Quick Estimate', 'Prime | Homepage Estimate', 'Prime | Request a Quote'] as $title) {
         $block = "<!-- wp:shortcode -->\n" . '[fluentform title="' . $title . '"]' . "\n<!-- /wp:shortcode -->";
         $replace[$block] = '<!-- wp:paragraph --><p>Please call or message us for a personalised quote.</p><!-- /wp:paragraph -->';
     }
