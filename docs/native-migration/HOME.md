@@ -1,36 +1,39 @@
-# Prime homepage for LocalWP
+# Prime homepage on staging
 
-The Home pattern uses Kadence and WordPress blocks. The Quick Estimate and the detailed homepage estimate are native Fluent Forms. The detailed form places the property choices beside the live price and custom-quote messages on desktop. On narrow screens, the choices come first, followed by the estimate and contact fields. The existing Prices page continues to use its own Request a Quote form.
+[Open the staging homepage](https://primedomestic.com.au/staging/) · [Download the LocalWP package](exports/Prime-Homepage-LocalWP.zip) · [Browse the native configuration files](exports/staging-home/)
 
-## Apply the homepage
+This is the WordPress homepage published on 22 November 2026. Its header, hero, estimate card, service photos, enquiry steps, About section, Google reviews, service areas, final contact panel and footer are editable blocks. Prime’s original logo appears in the header, About section and footer. The five FAQs are in the footer. The latest-posts query shows up to three posts when articles exist.
 
-1. Extract **Prime-Homepage-LocalWP.zip**. Open the existing Prime site in LocalWP with Kadence, Kadence Blocks, Fluent Forms and Fluent Forms Pro active.
-2. In **Fluent Forms → Tools → Import Forms**, import `fluentforms-home-quick.json` if **Prime | Quick Estimate** is absent. Import `fluentforms-home-detailed.json` once to add **Prime | Homepage Estimate**. Existing entries stay with their original forms. If you already have a homepage estimate with entries, keep it and choose the intended form by ID in the page editor.
-3. Under **Appearance → Patterns → Manage my patterns → Import from JSON**, import `prime-home-pattern.json`. On installations without that menu shortcut, open the pattern manager at `/wp-admin/edit.php?post_type=wp_block`.
-4. Edit the existing **Home** page. In List View, replace its body blocks with **My patterns → Prime Homepage**. In **Fluent Forms → All Forms**, copy the shortcode shown next to each homepage form. In the pattern’s two **Shortcode** blocks, replace the matching title-based shortcode with the one you copied. Saving with the actual IDs lets Fluent Forms load its native column and input styles in the page header. Use the full-width, unboxed Kadence page layout, turn off the page title and disable vertical content padding. Choose the existing Home page under **Settings → Reading** if a static homepage has not been assigned.
-5. The pattern uses the three service photos and Prime logo from the project. To host them with WordPress, upload the files in `media/` and choose **Replace → Open Media Library** for each Image block. The logo occupies the team-photo position until Derick supplies the original team photo. The reviews section links to Prime on Google. For a three-card feed, connect Prime's listing through a Google Reviews widget, select a three-column layout and insert its provided block above the existing Google button.
-6. Preview before saving. Quick Estimate opens the same Home page at the detailed form with the selected service and property size. The homepage form starts with a regular weekly clean, two bedrooms and two bathrooms in Malvern East. The quick estimate describes its one-off rate. Custom-quote conditions and the final entry confirmation use the approved form rules.
+## Package contents
 
-### Existing Quick Estimate installations
-
-If you already have the quick form, retain its entries and update its **Settings & Integrations → Confirmation Settings**. Select **To a Custom URL**. Set the URL to `{embed_post.permalink}?prime_service={inputs.quick_service}`, enable the query string, and enter `prime_size={inputs.quick_beds}%20%C2%B7%20{inputs.quick_baths}#estimator-section`. These are Fluent Forms’ built-in merge tags. The separate query string preserves both selections on import.
-
-## Match the shared header and footer
-
-The page body uses the theme's existing header and footer. The included Customizer export configures the utility bar, navigation, estimate button, four widget columns and one copyright row. Applying these theme settings also updates the shared header and footer on other pages.
-
-- In **Appearance → Customise → Export/Import**, export the current settings, then import `Prime-Header-Footer.dat`. The Export/Import panel is provided by **Customizer Export/Import**. Retain the existing site logo and the primary and mobile menu assignments. The header estimate button links to the estimator on Home from any page.
-- Four existing Kadence Footer widget areas hold **About**, **Services**, **Quick links** and **Contact**. On empty Footer 1–4 areas, import `Prime-Footer-Widgets.wie` with **Widget Importer & Exporter**. For populated areas, move their previous blocks into **Inactive Widgets** before importing, so the content appears once. These two import utilities can be deactivated after setup.
-- Privacy and terms links use the published Prime policy addresses. The local Terms draft can stay in review. The page body adds no mobile action bar. Keep the site's existing mobile actions in their plugin.
-
-## Check the rates and enquiry flow
-
-| Selection | Approved one-off range before extras and travel |
+| File | What it restores |
 | --- | --- |
-| Regular, 2 bedrooms and 2 bathrooms | $190–$230 |
-| Deep, 2 bedrooms and 2 bathrooms | $285–$345 |
-| End of lease, 2 bedrooms and 1 bathroom | $305–$375 |
+| `prime-home-pattern.json` | The exact published Home blocks, for use in an existing Home page |
+| `wordpress-home-prices.xml` | Home and Prices, their Kadence page settings, three synced starting-price patterns, two Google Reviews widget definitions and five media records |
+| `fluentforms-estimators.json` | The active Home quick estimate and detailed Prices estimator, including their native calculations, confirmation settings and configured notifications |
+| `media/` | The original Prime logo, three service photographs and the shared theme’s header crest |
+| `mobile-actions.json` | DS Mobile Menu settings for Call, WhatsApp and Estimate |
+| `Prime-Header-Footer.dat` and `Prime-Footer-Widgets.wie` | The shared Kadence Customizer settings and four footer widget areas used on other pages |
 
-The regular card starts at $110, end of lease at $250 and carpet at $45 per bedroom with a $110 job minimum. The estimate includes the approved grid, frequency, storey, travel, add-on rates and custom-quote conditions. A price change needs updating in the homepage form, the separate Prices form and the matching quick ranges.
+## Restore on another WordPress installation
 
-Use the licensed staging installation to submit one priced and one custom enquiry, inspect their entries, and verify the business notifications. The homepage receives entries in **Prime | Homepage Estimate**. Notifications and customer confirmations use the same settings as the approved detailed form. Use a local mail catcher when testing.
+1. Use the Kadence parent theme with Kadence Blocks, GenerateBlocks, Fluent Forms and licensed Fluent Forms Pro. The review feeds use **Widgets for Google Reviews** (RichPlugins). DS Mobile Menu provides the mobile action bar. Keep the existing site and form entries when updating an established installation.
+2. Import the two form definitions in **Fluent Forms → Tools → Import Forms** on a fresh installation. On an existing installation, identify the two active forms first. If they already contain entries, retain them and apply changes to those forms. Record their actual IDs.
+3. On a fresh copy, use **Tools → Import → WordPress** with `wordpress-home-prices.xml` to bring in the pages, synced price patterns, review widgets and media records. Assign the content to an existing local author and select the option to download attachments. The supplied images can also be uploaded to the Media Library. On an existing site, import missing dependencies and update the existing Home page with the included pattern. WordPress can skip existing posts during XML import. Use either the imported Home page or the pattern in your existing page.
+4. In the Home page’s Kadence settings, select a full-width, unboxed layout, hide the title and vertical padding, and check **Disable Header** and **Disable Footer**. The page supplies its own header and footer. Other pages retain the shared theme layout. Assign Home under **Settings → Reading**.
+5. Match the references below to the target installation. In the block editor, reconnect the synced patterns and images, and replace the shortcode IDs. If the quick form has a different ID, update its `#fluentform_8` block style selectors as well. Change staging URLs in Home, Prices, the quick form’s confirmation, theme links, widget links and mobile actions to the target site's URLs. In **Google Reviews**, connect Prime Domestic and Cleaning Services and refresh manually to load its genuine reviews on a fresh site.
+6. To restore the shared theme layout elsewhere, import the DAT with **Customizer Export/Import** and the four footer areas with **Widget Importer & Exporter**. Review existing widget areas first to avoid duplicates. Check the theme’s logo, menus and site icon against the target Media Library. Import the mobile JSON in **DS Mobile Menu → Import & Export**.
+
+| Staging ID | Reference |
+| --- | --- |
+| 8 / 4 | Fluent Forms Home quick estimate / Prices detailed estimate |
+| 38 / 40 / 39 | Regular, end-of-lease and carpet starting-price synced patterns |
+| 55 / 36 | Google rating summary / Google review carousel |
+| 7 / 64 / 65 / 66 | Original logo / regular / end-of-lease / carpet service photos |
+| 76 | Shared theme header crest |
+
+The Quick Estimate sends the service and property choices to **Prices**. On another host, edit the destination under the quick form’s **Settings & Integrations → Confirmation Settings** and retain its merge tags, query string and `#estimate` anchor. The ZIP contains form definitions only. Keep the business licence and any site credentials in the target installation.
+
+## Staging checks
+
+The default regular clean for two bedrooms and two bathrooms displayed **A$190–A$230**. Changing to end-of-lease cleaning with three bedrooms and two bathrooms displayed **A$425–A$515** and carried that selection to Prices. The review carousel showed three cards on desktop and one on mobile. The page rendered one header and one footer, and the five FAQ accordions worked. Four original before-and-after pairs are still awaiting client photos.

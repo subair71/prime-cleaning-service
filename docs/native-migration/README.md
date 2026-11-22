@@ -1,6 +1,6 @@
 # Native WordPress migration — review milestone
 
-For the latest homepage, [download the LocalWP package](exports/Prime-Homepage-LocalWP.zip) and [follow the homepage installation guide](HOME.md). Preview it on [desktop](screenshots/reference-home-desktop.webp) or [mobile](screenshots/reference-home-mobile.webp). The [full page](screenshots/reference-home-full.webp) shows all ten sections. The screenshots use an isolated WordPress installation with Kadence Blocks and Fluent Forms Free. The licensed Pro calculation and final submission still need a staging check.
+For the published staging homepage, [download the LocalWP package](exports/Prime-Homepage-LocalWP.zip) and [follow the restoration guide](HOME.md). The native staging exports include the editable homepage, the Prices handoff, both estimators and both Google review widgets. Earlier screenshots and the isolated fresh-review importer below describe the preceding review build.
 
 The native page package includes the editable Request a Quote estimator and Derick’s approved prices. Follow the [staging installation and acceptance checks](ESTIMATOR.md) before publishing.
 
@@ -13,7 +13,7 @@ For an existing LocalWP site, [import the updated header and footer](HANDOVER.md
 - Standard Kadence parent theme; native Customizer palette, typography, header button, desktop menu, mobile drawer and four footer widget areas. Menus and footer content are editable through WordPress.
 - Client-supplied logo and existing service images copied into the Media Library; active pages no longer reference child-theme assets.
 - Native Fluent Forms contact form, consent, required-field validation, entry storage, honeypot and confirmation. Its normal export is included. No custom bridge, tokens, hidden calculator payload or custom form CSS/JS.
-- Blog uses the native Query Loop. Derick’s supplied Google review link is included; the genuine live review feed remains unconfigured. No invented reviews or sample ratings are published. Office and Terms originals remain drafts. The supplied approved Privacy copy is published in the clean review; existing-site publication states must be preserved during the real migration.
+- Blog uses the native Query Loop. Derick’s supplied Google review link is included; the genuine live review feed was unconfigured in the isolated review. The newer staging export includes both configured widgets. No invented reviews or sample ratings are published. Office and Terms originals remain drafts. The supplied approved Privacy copy is published in the clean review; existing-site publication states must be preserved during the real migration.
 - The Prices page embeds the native Fluent Forms estimator. Free-only review installations use the phone and WhatsApp fallback.
 
 Both the parent theme and native plugins work with the custom child theme and Prime estimator disabled. A second import test used an installation where those custom directories do not exist. The legacy files remain in this branch for rollback until the complete estimator/history replacements pass acceptance. Do not activate them as a workaround for missing Pro.

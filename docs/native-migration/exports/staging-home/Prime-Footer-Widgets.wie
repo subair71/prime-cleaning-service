@@ -1,0 +1,22 @@
+{
+  "footer1": {
+    "block-7": {
+      "content": "<!-- wp:heading {\"level\":3,\"style\":{\"color\":{\"text\":\"#ffffff\"},\"typography\":{\"fontSize\":\"18px\"}}} -->\n<h3 class=\"wp-block-heading has-text-color\" style=\"color:#ffffff;font-size:18px\">About</h3>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>Prime Domestic and Cleaning Services. A small, family-run cleaning team from Malvern East, looking after homes across Melbourne's south-east.</p>\n<!-- /wp:paragraph -->"
+    }
+  },
+  "footer2": {
+    "block-8": {
+      "content": "<!-- wp:heading {\"level\":3,\"style\":{\"color\":{\"text\":\"#ffffff\"},\"typography\":{\"fontSize\":\"18px\"}}} -->\n<h3 class=\"wp-block-heading has-text-color\" style=\"color:#ffffff;font-size:18px\">Services</h3>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p><a href=\"/staging/end-of-lease-cleaning/\">End of Lease</a></p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p><a href=\"/staging/regular-house-cleaning/\">Regular &amp; Deep Cleaning</a></p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p><a href=\"/staging/carpet-steam-cleaning/\">Carpet Steam Cleaning</a></p>\n<!-- /wp:paragraph -->"
+    }
+  },
+  "footer3": {
+    "block-9": {
+      "content": "<!-- wp:heading {\"level\":3,\"style\":{\"color\":{\"text\":\"#ffffff\"},\"typography\":{\"fontSize\":\"18px\"}}} -->\n<h3 class=\"wp-block-heading has-text-color\" style=\"color:#ffffff;font-size:18px\">Quick links</h3>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p><a href=\"/staging/#estimator-section\">Prices &amp; Estimate</a></p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p><a href=\"/staging/#about-story\">About</a></p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p><a href=\"/staging/#contact-areas\">Contact &amp; Service Areas</a></p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p><a href=\"https://www.primedomestic.com.au/privacy/\">Privacy Policy</a></p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p><a href=\"https://www.primedomestic.com.au/terms/\">Terms</a></p>\n<!-- /wp:paragraph -->"
+    }
+  },
+  "footer4": {
+    "block-10": {
+      "content": "<!-- wp:heading {\"level\":3,\"style\":{\"color\":{\"text\":\"#ffffff\"},\"typography\":{\"fontSize\":\"18px\"}}} -->\n<h3 class=\"wp-block-heading has-text-color\" style=\"color:#ffffff;font-size:18px\">Contact</h3>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p><a href=\"tel:+61491245156\">0491 245 156</a></p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p><a href=\"mailto:info@primedomestic.com.au\">info@primedomestic.com.au</a></p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p><a href=\"https://wa.me/61491245156\">WhatsApp</a></p>\n<!-- /wp:paragraph -->"
+    }
+  }
+}
