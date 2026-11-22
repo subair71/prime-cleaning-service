@@ -2,6 +2,8 @@
 
 The staging site uses **WordPress.org, Kadence, Kadence Blocks, GenerateBlocks and Fluent Forms Pro**. Every delivered page section is editable in the normal block editor. The custom theme/calculator from the earlier prototype is retained only as migration history and must not be activated as a substitute for the contracted native build.
 
+The [mobile staging design](docs/native-migration/exports/Prime-Mobile-Staging-Design.zip) contains the responsive page layouts and the deployed three-step Fluent Forms Pro estimate. Its README covers restoration and maintaining prices across the mobile, desktop and quick estimates.
+
 The [enhanced ten-page staging design](docs/native-migration/exports/Prime-Staging-Design.zip) contains the editable WordPress layouts, Prime’s original round crest references, and an in-place staging update command. Open the README in the ZIP for the upload procedure and estimator details.
 
 The [22 November staging homepage and its restoration package](docs/native-migration/HOME.md) include the original logo, the live Home-to-Prices estimator and both Google review widgets.
