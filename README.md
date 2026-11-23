@@ -2,6 +2,8 @@
 
 The staging site uses **WordPress.org, Kadence, Kadence Blocks, GenerateBlocks and Fluent Forms Pro**. Every delivered page section is editable in the normal block editor. The custom theme/calculator from the earlier prototype is retained only as migration history and must not be activated as a substitute for the contracted native build.
 
+The [approved page titles and descriptions](docs/native-migration/exports/wordpress-seo.csv) are saved in Rank Math SEO Free on staging. Edit them through each page’s search snippet. The Terms metadata belongs to its draft. Staging uses noindex. Review indexing, canonical URLs and the sitemap on the production domain at launch.
+
 The [mobile staging design](docs/native-migration/exports/Prime-Mobile-Staging-Design.zip) contains the responsive page layouts and the deployed three-step Fluent Forms Pro estimate. Its README covers restoration and maintaining prices across the mobile, desktop and quick estimates.
 
 The [enhanced ten-page staging design](docs/native-migration/exports/Prime-Staging-Design.zip) contains the editable WordPress layouts, Prime’s original round crest references, and an in-place staging update command. Open the README in the ZIP for the upload procedure and estimator details.
