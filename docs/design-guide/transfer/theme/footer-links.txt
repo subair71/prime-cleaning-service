@@ -1,0 +1,19 @@
+<!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"top":"12px","bottom":"12px"}}}} -->
+<h3 class="wp-block-heading" style="margin-top:12px;margin-bottom:12px">Quick links</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p><a href="/staging/prices/">Prices &amp; estimate</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="/staging/about/">About</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="/staging/contact/">Contact &amp; service areas</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="/staging/privacy/">Privacy Policy</a></p>
+<!-- /wp:paragraph -->

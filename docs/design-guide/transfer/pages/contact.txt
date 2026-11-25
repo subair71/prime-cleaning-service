@@ -1,0 +1,127 @@
+<!-- wp:group {"align":"full","style":{"color":{"background":"#e8f4ef"},"spacing":{"padding":{"top":"52px","right":"22px","bottom":"52px","left":"22px"},"margin":{"top":"0","bottom":"0"},"blockGap":"22px"}},"layout":{"type":"constrained","contentSize":"1160px"}} -->
+<div class="wp-block-group alignfull has-background" style="background-color:#e8f4ef;margin-top:0;margin-bottom:0;padding-top:52px;padding-right:22px;padding-bottom:52px;padding-left:22px"><!-- wp:columns {"verticalAlignment":"center","style":{"spacing":{"blockGap":{"top":"16px","left":"36px"}}}} -->
+<div class="wp-block-columns are-vertically-aligned-center"><!-- wp:column {"width":"55%"} -->
+<div class="wp-block-column" style="flex-basis:55%"><!-- wp:paragraph {"style":{"typography":{"fontSize":"12px","fontWeight":"700","letterSpacing":"1.5px"},"color":{"text":"#086762"}}} -->
+<p class="has-text-color" style="color:#086762;font-size:12px;font-weight:700;letter-spacing:1.5px">CONTACT &amp; SERVICE AREAS</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":1,"style":{"spacing":{"margin":{"top":"12px","bottom":"12px"}}}} -->
+<h1 class="wp-block-heading" style="margin-top:12px;margin-bottom:12px">Get in touch</h1>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Call, message or fill in the form. You’ll hear from a real person.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:buttons {"style":{"spacing":{"blockGap":"9px"}},"layout":{"type":"flex","flexWrap":"wrap"}} -->
+<div class="wp-block-buttons"><!-- wp:button {"style":{"color":{"background":"#086762","text":"#ffffff"},"border":{"radius":"6px","width":"1px","color":"#086762"},"spacing":{"padding":{"top":"12px","right":"18px","bottom":"12px","left":"18px"}},"typography":{"fontWeight":"600","fontSize":"15px"}}} -->
+<div class="wp-block-button"><a class="wp-block-button__link has-text-color has-background has-border-color has-custom-font-size wp-element-button" href="tel:+61491245156" style="border-color:#086762;border-width:1px;border-radius:6px;color:#ffffff;background-color:#086762;padding-top:12px;padding-right:18px;padding-bottom:12px;padding-left:18px;font-size:15px;font-weight:600">Call 0491 245 156</a></div>
+<!-- /wp:button -->
+
+<!-- wp:button {"style":{"color":{"background":"#ffffff","text":"#143e40"},"border":{"radius":"6px","width":"1px","color":"#ceded8"},"spacing":{"padding":{"top":"12px","right":"18px","bottom":"12px","left":"18px"}},"typography":{"fontWeight":"600","fontSize":"15px"}}} -->
+<div class="wp-block-button"><a class="wp-block-button__link has-text-color has-background has-border-color has-custom-font-size wp-element-button" href="https://wa.me/61491245156" style="border-color:#ceded8;border-width:1px;border-radius:6px;color:#143e40;background-color:#ffffff;padding-top:12px;padding-right:18px;padding-bottom:12px;padding-left:18px;font-size:15px;font-weight:600">WhatsApp us</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons -->
+
+<!-- wp:paragraph -->
+<p><a href="mailto:info@primedomestic.com.au">info@primedomestic.com.au</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>We aim to reply within 2 hours during the day, and always within 24 hours.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:column -->
+
+<!-- wp:column {"width":"45%"} -->
+<div class="wp-block-column" style="flex-basis:45%"><!-- wp:group {"style":{"color":{"background":"#ffffff"},"border":{"color":"#ceded8","width":"1px","style":"solid","radius":"10px"},"spacing":{"padding":{"top":"20px","right":"20px","bottom":"20px","left":"20px"},"blockGap":"12px"}}} -->
+<div class="wp-block-group has-border-color has-background" style="border-color:#ceded8;border-style:solid;border-width:1px;border-radius:10px;background-color:#ffffff;padding-top:20px;padding-right:20px;padding-bottom:20px;padding-left:20px"><!-- wp:heading {"style":{"spacing":{"margin":{"top":"12px","bottom":"12px"}}}} -->
+<h2 class="wp-block-heading" style="margin-top:12px;margin-bottom:12px">Send us a quick message</h2>
+<!-- /wp:heading -->
+
+<!-- wp:shortcode -->
+[fluentform title="Prime | Contact · Guide"]
+<!-- /wp:shortcode --></div>
+<!-- /wp:group --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"align":"full","style":{"color":{"background":"#ffffff"},"spacing":{"padding":{"top":"44px","right":"22px","bottom":"44px","left":"22px"},"margin":{"top":"0","bottom":"0"},"blockGap":"22px"}},"layout":{"type":"constrained","contentSize":"1160px"}} -->
+<div class="wp-block-group alignfull has-background" style="background-color:#ffffff;margin-top:0;margin-bottom:0;padding-top:44px;padding-right:22px;padding-bottom:44px;padding-left:22px"><!-- wp:heading {"style":{"spacing":{"margin":{"top":"12px","bottom":"12px"}}}} -->
+<h2 class="wp-block-heading" style="margin-top:12px;margin-bottom:12px">Where we clean</h2>
+<!-- /wp:heading -->
+
+<!-- wp:columns {"verticalAlignment":"top","style":{"spacing":{"blockGap":{"top":"16px","left":"20px"}}}} -->
+<div class="wp-block-columns are-vertically-aligned-top"><!-- wp:column -->
+<div class="wp-block-column"><!-- wp:image {"id":114,"aspectRatio":"2.15","scale":"cover","sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"10px","width":"0px"}}} -->
+<figure class="wp-block-image size-full has-custom-border"><img src="https://primedomestic.com.au/staging/wp-content/uploads/2026/11/prime-malvern-east-service-zones.png" alt="Indicative travel zones centred on Malvern East." class="wp-image-114" style="border-width:0px;border-radius:10px;aspect-ratio:2.15;object-fit:cover"/></figure>
+<!-- /wp:image --></div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column"><!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"top":"12px","bottom":"12px"}}}} -->
+<h3 class="wp-block-heading" style="margin-top:12px;margin-bottom:12px">Based in Malvern East</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Free travel within about 15 km. A flat $30 travel fee applies to each visit in the 15–25 km zone.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Beyond 25 km is by arrangement. Ask us about your suburb.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"align":"full","style":{"color":{"background":"#faf7ee"},"spacing":{"padding":{"top":"44px","right":"22px","bottom":"44px","left":"22px"},"margin":{"top":"0","bottom":"0"},"blockGap":"22px"}},"layout":{"type":"constrained","contentSize":"1160px"},"anchor":"suburbs"} -->
+<div class="wp-block-group alignfull has-background" id="suburbs" style="background-color:#faf7ee;margin-top:0;margin-bottom:0;padding-top:44px;padding-right:22px;padding-bottom:44px;padding-left:22px"><!-- wp:heading {"style":{"spacing":{"margin":{"top":"12px","bottom":"12px"}}}} -->
+<h2 class="wp-block-heading" style="margin-top:12px;margin-bottom:12px">Find your suburb</h2>
+<!-- /wp:heading -->
+
+<!-- wp:columns {"verticalAlignment":"top","style":{"spacing":{"blockGap":{"top":"16px","left":"20px"}}}} -->
+<div class="wp-block-columns are-vertically-aligned-top"><!-- wp:column -->
+<div class="wp-block-column"><!-- wp:group {"style":{"color":{"background":"#ffffff"},"border":{"color":"#ceded8","width":"1px","style":"solid","radius":"10px"},"spacing":{"padding":{"top":"20px","right":"20px","bottom":"20px","left":"20px"},"blockGap":"12px"}}} -->
+<div class="wp-block-group has-border-color has-background" style="border-color:#ceded8;border-style:solid;border-width:1px;border-radius:10px;background-color:#ffffff;padding-top:20px;padding-right:20px;padding-bottom:20px;padding-left:20px"><!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"top":"12px","bottom":"12px"}}}} -->
+<h3 class="wp-block-heading" style="margin-top:12px;margin-bottom:12px">Inner zone · Travel included</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Armadale 3143, Ashburton 3147, Bentleigh 3204, Bentleigh East 3165, Burwood 3125, Camberwell 3124, Carnegie 3163, Caulfield 3162, Caulfield East 3145, Caulfield North 3161, Caulfield South 3162, Chadstone 3148, Clayton 3168, Elsternwick 3185, Glen Iris 3146, Hawthorn 3122, Hughesdale 3166, Malvern 3144, Malvern East 3145, McKinnon 3204, Mount Waverley 3149, Murrumbeena 3163, Oakleigh 3166, Ormond 3204, Prahran 3181, St Kilda East 3183, Toorak 3142.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column"><!-- wp:group {"style":{"color":{"background":"#ffffff"},"border":{"color":"#ceded8","width":"1px","style":"solid","radius":"10px"},"spacing":{"padding":{"top":"20px","right":"20px","bottom":"20px","left":"20px"},"blockGap":"12px"}}} -->
+<div class="wp-block-group has-border-color has-background" style="border-color:#ceded8;border-style:solid;border-width:1px;border-radius:10px;background-color:#ffffff;padding-top:20px;padding-right:20px;padding-bottom:20px;padding-left:20px"><!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"top":"12px","bottom":"12px"}}}} -->
+<h3 class="wp-block-heading" style="margin-top:12px;margin-bottom:12px">Outer zone · $30 per visit</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Blackburn 3130, Box Hill 3128, Brighton 3186, Cheltenham 3192, Doncaster 3108, Glen Waverley 3150, Melbourne CBD 3000, Mentone 3194, Moorabbin 3189, Mulgrave 3170, Noble Park 3174, Nunawading 3131, Springvale 3171, Wheelers Hill 3150.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"align":"full","style":{"color":{"background":"#104747"},"spacing":{"padding":{"top":"44px","right":"22px","bottom":"44px","left":"22px"},"margin":{"top":"0","bottom":"0"},"blockGap":"22px"}},"layout":{"type":"constrained","contentSize":"1160px"}} -->
+<div class="wp-block-group alignfull has-background" style="background-color:#104747;margin-top:0;margin-bottom:0;padding-top:44px;padding-right:22px;padding-bottom:44px;padding-left:22px"><!-- wp:heading {"style":{"color":{"text":"#ffffff"},"spacing":{"margin":{"top":"12px","bottom":"12px"}}}} -->
+<h2 class="wp-block-heading has-text-color" style="color:#ffffff;margin-top:12px;margin-bottom:12px">Can’t see your suburb? Get in touch.</h2>
+<!-- /wp:heading -->
+
+<!-- wp:buttons {"style":{"spacing":{"blockGap":"9px"}},"layout":{"type":"flex","flexWrap":"wrap"}} -->
+<div class="wp-block-buttons"><!-- wp:button {"style":{"color":{"background":"#edce92","text":"#143e40"},"border":{"radius":"6px","width":"1px","color":"#edce92"},"spacing":{"padding":{"top":"12px","right":"18px","bottom":"12px","left":"18px"}},"typography":{"fontWeight":"600","fontSize":"15px"}}} -->
+<div class="wp-block-button"><a class="wp-block-button__link has-text-color has-background has-border-color has-custom-font-size wp-element-button" href="/staging/prices/#estimate" style="border-color:#edce92;border-width:1px;border-radius:6px;color:#143e40;background-color:#edce92;padding-top:12px;padding-right:18px;padding-bottom:12px;padding-left:18px;font-size:15px;font-weight:600">Get my estimate</a></div>
+<!-- /wp:button -->
+
+<!-- wp:button {"style":{"color":{"background":"#ffffff","text":"#143e40"},"border":{"radius":"6px","width":"1px","color":"#ceded8"},"spacing":{"padding":{"top":"12px","right":"18px","bottom":"12px","left":"18px"}},"typography":{"fontWeight":"600","fontSize":"15px"}}} -->
+<div class="wp-block-button"><a class="wp-block-button__link has-text-color has-background has-border-color has-custom-font-size wp-element-button" href="tel:+61491245156" style="border-color:#ceded8;border-width:1px;border-radius:6px;color:#143e40;background-color:#ffffff;padding-top:12px;padding-right:18px;padding-bottom:12px;padding-left:18px;font-size:15px;font-weight:600">Call us</a></div>
+<!-- /wp:button -->
+
+<!-- wp:button {"style":{"color":{"background":"#ffffff","text":"#143e40"},"border":{"radius":"6px","width":"1px","color":"#ceded8"},"spacing":{"padding":{"top":"12px","right":"18px","bottom":"12px","left":"18px"}},"typography":{"fontWeight":"600","fontSize":"15px"}}} -->
+<div class="wp-block-button"><a class="wp-block-button__link has-text-color has-background has-border-color has-custom-font-size wp-element-button" href="https://wa.me/61491245156" style="border-color:#ceded8;border-width:1px;border-radius:6px;color:#143e40;background-color:#ffffff;padding-top:12px;padding-right:18px;padding-bottom:12px;padding-left:18px;font-size:15px;font-weight:600">WhatsApp us</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons --></div>
+<!-- /wp:group -->

@@ -1,0 +1,13 @@
+<!-- wp:buttons {"style":{"spacing":{"blockGap":"9px"}},"layout":{"type":"flex","flexWrap":"wrap"}} -->
+<div class="wp-block-buttons"><!-- wp:button {"style":{"color":{"background":"#ffffff","text":"#143e40"},"border":{"radius":"6px","width":"1px","color":"#ceded8"},"spacing":{"padding":{"top":"12px","right":"18px","bottom":"12px","left":"18px"}},"typography":{"fontWeight":"600","fontSize":"15px"}}} -->
+<div class="wp-block-button"><a class="wp-block-button__link has-text-color has-background has-border-color has-custom-font-size wp-element-button" href="tel:+61491245156" style="border-color:#ceded8;border-width:1px;border-radius:6px;color:#143e40;background-color:#ffffff;padding-top:12px;padding-right:18px;padding-bottom:12px;padding-left:18px;font-size:15px;font-weight:600">Call</a></div>
+<!-- /wp:button -->
+
+<!-- wp:button {"style":{"color":{"background":"#ffffff","text":"#143e40"},"border":{"radius":"6px","width":"1px","color":"#ceded8"},"spacing":{"padding":{"top":"12px","right":"18px","bottom":"12px","left":"18px"}},"typography":{"fontWeight":"600","fontSize":"15px"}}} -->
+<div class="wp-block-button"><a class="wp-block-button__link has-text-color has-background has-border-color has-custom-font-size wp-element-button" href="https://wa.me/61491245156" style="border-color:#ceded8;border-width:1px;border-radius:6px;color:#143e40;background-color:#ffffff;padding-top:12px;padding-right:18px;padding-bottom:12px;padding-left:18px;font-size:15px;font-weight:600">WhatsApp</a></div>
+<!-- /wp:button -->
+
+<!-- wp:button {"style":{"color":{"background":"#086762","text":"#ffffff"},"border":{"radius":"6px","width":"1px","color":"#086762"},"spacing":{"padding":{"top":"12px","right":"18px","bottom":"12px","left":"18px"}},"typography":{"fontWeight":"600","fontSize":"15px"}}} -->
+<div class="wp-block-button"><a class="wp-block-button__link has-text-color has-background has-border-color has-custom-font-size wp-element-button" href="/staging/prices/" style="border-color:#086762;border-width:1px;border-radius:6px;color:#ffffff;background-color:#086762;padding-top:12px;padding-right:18px;padding-bottom:12px;padding-left:18px;font-size:15px;font-weight:600">Estimate</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons -->

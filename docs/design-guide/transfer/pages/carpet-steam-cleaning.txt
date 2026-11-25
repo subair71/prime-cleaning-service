@@ -1,0 +1,185 @@
+<!-- wp:group {"align":"full","style":{"color":{"background":"#e8f4ef"},"spacing":{"padding":{"top":"52px","right":"22px","bottom":"52px","left":"22px"},"margin":{"top":"0","bottom":"0"},"blockGap":"22px"}},"layout":{"type":"constrained","contentSize":"1160px"}} -->
+<div class="wp-block-group alignfull has-background" style="background-color:#e8f4ef;margin-top:0;margin-bottom:0;padding-top:52px;padding-right:22px;padding-bottom:52px;padding-left:22px"><!-- wp:columns {"verticalAlignment":"center","style":{"spacing":{"blockGap":{"top":"16px","left":"36px"}}}} -->
+<div class="wp-block-columns are-vertically-aligned-center"><!-- wp:column {"width":"55%"} -->
+<div class="wp-block-column" style="flex-basis:55%"><!-- wp:paragraph {"style":{"typography":{"fontSize":"12px","fontWeight":"700","letterSpacing":"1.5px"},"color":{"text":"#086762"}}} -->
+<p class="has-text-color" style="color:#086762;font-size:12px;font-weight:700;letter-spacing:1.5px">OUR SERVICES / CARPET STEAM CLEANING</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":1,"style":{"spacing":{"margin":{"top":"12px","bottom":"12px"}}}} -->
+<h1 class="wp-block-heading" style="margin-top:12px;margin-bottom:12px">Carpet steam cleaning in Malvern East</h1>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Spilled juice, muddy paws, that one dinner party. Give your carpet a fresh start.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:buttons {"style":{"spacing":{"blockGap":"9px"}},"layout":{"type":"flex","flexWrap":"wrap"}} -->
+<div class="wp-block-buttons"><!-- wp:button {"style":{"color":{"background":"#086762","text":"#ffffff"},"border":{"radius":"6px","width":"1px","color":"#086762"},"spacing":{"padding":{"top":"12px","right":"18px","bottom":"12px","left":"18px"}},"typography":{"fontWeight":"600","fontSize":"15px"}}} -->
+<div class="wp-block-button"><a class="wp-block-button__link has-text-color has-background has-border-color has-custom-font-size wp-element-button" href="/staging/prices/?prime_service=Carpet+steam+cleaning#estimate" style="border-color:#086762;border-width:1px;border-radius:6px;color:#ffffff;background-color:#086762;padding-top:12px;padding-right:18px;padding-bottom:12px;padding-left:18px;font-size:15px;font-weight:600">Get my carpet estimate</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons --></div>
+<!-- /wp:column -->
+
+<!-- wp:column {"width":"45%"} -->
+<div class="wp-block-column" style="flex-basis:45%"><!-- wp:image {"id":10,"aspectRatio":"1.64","scale":"cover","sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"10px","width":"0px"}}} -->
+<figure class="wp-block-image size-full has-custom-border"><img src="https://primedomestic.com.au/staging/wp-content/uploads/2026/11/prime-carpet-1280.webp" alt="An extraction wand steam cleaning a carpet." class="wp-image-10" style="border-width:0px;border-radius:10px;aspect-ratio:1.64;object-fit:cover"/></figure>
+<!-- /wp:image --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"align":"full","style":{"color":{"background":"#faf7ee"},"spacing":{"padding":{"top":"44px","right":"22px","bottom":"44px","left":"22px"},"margin":{"top":"0","bottom":"0"},"blockGap":"22px"}},"layout":{"type":"constrained","contentSize":"1160px"}} -->
+<div class="wp-block-group alignfull has-background" style="background-color:#faf7ee;margin-top:0;margin-bottom:0;padding-top:44px;padding-right:22px;padding-bottom:44px;padding-left:22px"><!-- wp:heading {"style":{"spacing":{"margin":{"top":"12px","bottom":"12px"}}}} -->
+<h2 class="wp-block-heading" style="margin-top:12px;margin-bottom:12px">Choose the areas to steam clean</h2>
+<!-- /wp:heading -->
+
+<!-- wp:columns {"verticalAlignment":"top","style":{"spacing":{"blockGap":{"top":"16px","left":"20px"}}}} -->
+<div class="wp-block-columns are-vertically-aligned-top"><!-- wp:column -->
+<div class="wp-block-column"><!-- wp:group {"style":{"color":{"background":"#ffffff"},"border":{"color":"#ceded8","width":"1px","style":"solid","radius":"10px"},"spacing":{"padding":{"top":"20px","right":"20px","bottom":"20px","left":"20px"},"blockGap":"12px"}}} -->
+<div class="wp-block-group has-border-color has-background" style="border-color:#ceded8;border-style:solid;border-width:1px;border-radius:10px;background-color:#ffffff;padding-top:20px;padding-right:20px;padding-bottom:20px;padding-left:20px"><!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"top":"12px","bottom":"12px"}}}} -->
+<h3 class="wp-block-heading" style="margin-top:12px;margin-bottom:12px">Bedrooms</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Count each bedroom.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column"><!-- wp:group {"style":{"color":{"background":"#ffffff"},"border":{"color":"#ceded8","width":"1px","style":"solid","radius":"10px"},"spacing":{"padding":{"top":"20px","right":"20px","bottom":"20px","left":"20px"},"blockGap":"12px"}}} -->
+<div class="wp-block-group has-border-color has-background" style="border-color:#ceded8;border-style:solid;border-width:1px;border-radius:10px;background-color:#ffffff;padding-top:20px;padding-right:20px;padding-bottom:20px;padding-left:20px"><!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"top":"12px","bottom":"12px"}}}} -->
+<h3 class="wp-block-heading" style="margin-top:12px;margin-bottom:12px">Lounge / living</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Count each living room.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column"><!-- wp:group {"style":{"color":{"background":"#ffffff"},"border":{"color":"#ceded8","width":"1px","style":"solid","radius":"10px"},"spacing":{"padding":{"top":"20px","right":"20px","bottom":"20px","left":"20px"},"blockGap":"12px"}}} -->
+<div class="wp-block-group has-border-color has-background" style="border-color:#ceded8;border-style:solid;border-width:1px;border-radius:10px;background-color:#ffffff;padding-top:20px;padding-right:20px;padding-bottom:20px;padding-left:20px"><!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"top":"12px","bottom":"12px"}}}} -->
+<h3 class="wp-block-heading" style="margin-top:12px;margin-bottom:12px">Hallway</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Select if included.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column"><!-- wp:group {"style":{"color":{"background":"#ffffff"},"border":{"color":"#ceded8","width":"1px","style":"solid","radius":"10px"},"spacing":{"padding":{"top":"20px","right":"20px","bottom":"20px","left":"20px"},"blockGap":"12px"}}} -->
+<div class="wp-block-group has-border-color has-background" style="border-color:#ceded8;border-style:solid;border-width:1px;border-radius:10px;background-color:#ffffff;padding-top:20px;padding-right:20px;padding-bottom:20px;padding-left:20px"><!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"top":"12px","bottom":"12px"}}}} -->
+<h3 class="wp-block-heading" style="margin-top:12px;margin-bottom:12px">Stairs</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Select if included.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"align":"full","style":{"color":{"background":"#ffffff"},"spacing":{"padding":{"top":"44px","right":"22px","bottom":"44px","left":"22px"},"margin":{"top":"0","bottom":"0"},"blockGap":"22px"}},"layout":{"type":"constrained","contentSize":"1160px"}} -->
+<div class="wp-block-group alignfull has-background" style="background-color:#ffffff;margin-top:0;margin-bottom:0;padding-top:44px;padding-right:22px;padding-bottom:44px;padding-left:22px"><!-- wp:heading {"style":{"spacing":{"margin":{"top":"12px","bottom":"12px"}}}} -->
+<h2 class="wp-block-heading" style="margin-top:12px;margin-bottom:12px">How we clean</h2>
+<!-- /wp:heading -->
+
+<!-- wp:columns {"verticalAlignment":"top","style":{"spacing":{"blockGap":{"top":"16px","left":"20px"}}}} -->
+<div class="wp-block-columns are-vertically-aligned-top"><!-- wp:column -->
+<div class="wp-block-column"><!-- wp:group {"style":{"color":{"background":"#ffffff"},"border":{"color":"#ceded8","width":"1px","style":"solid","radius":"10px"},"spacing":{"padding":{"top":"20px","right":"20px","bottom":"20px","left":"20px"},"blockGap":"12px"}}} -->
+<div class="wp-block-group has-border-color has-background" style="border-color:#ceded8;border-style:solid;border-width:1px;border-radius:10px;background-color:#ffffff;padding-top:20px;padding-right:20px;padding-bottom:20px;padding-left:20px"><!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"top":"12px","bottom":"12px"}}}} -->
+<h3 class="wp-block-heading" style="margin-top:12px;margin-bottom:12px">Preparation</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Pre-vacuum high-traffic areas and pre-treat common marks.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column"><!-- wp:group {"style":{"color":{"background":"#ffffff"},"border":{"color":"#ceded8","width":"1px","style":"solid","radius":"10px"},"spacing":{"padding":{"top":"20px","right":"20px","bottom":"20px","left":"20px"},"blockGap":"12px"}}} -->
+<div class="wp-block-group has-border-color has-background" style="border-color:#ceded8;border-style:solid;border-width:1px;border-radius:10px;background-color:#ffffff;padding-top:20px;padding-right:20px;padding-bottom:20px;padding-left:20px"><!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"top":"12px","bottom":"12px"}}}} -->
+<h3 class="wp-block-heading" style="margin-top:12px;margin-bottom:12px">Hot-water extraction</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Work the solution into the fibres, then extract dirt and moisture.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns -->
+
+<!-- wp:columns {"verticalAlignment":"top","style":{"spacing":{"blockGap":{"top":"16px","left":"20px"}}}} -->
+<div class="wp-block-columns are-vertically-aligned-top"><!-- wp:column -->
+<div class="wp-block-column"><!-- wp:group {"style":{"color":{"background":"#ffffff"},"border":{"color":"#ceded8","width":"1px","style":"solid","radius":"10px"},"spacing":{"padding":{"top":"20px","right":"20px","bottom":"20px","left":"20px"},"blockGap":"12px"}}} -->
+<div class="wp-block-group has-border-color has-background" style="border-color:#ceded8;border-style:solid;border-width:1px;border-radius:10px;background-color:#ffffff;padding-top:20px;padding-right:20px;padding-bottom:20px;padding-left:20px"><!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"top":"12px","bottom":"12px"}}}} -->
+<h3 class="wp-block-heading" style="margin-top:12px;margin-bottom:12px">Finish</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Groom the pile and allow airflow while the carpet dries.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"align":"full","style":{"color":{"background":"#faf7ee"},"spacing":{"padding":{"top":"44px","right":"22px","bottom":"44px","left":"22px"},"margin":{"top":"0","bottom":"0"},"blockGap":"22px"}},"layout":{"type":"constrained","contentSize":"1160px"}} -->
+<div class="wp-block-group alignfull has-background" style="background-color:#faf7ee;margin-top:0;margin-bottom:0;padding-top:44px;padding-right:22px;padding-bottom:44px;padding-left:22px"><!-- wp:heading {"style":{"spacing":{"margin":{"top":"12px","bottom":"12px"}}}} -->
+<h2 class="wp-block-heading" style="margin-top:12px;margin-bottom:12px">Outside this service</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Off-site rug cleaning, flood restoration and heavy mould treatment.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"align":"full","style":{"color":{"background":"#ffffff"},"spacing":{"padding":{"top":"44px","right":"22px","bottom":"44px","left":"22px"},"margin":{"top":"0","bottom":"0"},"blockGap":"22px"}},"layout":{"type":"constrained","contentSize":"1160px"}} -->
+<div class="wp-block-group alignfull has-background" style="background-color:#ffffff;margin-top:0;margin-bottom:0;padding-top:44px;padding-right:22px;padding-bottom:44px;padding-left:22px"><!-- wp:heading {"style":{"spacing":{"margin":{"top":"12px","bottom":"12px"}}}} -->
+<h2 class="wp-block-heading" style="margin-top:12px;margin-bottom:12px">Frequently asked questions</h2>
+<!-- /wp:heading -->
+
+<!-- wp:details {"showContent":true,"style":{"border":{"color":"#ceded8","width":"1px","style":"solid","radius":"10px"},"spacing":{"padding":{"top":"14px","right":"16px","bottom":"14px","left":"16px"}}}} -->
+<details class="wp-block-details has-border-color" style="border-color:#ceded8;border-style:solid;border-width:1px;border-radius:10px;padding-top:14px;padding-right:16px;padding-bottom:14px;padding-left:16px" open><summary>How long does it take to dry?</summary><!-- wp:paragraph -->
+<p>Usually a few hours. Weather, airflow and the carpet make a difference.</p>
+<!-- /wp:paragraph --></details>
+<!-- /wp:details -->
+
+<!-- wp:details {"style":{"border":{"color":"#ceded8","width":"1px","style":"solid","radius":"10px"},"spacing":{"padding":{"top":"14px","right":"16px","bottom":"14px","left":"16px"}}}} -->
+<details class="wp-block-details has-border-color" style="border-color:#ceded8;border-style:solid;border-width:1px;border-radius:10px;padding-top:14px;padding-right:16px;padding-bottom:14px;padding-left:16px"><summary>Will every stain come out?</summary><!-- wp:paragraph -->
+<p>We assess stubborn stains and explain what the clean can achieve.</p>
+<!-- /wp:paragraph --></details>
+<!-- /wp:details -->
+
+<!-- wp:details {"style":{"border":{"color":"#ceded8","width":"1px","style":"solid","radius":"10px"},"spacing":{"padding":{"top":"14px","right":"16px","bottom":"14px","left":"16px"}}}} -->
+<details class="wp-block-details has-border-color" style="border-color:#ceded8;border-style:solid;border-width:1px;border-radius:10px;padding-top:14px;padding-right:16px;padding-bottom:14px;padding-left:16px"><summary>Can I add this to an end of lease clean?</summary><!-- wp:paragraph -->
+<p>Yes. Choose carpet steam cleaning as an add-on.</p>
+<!-- /wp:paragraph --></details>
+<!-- /wp:details --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"align":"full","style":{"color":{"background":"#104747"},"spacing":{"padding":{"top":"44px","right":"22px","bottom":"44px","left":"22px"},"margin":{"top":"0","bottom":"0"},"blockGap":"22px"}},"layout":{"type":"constrained","contentSize":"1160px"}} -->
+<div class="wp-block-group alignfull has-background" style="background-color:#104747;margin-top:0;margin-bottom:0;padding-top:44px;padding-right:22px;padding-bottom:44px;padding-left:22px"><!-- wp:heading {"style":{"color":{"text":"#ffffff"},"spacing":{"margin":{"top":"12px","bottom":"12px"}}}} -->
+<h2 class="wp-block-heading has-text-color" style="color:#ffffff;margin-top:12px;margin-bottom:12px">Fresh carpet, happy feet.</h2>
+<!-- /wp:heading -->
+
+<!-- wp:buttons {"style":{"spacing":{"blockGap":"9px"}},"layout":{"type":"flex","flexWrap":"wrap"}} -->
+<div class="wp-block-buttons"><!-- wp:button {"style":{"color":{"background":"#edce92","text":"#143e40"},"border":{"radius":"6px","width":"1px","color":"#edce92"},"spacing":{"padding":{"top":"12px","right":"18px","bottom":"12px","left":"18px"}},"typography":{"fontWeight":"600","fontSize":"15px"}}} -->
+<div class="wp-block-button"><a class="wp-block-button__link has-text-color has-background has-border-color has-custom-font-size wp-element-button" href="/staging/prices/?prime_service=Carpet+steam+cleaning#estimate" style="border-color:#edce92;border-width:1px;border-radius:6px;color:#143e40;background-color:#edce92;padding-top:12px;padding-right:18px;padding-bottom:12px;padding-left:18px;font-size:15px;font-weight:600">Get my estimate</a></div>
+<!-- /wp:button -->
+
+<!-- wp:button {"style":{"color":{"background":"#ffffff","text":"#143e40"},"border":{"radius":"6px","width":"1px","color":"#ceded8"},"spacing":{"padding":{"top":"12px","right":"18px","bottom":"12px","left":"18px"}},"typography":{"fontWeight":"600","fontSize":"15px"}}} -->
+<div class="wp-block-button"><a class="wp-block-button__link has-text-color has-background has-border-color has-custom-font-size wp-element-button" href="tel:+61491245156" style="border-color:#ceded8;border-width:1px;border-radius:6px;color:#143e40;background-color:#ffffff;padding-top:12px;padding-right:18px;padding-bottom:12px;padding-left:18px;font-size:15px;font-weight:600">Call us</a></div>
+<!-- /wp:button -->
+
+<!-- wp:button {"style":{"color":{"background":"#ffffff","text":"#143e40"},"border":{"radius":"6px","width":"1px","color":"#ceded8"},"spacing":{"padding":{"top":"12px","right":"18px","bottom":"12px","left":"18px"}},"typography":{"fontWeight":"600","fontSize":"15px"}}} -->
+<div class="wp-block-button"><a class="wp-block-button__link has-text-color has-background has-border-color has-custom-font-size wp-element-button" href="https://wa.me/61491245156" style="border-color:#ceded8;border-width:1px;border-radius:6px;color:#143e40;background-color:#ffffff;padding-top:12px;padding-right:18px;padding-bottom:12px;padding-left:18px;font-size:15px;font-weight:600">WhatsApp us</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons --></div>
+<!-- /wp:group -->

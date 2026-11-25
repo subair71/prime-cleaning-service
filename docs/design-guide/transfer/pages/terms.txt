@@ -1,0 +1,37 @@
+<!-- wp:group {"align":"full","style":{"color":{"background":"#e8f4ef"},"spacing":{"padding":{"top":"44px","right":"22px","bottom":"44px","left":"22px"},"margin":{"top":"0","bottom":"0"},"blockGap":"22px"}},"layout":{"type":"constrained","contentSize":"1160px"}} -->
+<div class="wp-block-group alignfull has-background" style="background-color:#e8f4ef;margin-top:0;margin-bottom:0;padding-top:44px;padding-right:22px;padding-bottom:44px;padding-left:22px"><!-- wp:paragraph {"style":{"typography":{"fontSize":"12px","fontWeight":"700","letterSpacing":"1.5px"},"color":{"text":"#086762"}}} -->
+<p class="has-text-color" style="color:#086762;font-size:12px;font-weight:700;letter-spacing:1.5px">WEBSITE INFORMATION</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":1,"style":{"spacing":{"margin":{"top":"12px","bottom":"12px"}}}} -->
+<h1 class="wp-block-heading" style="margin-top:12px;margin-bottom:12px">Terms of Service</h1>
+<!-- /wp:heading --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"align":"full","style":{"color":{"background":"#ffffff"},"spacing":{"padding":{"top":"44px","right":"22px","bottom":"44px","left":"22px"},"margin":{"top":"0","bottom":"0"},"blockGap":"22px"}},"layout":{"type":"constrained","contentSize":"1160px"}} -->
+<div class="wp-block-group alignfull has-background" style="background-color:#ffffff;margin-top:0;margin-bottom:0;padding-top:44px;padding-right:22px;padding-bottom:44px;padding-left:22px"><!-- wp:heading {"style":{"spacing":{"margin":{"top":"12px","bottom":"12px"}}}} -->
+<h2 class="wp-block-heading" style="margin-top:12px;margin-bottom:12px">On this page</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Estimates and confirmation · Access to the property · Payment on completion · Cancellation and rescheduling · Regular visit discount · Reporting a problem</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"align":"full","style":{"color":{"background":"#faf7ee"},"spacing":{"padding":{"top":"44px","right":"22px","bottom":"44px","left":"22px"},"margin":{"top":"0","bottom":"0"},"blockGap":"22px"}},"layout":{"type":"constrained","contentSize":"1160px"}} -->
+<div class="wp-block-group alignfull has-background" style="background-color:#faf7ee;margin-top:0;margin-bottom:0;padding-top:44px;padding-right:22px;padding-bottom:44px;padding-left:22px"><!-- wp:heading {"style":{"spacing":{"margin":{"top":"12px","bottom":"12px"}}}} -->
+<h2 class="wp-block-heading" style="margin-top:12px;margin-bottom:12px">Booking and payment</h2>
+<!-- /wp:heading --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"align":"full","style":{"color":{"background":"#ffffff"},"spacing":{"padding":{"top":"44px","right":"22px","bottom":"44px","left":"22px"},"margin":{"top":"0","bottom":"0"},"blockGap":"22px"}},"layout":{"type":"constrained","contentSize":"1160px"}} -->
+<div class="wp-block-group alignfull has-background" style="background-color:#ffffff;margin-top:0;margin-bottom:0;padding-top:44px;padding-right:22px;padding-bottom:44px;padding-left:22px"><!-- wp:heading {"style":{"spacing":{"margin":{"top":"12px","bottom":"12px"}}}} -->
+<h2 class="wp-block-heading" style="margin-top:12px;margin-bottom:12px">Questions about your clean?</h2>
+<!-- /wp:heading -->
+
+<!-- wp:buttons {"style":{"spacing":{"blockGap":"9px"}},"layout":{"type":"flex","flexWrap":"wrap"}} -->
+<div class="wp-block-buttons"><!-- wp:button {"style":{"color":{"background":"#ffffff","text":"#143e40"},"border":{"radius":"6px","width":"1px","color":"#ceded8"},"spacing":{"padding":{"top":"12px","right":"18px","bottom":"12px","left":"18px"}},"typography":{"fontWeight":"600","fontSize":"15px"}}} -->
+<div class="wp-block-button"><a class="wp-block-button__link has-text-color has-background has-border-color has-custom-font-size wp-element-button" href="/staging/contact/" style="border-color:#ceded8;border-width:1px;border-radius:6px;color:#143e40;background-color:#ffffff;padding-top:12px;padding-right:18px;padding-bottom:12px;padding-left:18px;font-size:15px;font-weight:600">Contact the team</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons --></div>
+<!-- /wp:group -->

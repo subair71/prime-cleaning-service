@@ -1,0 +1,529 @@
+<!-- wp:group {"align":"full","style":{"color":{"background":"#e8f4ef"},"spacing":{"padding":{"top":"52px","right":"22px","bottom":"52px","left":"22px"},"margin":{"top":"0","bottom":"0"},"blockGap":"22px"}},"layout":{"type":"constrained","contentSize":"1160px"}} -->
+<div class="wp-block-group alignfull has-background" style="background-color:#e8f4ef;margin-top:0;margin-bottom:0;padding-top:52px;padding-right:22px;padding-bottom:52px;padding-left:22px"><!-- wp:paragraph {"style":{"typography":{"fontSize":"12px","fontWeight":"700","letterSpacing":"1.5px"},"color":{"text":"#086762"}}} -->
+<p class="has-text-color" style="color:#086762;font-size:12px;font-weight:700;letter-spacing:1.5px">WEBSITE INFORMATION</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":1,"style":{"spacing":{"margin":{"top":"12px","bottom":"12px"}}}} -->
+<h1 class="wp-block-heading" style="margin-top:12px;margin-bottom:12px">Privacy Policy</h1>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>We only collect what we need to quote and clean, and we never sell it.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Version 1.2 · Effective 8 November 2026</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"align":"full","style":{"color":{"background":"#ffffff"},"spacing":{"padding":{"top":"44px","right":"22px","bottom":"44px","left":"22px"},"margin":{"top":"0","bottom":"0"},"blockGap":"22px"}},"layout":{"type":"constrained","contentSize":"1160px"}} -->
+<div class="wp-block-group alignfull has-background" style="background-color:#ffffff;margin-top:0;margin-bottom:0;padding-top:44px;padding-right:22px;padding-bottom:44px;padding-left:22px"><!-- wp:heading {"style":{"spacing":{"margin":{"top":"12px","bottom":"12px"}}}} -->
+<h2 class="wp-block-heading" style="margin-top:12px;margin-bottom:12px">In this policy</h2>
+<!-- /wp:heading -->
+
+<!-- wp:columns {"verticalAlignment":"top","style":{"spacing":{"blockGap":{"top":"16px","left":"20px"}}}} -->
+<div class="wp-block-columns are-vertically-aligned-top"><!-- wp:column -->
+<div class="wp-block-column"><!-- wp:paragraph -->
+<p><a href="#policy-1">1. About this policy</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="#policy-2">2. What we collect</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="#policy-3">3. Job photos</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="#policy-4">4. Why we use it</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="#policy-5">5. Who we share it with</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="#policy-6">6. Overseas storage</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="#policy-7">7. How we store and keep it</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="#policy-8">8. Messages and Google reviews</a></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column"><!-- wp:paragraph -->
+<p><a href="#policy-9">9. Cookies and our website</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="#policy-10">10. Dealing with us anonymously</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="#policy-11">11. Automated decisions</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="#policy-12">12. Children</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="#policy-13">13. Access, correction and complaints</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="#policy-14">14. Data breaches</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="#policy-15">15. Changes to this policy</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="#policy-16">16. Contact us</a></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"align":"full","style":{"color":{"background":"#faf7ee"},"spacing":{"padding":{"top":"44px","right":"22px","bottom":"44px","left":"22px"},"margin":{"top":"0","bottom":"0"},"blockGap":"22px"}},"layout":{"type":"constrained","contentSize":"1160px"}} -->
+<div class="wp-block-group alignfull has-background" style="background-color:#faf7ee;margin-top:0;margin-bottom:0;padding-top:44px;padding-right:22px;padding-bottom:44px;padding-left:22px"><!-- wp:heading {"style":{"spacing":{"margin":{"top":"12px","bottom":"12px"}}}} -->
+<h2 class="wp-block-heading" style="margin-top:12px;margin-bottom:12px">Policy text</h2>
+<!-- /wp:heading -->
+
+<!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"top":"12px","bottom":"12px"}}},"anchor":"policy-1"} -->
+<h3 id="policy-1" class="wp-block-heading" style="margin-top:12px;margin-bottom:12px">1. About this policy</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Prime Domestic and Cleaning Services ("we", "us", "our") is a small, local cleaning business based in Malvern East, Victoria. We clean homes and apartments across Melbourne's south east.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>This policy explains what personal information we collect, why we collect it, how we use, store and share it, and how you can see it, correct it or complain. We handle personal information in line with the Privacy Act 1988 (Cth) and the Australian Privacy Principles, and we send electronic messages in line with the Spam Act 2003 (Cth).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>It applies to anyone who visits our website, contacts us, uses our price estimator, books a clean, or whose details are given to us by someone else, such as a tenant whose property manager books an end of lease clean.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"top":"12px","bottom":"12px"}}},"anchor":"policy-2"} -->
+<h3 id="policy-2" class="wp-block-heading" style="margin-top:12px;margin-bottom:12px">2. What we collect</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>We only collect what we need to quote, book, carry out and invoice your clean.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Contact details: your name, phone number, email address and the address of the property to be cleaned.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Job details: the type of clean, number of bedrooms and bathrooms, add-ons, preferred dates, access and parking arrangements, pets, and any instructions you give us.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Price estimator details: the options you select and the estimate shown to you.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Photos you send us: photos of the property you send us on WhatsApp so we can confirm your quote.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Billing details: the name and address on your invoice, and the payer name and reference shown on your bank transfer. If we give you a refund, we also collect the bank account name, BSB and account number you give us for it, and use them only for that refund. If an NDIS plan or aged care program pays for your clean, we also collect your plan manager's or provider's details and the reference numbers they need to pay us.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Messages: emails, texts, WhatsApp chats, form submissions and notes of phone calls with you.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Job photos we take: in limited cases only, for protection (see section 3).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Feedback and reviews: feedback you send us and reviews you choose to post on Google. Website data: your IP address, browser and device type, pages viewed and how you found our site, collected through cookies and similar tools (see section 9).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>What we do not collect. We do not collect or keep keys, lockbox or key safe codes, keyless entry PINs or alarm codes. We never copy keys. We do not take payments on our website and we never collect or store card numbers, CVVs or banking passwords. We do not ask for government ID such as a driver's licence or Medicare number.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Keys on the day of a clean. If you or your agent leave a key for us on the day, for example in a temporary lockbox or a place you nominate, we use it only to enter and leave for that job. We return or secure it as agreed with you or your agent when the job is finished. We do not record any lockbox or access code you give us for the day.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Health and disability information. We do not ask for it. Sometimes you may tell us about a disability, mobility needs or allergies so we can clean safely, or an NDIS or aged care plan may pay for your clean. We only collect this with your consent, use it only to clean safely and be paid, and share it only with your plan manager or provider where needed for payment. We are not a registered NDIS provider. For NDIS or aged care invoices, we only record the details your plan manager or provider needs to pay us, such as your name and NDIS or reference number, and we never record a diagnosis. We also handle health information in line with the Health Records Act 2001 (Vic).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>How we collect it. Mostly directly from you: through our website forms and estimator, by phone, text, email or WhatsApp, through our Google Business Profile or social media pages, and when you book and pay. Sometimes we receive your details from a real estate agent or property manager, a family member or carer, an NDIS plan manager or aged care provider, or someone who referred you. If someone gives us your details, we ask them to let you know and to point you to this policy. If we receive information we did not ask for and do not need, we delete it as soon as practicable, where lawful.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"top":"12px","bottom":"12px"}}},"anchor":"policy-3"} -->
+<h3 id="policy-3" class="wp-block-heading" style="margin-top:12px;margin-bottom:12px">3. Job photos</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>We never take photos for marketing and we never publish photos of a client's property.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>We may take a small number of photos during a job only to protect you and us. For example, to record existing damage, a condition that is unsafe or far beyond what was quoted, or finished work where there could be a dispute, such as an end of lease clean. We avoid photographing people, documents, family photos, mail and other private items.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>These photos are used only to resolve a question about the job, a complaint, or an insurance or payment matter. They are shared only with you, your agent or property manager where relevant, or our insurer if a claim is made.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>We delete job photos, and photos you sent us for a quote, within 90 days after the job, or within 90 days of the quote if you did not book. If photos are needed for an open dispute, complaint or claim, we delete them once it is resolved.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"top":"12px","bottom":"12px"}}},"anchor":"policy-4"} -->
+<h3 id="policy-4" class="wp-block-heading" style="margin-top:12px;margin-bottom:12px">4. Why we use it</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>We use personal information to:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>answer enquiries and give you quotes</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>book, schedule and carry out your clean, including travelling to the property</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>contact you about your booking, changes, access and parking</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>issue invoices and receipts and match payments to bookings</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>handle feedback, complaints, disputes and insurance claims</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>ask once whether you would like to leave a Google review (see section 8)</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>keep business records, meet our tax and legal obligations, and protect our legal rights</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>keep our website working, secure and free of spam, and see how it is used so we can improve it.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>We do not use your information for anything else unless you agree, or the law allows or requires it. We never sell, rent or trade personal information.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"top":"12px","bottom":"12px"}}},"anchor":"policy-5"} -->
+<h3 id="policy-5" class="wp-block-heading" style="margin-top:12px;margin-bottom:12px">5. Who we share it with</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>We only share personal information when we need to run the business, or when the law requires it:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Service providers who host our website and supply our email, calendar, file storage, messaging, accounting and website tools (see section 6). They only handle your information to provide their service to us.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Your agent, property manager, plan manager or provider, where they booked or are paying for the clean, to arrange access, confirm the work or process payment.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>People who work on your job. If a team member attends your clean, we share only what they need for that job, such as the address, access arrangements and instructions, and they must keep it confidential.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Professional advisers and insurers, such as our accountant, bookkeeper, lawyer or insurer, who must keep it confidential.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Government and law enforcement, where required or authorised by law, such as the Australian Taxation Office, or under a court order or subpoena.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"top":"12px","bottom":"12px"}}},"anchor":"policy-6"} -->
+<h3 id="policy-6" class="wp-block-heading" style="margin-top:12px;margin-bottom:12px">6. Overseas storage</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Our website is hosted in Australia, and the enquiries and estimator entries submitted through it are stored in our website's database with our Australian host.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Some tools we use to run the business are run by global companies that may store or process information outside Australia, mainly in the United States and other countries where they have data centres:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Google: business email (Google Workspace, where copies of website enquiries are also sent), calendar, files and spreadsheets, Google Analytics, Google Search Console, Google reCAPTCHA, Google Maps and our Google Business Profile and reviews.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Cloudflare: Turnstile spam protection on our forms, if used instead of reCAPTCHA.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Meta: WhatsApp, and our Facebook and Instagram pages.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Our accounting software provider, if we use one to prepare invoices. Until then, invoices are kept in our Google Workspace account.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>WhatsApp. Our website links to WhatsApp through a standard chat link. We do not use the WhatsApp Business API or any automated chatbot, and messages are answered by us personally. WhatsApp is owned by Meta, which may process messages outside Australia under its own privacy policy. We do not control how Meta stores messages. If you prefer, you can contact us by email or phone instead.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>We use established providers with strong security and take reasonable steps to make sure they handle personal information consistently with the Australian Privacy Principles. We never send personal information overseas to marketers or data brokers.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"top":"12px","bottom":"12px"}}},"anchor":"policy-7"} -->
+<h3 id="policy-7" class="wp-block-heading" style="margin-top:12px;margin-bottom:12px">7. How we store and keep it</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>We take reasonable steps to protect personal information from misuse, loss and unauthorised access, change or disclosure, including:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>HTTPS encryption across our website, so form details are protected in transit</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>two-step verification and login limits on our website administration, and two-step verification on our email and business accounts</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>regular website backups held with our Australian host</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>a passcode on the phone we use for the business</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>access to client information only for people who need it for a job.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>No system is completely secure, so we cannot guarantee absolute security.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>How long we keep it.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>When we no longer need personal information for any lawful purpose, we securely delete it or remove anything that identifies you.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"top":"12px","bottom":"12px"}}},"anchor":"policy-8"} -->
+<h3 id="policy-8" class="wp-block-heading" style="margin-top:12px;margin-bottom:12px">8. Messages and Google reviews</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>We will contact you about your quote, booking and invoice by phone, text, WhatsApp or email.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>After a completed job, we may send you one message asking if you would like to leave a Google review, and at most one follow-up. Reviews are entirely your choice and we never offer rewards for them. We do not send newsletters or promotional campaigns, and we never buy or use contact lists.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Every non-essential message we send identifies us and tells you how to opt out. Reply STOP to a text or email info@primedomestic.com.au, and we will action it within 5 working days. Opting out does not stop messages we need to send about a booking you have with us.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"top":"12px","bottom":"12px"}}},"anchor":"policy-9"} -->
+<h3 id="policy-9" class="wp-block-heading" style="margin-top:12px;margin-bottom:12px">9. Cookies and our website</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Cookies are small files saved on your device when you visit a website.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>We do not use the Meta Pixel, the TikTok Pixel or any other advertising or retargeting pixel, and we do not sell advertising space. If that ever changes, we will update this policy first.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Our website uses:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Essential cookies, needed for the site, forms and estimator to work. These are always on.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Security checks, through Google reCAPTCHA v3 or Cloudflare Turnstile, which check that a form is being sent by a real person. These are needed to keep our forms free of spam. Analytics, through Google Analytics 4 and Google Search Console, to see how visitors find and use our site. We look at this data in total, not to identify you. Embedded content, such as a Google map of our service area and our Google reviews. Google may set its own cookies when these load.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Cookie banner. When you first visit, a banner lets you accept or decline non-essential cookies, including Google Analytics and embedded maps and reviews. You can change your choice at any time using the cookie settings link at the bottom of every page. You can also block cookies in your browser settings, but if you block essential or security cookies, our forms and estimator may not work.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"top":"12px","bottom":"12px"}}},"anchor":"policy-10"} -->
+<h3 id="policy-10" class="wp-block-heading" style="margin-top:12px;margin-bottom:12px">10. Dealing with us anonymously</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>You can browse our website and see an estimate from our price estimator without giving us your name or contact details. We only ask for these if you choose to request a booking. To give you a confirmed quote, book and carry out a clean and send an invoice, we need your name, contact details and the property address, so we cannot provide our services anonymously.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"top":"12px","bottom":"12px"}}},"anchor":"policy-11"} -->
+<h3 id="policy-11" class="wp-block-heading" style="margin-top:12px;margin-bottom:12px">11. Automated decisions</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Our price estimator is a calculator only. It works out an estimate from the options you choose and does not make any decision about you. Your final price is set by us personally after we look at your photos or talk with you. We do not use computer programs to make decisions that significantly affect your rights or interests.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"top":"12px","bottom":"12px"}}},"anchor":"policy-12"} -->
+<h3 id="policy-12" class="wp-block-heading" style="margin-top:12px;margin-bottom:12px">12. Children</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Our website and services are for adults. We do not market to anyone under 18 and we do not knowingly collect personal information from children, including dates of birth. If a child has sent us information, please tell us and we will delete it. If children are at a property during a clean, we do not collect information about them beyond what we need to work safely.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"top":"12px","bottom":"12px"}}},"anchor":"policy-13"} -->
+<h3 id="policy-13" class="wp-block-heading" style="margin-top:12px;margin-bottom:12px">13. Access, correction and complaints</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>You can ask to see the personal information we hold about you, and ask us to correct it if it is wrong, out of date, incomplete or misleading. We will confirm your identity first. We aim to respond within 30 days, and there is no charge. If we refuse a request where the law allows us to, we will tell you why in writing and how to complain.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>If you have a concern or think we have mishandled your information, please contact us first (see section 16). We will acknowledge your complaint within 5 working days and give you a written response within 30 days.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>If you are not satisfied with our response, you can contact the Office of the Australian Information Commissioner (OAIC):</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Website: www.oaic.gov.au Phone: 1300 363 992 Post: GPO Box 5288, Sydney NSW 2001</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>If your complaint is about health or disability information, you can also contact the Health Complaints Commissioner (Victoria) at www.hcc.vic.gov.au or 1300 582 113.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"top":"12px","bottom":"12px"}}},"anchor":"policy-14"} -->
+<h3 id="policy-14" class="wp-block-heading" style="margin-top:12px;margin-bottom:12px">14. Data breaches</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>If we suspect a data breach, we will act straight away to contain it and reduce any harm. We will assess what happened within 30 days.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>If the breach is likely to cause serious harm to you, we will notify you and the OAIC as soon as practicable, as required under the Notifiable Data Breaches scheme. We will tell you what happened, what information was involved and what you can do to protect yourself.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"top":"12px","bottom":"12px"}}},"anchor":"policy-15"} -->
+<h3 id="policy-15" class="wp-block-heading" style="margin-top:12px;margin-bottom:12px">15. Changes to this policy</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>We may update this policy when our services, tools or the law change. The current version will always be on this page with its version number and date. Earlier versions are available on request.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":4,"style":{"spacing":{"margin":{"top":"12px","bottom":"12px"}}}} -->
+<h4 class="wp-block-heading" style="margin-top:12px;margin-bottom:12px">Date</h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p><strong>1.2</strong><br>8 November 2026</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>1.1</strong><br>8 November 2026</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>1.0</strong><br>8 November 2026</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":4,"style":{"spacing":{"margin":{"top":"12px","bottom":"12px"}}}} -->
+<h4 class="wp-block-heading" style="margin-top:12px;margin-bottom:12px">Change</h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p><strong>1.2</strong><br>Added refund bank details, NDIS and Victorian health records wording, and Health Complaints Commissioner contact</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>1.1</strong><br>Added data breach, cookie banner, WhatsApp, children and version sections; added phone contact; restructured sections</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>1.0</strong><br>First version</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"top":"12px","bottom":"12px"}}},"anchor":"policy-16"} -->
+<h3 id="policy-16" class="wp-block-heading" style="margin-top:12px;margin-bottom:12px">16. Contact us</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Business: Prime Domestic and Cleaning Services</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>ABN: 16 938 734 164</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Email: info@primedomestic.com.au</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Phone: 0491 245 156</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Location: Malvern East, Victoria 3145</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Website: www.primedomestic.com.au</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>See also our Terms of Service.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"align":"full","style":{"color":{"background":"#ffffff"},"spacing":{"padding":{"top":"44px","right":"22px","bottom":"44px","left":"22px"},"margin":{"top":"0","bottom":"0"},"blockGap":"22px"}},"layout":{"type":"constrained","contentSize":"1160px"}} -->
+<div class="wp-block-group alignfull has-background" style="background-color:#ffffff;margin-top:0;margin-bottom:0;padding-top:44px;padding-right:22px;padding-bottom:44px;padding-left:22px"><!-- wp:heading {"style":{"spacing":{"margin":{"top":"12px","bottom":"12px"}}}} -->
+<h2 class="wp-block-heading" style="margin-top:12px;margin-bottom:12px">Privacy enquiries</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Contact the business about access, corrections or a privacy concern.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="mailto:info@primedomestic.com.au">info@primedomestic.com.au</a></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
