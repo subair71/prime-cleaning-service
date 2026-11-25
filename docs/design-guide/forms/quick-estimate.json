@@ -1,0 +1,5115 @@
+[
+  {
+    "title": "Prime | Quick estimate · Guide",
+    "status": "published",
+    "appearance_settings": null,
+    "form_fields": {
+      "fields": [
+        {
+          "index": 7,
+          "element": "select",
+          "attributes": {
+            "autocomplete": "",
+            "name": "quick_service",
+            "value": "",
+            "id": "",
+            "class": ""
+          },
+          "settings": {
+            "dynamic_default_value": "",
+            "label": "Service",
+            "admin_field_label": "Service",
+            "help_message": "",
+            "container_class": "",
+            "label_placement": "",
+            "placeholder": "Choose a service",
+            "advanced_options": [
+              {
+                "label": "Regular cleaning",
+                "value": "Regular cleaning",
+                "calc_value": ""
+              },
+              {
+                "label": "Deep or spring cleaning",
+                "value": "Deep or spring cleaning",
+                "calc_value": ""
+              },
+              {
+                "label": "End of lease cleaning",
+                "value": "End of lease cleaning",
+                "calc_value": ""
+              },
+              {
+                "label": "Carpet steam only",
+                "value": "Carpet steam cleaning",
+                "calc_value": ""
+              }
+            ],
+            "calc_value_status": true,
+            "enable_image_input": false,
+            "values_visible": false,
+            "enable_option_groups": "no",
+            "enable_select_2": "no",
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required",
+                "global_message": "This field is required",
+                "global": true
+              }
+            },
+            "conditional_logics": [],
+            "randomize_options": "no"
+          },
+          "editor_options": {
+            "title": "Dropdown",
+            "icon_class": "ff-edit-dropdown",
+            "element": "select",
+            "template": "select"
+          },
+          "uniqElKey": "el_prime_guide_1000"
+        },
+        {
+          "index": 1,
+          "element": "container",
+          "attributes": [],
+          "settings": {
+            "container_class": "",
+            "conditional_logics": {
+              "status": false,
+              "type": "all",
+              "conditions": []
+            },
+            "container_width": "",
+            "is_width_auto_calc": true
+          },
+          "columns": [
+            {
+              "width": 50.0,
+              "fields": [
+                {
+                  "index": 7,
+                  "element": "select",
+                  "attributes": {
+                    "autocomplete": "",
+                    "name": "quick_beds",
+                    "value": "",
+                    "id": "",
+                    "class": ""
+                  },
+                  "settings": {
+                    "dynamic_default_value": "",
+                    "label": "Bedrooms",
+                    "admin_field_label": "Bedrooms",
+                    "help_message": "",
+                    "container_class": "",
+                    "label_placement": "",
+                    "placeholder": "Select",
+                    "advanced_options": [
+                      {
+                        "label": "Studio",
+                        "value": "studio",
+                        "calc_value": "1"
+                      },
+                      {
+                        "label": "1",
+                        "value": "1",
+                        "calc_value": "1"
+                      },
+                      {
+                        "label": "2",
+                        "value": "2",
+                        "calc_value": "2"
+                      },
+                      {
+                        "label": "3",
+                        "value": "3",
+                        "calc_value": "3"
+                      },
+                      {
+                        "label": "4",
+                        "value": "4",
+                        "calc_value": "4"
+                      },
+                      {
+                        "label": "5",
+                        "value": "5",
+                        "calc_value": "5"
+                      },
+                      {
+                        "label": "6+",
+                        "value": "6plus",
+                        "calc_value": "6"
+                      }
+                    ],
+                    "calc_value_status": true,
+                    "enable_image_input": false,
+                    "values_visible": false,
+                    "enable_option_groups": "no",
+                    "enable_select_2": "no",
+                    "validation_rules": {
+                      "required": {
+                        "value": true,
+                        "message": "This field is required",
+                        "global_message": "This field is required",
+                        "global": true
+                      }
+                    },
+                    "conditional_logics": [],
+                    "randomize_options": "no"
+                  },
+                  "editor_options": {
+                    "title": "Dropdown",
+                    "icon_class": "ff-edit-dropdown",
+                    "element": "select",
+                    "template": "select"
+                  },
+                  "uniqElKey": "el_prime_guide_1001"
+                }
+              ]
+            },
+            {
+              "width": 50.0,
+              "fields": [
+                {
+                  "index": 7,
+                  "element": "select",
+                  "attributes": {
+                    "autocomplete": "",
+                    "name": "quick_baths",
+                    "value": "",
+                    "id": "",
+                    "class": ""
+                  },
+                  "settings": {
+                    "dynamic_default_value": "",
+                    "label": "Bathrooms",
+                    "admin_field_label": "Bathrooms",
+                    "help_message": "",
+                    "container_class": "",
+                    "label_placement": "",
+                    "placeholder": "Select",
+                    "advanced_options": [
+                      {
+                        "label": "1",
+                        "value": "1",
+                        "calc_value": ""
+                      },
+                      {
+                        "label": "2",
+                        "value": "2",
+                        "calc_value": ""
+                      },
+                      {
+                        "label": "3",
+                        "value": "3",
+                        "calc_value": ""
+                      },
+                      {
+                        "label": "4",
+                        "value": "4",
+                        "calc_value": ""
+                      },
+                      {
+                        "label": "5+",
+                        "value": "5plus",
+                        "calc_value": ""
+                      }
+                    ],
+                    "calc_value_status": true,
+                    "enable_image_input": false,
+                    "values_visible": false,
+                    "enable_option_groups": "no",
+                    "enable_select_2": "no",
+                    "validation_rules": {
+                      "required": {
+                        "value": true,
+                        "message": "This field is required",
+                        "global_message": "This field is required",
+                        "global": true
+                      }
+                    },
+                    "conditional_logics": {
+                      "status": true,
+                      "type": "all",
+                      "conditions": [
+                        {
+                          "field": "quick_service",
+                          "operator": "!=",
+                          "value": "Carpet steam cleaning"
+                        }
+                      ]
+                    },
+                    "randomize_options": "no"
+                  },
+                  "editor_options": {
+                    "title": "Dropdown",
+                    "icon_class": "ff-edit-dropdown",
+                    "element": "select",
+                    "template": "select"
+                  },
+                  "uniqElKey": "el_prime_guide_1002"
+                }
+              ]
+            }
+          ],
+          "editor_options": {
+            "title": "Two Column Container",
+            "icon_class": "ff-edit-column-2"
+          },
+          "uniqElKey": "el_prime_guide_1003"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1004"
+          },
+          "settings": {
+            "label": "$100–$120",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Regular cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "studio"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "1"
+                }
+              ]
+            },
+            "admin_field_label": "$100–$120"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1005"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1006"
+          },
+          "settings": {
+            "label": "$145–$175",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Regular cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "studio"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "2"
+                }
+              ]
+            },
+            "admin_field_label": "$145–$175"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1007"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_custom_1008"
+          },
+          "settings": {
+            "label": "Request a custom quote",
+            "description": "Continue to send your property details.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Regular cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "studio"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "3"
+                }
+              ]
+            },
+            "admin_field_label": "Request a custom quote"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1009"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_custom_1010"
+          },
+          "settings": {
+            "label": "Request a custom quote",
+            "description": "Continue to send your property details.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Regular cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "studio"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "4"
+                }
+              ]
+            },
+            "admin_field_label": "Request a custom quote"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1011"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_custom_1012"
+          },
+          "settings": {
+            "label": "Request a custom quote",
+            "description": "Continue to send your property details.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Regular cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "studio"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "5plus"
+                }
+              ]
+            },
+            "admin_field_label": "Request a custom quote"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1013"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1014"
+          },
+          "settings": {
+            "label": "$115–$145",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Regular cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "1"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "1"
+                }
+              ]
+            },
+            "admin_field_label": "$115–$145"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1015"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1016"
+          },
+          "settings": {
+            "label": "$160–$200",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Regular cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "1"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "2"
+                }
+              ]
+            },
+            "admin_field_label": "$160–$200"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1017"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1018"
+          },
+          "settings": {
+            "label": "$205–$255",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Regular cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "1"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "3"
+                }
+              ]
+            },
+            "admin_field_label": "$205–$255"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1019"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_custom_1020"
+          },
+          "settings": {
+            "label": "Request a custom quote",
+            "description": "Continue to send your property details.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Regular cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "1"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "4"
+                }
+              ]
+            },
+            "admin_field_label": "Request a custom quote"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1021"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_custom_1022"
+          },
+          "settings": {
+            "label": "Request a custom quote",
+            "description": "Continue to send your property details.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Regular cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "1"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "5plus"
+                }
+              ]
+            },
+            "admin_field_label": "Request a custom quote"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1023"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1024"
+          },
+          "settings": {
+            "label": "$145–$175",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Regular cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "2"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "1"
+                }
+              ]
+            },
+            "admin_field_label": "$145–$175"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1025"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1026"
+          },
+          "settings": {
+            "label": "$190–$230",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Regular cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "2"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "2"
+                }
+              ]
+            },
+            "admin_field_label": "$190–$230"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1027"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1028"
+          },
+          "settings": {
+            "label": "$235–$285",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Regular cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "2"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "3"
+                }
+              ]
+            },
+            "admin_field_label": "$235–$285"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1029"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1030"
+          },
+          "settings": {
+            "label": "$280–$340",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Regular cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "2"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "4"
+                }
+              ]
+            },
+            "admin_field_label": "$280–$340"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1031"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_custom_1032"
+          },
+          "settings": {
+            "label": "Request a custom quote",
+            "description": "Continue to send your property details.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Regular cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "2"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "5plus"
+                }
+              ]
+            },
+            "admin_field_label": "Request a custom quote"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1033"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1034"
+          },
+          "settings": {
+            "label": "$170–$210",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Regular cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "3"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "1"
+                }
+              ]
+            },
+            "admin_field_label": "$170–$210"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1035"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1036"
+          },
+          "settings": {
+            "label": "$215–$265",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Regular cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "3"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "2"
+                }
+              ]
+            },
+            "admin_field_label": "$215–$265"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1037"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1038"
+          },
+          "settings": {
+            "label": "$260–$320",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Regular cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "3"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "3"
+                }
+              ]
+            },
+            "admin_field_label": "$260–$320"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1039"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1040"
+          },
+          "settings": {
+            "label": "$305–$375",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Regular cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "3"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "4"
+                }
+              ]
+            },
+            "admin_field_label": "$305–$375"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1041"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_custom_1042"
+          },
+          "settings": {
+            "label": "Request a custom quote",
+            "description": "Continue to send your property details.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Regular cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "3"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "5plus"
+                }
+              ]
+            },
+            "admin_field_label": "Request a custom quote"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1043"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1044"
+          },
+          "settings": {
+            "label": "$200–$240",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Regular cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "4"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "1"
+                }
+              ]
+            },
+            "admin_field_label": "$200–$240"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1045"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1046"
+          },
+          "settings": {
+            "label": "$245–$295",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Regular cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "4"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "2"
+                }
+              ]
+            },
+            "admin_field_label": "$245–$295"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1047"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1048"
+          },
+          "settings": {
+            "label": "$290–$350",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Regular cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "4"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "3"
+                }
+              ]
+            },
+            "admin_field_label": "$290–$350"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1049"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1050"
+          },
+          "settings": {
+            "label": "$335–$405",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Regular cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "4"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "4"
+                }
+              ]
+            },
+            "admin_field_label": "$335–$405"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1051"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_custom_1052"
+          },
+          "settings": {
+            "label": "Request a custom quote",
+            "description": "Continue to send your property details.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Regular cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "4"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "5plus"
+                }
+              ]
+            },
+            "admin_field_label": "Request a custom quote"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1053"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1054"
+          },
+          "settings": {
+            "label": "$225–$275",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Regular cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "5"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "1"
+                }
+              ]
+            },
+            "admin_field_label": "$225–$275"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1055"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1056"
+          },
+          "settings": {
+            "label": "$270–$330",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Regular cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "5"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "2"
+                }
+              ]
+            },
+            "admin_field_label": "$270–$330"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1057"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1058"
+          },
+          "settings": {
+            "label": "$315–$385",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Regular cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "5"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "3"
+                }
+              ]
+            },
+            "admin_field_label": "$315–$385"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1059"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1060"
+          },
+          "settings": {
+            "label": "$360–$440",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Regular cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "5"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "4"
+                }
+              ]
+            },
+            "admin_field_label": "$360–$440"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1061"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_custom_1062"
+          },
+          "settings": {
+            "label": "Request a custom quote",
+            "description": "Continue to send your property details.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Regular cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "5"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "5plus"
+                }
+              ]
+            },
+            "admin_field_label": "Request a custom quote"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1063"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_custom_1064"
+          },
+          "settings": {
+            "label": "Request a custom quote",
+            "description": "Continue to send your property details.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Regular cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "6plus"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "1"
+                }
+              ]
+            },
+            "admin_field_label": "Request a custom quote"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1065"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_custom_1066"
+          },
+          "settings": {
+            "label": "Request a custom quote",
+            "description": "Continue to send your property details.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Regular cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "6plus"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "2"
+                }
+              ]
+            },
+            "admin_field_label": "Request a custom quote"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1067"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_custom_1068"
+          },
+          "settings": {
+            "label": "Request a custom quote",
+            "description": "Continue to send your property details.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Regular cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "6plus"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "3"
+                }
+              ]
+            },
+            "admin_field_label": "Request a custom quote"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1069"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_custom_1070"
+          },
+          "settings": {
+            "label": "Request a custom quote",
+            "description": "Continue to send your property details.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Regular cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "6plus"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "4"
+                }
+              ]
+            },
+            "admin_field_label": "Request a custom quote"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1071"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_custom_1072"
+          },
+          "settings": {
+            "label": "Request a custom quote",
+            "description": "Continue to send your property details.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Regular cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "6plus"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "5plus"
+                }
+              ]
+            },
+            "admin_field_label": "Request a custom quote"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1073"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1074"
+          },
+          "settings": {
+            "label": "$150–$180",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Deep or spring cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "studio"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "1"
+                }
+              ]
+            },
+            "admin_field_label": "$150–$180"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1075"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1076"
+          },
+          "settings": {
+            "label": "$215–$265",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Deep or spring cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "studio"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "2"
+                }
+              ]
+            },
+            "admin_field_label": "$215–$265"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1077"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_custom_1078"
+          },
+          "settings": {
+            "label": "Request a custom quote",
+            "description": "Continue to send your property details.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Deep or spring cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "studio"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "3"
+                }
+              ]
+            },
+            "admin_field_label": "Request a custom quote"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1079"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_custom_1080"
+          },
+          "settings": {
+            "label": "Request a custom quote",
+            "description": "Continue to send your property details.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Deep or spring cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "studio"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "4"
+                }
+              ]
+            },
+            "admin_field_label": "Request a custom quote"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1081"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_custom_1082"
+          },
+          "settings": {
+            "label": "Request a custom quote",
+            "description": "Continue to send your property details.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Deep or spring cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "studio"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "5plus"
+                }
+              ]
+            },
+            "admin_field_label": "Request a custom quote"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1083"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1084"
+          },
+          "settings": {
+            "label": "$175–$215",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Deep or spring cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "1"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "1"
+                }
+              ]
+            },
+            "admin_field_label": "$175–$215"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1085"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1086"
+          },
+          "settings": {
+            "label": "$245–$295",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Deep or spring cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "1"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "2"
+                }
+              ]
+            },
+            "admin_field_label": "$245–$295"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1087"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1088"
+          },
+          "settings": {
+            "label": "$310–$380",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Deep or spring cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "1"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "3"
+                }
+              ]
+            },
+            "admin_field_label": "$310–$380"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1089"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_custom_1090"
+          },
+          "settings": {
+            "label": "Request a custom quote",
+            "description": "Continue to send your property details.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Deep or spring cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "1"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "4"
+                }
+              ]
+            },
+            "admin_field_label": "Request a custom quote"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1091"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_custom_1092"
+          },
+          "settings": {
+            "label": "Request a custom quote",
+            "description": "Continue to send your property details.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Deep or spring cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "1"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "5plus"
+                }
+              ]
+            },
+            "admin_field_label": "Request a custom quote"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1093"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1094"
+          },
+          "settings": {
+            "label": "$215–$265",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Deep or spring cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "2"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "1"
+                }
+              ]
+            },
+            "admin_field_label": "$215–$265"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1095"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1096"
+          },
+          "settings": {
+            "label": "$285–$345",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Deep or spring cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "2"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "2"
+                }
+              ]
+            },
+            "admin_field_label": "$285–$345"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1097"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1098"
+          },
+          "settings": {
+            "label": "$350–$430",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Deep or spring cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "2"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "3"
+                }
+              ]
+            },
+            "admin_field_label": "$350–$430"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1099"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1100"
+          },
+          "settings": {
+            "label": "$420–$510",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Deep or spring cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "2"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "4"
+                }
+              ]
+            },
+            "admin_field_label": "$420–$510"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1101"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_custom_1102"
+          },
+          "settings": {
+            "label": "Request a custom quote",
+            "description": "Continue to send your property details.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Deep or spring cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "2"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "5plus"
+                }
+              ]
+            },
+            "admin_field_label": "Request a custom quote"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1103"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1104"
+          },
+          "settings": {
+            "label": "$255–$315",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Deep or spring cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "3"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "1"
+                }
+              ]
+            },
+            "admin_field_label": "$255–$315"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1105"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1106"
+          },
+          "settings": {
+            "label": "$325–$395",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Deep or spring cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "3"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "2"
+                }
+              ]
+            },
+            "admin_field_label": "$325–$395"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1107"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1108"
+          },
+          "settings": {
+            "label": "$390–$480",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Deep or spring cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "3"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "3"
+                }
+              ]
+            },
+            "admin_field_label": "$390–$480"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1109"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1110"
+          },
+          "settings": {
+            "label": "$460–$560",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Deep or spring cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "3"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "4"
+                }
+              ]
+            },
+            "admin_field_label": "$460–$560"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1111"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_custom_1112"
+          },
+          "settings": {
+            "label": "Request a custom quote",
+            "description": "Continue to send your property details.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Deep or spring cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "3"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "5plus"
+                }
+              ]
+            },
+            "admin_field_label": "Request a custom quote"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1113"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1114"
+          },
+          "settings": {
+            "label": "$295–$365",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Deep or spring cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "4"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "1"
+                }
+              ]
+            },
+            "admin_field_label": "$295–$365"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1115"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1116"
+          },
+          "settings": {
+            "label": "$365–$445",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Deep or spring cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "4"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "2"
+                }
+              ]
+            },
+            "admin_field_label": "$365–$445"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1117"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1118"
+          },
+          "settings": {
+            "label": "$430–$530",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Deep or spring cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "4"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "3"
+                }
+              ]
+            },
+            "admin_field_label": "$430–$530"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1119"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1120"
+          },
+          "settings": {
+            "label": "$500–$610",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Deep or spring cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "4"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "4"
+                }
+              ]
+            },
+            "admin_field_label": "$500–$610"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1121"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_custom_1122"
+          },
+          "settings": {
+            "label": "Request a custom quote",
+            "description": "Continue to send your property details.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Deep or spring cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "4"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "5plus"
+                }
+              ]
+            },
+            "admin_field_label": "Request a custom quote"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1123"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1124"
+          },
+          "settings": {
+            "label": "$340–$415",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Deep or spring cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "5"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "1"
+                }
+              ]
+            },
+            "admin_field_label": "$340–$415"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1125"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1126"
+          },
+          "settings": {
+            "label": "$405–$495",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Deep or spring cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "5"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "2"
+                }
+              ]
+            },
+            "admin_field_label": "$405–$495"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1127"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1128"
+          },
+          "settings": {
+            "label": "$475–$580",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Deep or spring cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "5"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "3"
+                }
+              ]
+            },
+            "admin_field_label": "$475–$580"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1129"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1130"
+          },
+          "settings": {
+            "label": "$540–$660",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Deep or spring cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "5"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "4"
+                }
+              ]
+            },
+            "admin_field_label": "$540–$660"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1131"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_custom_1132"
+          },
+          "settings": {
+            "label": "Request a custom quote",
+            "description": "Continue to send your property details.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Deep or spring cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "5"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "5plus"
+                }
+              ]
+            },
+            "admin_field_label": "Request a custom quote"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1133"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_custom_1134"
+          },
+          "settings": {
+            "label": "Request a custom quote",
+            "description": "Continue to send your property details.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Deep or spring cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "6plus"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "1"
+                }
+              ]
+            },
+            "admin_field_label": "Request a custom quote"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1135"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_custom_1136"
+          },
+          "settings": {
+            "label": "Request a custom quote",
+            "description": "Continue to send your property details.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Deep or spring cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "6plus"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "2"
+                }
+              ]
+            },
+            "admin_field_label": "Request a custom quote"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1137"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_custom_1138"
+          },
+          "settings": {
+            "label": "Request a custom quote",
+            "description": "Continue to send your property details.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Deep or spring cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "6plus"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "3"
+                }
+              ]
+            },
+            "admin_field_label": "Request a custom quote"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1139"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_custom_1140"
+          },
+          "settings": {
+            "label": "Request a custom quote",
+            "description": "Continue to send your property details.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Deep or spring cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "6plus"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "4"
+                }
+              ]
+            },
+            "admin_field_label": "Request a custom quote"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1141"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_custom_1142"
+          },
+          "settings": {
+            "label": "Request a custom quote",
+            "description": "Continue to send your property details.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Deep or spring cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "6plus"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "5plus"
+                }
+              ]
+            },
+            "admin_field_label": "Request a custom quote"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1143"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1144"
+          },
+          "settings": {
+            "label": "$225–$275",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "End of lease cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "studio"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "1"
+                }
+              ]
+            },
+            "admin_field_label": "$225–$275"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1145"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1146"
+          },
+          "settings": {
+            "label": "$290–$350",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "End of lease cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "studio"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "2"
+                }
+              ]
+            },
+            "admin_field_label": "$290–$350"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1147"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_custom_1148"
+          },
+          "settings": {
+            "label": "Request a custom quote",
+            "description": "Continue to send your property details.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "End of lease cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "studio"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "3"
+                }
+              ]
+            },
+            "admin_field_label": "Request a custom quote"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1149"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_custom_1150"
+          },
+          "settings": {
+            "label": "Request a custom quote",
+            "description": "Continue to send your property details.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "End of lease cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "studio"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "4"
+                }
+              ]
+            },
+            "admin_field_label": "Request a custom quote"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1151"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_custom_1152"
+          },
+          "settings": {
+            "label": "Request a custom quote",
+            "description": "Continue to send your property details.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "End of lease cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "studio"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "5plus"
+                }
+              ]
+            },
+            "admin_field_label": "Request a custom quote"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1153"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1154"
+          },
+          "settings": {
+            "label": "$250–$310",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "End of lease cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "1"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "1"
+                }
+              ]
+            },
+            "admin_field_label": "$250–$310"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1155"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1156"
+          },
+          "settings": {
+            "label": "$315–$385",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "End of lease cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "1"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "2"
+                }
+              ]
+            },
+            "admin_field_label": "$315–$385"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1157"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1158"
+          },
+          "settings": {
+            "label": "$380–$460",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "End of lease cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "1"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "3"
+                }
+              ]
+            },
+            "admin_field_label": "$380–$460"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1159"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_custom_1160"
+          },
+          "settings": {
+            "label": "Request a custom quote",
+            "description": "Continue to send your property details.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "End of lease cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "1"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "4"
+                }
+              ]
+            },
+            "admin_field_label": "Request a custom quote"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1161"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_custom_1162"
+          },
+          "settings": {
+            "label": "Request a custom quote",
+            "description": "Continue to send your property details.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "End of lease cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "1"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "5plus"
+                }
+              ]
+            },
+            "admin_field_label": "Request a custom quote"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1163"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1164"
+          },
+          "settings": {
+            "label": "$305–$375",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "End of lease cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "2"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "1"
+                }
+              ]
+            },
+            "admin_field_label": "$305–$375"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1165"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1166"
+          },
+          "settings": {
+            "label": "$370–$450",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "End of lease cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "2"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "2"
+                }
+              ]
+            },
+            "admin_field_label": "$370–$450"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1167"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1168"
+          },
+          "settings": {
+            "label": "$430–$530",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "End of lease cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "2"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "3"
+                }
+              ]
+            },
+            "admin_field_label": "$430–$530"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1169"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1170"
+          },
+          "settings": {
+            "label": "$495–$605",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "End of lease cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "2"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "4"
+                }
+              ]
+            },
+            "admin_field_label": "$495–$605"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1171"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_custom_1172"
+          },
+          "settings": {
+            "label": "Request a custom quote",
+            "description": "Continue to send your property details.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "End of lease cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "2"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "5plus"
+                }
+              ]
+            },
+            "admin_field_label": "Request a custom quote"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1173"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1174"
+          },
+          "settings": {
+            "label": "$360–$440",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "End of lease cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "3"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "1"
+                }
+              ]
+            },
+            "admin_field_label": "$360–$440"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1175"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1176"
+          },
+          "settings": {
+            "label": "$425–$515",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "End of lease cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "3"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "2"
+                }
+              ]
+            },
+            "admin_field_label": "$425–$515"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1177"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1178"
+          },
+          "settings": {
+            "label": "$485–$595",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "End of lease cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "3"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "3"
+                }
+              ]
+            },
+            "admin_field_label": "$485–$595"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1179"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1180"
+          },
+          "settings": {
+            "label": "$550–$670",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "End of lease cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "3"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "4"
+                }
+              ]
+            },
+            "admin_field_label": "$550–$670"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1181"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_custom_1182"
+          },
+          "settings": {
+            "label": "Request a custom quote",
+            "description": "Continue to send your property details.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "End of lease cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "3"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "5plus"
+                }
+              ]
+            },
+            "admin_field_label": "Request a custom quote"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1183"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1184"
+          },
+          "settings": {
+            "label": "$415–$505",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "End of lease cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "4"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "1"
+                }
+              ]
+            },
+            "admin_field_label": "$415–$505"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1185"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1186"
+          },
+          "settings": {
+            "label": "$475–$585",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "End of lease cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "4"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "2"
+                }
+              ]
+            },
+            "admin_field_label": "$475–$585"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1187"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1188"
+          },
+          "settings": {
+            "label": "$540–$660",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "End of lease cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "4"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "3"
+                }
+              ]
+            },
+            "admin_field_label": "$540–$660"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1189"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1190"
+          },
+          "settings": {
+            "label": "$605–$735",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "End of lease cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "4"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "4"
+                }
+              ]
+            },
+            "admin_field_label": "$605–$735"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1191"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_custom_1192"
+          },
+          "settings": {
+            "label": "Request a custom quote",
+            "description": "Continue to send your property details.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "End of lease cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "4"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "5plus"
+                }
+              ]
+            },
+            "admin_field_label": "Request a custom quote"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1193"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1194"
+          },
+          "settings": {
+            "label": "$470–$570",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "End of lease cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "5"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "1"
+                }
+              ]
+            },
+            "admin_field_label": "$470–$570"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1195"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1196"
+          },
+          "settings": {
+            "label": "$530–$650",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "End of lease cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "5"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "2"
+                }
+              ]
+            },
+            "admin_field_label": "$530–$650"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1197"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1198"
+          },
+          "settings": {
+            "label": "$595–$725",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "End of lease cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "5"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "3"
+                }
+              ]
+            },
+            "admin_field_label": "$595–$725"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1199"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1200"
+          },
+          "settings": {
+            "label": "$655–$805",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "End of lease cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "5"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "4"
+                }
+              ]
+            },
+            "admin_field_label": "$655–$805"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1201"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_custom_1202"
+          },
+          "settings": {
+            "label": "Request a custom quote",
+            "description": "Continue to send your property details.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "End of lease cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "5"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "5plus"
+                }
+              ]
+            },
+            "admin_field_label": "Request a custom quote"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1203"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_custom_1204"
+          },
+          "settings": {
+            "label": "Request a custom quote",
+            "description": "Continue to send your property details.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "End of lease cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "6plus"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "1"
+                }
+              ]
+            },
+            "admin_field_label": "Request a custom quote"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1205"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_custom_1206"
+          },
+          "settings": {
+            "label": "Request a custom quote",
+            "description": "Continue to send your property details.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "End of lease cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "6plus"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "2"
+                }
+              ]
+            },
+            "admin_field_label": "Request a custom quote"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1207"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_custom_1208"
+          },
+          "settings": {
+            "label": "Request a custom quote",
+            "description": "Continue to send your property details.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "End of lease cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "6plus"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "3"
+                }
+              ]
+            },
+            "admin_field_label": "Request a custom quote"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1209"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_custom_1210"
+          },
+          "settings": {
+            "label": "Request a custom quote",
+            "description": "Continue to send your property details.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "End of lease cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "6plus"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "4"
+                }
+              ]
+            },
+            "admin_field_label": "Request a custom quote"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1211"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_custom_1212"
+          },
+          "settings": {
+            "label": "Request a custom quote",
+            "description": "Continue to send your property details.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "End of lease cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "6plus"
+                },
+                {
+                  "field": "quick_baths",
+                  "operator": "=",
+                  "value": "5plus"
+                }
+              ]
+            },
+            "admin_field_label": "Request a custom quote"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1213"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1214"
+          },
+          "settings": {
+            "label": "$100–$120",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Carpet steam cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "studio"
+                }
+              ]
+            },
+            "admin_field_label": "$100–$120"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1215"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1216"
+          },
+          "settings": {
+            "label": "$100–$120",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Carpet steam cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "1"
+                }
+              ]
+            },
+            "admin_field_label": "$100–$120"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1217"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1218"
+          },
+          "settings": {
+            "label": "$100–$120",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Carpet steam cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "2"
+                }
+              ]
+            },
+            "admin_field_label": "$100–$120"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1219"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1220"
+          },
+          "settings": {
+            "label": "$120–$150",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Carpet steam cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "3"
+                }
+              ]
+            },
+            "admin_field_label": "$120–$150"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1221"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1222"
+          },
+          "settings": {
+            "label": "$160–$200",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Carpet steam cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "4"
+                }
+              ]
+            },
+            "admin_field_label": "$160–$200"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1223"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_range_1224"
+          },
+          "settings": {
+            "label": "$205–$250",
+            "description": "Indicative price before extras or travel.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Carpet steam cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "5"
+                }
+              ]
+            },
+            "admin_field_label": "$205–$250"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1225"
+        },
+        {
+          "index": 1,
+          "element": "section_break",
+          "attributes": {
+            "id": "",
+            "class": "",
+            "name": "quick_custom_1226"
+          },
+          "settings": {
+            "label": "Request a custom quote",
+            "description": "Continue to send your property details.",
+            "align": "left",
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Carpet steam cleaning"
+                },
+                {
+                  "field": "quick_beds",
+                  "operator": "=",
+                  "value": "6plus"
+                }
+              ]
+            },
+            "admin_field_label": "Request a custom quote"
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section-break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_prime_guide_1227"
+        },
+        {
+          "index": 6,
+          "element": "input_number",
+          "attributes": {
+            "autocomplete": "",
+            "type": "number",
+            "name": "quick_carpet_count",
+            "value": "",
+            "id": "",
+            "class": "",
+            "placeholder": ""
+          },
+          "settings": {
+            "container_class": "ff_force_hide",
+            "label": "Carpeted bedrooms",
+            "admin_field_label": "Carpeted bedrooms",
+            "label_placement": "",
+            "help_message": "",
+            "number_step": "",
+            "prefix_label": "",
+            "suffix_label": "",
+            "numeric_formatter": "",
+            "mobile_keyboard_type_number": "",
+            "validation_rules": {
+              "required": {
+                "value": false,
+                "message": "This field is required",
+                "global_message": "This field is required",
+                "global": true
+              },
+              "numeric": {
+                "value": true,
+                "message": "This field must contain numeric value",
+                "global_message": "This field must contain numeric value",
+                "global": true
+              },
+              "min": {
+                "value": "",
+                "message": "Validation fails for minimum value",
+                "global_message": "Validation fails for minimum value",
+                "global": true
+              },
+              "max": {
+                "value": "",
+                "message": "Validation fails for maximum value",
+                "global_message": "Validation fails for maximum value",
+                "global": true
+              },
+              "digits": {
+                "value": "",
+                "message": "Validation fails for limited digits",
+                "global_message": "Validation fails for limited digits",
+                "global": true
+              }
+            },
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Carpet steam cleaning"
+                }
+              ]
+            },
+            "calculation_settings": {
+              "status": true,
+              "formula": "{select.quick_beds}"
+            }
+          },
+          "editor_options": {
+            "title": "Numeric Field",
+            "icon_class": "ff-edit-numeric",
+            "template": "inputText"
+          },
+          "uniqElKey": "el_prime_guide_1228"
+        },
+        {
+          "index": 2,
+          "element": "input_text",
+          "attributes": {
+            "autocomplete": "name",
+            "type": "text",
+            "name": "quick_carpet_area",
+            "value": "Bedroom",
+            "class": "",
+            "placeholder": "",
+            "maxlength": ""
+          },
+          "settings": {
+            "container_class": "ff_force_hide",
+            "label": "Carpet area",
+            "label_placement": "",
+            "admin_field_label": "Carpet area",
+            "help_message": "",
+            "prefix_label": "",
+            "suffix_label": "",
+            "validation_rules": {
+              "required": {
+                "value": false,
+                "message": "This field is required",
+                "global_message": "This field is required",
+                "global": true
+              }
+            },
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "quick_service",
+                  "operator": "=",
+                  "value": "Carpet steam cleaning"
+                }
+              ]
+            },
+            "is_unique": "no",
+            "unique_validation_message": "This value need to be unique."
+          },
+          "editor_options": {
+            "title": "Simple Text",
+            "icon_class": "ff-edit-text",
+            "template": "inputText"
+          },
+          "uniqElKey": "el_prime_guide_1229"
+        }
+      ],
+      "submitButton": {
+        "uniqElKey": "el_1524065200616",
+        "element": "button",
+        "attributes": {
+          "type": "submit",
+          "class": ""
+        },
+        "settings": {
+          "align": "left",
+          "button_style": "custom",
+          "container_class": "",
+          "help_message": "",
+          "background_color": "#086762",
+          "button_size": "md",
+          "color": "#ffffff",
+          "button_ui": {
+            "type": "default",
+            "text": "Add extras and get my estimate",
+            "img_url": ""
+          },
+          "normal_styles": {
+            "backgroundColor": "#0e7490",
+            "borderColor": "#0e7490",
+            "color": "#ffffff",
+            "borderRadius": "8",
+            "minWidth": "100%"
+          },
+          "hover_styles": {
+            "backgroundColor": "#075985",
+            "borderColor": "#075985",
+            "color": "#ffffff"
+          }
+        },
+        "editor_options": {
+          "title": "Submit Button"
+        }
+      }
+    },
+    "has_payment": "0",
+    "type": "form",
+    "conditions": null,
+    "metas": [
+      {
+        "meta_key": "formSettings",
+        "value": "{\"confirmation\": {\"redirectTo\": \"customUrl\", \"customUrl\": \"https://primedomestic.com.au/staging/prices/\", \"redirectMessage\": \"Opening your estimate\\u2026\", \"enable_query_string\": \"yes\", \"query_strings\": \"prime_service={inputs.quick_service}&prime_beds={inputs.quick_beds}&prime_baths={inputs.quick_baths}&prime_bedrooms={inputs.quick_carpet_count}&prime_carpet_area={inputs.quick_carpet_area}#estimate\", \"messageToShow\": \"\", \"customPage\": null, \"samePageFormBehavior\": \"hide_form\"}, \"restrictions\": {\"limitNumberOfEntries\": {\"enabled\": false, \"numberOfEntries\": null, \"period\": \"total\", \"limitReachedMsg\": \"Maximum number of entries exceeded.\"}, \"scheduleForm\": {\"enabled\": false, \"start\": null, \"end\": null, \"selectedDays\": [\"Monday\", \"Tuesday\", \"Wednesday\", \"Thursday\", \"Friday\", \"Saturday\", \"Sunday\"], \"pendingMsg\": \"Form submission is not started yet.\", \"expiredMsg\": \"Form submission is now closed.\"}, \"requireLogin\": {\"enabled\": false, \"requireLoginMsg\": \"You must be logged in to submit the form.\"}, \"denyEmptySubmission\": {\"enabled\": false, \"message\": \"Sorry, you cannot submit an empty form. Let's hear what you wanna say.\"}, \"restrictForm\": {\"enabled\": false, \"fields\": {\"ip\": {\"status\": false, \"values\": \"\", \"message\": \"Sorry! You can't submit a form from your IP address.\", \"validation_type\": \"fail_on_condition_met\"}, \"country\": {\"status\": false, \"values\": [], \"message\": \"Sorry! You can't submit a form the country you are residing.\", \"validation_type\": \"fail_on_condition_met\"}, \"keywords\": {\"status\": false, \"values\": \"\", \"message\": \"Sorry! Your submission contains some restricted keywords.\"}}}}, \"layout\": {\"labelPlacement\": \"top\", \"asteriskPlacement\": \"asterisk-right\", \"helpMessagePlacement\": \"with_label\", \"errorMessagePlacement\": \"inline\", \"cssClassName\": \"\"}, \"delete_entry_on_submission\": \"yes\", \"conv_form_per_step_save\": false, \"conv_form_resume_from_last_step\": false, \"appendSurveyResult\": {\"enabled\": false, \"showLabel\": false, \"showCount\": false}, \"webmcp\": {\"status\": false, \"tool_name\": \"\", \"tool_description\": \"\"}}"
+      },
+      {
+        "meta_key": "_ff_selected_style",
+        "value": "ffs_custom"
+      },
+      {
+        "meta_key": "_ff_form_styles",
+        "value": "{\"submit_button_style\": {\"all_tabs\": {\"element\": \"ff_tabs\", \"tabs\": {\"normal\": {\"key\": \"normal\", \"label\": \"Normal\", \"value\": {\"backgroundColor\": {\"label\": \"Background color\", \"element\": \"ff_color\", \"value\": \"#086762\"}, \"color\": {\"label\": \"Text color\", \"element\": \"ff_color\", \"value\": \"#ffffff\"}, \"padding\": {\"key\": \"padding\", \"value\": {\"top\": \"12\", \"right\": \"18\", \"bottom\": \"12\", \"left\": \"18\", \"linked\": \"no\"}, \"type\": \"px\"}}}, \"hover\": {\"key\": \"hover\", \"label\": \"Hover\", \"value\": {\"backgroundColor\": {\"label\": \"Background color\", \"element\": \"ff_color\", \"value\": \"#104747\"}, \"color\": {\"label\": \"Text color\", \"element\": \"ff_color\", \"value\": \"#ffffff\"}, \"padding\": {\"key\": \"padding\", \"value\": {\"top\": \"12\", \"right\": \"18\", \"bottom\": \"12\", \"left\": \"18\", \"linked\": \"no\"}, \"type\": \"px\"}}}}}}}"
+      }
+    ]
+  }
+]

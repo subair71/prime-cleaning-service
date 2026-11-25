@@ -1,0 +1,6 @@
+{
+  "__file": "wp_block",
+  "title": "Prime — Footer Services",
+  "content": "<!-- wp:heading {\"level\":3,\"style\":{\"spacing\":{\"margin\":{\"top\":\"12px\",\"bottom\":\"12px\"}}}} -->\n<h3 class=\"wp-block-heading\" style=\"margin-top:12px;margin-bottom:12px\">Services</h3>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p><a href=\"/staging/end-of-lease-cleaning/\">End of lease</a></p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p><a href=\"/staging/regular-house-cleaning/\">Regular &amp; deep</a></p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p><a href=\"/staging/carpet-steam-cleaning/\">Carpet steam</a></p>\n<!-- /wp:paragraph -->",
+  "syncStatus": "unsynced"
+}
