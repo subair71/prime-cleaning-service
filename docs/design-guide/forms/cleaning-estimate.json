@@ -25,7 +25,7 @@
             "icon_class": "ff-edit-section-break",
             "template": "sectionBreak"
           },
-          "uniqElKey": "el_prime_guide_1294"
+          "uniqElKey": "el_prime_guide_1295"
         },
         {
           "index": 7,
@@ -1426,7 +1426,7 @@
             "title": "Two Column Container",
             "icon_class": "ff-edit-column-2"
           },
-          "uniqElKey": "el_prime_guide_1295"
+          "uniqElKey": "el_prime_guide_1296"
         },
         {
           "index": 7,
@@ -1571,7 +1571,7 @@
             "element": "select",
             "template": "select"
           },
-          "uniqElKey": "el_prime_guide_1296"
+          "uniqElKey": "el_prime_guide_1297"
         },
         {
           "index": 7,
@@ -1643,7 +1643,7 @@
             "element": "select",
             "template": "select"
           },
-          "uniqElKey": "el_prime_guide_1297"
+          "uniqElKey": "el_prime_guide_1298"
         },
         {
           "index": 7,
@@ -1723,7 +1723,7 @@
             "element": "select",
             "template": "select"
           },
-          "uniqElKey": "el_prime_guide_1298"
+          "uniqElKey": "el_prime_guide_1299"
         },
         {
           "index": 7,
@@ -1749,7 +1749,7 @@
             "icon_class": "ff-edit-step",
             "template": "formStep"
           },
-          "uniqElKey": "el_prime_guide_1335"
+          "uniqElKey": "el_prime_guide_1336"
         },
         {
           "index": 1,
@@ -1771,7 +1771,7 @@
             "icon_class": "ff-edit-section-break",
             "template": "sectionBreak"
           },
-          "uniqElKey": "el_prime_guide_1300"
+          "uniqElKey": "el_prime_guide_1301"
         },
         {
           "index": 7,
@@ -2324,7 +2324,7 @@
             "element": "select",
             "template": "select"
           },
-          "uniqElKey": "el_prime_guide_1301"
+          "uniqElKey": "el_prime_guide_1302"
         },
         {
           "index": 9,
@@ -2523,7 +2523,7 @@
             "icon_class": "ff-edit-numeric",
             "template": "inputText"
           },
-          "uniqElKey": "el_prime_guide_1299"
+          "uniqElKey": "el_prime_guide_1300"
         },
         {
           "index": 6,
@@ -2601,7 +2601,7 @@
             "icon_class": "ff-edit-numeric",
             "template": "inputText"
           },
-          "uniqElKey": "el_prime_guide_1302"
+          "uniqElKey": "el_prime_guide_1303"
         },
         {
           "index": 7,
@@ -2672,7 +2672,7 @@
             "element": "select",
             "template": "select"
           },
-          "uniqElKey": "el_prime_guide_1303"
+          "uniqElKey": "el_prime_guide_1304"
         },
         {
           "index": 7,
@@ -2968,7 +2968,7 @@
             "element": "select",
             "template": "select"
           },
-          "uniqElKey": "el_prime_guide_1304"
+          "uniqElKey": "el_prime_guide_1305"
         },
         {
           "index": 2,
@@ -3017,7 +3017,7 @@
             "icon_class": "ff-edit-text",
             "template": "inputText"
           },
-          "uniqElKey": "el_prime_guide_1305"
+          "uniqElKey": "el_prime_guide_1306"
         },
         {
           "index": 6,
@@ -3153,7 +3153,7 @@
             "icon_class": "ff-edit-numeric",
             "template": "inputText"
           },
-          "uniqElKey": "el_prime_guide_1306"
+          "uniqElKey": "el_prime_guide_1307"
         },
         {
           "index": 6,
@@ -3602,6 +3602,84 @@
             "template": "inputText"
           },
           "uniqElKey": "el_prime_guide_1283"
+        },
+        {
+          "index": 6,
+          "element": "input_number",
+          "attributes": {
+            "autocomplete": "",
+            "type": "number",
+            "name": "carpet_is_base",
+            "value": "1",
+            "id": "",
+            "class": "",
+            "placeholder": ""
+          },
+          "settings": {
+            "container_class": "ff_force_hide",
+            "label": "Standalone carpet clean",
+            "admin_field_label": "Standalone carpet clean",
+            "label_placement": "",
+            "help_message": "",
+            "number_step": "",
+            "prefix_label": "",
+            "suffix_label": "",
+            "numeric_formatter": "",
+            "mobile_keyboard_type_number": "",
+            "validation_rules": {
+              "required": {
+                "value": false,
+                "message": "This field is required",
+                "global_message": "This field is required",
+                "global": true
+              },
+              "numeric": {
+                "value": true,
+                "message": "This field must contain numeric value",
+                "global_message": "This field must contain numeric value",
+                "global": true
+              },
+              "min": {
+                "value": "",
+                "message": "Validation fails for minimum value",
+                "global_message": "Validation fails for minimum value",
+                "global": true
+              },
+              "max": {
+                "value": "",
+                "message": "Validation fails for maximum value",
+                "global_message": "Validation fails for maximum value",
+                "global": true
+              },
+              "digits": {
+                "value": "",
+                "message": "Validation fails for limited digits",
+                "global_message": "Validation fails for limited digits",
+                "global": true
+              }
+            },
+            "conditional_logics": {
+              "status": true,
+              "type": "all",
+              "conditions": [
+                {
+                  "field": "service",
+                  "operator": "=",
+                  "value": "Carpet steam cleaning"
+                }
+              ]
+            },
+            "calculation_settings": {
+              "status": false,
+              "formula": ""
+            }
+          },
+          "editor_options": {
+            "title": "Numeric Field",
+            "icon_class": "ff-edit-numeric",
+            "template": "inputText"
+          },
+          "uniqElKey": "el_prime_guide_1284"
         },
         {
           "index": 6,
@@ -6629,7 +6707,7 @@
             "icon_class": "ff-edit-numeric",
             "template": "inputText"
           },
-          "uniqElKey": "el_prime_guide_1307"
+          "uniqElKey": "el_prime_guide_1308"
         },
         {
           "index": 7,
@@ -6655,7 +6733,7 @@
             "icon_class": "ff-edit-step",
             "template": "formStep"
           },
-          "uniqElKey": "el_prime_guide_1336"
+          "uniqElKey": "el_prime_guide_1337"
         },
         {
           "index": 1,
@@ -6687,7 +6765,7 @@
             "icon_class": "ff-edit-section-break",
             "template": "sectionBreak"
           },
-          "uniqElKey": "el_prime_guide_1315"
+          "uniqElKey": "el_prime_guide_1316"
         },
         {
           "index": 1,
@@ -6719,7 +6797,7 @@
             "icon_class": "ff-edit-section-break",
             "template": "sectionBreak"
           },
-          "uniqElKey": "el_prime_guide_1316"
+          "uniqElKey": "el_prime_guide_1317"
         },
         {
           "index": 6,
@@ -6797,7 +6875,7 @@
             "icon_class": "ff-edit-numeric",
             "template": "inputText"
           },
-          "uniqElKey": "el_prime_guide_1289"
+          "uniqElKey": "el_prime_guide_1290"
         },
         {
           "index": 6,
@@ -6867,7 +6945,7 @@
             },
             "calculation_settings": {
               "status": true,
-              "formula": "floor(({input.grid_rate}*(1+{select.service}))*1000000+0.500001)/1000000"
+              "formula": "floor(({input.grid_rate}*(1+{select.service})+{input.carpet_amount}*{input.carpet_is_base})*1000000+0.500001)/1000000"
             }
           },
           "editor_options": {
@@ -6875,7 +6953,7 @@
             "icon_class": "ff-edit-numeric",
             "template": "inputText"
           },
-          "uniqElKey": "el_prime_guide_1284"
+          "uniqElKey": "el_prime_guide_1285"
         },
         {
           "index": 6,
@@ -6953,7 +7031,7 @@
             "icon_class": "ff-edit-numeric",
             "template": "inputText"
           },
-          "uniqElKey": "el_prime_guide_1285"
+          "uniqElKey": "el_prime_guide_1286"
         },
         {
           "index": 6,
@@ -7031,7 +7109,7 @@
             "icon_class": "ff-edit-numeric",
             "template": "inputText"
           },
-          "uniqElKey": "el_prime_guide_1286"
+          "uniqElKey": "el_prime_guide_1287"
         },
         {
           "index": 6,
@@ -7101,7 +7179,7 @@
             },
             "calculation_settings": {
               "status": true,
-              "formula": "floor(({input.oven_amount}+{input.carpet_amount}+{input.rate_extras_item_0}+{input.rate_extras_item_1}+{input.rate_extras_item_2}+{input.rate_extra_interiors_item_0}+{input.rate_extra_interiors_item_1})*1000000+0.500001)/1000000"
+              "formula": "floor(({input.oven_amount}+{input.carpet_amount}*(1-{input.carpet_is_base})+{input.rate_extras_item_0}+{input.rate_extras_item_1}+{input.rate_extras_item_2}+{input.rate_extra_interiors_item_0}+{input.rate_extra_interiors_item_1})*1000000+0.500001)/1000000"
             }
           },
           "editor_options": {
@@ -7109,7 +7187,7 @@
             "icon_class": "ff-edit-numeric",
             "template": "inputText"
           },
-          "uniqElKey": "el_prime_guide_1287"
+          "uniqElKey": "el_prime_guide_1288"
         },
         {
           "index": 6,
@@ -7187,7 +7265,7 @@
             "icon_class": "ff-edit-numeric",
             "template": "inputText"
           },
-          "uniqElKey": "el_prime_guide_1288"
+          "uniqElKey": "el_prime_guide_1289"
         },
         {
           "index": 6,
@@ -7265,7 +7343,7 @@
             "icon_class": "ff-edit-numeric",
             "template": "inputText"
           },
-          "uniqElKey": "el_prime_guide_1290"
+          "uniqElKey": "el_prime_guide_1291"
         },
         {
           "index": 6,
@@ -7343,7 +7421,7 @@
             "icon_class": "ff-edit-numeric",
             "template": "inputText"
           },
-          "uniqElKey": "el_prime_guide_1291"
+          "uniqElKey": "el_prime_guide_1292"
         },
         {
           "index": 1,
@@ -7439,7 +7517,7 @@
                     "icon_class": "ff-edit-numeric",
                     "template": "inputText"
                   },
-                  "uniqElKey": "el_prime_guide_1292"
+                  "uniqElKey": "el_prime_guide_1293"
                 }
               ]
             },
@@ -7522,7 +7600,7 @@
                     "icon_class": "ff-edit-numeric",
                     "template": "inputText"
                   },
-                  "uniqElKey": "el_prime_guide_1293"
+                  "uniqElKey": "el_prime_guide_1294"
                 }
               ]
             }
@@ -7531,7 +7609,7 @@
             "title": "Two Column Container",
             "icon_class": "ff-edit-column-2"
           },
-          "uniqElKey": "el_prime_guide_1317"
+          "uniqElKey": "el_prime_guide_1318"
         },
         {
           "index": 1,
@@ -7627,7 +7705,7 @@
                     "icon_class": "ff-edit-numeric",
                     "template": "inputText"
                   },
-                  "uniqElKey": "el_prime_guide_1309"
+                  "uniqElKey": "el_prime_guide_1310"
                 }
               ]
             },
@@ -7710,7 +7788,7 @@
                     "icon_class": "ff-edit-numeric",
                     "template": "inputText"
                   },
-                  "uniqElKey": "el_prime_guide_1310"
+                  "uniqElKey": "el_prime_guide_1311"
                 }
               ]
             }
@@ -7719,7 +7797,7 @@
             "title": "Two Column Container",
             "icon_class": "ff-edit-column-2"
           },
-          "uniqElKey": "el_prime_guide_1318"
+          "uniqElKey": "el_prime_guide_1319"
         },
         {
           "index": 1,
@@ -7815,7 +7893,7 @@
                     "icon_class": "ff-edit-numeric",
                     "template": "inputText"
                   },
-                  "uniqElKey": "el_prime_guide_1311"
+                  "uniqElKey": "el_prime_guide_1312"
                 }
               ]
             },
@@ -7898,7 +7976,7 @@
                     "icon_class": "ff-edit-numeric",
                     "template": "inputText"
                   },
-                  "uniqElKey": "el_prime_guide_1312"
+                  "uniqElKey": "el_prime_guide_1313"
                 }
               ]
             }
@@ -7907,7 +7985,7 @@
             "title": "Two Column Container",
             "icon_class": "ff-edit-column-2"
           },
-          "uniqElKey": "el_prime_guide_1319"
+          "uniqElKey": "el_prime_guide_1320"
         },
         {
           "index": 1,
@@ -8003,7 +8081,7 @@
                     "icon_class": "ff-edit-numeric",
                     "template": "inputText"
                   },
-                  "uniqElKey": "el_prime_guide_1313"
+                  "uniqElKey": "el_prime_guide_1314"
                 }
               ]
             },
@@ -8086,7 +8164,7 @@
                     "icon_class": "ff-edit-numeric",
                     "template": "inputText"
                   },
-                  "uniqElKey": "el_prime_guide_1314"
+                  "uniqElKey": "el_prime_guide_1315"
                 }
               ]
             }
@@ -8095,7 +8173,7 @@
             "title": "Two Column Container",
             "icon_class": "ff-edit-column-2"
           },
-          "uniqElKey": "el_prime_guide_1320"
+          "uniqElKey": "el_prime_guide_1321"
         },
         {
           "index": 7,
@@ -8121,7 +8199,7 @@
             "icon_class": "ff-edit-step",
             "template": "formStep"
           },
-          "uniqElKey": "el_prime_guide_1337"
+          "uniqElKey": "el_prime_guide_1338"
         },
         {
           "index": 1,
@@ -8143,7 +8221,7 @@
             "icon_class": "ff-edit-section-break",
             "template": "sectionBreak"
           },
-          "uniqElKey": "el_prime_guide_1323"
+          "uniqElKey": "el_prime_guide_1324"
         },
         {
           "index": 2,
@@ -8182,7 +8260,7 @@
             "icon_class": "ff-edit-text",
             "template": "inputText"
           },
-          "uniqElKey": "el_prime_guide_1324"
+          "uniqElKey": "el_prime_guide_1325"
         },
         {
           "index": 1,
@@ -8252,7 +8330,7 @@
                     "icon_class": "el-icon-phone-outline",
                     "template": "inputText"
                   },
-                  "uniqElKey": "el_prime_guide_1325"
+                  "uniqElKey": "el_prime_guide_1326"
                 }
               ]
             },
@@ -8302,7 +8380,7 @@
                     "icon_class": "ff-edit-email",
                     "template": "inputText"
                   },
-                  "uniqElKey": "el_prime_guide_1326"
+                  "uniqElKey": "el_prime_guide_1327"
                 }
               ]
             }
@@ -8311,7 +8389,7 @@
             "title": "Two Column Container",
             "icon_class": "ff-edit-column-2"
           },
-          "uniqElKey": "el_prime_guide_1327"
+          "uniqElKey": "el_prime_guide_1328"
         },
         {
           "index": 13,
@@ -8353,7 +8431,7 @@
             "icon_class": "ff-edit-date",
             "template": "inputText"
           },
-          "uniqElKey": "el_prime_guide_1328"
+          "uniqElKey": "el_prime_guide_1329"
         },
         {
           "index": 1,
@@ -8413,7 +8491,7 @@
                     "icon_class": "ff-edit-date",
                     "template": "inputText"
                   },
-                  "uniqElKey": "el_prime_guide_1329"
+                  "uniqElKey": "el_prime_guide_1330"
                 }
               ]
             },
@@ -8460,7 +8538,7 @@
                     "icon_class": "ff-edit-date",
                     "template": "inputText"
                   },
-                  "uniqElKey": "el_prime_guide_1330"
+                  "uniqElKey": "el_prime_guide_1331"
                 }
               ]
             }
@@ -8469,7 +8547,7 @@
             "title": "Two Column Container",
             "icon_class": "ff-edit-column-2"
           },
-          "uniqElKey": "el_prime_guide_1331"
+          "uniqElKey": "el_prime_guide_1332"
         },
         {
           "index": 7,
@@ -8525,7 +8603,7 @@
             "element": "select",
             "template": "select"
           },
-          "uniqElKey": "el_prime_guide_1332"
+          "uniqElKey": "el_prime_guide_1333"
         },
         {
           "index": 2,
@@ -8564,7 +8642,7 @@
             "icon_class": "ff-edit-text",
             "template": "inputText"
           },
-          "uniqElKey": "el_prime_guide_1322"
+          "uniqElKey": "el_prime_guide_1323"
         },
         {
           "index": 7,
@@ -8638,7 +8716,7 @@
             "element": "select",
             "template": "select"
           },
-          "uniqElKey": "el_prime_guide_1333"
+          "uniqElKey": "el_prime_guide_1334"
         },
         {
           "index": 3,
@@ -8677,7 +8755,7 @@
             "icon_class": "ff-edit-textarea",
             "template": "inputTextarea"
           },
-          "uniqElKey": "el_prime_guide_1334"
+          "uniqElKey": "el_prime_guide_1335"
         },
         {
           "index": 9,
@@ -8738,7 +8816,7 @@
             "icon_class": "ff-edit-checkbox-1",
             "template": "inputCheckable"
           },
-          "uniqElKey": "el_prime_guide_1338"
+          "uniqElKey": "el_prime_guide_1339"
         }
       ],
       "submitButton": {
