@@ -123,7 +123,7 @@
             "title": "Two Column Container",
             "icon_class": "ff-edit-column-2"
           },
-          "uniqElKey": "el_prime_guide_1339"
+          "uniqElKey": "el_prime_guide_1340"
         },
         {
           "index": 1,
@@ -305,7 +305,7 @@
             "icon_class": "ff-edit-checkbox-1",
             "template": "inputCheckable"
           },
-          "uniqElKey": "el_prime_guide_1340"
+          "uniqElKey": "el_prime_guide_1341"
         }
       ],
       "submitButton": {
