@@ -1,0 +1,359 @@
+[
+  {
+    "title": "Prime | Contact · Guide",
+    "status": "published",
+    "appearance_settings": null,
+    "form_fields": {
+      "fields": [
+        {
+          "index": 1,
+          "element": "container",
+          "attributes": [],
+          "settings": {
+            "container_class": "",
+            "conditional_logics": {
+              "status": false,
+              "type": "all",
+              "conditions": []
+            },
+            "container_width": "",
+            "is_width_auto_calc": true
+          },
+          "columns": [
+            {
+              "width": 50.0,
+              "fields": [
+                {
+                  "index": 2,
+                  "element": "input_text",
+                  "attributes": {
+                    "autocomplete": "name",
+                    "type": "text",
+                    "name": "name",
+                    "value": "",
+                    "class": "",
+                    "placeholder": "",
+                    "maxlength": 200
+                  },
+                  "settings": {
+                    "container_class": "prime-ff-half",
+                    "label": "Name",
+                    "label_placement": "",
+                    "admin_field_label": "Full name",
+                    "help_message": "",
+                    "prefix_label": "",
+                    "suffix_label": "",
+                    "validation_rules": {
+                      "required": {
+                        "value": true,
+                        "message": "Please complete this field.",
+                        "global": false
+                      }
+                    },
+                    "conditional_logics": [],
+                    "is_unique": "no",
+                    "unique_validation_message": "This value need to be unique."
+                  },
+                  "editor_options": {
+                    "title": "Simple Text",
+                    "icon_class": "ff-edit-text",
+                    "template": "inputText"
+                  },
+                  "uniqElKey": "prime_name"
+                }
+              ]
+            },
+            {
+              "width": 50.0,
+              "fields": [
+                {
+                  "index": 18,
+                  "element": "phone",
+                  "attributes": {
+                    "autocomplete": "tel",
+                    "type": "tel",
+                    "name": "phone",
+                    "value": "",
+                    "class": "",
+                    "placeholder": "",
+                    "maxlength": 25
+                  },
+                  "settings": {
+                    "container_class": "prime-ff-half",
+                    "label": "Mobile",
+                    "label_placement": "",
+                    "admin_field_label": "Mobile number",
+                    "help_message": "",
+                    "prefix_label": "",
+                    "suffix_label": "",
+                    "validation_rules": {
+                      "required": {
+                        "value": true,
+                        "message": "Please complete this field.",
+                        "global": false
+                      },
+                      "valid_phone_number": {
+                        "value": true,
+                        "global": false,
+                        "message": "Please enter a valid mobile number."
+                      }
+                    },
+                    "conditional_logics": [],
+                    "is_unique": "no",
+                    "unique_validation_message": "This value need to be unique.",
+                    "auto_select_country": "no",
+                    "default_country": "au",
+                    "phone_country_list": {
+                      "active_list": "all",
+                      "visible_list": [],
+                      "hidden_list": []
+                    }
+                  },
+                  "editor_options": {
+                    "title": "Phone",
+                    "icon_class": "el-icon-phone-outline",
+                    "template": "inputText"
+                  },
+                  "uniqElKey": "prime_phone"
+                }
+              ]
+            }
+          ],
+          "editor_options": {
+            "title": "Two Column Container",
+            "icon_class": "ff-edit-column-2"
+          },
+          "uniqElKey": "el_prime_guide_1339"
+        },
+        {
+          "index": 1,
+          "element": "input_email",
+          "attributes": {
+            "autocomplete": "email",
+            "type": "email",
+            "name": "email",
+            "value": "",
+            "id": "",
+            "class": "",
+            "placeholder": "Email Address",
+            "maxlength": 200
+          },
+          "settings": {
+            "container_class": "prime-ff-half",
+            "label": "Email",
+            "label_placement": "",
+            "help_message": "",
+            "admin_field_label": "Email address",
+            "prefix_label": "",
+            "suffix_label": "",
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "Please complete this field.",
+                "global": false
+              },
+              "email": {
+                "value": true,
+                "message": "This field must contain a valid email",
+                "global_message": "This field must contain a valid email",
+                "global": true
+              }
+            },
+            "conditional_logics": [],
+            "is_unique": "no",
+            "unique_validation_message": "Email address need to be unique."
+          },
+          "editor_options": {
+            "title": "Email",
+            "icon_class": "ff-edit-email",
+            "template": "inputText"
+          },
+          "uniqElKey": "prime_email"
+        },
+        {
+          "index": 2,
+          "element": "input_text",
+          "attributes": {
+            "autocomplete": "address-level2",
+            "type": "text",
+            "name": "suburb_name",
+            "value": "",
+            "class": "",
+            "placeholder": "",
+            "maxlength": 200
+          },
+          "settings": {
+            "container_class": "prime-ff-half",
+            "label": "Suburb",
+            "label_placement": "",
+            "admin_field_label": "Suburb",
+            "help_message": "",
+            "prefix_label": "",
+            "suffix_label": "",
+            "validation_rules": {
+              "required": {
+                "value": false,
+                "message": "Please complete this field.",
+                "global": false
+              }
+            },
+            "conditional_logics": [],
+            "is_unique": "no",
+            "unique_validation_message": "This value need to be unique."
+          },
+          "editor_options": {
+            "title": "Simple Text",
+            "icon_class": "ff-edit-text",
+            "template": "inputText"
+          },
+          "uniqElKey": "prime_suburb_name"
+        },
+        {
+          "index": 3,
+          "element": "textarea",
+          "attributes": {
+            "autocomplete": "",
+            "name": "notes",
+            "value": "",
+            "id": "",
+            "class": "",
+            "placeholder": "",
+            "rows": 4,
+            "cols": 2,
+            "maxlength": 3000
+          },
+          "settings": {
+            "container_class": "prime-ff-full",
+            "label": "Message",
+            "admin_field_label": "Your enquiry",
+            "label_placement": "",
+            "help_message": "",
+            "prefix_label": "",
+            "suffix_label": "",
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "Please complete this field.",
+                "global": false
+              }
+            },
+            "conditional_logics": []
+          },
+          "editor_options": {
+            "title": "Text Area",
+            "icon_class": "ff-edit-textarea",
+            "template": "inputTextarea"
+          },
+          "uniqElKey": "prime_notes"
+        },
+        {
+          "index": 9,
+          "element": "input_checkbox",
+          "attributes": {
+            "type": "checkbox",
+            "name": "consent",
+            "value": []
+          },
+          "settings": {
+            "dynamic_default_value": "",
+            "container_class": "",
+            "label": "Privacy consent",
+            "admin_field_label": "Privacy consent",
+            "label_placement": "",
+            "display_type": "",
+            "help_message": "<a href=\"/staging/privacy/\">Read our Privacy Policy</a>",
+            "advanced_options": [
+              {
+                "label": "I agree to be contacted about this enquiry.",
+                "value": "Agreed",
+                "calc_value": ""
+              }
+            ],
+            "calc_value_status": false,
+            "enable_image_input": false,
+            "values_visible": false,
+            "randomize_options": "no",
+            "enable_other_option": "no",
+            "other_option_label": "Other",
+            "other_option_placeholder": "Please specify...",
+            "other_option_required_message": "Please specify a value for the selected \"Other\" option",
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required",
+                "global_message": "This field is required",
+                "global": true
+              },
+              "max_selection": {
+                "value": "",
+                "message": "You have selected more options than allowed",
+                "global_message": "You have selected more options than allowed",
+                "global": true
+              },
+              "min_selection": {
+                "value": "",
+                "message": "Please select at least the minimum number of options",
+                "global_message": "Please select at least the minimum number of options",
+                "global": true
+              }
+            },
+            "conditional_logics": [],
+            "layout_class": ""
+          },
+          "editor_options": {
+            "title": "Checkbox",
+            "icon_class": "ff-edit-checkbox-1",
+            "template": "inputCheckable"
+          },
+          "uniqElKey": "el_prime_guide_1340"
+        }
+      ],
+      "submitButton": {
+        "uniqElKey": "el_1524065200616",
+        "element": "button",
+        "attributes": {
+          "type": "submit",
+          "class": ""
+        },
+        "settings": {
+          "align": "left",
+          "button_style": "custom",
+          "container_class": "",
+          "help_message": "",
+          "background_color": "#086762",
+          "button_size": "md",
+          "color": "#ffffff",
+          "button_ui": {
+            "type": "default",
+            "text": "Send message",
+            "img_url": ""
+          }
+        },
+        "editor_options": {
+          "title": "Submit Button"
+        }
+      }
+    },
+    "has_payment": "0",
+    "type": "form",
+    "conditions": null,
+    "metas": [
+      {
+        "meta_key": "formSettings",
+        "value": "{\"confirmation\": {\"redirectTo\": \"samePage\", \"samePageFormBehavior\": \"hide_form\", \"messageToShow\": \"<p><strong>We\\u2019ve received your message.</strong></p><p>Our team will reply using the contact details you supplied. We aim to reply within 2 hours during the day, and always within 24 hours.</p><p><a href=\\\"https://wa.me/61491245156\\\">WhatsApp us</a></p>\", \"customUrl\": null, \"customPage\": null}, \"restrictions\": {\"limitNumberOfEntries\": {\"enabled\": false, \"numberOfEntries\": null, \"period\": \"total\", \"limitReachedMsg\": \"Maximum number of entries exceeded.\"}, \"scheduleForm\": {\"enabled\": false, \"start\": null, \"end\": null, \"selectedDays\": null, \"pendingMsg\": \"Form submission is not started yet.\", \"expiredMsg\": \"Form submission is now closed.\"}, \"requireLogin\": {\"enabled\": false, \"requireLoginMsg\": \"You must be logged in to submit the form.\"}, \"denyEmptySubmission\": {\"enabled\": false, \"message\": \"Sorry, you cannot submit an empty form. Let's hear what you wanna say.\"}, \"restrictForm\": {\"enabled\": false, \"fields\": {\"ip\": {\"status\": false, \"values\": \"\", \"message\": \"Sorry! You can't submit a form from your IP address.\", \"validation_type\": \"fail_on_condition_met\"}, \"country\": {\"status\": false, \"values\": [], \"message\": \"Sorry! You can't submit a form the country you are residing.\", \"validation_type\": \"fail_on_condition_met\"}, \"keywords\": {\"status\": false, \"values\": \"\", \"message\": \"Sorry! Your submission contains some restricted keywords.\"}}}}, \"layout\": {\"labelPlacement\": \"top\", \"asteriskPlacement\": \"asterisk-right\", \"helpMessagePlacement\": \"with_label\", \"errorMessagePlacement\": \"inline\", \"cssClassName\": \"\"}, \"delete_entry_on_submission\": \"no\", \"conv_form_per_step_save\": false, \"conv_form_resume_from_last_step\": false}"
+      },
+      {
+        "meta_key": "notifications",
+        "value": "{\"name\": \"Contact enquiry\", \"sendTo\": {\"type\": \"email\", \"email\": \"info@primedomestic.com.au\", \"field\": \"\", \"routing\": []}, \"fromName\": \"\", \"fromEmail\": \"\", \"replyTo\": \"{inputs.email}\", \"bcc\": \"\", \"subject\": \"Website contact enquiry\", \"message\": \"{all_data}\", \"conditionals\": {\"status\": false, \"type\": \"all\", \"conditions\": []}, \"enabled\": true, \"email_template\": \"\"}"
+      },
+      {
+        "meta_key": "_ff_selected_style",
+        "value": "ffs_custom"
+      },
+      {
+        "meta_key": "_ff_form_styles",
+        "value": "{\"submit_button_style\": {\"all_tabs\": {\"element\": \"ff_tabs\", \"tabs\": {\"normal\": {\"key\": \"normal\", \"label\": \"Normal\", \"value\": {\"backgroundColor\": {\"label\": \"Background color\", \"element\": \"ff_color\", \"value\": \"#086762\"}, \"color\": {\"label\": \"Text color\", \"element\": \"ff_color\", \"value\": \"#ffffff\"}, \"padding\": {\"key\": \"padding\", \"value\": {\"top\": \"12\", \"right\": \"18\", \"bottom\": \"12\", \"left\": \"18\", \"linked\": \"no\"}, \"type\": \"px\"}}}, \"hover\": {\"key\": \"hover\", \"label\": \"Hover\", \"value\": {\"backgroundColor\": {\"label\": \"Background color\", \"element\": \"ff_color\", \"value\": \"#104747\"}, \"color\": {\"label\": \"Text color\", \"element\": \"ff_color\", \"value\": \"#ffffff\"}, \"padding\": {\"key\": \"padding\", \"value\": {\"top\": \"12\", \"right\": \"18\", \"bottom\": \"12\", \"left\": \"18\", \"linked\": \"no\"}, \"type\": \"px\"}}}}}}}"
+      }
+    ]
+  }
+]

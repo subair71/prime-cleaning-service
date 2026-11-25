@@ -1,0 +1,6 @@
+{
+  "__file": "wp_block",
+  "title": "Prime — Footer Contact",
+  "content": "<!-- wp:heading {\"level\":3,\"style\":{\"spacing\":{\"margin\":{\"top\":\"12px\",\"bottom\":\"12px\"}}}} -->\n<h3 class=\"wp-block-heading\" style=\"margin-top:12px;margin-bottom:12px\">Get in touch</h3>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p><a href=\"tel:+61491245156\">0491 245 156</a></p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p><a href=\"https://wa.me/61491245156\">WhatsApp</a></p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p><a href=\"mailto:info@primedomestic.com.au\">info@primedomestic.com.au</a></p>\n<!-- /wp:paragraph -->",
+  "syncStatus": "unsynced"
+}

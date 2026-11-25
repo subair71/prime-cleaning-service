@@ -1,0 +1,6 @@
+{
+  "__file": "wp_block",
+  "title": "Prime — Footer Links",
+  "content": "<!-- wp:heading {\"level\":3,\"style\":{\"spacing\":{\"margin\":{\"top\":\"12px\",\"bottom\":\"12px\"}}}} -->\n<h3 class=\"wp-block-heading\" style=\"margin-top:12px;margin-bottom:12px\">Quick links</h3>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p><a href=\"/staging/prices/\">Prices &amp; estimate</a></p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p><a href=\"/staging/about/\">About</a></p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p><a href=\"/staging/contact/\">Contact &amp; service areas</a></p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p><a href=\"/staging/privacy/\">Privacy Policy</a></p>\n<!-- /wp:paragraph -->",
+  "syncStatus": "unsynced"
+}

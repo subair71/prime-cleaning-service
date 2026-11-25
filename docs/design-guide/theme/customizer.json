@@ -1,0 +1,717 @@
+{
+  "mods": {
+    "content_width": {
+      "size": 1160,
+      "unit": "px"
+    },
+    "page_title": false,
+    "page_layout": "fullwidth",
+    "page_content_style": "unboxed",
+    "page_vertical_padding": "hide",
+    "site_background": {
+      "desktop": {
+        "color": "#ffffff"
+      }
+    },
+    "content_background": {
+      "desktop": {
+        "color": "#ffffff"
+      }
+    },
+    "base_font": {
+      "family": "Inter",
+      "google": true,
+      "weight": "400",
+      "variant": "regular",
+      "size": {
+        "desktop": 16,
+        "tablet": 16,
+        "mobile": 16
+      },
+      "lineHeight": {
+        "desktop": 1.6
+      },
+      "color": "palette4"
+    },
+    "heading_font": {
+      "family": "Poppins",
+      "google": true,
+      "weight": "600",
+      "variant": "600"
+    },
+    "load_fonts_local": true,
+    "preload_fonts_local": true,
+    "brand_typography": {
+      "family": "Poppins",
+      "google": true,
+      "weight": "600",
+      "variant": "600",
+      "size": {
+        "desktop": 18,
+        "mobile": 15
+      },
+      "lineHeight": {
+        "desktop": 1.6
+      },
+      "color": "palette3"
+    },
+    "brand_tag_typography": {
+      "family": "Inter",
+      "google": true,
+      "weight": "700",
+      "variant": "700",
+      "size": {
+        "desktop": 12,
+        "mobile": 11
+      },
+      "lineHeight": {
+        "desktop": 1.6
+      },
+      "color": "palette1"
+    },
+    "logo_layout": {
+      "include": {
+        "desktop": "logo_title_tagline",
+        "tablet": "",
+        "mobile": "logo_title_tagline"
+      },
+      "layout": {
+        "desktop": "standard",
+        "mobile": "",
+        "tablet": ""
+      }
+    },
+    "header_button_label": "Get my estimate",
+    "header_button_link": "/staging/prices/",
+    "header_button_radius": {
+      "size": [
+        6,
+        6,
+        6,
+        6
+      ],
+      "unit": "px",
+      "locked": true
+    },
+    "header_main_height": {
+      "size": {
+        "desktop": 76,
+        "tablet": 64,
+        "mobile": 60
+      },
+      "unit": {
+        "desktop": "px",
+        "tablet": "px",
+        "mobile": "px"
+      }
+    },
+    "header_sticky": "main",
+    "primary_navigation_typography": {
+      "family": "Inter",
+      "google": true,
+      "weight": "600",
+      "variant": "600",
+      "size": {
+        "desktop": 14
+      },
+      "lineHeight": {
+        "desktop": 1.6
+      },
+      "color": "#143e40"
+    },
+    "primary_navigation_spacing": {
+      "size": 0.9,
+      "unit": "em"
+    },
+    "footer_middle_columns": "4",
+    "footer_middle_layout": {
+      "desktop": "equal",
+      "tablet": "two-grid",
+      "mobile": "row"
+    },
+    "footer_middle_background": {
+      "desktop": {
+        "color": "#103c3d"
+      }
+    },
+    "footer_bottom_background": {
+      "desktop": {
+        "color": "#103c3d"
+      }
+    },
+    "footer_middle_widget_title": {
+      "color": "#ffffff"
+    },
+    "footer_middle_widget_content": {
+      "family": "inherit",
+      "google": false,
+      "weight": "400",
+      "variant": "regular",
+      "size": {
+        "desktop": 15
+      },
+      "lineHeight": {
+        "desktop": 1.6
+      },
+      "color": "#cbd5e1"
+    },
+    "footer_middle_widget_content_color": {
+      "color": "#ffffff",
+      "hover": "#7adad1"
+    },
+    "footer_html_content": "© {year} Prime Domestic and Cleaning Services · ABN 16 938 734 164 · Payment is due on completion · No GST charged.",
+    "footer_html_color": {
+      "color": "#c2dbd7",
+      "hover": "#ffffff"
+    },
+    "h1_font": {
+      "family": "Poppins",
+      "google": true,
+      "weight": "700",
+      "variant": "700",
+      "size": {
+        "desktop": 49,
+        "tablet": 39,
+        "mobile": 35
+      },
+      "lineHeight": {
+        "desktop": 1.09
+      },
+      "color": "palette3"
+    },
+    "h2_font": {
+      "family": "Poppins",
+      "google": true,
+      "weight": "600",
+      "variant": "600",
+      "size": {
+        "desktop": 32,
+        "tablet": 28,
+        "mobile": 25
+      },
+      "lineHeight": {
+        "desktop": 1.22
+      },
+      "color": "palette3"
+    },
+    "h3_font": {
+      "family": "Poppins",
+      "google": true,
+      "weight": "600",
+      "variant": "600",
+      "size": {
+        "desktop": 21,
+        "tablet": 20,
+        "mobile": 19
+      },
+      "lineHeight": {
+        "desktop": 1.22
+      },
+      "color": "palette3"
+    },
+    "header_desktop_items": {
+      "top": {
+        "top_left": [],
+        "top_left_center": [],
+        "top_center": [],
+        "top_right_center": [],
+        "top_right": []
+      },
+      "main": {
+        "main_left": [
+          "logo"
+        ],
+        "main_left_center": [],
+        "main_center": [],
+        "main_right_center": [],
+        "main_right": [
+          "navigation",
+          "social",
+          "button"
+        ]
+      },
+      "bottom": {
+        "bottom_left": [],
+        "bottom_left_center": [],
+        "bottom_center": [],
+        "bottom_right_center": [],
+        "bottom_right": []
+      }
+    },
+    "header_mobile_items": {
+      "popup": {
+        "popup_content": [
+          "mobile-navigation"
+        ]
+      },
+      "top": {
+        "top_left": [],
+        "top_center": [],
+        "top_right": []
+      },
+      "main": {
+        "main_left": [
+          "mobile-logo"
+        ],
+        "main_center": [],
+        "main_right": [
+          "popup-toggle"
+        ]
+      },
+      "bottom": {
+        "bottom_left": [],
+        "bottom_center": [],
+        "bottom_right": []
+      }
+    },
+    "footer_items": {
+      "top": {
+        "top_1": [],
+        "top_2": [],
+        "top_3": [],
+        "top_4": [],
+        "top_5": []
+      },
+      "middle": {
+        "middle_1": [
+          "footer-widget1"
+        ],
+        "middle_2": [
+          "footer-widget2"
+        ],
+        "middle_3": [
+          "footer-widget3"
+        ],
+        "middle_4": [
+          "footer-widget4"
+        ],
+        "middle_5": []
+      },
+      "bottom": {
+        "bottom_1": [
+          "footer-html"
+        ],
+        "bottom_2": [],
+        "bottom_3": [],
+        "bottom_4": [],
+        "bottom_5": []
+      }
+    },
+    "footer_middle_top_spacing": {
+      "size": {
+        "desktop": 36,
+        "tablet": 30,
+        "mobile": 26
+      },
+      "unit": {
+        "desktop": "px",
+        "tablet": "px",
+        "mobile": "px"
+      }
+    },
+    "footer_middle_bottom_spacing": {
+      "size": {
+        "desktop": 36,
+        "tablet": 30,
+        "mobile": 26
+      },
+      "unit": {
+        "desktop": "px",
+        "tablet": "px",
+        "mobile": "px"
+      }
+    },
+    "mobile_header_sticky": "no",
+    "logo_width": {
+      "size": {
+        "desktop": 56,
+        "tablet": 48,
+        "mobile": 44
+      },
+      "unit": {
+        "desktop": "px",
+        "tablet": "px",
+        "mobile": "px"
+      }
+    },
+    "content_narrow_width": {
+      "size": 800,
+      "unit": "px"
+    },
+    "content_edge_spacing": {
+      "size": {
+        "desktop": 24,
+        "tablet": 24,
+        "mobile": 20
+      },
+      "unit": {
+        "desktop": "px",
+        "tablet": "px",
+        "mobile": "px"
+      }
+    },
+    "buttons_color": {
+      "color": "palette9",
+      "hover": "palette9"
+    },
+    "buttons_background": {
+      "color": "#086762",
+      "hover": "#104747"
+    },
+    "buttons_border_radius": {
+      "size": {
+        "desktop": 8
+      },
+      "unit": {
+        "desktop": "px"
+      }
+    },
+    "buttons_typography": {
+      "size": {
+        "desktop": 16
+      },
+      "lineHeight": {
+        "desktop": 1.4
+      },
+      "family": "inherit",
+      "google": false,
+      "weight": "600",
+      "variant": "600"
+    },
+    "buttons_padding": {
+      "size": {
+        "desktop": [
+          13,
+          22,
+          13,
+          22
+        ]
+      },
+      "unit": {
+        "desktop": "px"
+      },
+      "locked": {
+        "desktop": false
+      }
+    },
+    "header_button_padding": {
+      "size": [
+        13,
+        23,
+        13,
+        23
+      ],
+      "unit": "px",
+      "locked": false
+    },
+    "header_popup_background": {
+      "desktop": {
+        "color": "#f7faf7"
+      }
+    },
+    "header_popup_close_color": {
+      "color": "#163d44",
+      "hover": "#066667"
+    },
+    "mobile_navigation_color": {
+      "color": "#163d44",
+      "hover": "#066667",
+      "active": "#066667"
+    },
+    "mobile_navigation_background": {
+      "color": "#ffffff",
+      "hover": "#edf8f6",
+      "active": "#edf8f6"
+    },
+    "mobile_navigation_divider": {
+      "width": 1,
+      "unit": "px",
+      "style": "solid",
+      "color": "#d6e5e3"
+    },
+    "mobile_navigation_typography": {
+      "size": {
+        "desktop": 16
+      },
+      "lineHeight": {
+        "desktop": 1.5
+      },
+      "family": "inherit",
+      "google": false,
+      "weight": "600",
+      "variant": "600"
+    },
+    "mobile_trigger_icon_size": {
+      "size": 20,
+      "unit": "px"
+    },
+    "mobile_trigger_padding": {
+      "size": [
+        11,
+        12,
+        11,
+        12
+      ],
+      "unit": "px",
+      "locked": false
+    },
+    "header_top_height": {
+      "size": {
+        "desktop": 34
+      },
+      "unit": {
+        "desktop": "px"
+      }
+    },
+    "header_top_background": {
+      "desktop": {
+        "color": "#0f172a"
+      }
+    },
+    "header_social_items": {
+      "items": [
+        {
+          "id": "phone",
+          "enabled": true,
+          "source": "icon",
+          "url": "",
+          "imageid": "",
+          "width": 24,
+          "icon": "phoneAlt2",
+          "label": "0491 245 156"
+        }
+      ]
+    },
+    "phone_link": "+61491245156",
+    "header_social_show_label": true,
+    "header_social_color": {
+      "color": "#143e40",
+      "hover": "#086762"
+    },
+    "header_social_background": {
+      "color": "transparent",
+      "hover": "transparent"
+    },
+    "header_social_icon_size": {
+      "size": 15,
+      "unit": "px"
+    },
+    "header_social_typography": {
+      "family": "inherit",
+      "google": false,
+      "weight": "600",
+      "variant": "600",
+      "size": {
+        "desktop": 13
+      },
+      "lineHeight": {
+        "desktop": 1.5
+      }
+    },
+    "header_main_background": {
+      "desktop": {
+        "color": "#ffffff"
+      }
+    },
+    "header_main_bottom_border": {
+      "desktop": {
+        "width": 1,
+        "unit": "px",
+        "style": "solid",
+        "color": "#c5dcd7"
+      }
+    },
+    "header_button_size": "custom",
+    "header_button_background": {
+      "color": "#086762",
+      "hover": "#104747"
+    },
+    "header_button_color": {
+      "color": "#ffffff",
+      "hover": "#ffffff"
+    },
+    "primary_navigation_style": "standard",
+    "primary_navigation_color": {
+      "color": "#334155",
+      "hover": "#0e7490",
+      "active": "#0e7490"
+    },
+    "mobile_trigger_label": "Menu",
+    "mobile_trigger_style": "bordered",
+    "mobile_trigger_icon": "menu2",
+    "mobile_trigger_border": {
+      "width": 1,
+      "unit": "px",
+      "style": "solid",
+      "color": "#276563"
+    },
+    "mobile_trigger_color": {
+      "color": "#174a48",
+      "hover": "#ffffff"
+    },
+    "mobile_trigger_background": {
+      "color": "#e4f3ee",
+      "hover": "#145853"
+    },
+    "mobile_trigger_typography": {
+      "family": "inherit",
+      "google": false,
+      "weight": "600",
+      "variant": "600",
+      "size": {
+        "desktop": 14
+      },
+      "lineHeight": {
+        "desktop": 1.5
+      }
+    },
+    "footer_middle_column_spacing": {
+      "size": {
+        "desktop": 32,
+        "tablet": 26,
+        "mobile": 18
+      },
+      "unit": {
+        "desktop": "px",
+        "tablet": "px",
+        "mobile": "px"
+      }
+    },
+    "footer_middle_link_colors": {
+      "color": "#e2e8f0",
+      "hover": "#ffffff"
+    },
+    "footer_bottom_top_border": {
+      "desktop": {
+        "width": 1,
+        "unit": "px",
+        "style": "solid",
+        "color": "#334155"
+      }
+    },
+    "footer_bottom_top_spacing": {
+      "size": {
+        "desktop": 16,
+        "tablet": 15,
+        "mobile": 14
+      },
+      "unit": {
+        "desktop": "px",
+        "tablet": "px",
+        "mobile": "px"
+      }
+    },
+    "footer_bottom_bottom_spacing": {
+      "size": {
+        "desktop": 20,
+        "mobile": 88
+      },
+      "unit": {
+        "desktop": "px",
+        "mobile": "px"
+      }
+    },
+    "footer_html_typography": {
+      "family": "inherit",
+      "google": false,
+      "weight": "400",
+      "variant": "regular",
+      "size": {
+        "desktop": 13
+      },
+      "lineHeight": {
+        "desktop": 1.5
+      },
+      "color": "#c2dbd7"
+    },
+    "footer_middle_top_border": {
+      "desktop": {
+        "width": 1,
+        "unit": "px",
+        "style": "solid",
+        "color": "#e2e8f0"
+      }
+    },
+    "mobile_navigation_collapse": false
+  },
+  "palette": {
+    "palette": [
+      {
+        "color": "#086762",
+        "slug": "palette1",
+        "name": "Prime teal"
+      },
+      {
+        "color": "#104747",
+        "slug": "palette2",
+        "name": "Deep teal"
+      },
+      {
+        "color": "#143e40",
+        "slug": "palette3",
+        "name": "Heading"
+      },
+      {
+        "color": "#374b48",
+        "slug": "palette4",
+        "name": "Body"
+      },
+      {
+        "color": "#4e6560",
+        "slug": "palette5",
+        "name": "Muted text"
+      },
+      {
+        "color": "#627771",
+        "slug": "palette6",
+        "name": "Subtle text"
+      },
+      {
+        "color": "#ceded8",
+        "slug": "palette7",
+        "name": "Border"
+      },
+      {
+        "color": "#e8f4ef",
+        "slug": "palette8",
+        "name": "Pale teal"
+      },
+      {
+        "color": "#ffffff",
+        "slug": "palette9",
+        "name": "White"
+      },
+      {
+        "color": "#FfFfFf",
+        "slug": "palette10",
+        "name": "Palette Color Complement"
+      },
+      {
+        "color": "#13612e",
+        "slug": "palette11",
+        "name": "Palette Color Success"
+      },
+      {
+        "color": "#1159af",
+        "slug": "palette12",
+        "name": "Palette Color Info"
+      },
+      {
+        "color": "#b82105",
+        "slug": "palette13",
+        "name": "Palette Color Alert"
+      },
+      {
+        "color": "#f7630c",
+        "slug": "palette14",
+        "name": "Palette Color Warning"
+      },
+      {
+        "color": "#f5a524",
+        "slug": "palette15",
+        "name": "Palette Color Rating"
+      }
+    ],
+    "active": "palette"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "__file": "wp_block",
+  "title": "Prime — Desktop Whatsapp",
+  "content": "<!-- wp:social-links {\"iconColorValue\":\"#ffffff\",\"iconBackgroundColorValue\":\"#086762\",\"layout\":{\"type\":\"flex\",\"justifyContent\":\"right\"}} -->\n<ul class=\"wp-block-social-links has-icon-color has-icon-background-color\"><!-- wp:social-link {\"url\":\"https://wa.me/61491245156\",\"service\":\"whatsapp\",\"label\":\"Chat with Prime Domestic on WhatsApp\"} /--></ul>\n<!-- /wp:social-links -->",
+  "syncStatus": "unsynced"
+}

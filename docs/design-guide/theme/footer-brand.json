@@ -1,0 +1,6 @@
+{
+  "__file": "wp_block",
+  "title": "Prime — Footer Brand",
+  "content": "<!-- wp:image {\"id\":7,\"width\":\"70px\",\"aspectRatio\":\"1\",\"scale\":\"cover\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\",\"style\":{\"border\":{\"radius\":\"10px\",\"width\":\"0px\"}}} -->\n<figure class=\"wp-block-image size-full is-resized has-custom-border\"><img src=\"https://primedomestic.com.au/staging/wp-content/uploads/2026/11/prime-client-logo.png\" alt=\"Prime Domestic and Cleaning Services\" class=\"wp-image-7\" style=\"border-width:0px;border-radius:10px;aspect-ratio:1;object-fit:cover;width:70px;height:auto\"/></figure>\n<!-- /wp:image -->\n\n<!-- wp:paragraph -->\n<p>A family-run cleaning team in Malvern East, serving Melbourne’s south-east.</p>\n<!-- /wp:paragraph -->",
+  "syncStatus": "unsynced"
+}
