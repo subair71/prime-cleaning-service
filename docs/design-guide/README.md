@@ -62,6 +62,8 @@ The review ran WordPress with the Kadence parent theme and Fluent Forms Pro. All
 | Deep, 4 bedrooms, 2 bathrooms, double-storey and fridge | $505.75 | $455–$555 |
 | Empty end of lease, 2 bedrooms, 1 bathroom, standard oven and outer-zone travel | $460.00 | $415–$505 |
 | Carpet-only, 1 bedroom in the inner zone | $110.00 | $100–$120 |
-| Furnished end of lease, 6+ bedrooms, 5+ bathrooms, blank applicable grid cell, or unlisted suburb | Manual review | Price omitted |
+| Carpet-only, 3 bedrooms, 1 lounge, hallway and stairs | $275.00 | $250–$305 |
+| Weekly Regular case above with 2 carpet bedrooms added | $316.40 | $285–$350 |
+| Furnished end of lease, 6+ bedrooms, 5+ bathrooms, blank applicable grid cell, unpriced double oven, or unlisted suburb | Manual review | Price omitted |
 
 The most visible differences from the guide are the Fluent Forms progress indicator, field and calendar styling, and the static desktop help panel beside the estimate. The form shows its calculated breakdown in the result step. The fixed contact actions and unapproved Terms body remain to be checked separately. Device-specific column spacing, text wrapping and button proportions can also differ from the previews.
